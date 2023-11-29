@@ -1,0 +1,17 @@
+.mini-naw {
+    margin: 0;
+    padding: 12px 4px;
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@media (max-width: 390px) {
+    .mini-naw {
+        margin: 0;
+        padding: 12px 4px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}

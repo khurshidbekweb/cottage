@@ -1,0 +1,38 @@
+.places-mini-card {
+  display: none;
+}
+
+@media (max-width: 390px) {
+  .places-mini-card {
+    display: block;
+    position: relative;
+  }
+
+  .places-mini-card-name {
+    position: absolute;
+    width: 234px;
+    margin: 32px 0 0 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 28px;
+    color: #ffffff;
+  }
+
+  .places-mini-card-text {
+    position: absolute;
+    margin: 288px 50px 0 50px;
+    padding: 0 0 8px 0;
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 22px;
+    color: #ffffff;
+    border-bottom: 1px solid #ffffff;
+  }
+}

@@ -1,0 +1,113 @@
+@keyframes heartbeat {
+    0%{
+        transform: scale(1);
+    }
+
+    50%{
+        transform: scale(1.1);
+    }
+
+    100%{
+        transform: scale(1);
+    }
+
+}
+
+.dacha-heart-icon {
+    color: #2C2D2E;
+    fill: #2C2D2E;
+    width: 31.96px;
+    height: 25.47px;
+
+}
+
+.dacha-heart-icon:hover {
+    animation: heartbeat 1s infinite;
+    transition: opacity 500ms;
+}
+
+
+.dacha-heart-icon:active {
+    fill: red;
+    color: red;
+}
+
+.dacha-card {
+    width: 350px;
+    position: relative;
+    margin: 0;
+    padding: 12px 12px 24px 12px;
+    background: #FFFFFF;
+    border: 1px solid rgba(44, 45, 46, 0.25);
+    border-radius: 35px;
+}
+
+.dacha-card-like {
+    position: absolute;
+    top: 262px;
+    right: 28px;
+    margin: 0;
+    padding: 16px 12.04px 14.53px 12px;
+    border-radius: 50%;
+background: #FFFFFF;
+box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.25);
+cursor: pointer;
+}
+
+.dacha-card-like:active {
+    background: #2C2D2E;
+}
+
+.dacha-card-name {
+    margin: 26px 0 6px;
+    padding: 0;
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 36px;
+    color: #2C2D2E;
+}
+
+.dacha-card-text {
+    margin: 0 0 6px 0;
+    padding: 0;
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 26px;
+    color: #2C2D2E;
+}
+
+.dacha-card-text:last-child {
+    margin-bottom: 20px;
+}
+
+.dacha-card-btn {
+    width: 220px;
+    position: relative;
+    text-decoration: none;
+    left: 16%;
+    margin: 19px 0 0 0;
+    padding: 10px 61px;
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 36px;
+    color: #FFFFFF;
+    background: #3CD298;
+    border: none;
+    border-radius: 35px;
+}
+
+.dacha-card-btn:hover {
+   color: #FFFFFF;
+}
+
+@media (max-width: 390px) {
+    .dacha-card {
+        display: none;
+    }
+}

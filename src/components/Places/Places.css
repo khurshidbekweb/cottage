@@ -1,0 +1,74 @@
+.places-top {
+    margin: 173px 0 0 0;
+    padding: 0;
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 60px;
+    color: #2C2D2E;
+}
+
+.places-cards {
+    margin: 48px 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 19px;
+}
+
+.places-circles {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.places-active {
+    width: 12px;
+    height: 12px;
+    margin: 0;
+    padding: 0;
+    background: #2C2D2E;
+    border: 1px solid #2C2D2E;
+    border-radius: 50%;
+}
+
+.places-circle {
+    width: 12px;
+    height: 12px;
+    margin: 0;
+    padding: 0;
+    border: 1px solid #2C2D2E;
+    border-radius: 50%;
+}
+
+@media (max-width: 390px) {
+    .places-top {
+        margin: 49px 0 0 0;
+        padding: 0;
+        font-family: sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 34px;
+        color: #2C2D2E;
+    }
+
+    .places-cards {
+        margin: 32px 0 25px;
+        padding: 0;
+        display: grid;
+        grid-auto-flow: column;
+        gap: 12px;
+        overflow-y: auto;
+        overscroll-behavior-x: contain;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+    }
+
+    .places-cards::-webkit-scrollbar {
+        display: none;
+    }
+}

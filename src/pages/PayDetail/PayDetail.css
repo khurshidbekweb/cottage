@@ -1,0 +1,72 @@
+.pay-detail-user {
+    margin: 120px 0 24px;
+    padding: 0;
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 42px;
+    color: #2C2D2E;
+}
+
+.pay-detail-date {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    color: #2C2D2E;
+}
+
+.pay-detail-text {
+    margin: 48px 0 24px;
+    padding: 0;
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    color: #2C2D2E;
+}
+
+.pay-detail-btn {
+    width: 160px;
+    margin: 0 auto;
+    display: block;
+    padding: 10px 46px;
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 28px;
+    color: #FFFFFF;
+    background: #FF0000;
+    border: none;
+    border-radius: 24px;
+}
+
+@media (max-width: 390px) {
+    .pay-detail-user {
+        margin: 32px 0 24px;
+        padding: 0;
+        font-family: sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 34px;
+        color: #2C2D2E;
+    }
+
+    .pay-detail-text {
+        margin: 27px 0 36px;
+        padding: 0;
+        font-family: sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 26px;
+        color: #2C2D2E;
+    }
+}

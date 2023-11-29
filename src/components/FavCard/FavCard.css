@@ -1,0 +1,188 @@
+.favcard {
+    position: relative;
+  margin: 0;
+  padding: 12px 12px 24px 12px;
+  background: #ffffff;
+  border: 1px solid rgba(44, 45, 46, 0.25);
+  border-radius: 35px;
+}
+
+.favcard-header {
+  margin: 26px 0 0 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.favcard-name {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 36px;
+  color: #2c2d2e;
+}
+
+.favcard-heart {
+    position: absolute;
+    top: 28px;
+    right: 28px;
+    margin: 0;
+    padding: 16px 12px 14px;
+    border-radius: 50%;
+    background: #2C2D2E;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+}
+
+.favcard-heart:active {
+    background: #fff;
+}
+
+.favcard-like {
+    width: 31px;
+    height: 25px;
+    color: red;
+    fill: red;
+}
+
+.favcard-like:active {
+    color: #2C2D2E;
+    fill: #2c2d2e;
+}
+
+.favcard-stars {
+  display: flex;
+  gap: 16px;
+}
+
+.favcard-star:active {
+  color: #ffd400;
+}
+
+.favcard-star-active {
+  color: #ffd400;
+}
+
+.favcard-text {
+    margin: 6px 0 0 0;
+    padding: 0;
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 26px;
+    color: #2C2D2E;
+}
+
+.favcard-text:last-child {
+    margin-bottom: 25px;
+}
+
+.favcard-btn {
+    position: relative;
+    left: 16%;
+    margin: 0;
+    padding: 10px 61px;
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 36px;
+    color: #FFFFFF;
+    background: #3CD298;
+    border-radius: 35px;
+    text-decoration: none;
+}
+
+.favcard-btn:hover {
+    color: #ffffff;
+}
+
+@media (max-width: 390px) {
+    .favcard {
+        position: relative;
+      margin: 0;
+      padding: 12px;
+      background: #ffffff;
+      border: 1px solid rgba(44, 45, 46, 0.25);
+      border-radius: 18px;
+    }
+
+    .favcard-img {
+        margin: 0;
+        padding: 0;
+        width: 148px;
+        height: 120px;
+    }
+
+    .favcard-header {
+        margin: 12px 0 0 0;
+        padding: 0;
+        display: block;
+    }
+
+    .favcard-name {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 26px;
+        color: #2c2d2e;
+    }
+
+    .favcard-text {
+        width: 148px;
+        margin: 6px 0 0 0;
+        padding: 0;
+        font-family: sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 22px;
+        color: #2C2D2E;
+    }
+
+    .favcard-btn {
+        position: relative;
+        left: 3%;
+        margin: 0;
+        padding: 8px 27px;
+        font-family: sans-serif;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 15px;
+        line-height: 20px;
+        color: #FFFFFF;
+        background: #3CD298;
+        border-radius: 18px;
+        text-decoration: none;
+    }
+
+    .favcard-heart {
+        position: absolute;
+        top: 24px;
+        right: 24px;
+        margin: 0;
+        padding: 1px 5px;
+        border-radius: 50%;
+        background: #2C2D2E;
+        box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.25);
+        cursor: pointer;
+    }
+
+    .favcard-like {
+        width: auto;
+        height: auto;
+    }
+
+    .favcard-stars {
+        display: flex;
+        gap: 6px;
+      }
+}
