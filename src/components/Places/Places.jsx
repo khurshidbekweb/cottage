@@ -1,4 +1,17 @@
 import "./Places.css";
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+import {
+  Navigation,
+  Pagination,
+  Scrollbar,
+  A11y,
+  Autoplay,
+  Parallax,
+} from "swiper/modules";
+
+
 import PlacesCard from "../PlacesCard/PlacesCard";
 import Nature1 from '../../assets/images/nature1.png'
 import Nature2 from '../../assets/images/nature2.png'
@@ -17,22 +30,36 @@ import Nature12 from '../../assets/images/nature12.png'
 import Nature13 from '../../assets/images/nature13.png'
 import Nature14 from '../../assets/images/nature14.png'
 
+import 'swiper/css/bundle';
 const Places = () => {
   return (
       <div className="container">
         <div className="places">
           <h2 className="places-top">Месты Отдыха</h2>
+          <Swiper
+              className="places-swiper"
+              modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay, Parallax]}
+              spaceBetween={30}
+              slidesPerView={4}
+              autoplay={{
+                delay: 2000,
+              }}
+              parallax={{
+                enabled: true,
+              }}
+            >
+              <SwiperSlide><PlacesCard name="Бурчумулла" img={Nature1}/></SwiperSlide>
+              <SwiperSlide><PlacesCard name="Юсуфхона" img={Nature2}/></SwiperSlide>
+              <SwiperSlide><PlacesCard name="Чимган" img={Nature3}/></SwiperSlide>
+              <SwiperSlide><PlacesCard name="Чарвак" img={Nature4}/></SwiperSlide>
+              <SwiperSlide><PlacesCard name="Хумсан" img={Nature5}/></SwiperSlide>
+              <SwiperSlide><PlacesCard name="Акташ" img={Nature6}/></SwiperSlide>
+              <SwiperSlide><PlacesCard name="Чирчик" img={Nature7}/></SwiperSlide>
+              <SwiperSlide><PlacesCard name="Другии месты" img={NoNature}/></SwiperSlide>
+          </Swiper>
+
 
           <div className="places-cards">
-            <PlacesCard name="Бурчумулла" img={Nature1}/>
-            <PlacesCard name="Юсуфхона" img={Nature2}/>
-            <PlacesCard name="Чимган" img={Nature3}/>
-            <PlacesCard name="Чарвак" img={Nature4}/>
-            <PlacesCard name="Хумсан" img={Nature5}/>
-            <PlacesCard name="Акташ" img={Nature6}/>
-            <PlacesCard name="Чирчик" img={Nature7}/>
-            <PlacesCard name="Другии месты" img={NoNature}/>
-
             <PlacesMiniCard name="Бурчумулла" image={Nature8} text='Дачи, Рыбалки, Пикник'/>
             <PlacesMiniCard name="Юсуфхона" image={Nature9} text='Дачи, Рыбалки, Пикник'/>
             <PlacesMiniCard name="Чимган" image={Nature10} text='Дачи, Рыбалки, Пикник'/>
@@ -43,13 +70,13 @@ const Places = () => {
             <PlacesMiniCard name="Другии месты" image={NoNature} text='Дачи, Рыбалки, Пикник'/>
           </div>
 
-          <div className="places-circles">
+          {/* <div className="places-circles">
             <div className="places-active"></div>
             <div className="places-circle"></div>
             <div className="places-circle"></div>
             <div className="places-circle"></div>
             <div className="places-circle"></div>
-          </div>
+          </div> */}
         </div>
       </div>
   );

@@ -35,7 +35,7 @@ const Header = () => {
           clickable: true,
           // bulletClass: "circle",
           // bulletActiveClass: "active",
-          // dynamicBullets: true
+          dynamicBullets: true
         }}
       >
         <SwiperSlide>
@@ -103,13 +103,13 @@ const Header = () => {
             </div>
           </div>
         </SwiperSlide>
-        {/* <div className="circles">
+        <div className="circles">
           <div className="circle"></div>
           <div className="circle"></div>
           <div className="circle"></div>
           <div className="circle"></div>
           <div className="circle"></div>
-        </div> */}
+        </div>
       </Swiper>
 
       <div className="header-menu">
@@ -166,13 +166,7 @@ const Header = () => {
         </Link>
       </div>
 
-      {/* <div className="circles-next">
-            <div className="circle active"></div>
-            <div className="circle "></div>
-            <div className="circle"></div>
-            <div className="circle"></div>
-            <div className="circle"></div>
-      </div> */}
+      
     </header>
   );
 };

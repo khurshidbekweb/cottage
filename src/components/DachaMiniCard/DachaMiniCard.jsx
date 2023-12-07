@@ -6,9 +6,9 @@ const DachaMiniCard = (props) => {
   return (
     <div className="dacha-mini-card">
       <div>
-        <img src={props.img} width="148" height="120" alt="dacha" />
+        <img className="view-img" src={props.img}  alt="dacha" />
         <div className="dmc-like">
-        <FiHeart className="dacha-mini-heart-icon" />
+          <FiHeart className="dacha-mini-heart-icon" />
         </div>
       </div>
       <div>
