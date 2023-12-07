@@ -406,7 +406,7 @@
     background-color: transparent;
 }
 
-@media (max-width: 390px) {
+@media only screen and (max-width: 576px) {
     .navbar {
         margin: 0;
         padding: 10px 0;
@@ -416,9 +416,11 @@
     }
 
     .menu {
-        display: flex;
+        display: flex;        
     }
-
+    .modal-menu{
+        z-index: 999;
+    }
     .logo {
         margin: 0 45px 0 0;
         padding: 0;

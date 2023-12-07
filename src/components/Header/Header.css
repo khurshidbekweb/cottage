@@ -24,6 +24,7 @@
     text-align: center;
 }
 
+
 .info-card {
     padding: 80px 0;
 }
@@ -216,7 +217,12 @@
     display: none;
 }
 
-@media (max-width: 390px) {
+@media only screen and (max-width: 390px) {
+    .swiper{
+        width: 100%;
+        display: block;
+        z-index: -9 !important;
+    }
     .header {
         width: 358px;
         margin: 0 auto;
@@ -307,6 +313,7 @@
         background: #2C2D2E;
         box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.1);
         border-radius: 35px;
+        z-index: -1;
     }
 
     .header-inner {

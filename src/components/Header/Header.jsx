@@ -19,6 +19,7 @@ const Header = () => {
   return (
     <header className="header">
       <Swiper
+      className="swiper"
         modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay, Parallax]}
         spaceBetween={1}
         slidesPerView={1}
@@ -30,12 +31,11 @@ const Header = () => {
           enabled: true,
         }}
         pagination= {{
-          // el: "div",
           enabled: true,
           clickable: true,
-          bulletClass: "circle",
-          bulletActiveClass: "active",
-          dynamicBullets: true
+          // bulletClass: "circle",
+          // bulletActiveClass: "active",
+          // dynamicBullets: true
         }}
       >
         <SwiperSlide>
@@ -48,13 +48,6 @@ const Header = () => {
                   Просмотреть
                 </Link>
               </div>
-              {/* <div className="circles">
-                    <div className="circle active"></div>
-                    <div className="circle"></div>
-                    <div className="circle"></div>
-                    <div className="circle"></div>
-                    <div className="circle"></div>
-                  </div>                           */}
             </div>
           </div>
         </SwiperSlide>
@@ -68,13 +61,6 @@ const Header = () => {
                   Просмотреть
                 </Link>
               </div>
-              {/* <div className="circles">
-                    <div className="circle"></div>
-                    <div className="circle active"></div>
-                    <div className="circle"></div>
-                    <div className="circle"></div>
-                    <div className="circle"></div>
-                  </div> */}
             </div>
           </div>
         </SwiperSlide>
@@ -88,13 +74,6 @@ const Header = () => {
                   Просмотреть
                 </Link>
               </div>
-              {/* <div className="circles">
-                    <div className="circle"></div>
-                    <div className="circle"></div>
-                    <div className="circle active"></div>
-                    <div className="circle"></div>
-                    <div className="circle"></div>
-                  </div>             */}
             </div>
           </div>
         </SwiperSlide>
@@ -108,13 +87,6 @@ const Header = () => {
                   Просмотреть
                 </Link>
               </div>
-              {/* <div className="circles">
-                    <div className="circle"></div>
-                    <div className="circle"></div>
-                    <div className="circle"></div>
-                    <div className="circle active"></div>
-                    <div className="circle"></div>
-                  </div>        */}
             </div>
           </div>
         </SwiperSlide>
@@ -127,14 +99,7 @@ const Header = () => {
                 <Link to="/view" className="header-btn">
                   Просмотреть
                 </Link>
-              </div>
-              {/* <div className="circles">
-                    <div className="circle"></div>
-                    <div className="circle"></div>
-                    <div className="circle"></div>
-                    <div className="circle"></div>
-                    <div className="circle active"></div>
-                  </div>        */}
+              </div>              
             </div>
           </div>
         </SwiperSlide>
@@ -175,7 +140,6 @@ const Header = () => {
 
           <div className="header-inner-box">
             <p className="header-top-usd">Цена</p>
-
             <input
               className="header-nums"
               type="text"
@@ -208,7 +172,7 @@ const Header = () => {
             <div className="circle"></div>
             <div className="circle"></div>
             <div className="circle"></div>
-          </div> */}
+      </div> */}
     </header>
   );
 };

@@ -60,7 +60,7 @@ const Navbar = () => {
               position: "none",
               background: "#2C2D2E",
               border: "none",
-              color: "#ffffff",
+              color: "#ffffff"
             },
           }}
         >
@@ -78,9 +78,8 @@ const Navbar = () => {
             <Link to="/contact" className="modal-contact">
               Контакты
             </Link>
-
             <select className="modal-select-two" name="social" id="social">
-              <option value="socials">Социальный сети</option>
+              <option hidden value="socials">Социальный сети</option>
               <option value="telegram">Telegram</option>
               <option value="facebook">Facebook</option>
               <option value="instagram">Instagram</option>
@@ -125,7 +124,7 @@ const Navbar = () => {
           </Link>
 
           <select className="select-two" name="social" id="social">
-            <option value="socials">Социальный сети</option>
+            <option hidden value="socials">Социальный сети</option>
             <option value="telegram">Telegram</option>
             <option value="facebook">Facebook</option>
             <option value="instagram">Instagram</option>
@@ -133,8 +132,8 @@ const Navbar = () => {
           </select>
 
           <select className="select-three" name="language" id="language">
-            <option value="ru">Ру</option>
             <option value="uz">Uz</option>
+            <option value="ru">Ру</option>
           </select>
         </div>
 
