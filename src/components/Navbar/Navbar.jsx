@@ -92,8 +92,8 @@ const Navbar = () => {
               name="language"
               id="language"
             >
-              <option value="ru">Ру</option>
               <option value="uz">Uz</option>
+              <option value="ru">Ру</option>
             </select>
 
             {user?.displayName ? (
