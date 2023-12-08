@@ -1,0 +1,24 @@
+.contact-inp{
+    margin-top: 10px;
+    border: none;
+    border-bottom: 2px solid black ;
+    display: block;
+    width: 250px;
+}
+.label-conatct{
+    display: block;
+}
+.btn-sentMasseage{
+    margin-right: auto;
+    padding: 8px 20px;
+    border: none;
+    background: #000;
+    color: white;
+    border-radius: 5px;
+    margin-right: 0;
+    display: block;
+    margin-top: 50px;
+}
+.contact-to-offece{
+    margin-top: 120px;
+}

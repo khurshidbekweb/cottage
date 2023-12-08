@@ -200,14 +200,14 @@
     outline: none;
 }
 
-.modal-menu {
+.modal-nav-menu {
     width: 199px;
     margin: 0 auto;
     padding: 69px 0 0 0;
     text-align: center;
 }
 
-.modal-select-one {
+.modal-nav-select-one {
     width: 80px;
     margin: 0 0 16px 0;
     padding: 0;
@@ -222,7 +222,7 @@
     background: #2C2D2E;
 }
 
-.modal-contact {
+.modal-nav-contact {
     margin: 0 0 16px 0;
     padding: 0;
     font-family: sans-serif;
@@ -235,7 +235,7 @@
     text-decoration: none;
 }
 
-.modal-select-two {
+.modal-nav-select-two {
     width: 199px;
     margin: 0 0 16px 0;
     padding: 0;
@@ -250,7 +250,7 @@
     background: #2C2D2E;
 }
 
-.modal-select-three {
+.modal-nav-select-three {
     width: 56px;
     margin: 0 0 36px 0;
     padding: 0;
@@ -265,7 +265,7 @@
     background: #2C2D2E;
 }
 
-.modal-btn {
+.modal-nav-btn {
     width: 136px;
     margin: 0 auto;
     padding: 8px 50px 8px 51px;
@@ -281,7 +281,7 @@
     border-radius: 18px;
 }
 
-.modal-out {
+.modal-nav-out {
     width: 136px;
     margin: 0 auto;
     padding: 8px 30px;
@@ -307,7 +307,7 @@
     background: #0087C2;
 }
 
-.modal-overlay {
+.modal-nav-overlay {
     background: transparent;
     position: fixed;
     top: 0;
@@ -316,7 +316,7 @@
     bottom: 0;
 }
 
-.modal-content {
+.modal-nav-content {
     width: 90%;
     max-width: 231px;
     background-color: #FFFFFF;
@@ -327,7 +327,7 @@
     left: 71.7%;
 }
 
-.user-modal-top {
+.user-modal-nav-top {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -363,7 +363,7 @@
     color: #2C2D2E;
 }
 
-.user-modal-profil {
+.user-modal-nav-profil {
     margin-bottom: 16px;
     display: flex;
     align-items: center;
@@ -387,7 +387,7 @@
     color: #2C2D2E;
 }
 
-.user-modal-out {
+.user-modal-nav-out {
     display: flex;
     align-items: center;
     gap: 11px;
@@ -418,10 +418,10 @@
     .menu {
         display: flex;        
     }
-    .modal-menu{
+    .modal-nav-menu{
         z-index: 999;
     }
-    .modal-content{
+    .modal-nav-content{
         z-index: 9999;
     }
     .logo {

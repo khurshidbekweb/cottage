@@ -1,8 +1,9 @@
 .signin {
   background-image: url(../../assets/images/mountain.jpg);
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   height: 100vh;
+  overflow: hidden;
 }
 
 .background {

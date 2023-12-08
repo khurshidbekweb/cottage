@@ -1,0 +1,77 @@
+.dashboart{
+    background: #EEF5FF;
+}
+
+.dashboart-inner{
+    display: flex;
+}
+.aside-dashboart{
+    width: 300px;
+    height: 100vh;
+    background-color: #2B2A4C;
+    padding: 20px;
+    text-align: center;
+}
+.dash-img-logo{
+    padding: 10px 50px;
+    margin: 0 auto; 
+    border-radius: 50%;
+    border: 1px solid silver;
+}
+.main-dashboart{
+    width: 100%;
+    background-color: #ffff;
+    padding: 20px;
+}
+.header-dashboart{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.input-search{
+    padding: 8px 20px;
+    border-radius: 5px;
+}
+.userLogo{
+    cursor: pointer;
+}
+.link-wrap-dash{
+    margin-left: 50px;
+}
+.dash-link{
+    text-decoration: none;
+    color: white;
+    display: block;
+    margin: 5px auto;
+    text-align: start;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 8px 15px;
+}
+.dash-link:hover{
+    background: blue;
+    color: white;
+
+}
+.active{
+    background: blue;
+    border-radius: 5px;
+}
+
+.log-aout{
+    margin: 170px 0 0;
+    display: block;
+    color: red;
+    font-size: 20px;
+    font-weight: 500;
+    border-radius: 9px;
+}
+
+.btn-modal{
+    margin-left: auto;
+    padding: 8px 19px;
+}
+.modal-language{
+    display: none;
+    margin: 0 auto;
+}

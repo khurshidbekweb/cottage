@@ -27,7 +27,7 @@ const SignIn = () => {
       coustumAxios.auth(userInfo).then(res => {
         if(res.status===200){
           localStorage.setItem("token", res.data.token);
-          navigate("/add")
+          navigate("/dashboart")
         }
       })
     }
@@ -70,7 +70,6 @@ const SignIn = () => {
               <img src={Eye} alt="password" />
             </div>
             <p className="signin-p">Забыли пароль?</p>
-            {/* <button onClick={(e)=> singIn(e)} className="signin-submit"> Войти </button> */}
             <input  onClick={(e)=> singIn(e)} type="submit" className="signin-submit" value={"Войти"}/>
           </form>
 

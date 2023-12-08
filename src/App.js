@@ -16,6 +16,12 @@ import AddNew from './pages/AddNew/AddNew'
 import {Routes, Route} from "react-router-dom"
 import { AuthContextProvider } from './context/AuthContext';
 import Protected from './components/Protected';
+import Dashboart from './pages/Dashboart';
+import Language from './pages/Dashboart/Language';
+import DashHome from './pages/Dashboart/dashHome';
+import Place from './pages/Dashboart/Place';
+import Region from './pages/Dashboart/Region';
+import Translate from './pages/Dashboart/Translate';
 
 function App() {
   return (
@@ -25,7 +31,15 @@ function App() {
         <Route path='/' element={<Home/>} />
         <Route path='/sign-in' element={<SignIn/>} />
         <Route path='/sign-up' element={<SignUp/>} />
+        <Route path='/dashboart' element = {<Dashboart/>}>
+          <Route index element= {<Protected><DashHome/></Protected>}/>
+          <Route path='language' element ={<Protected><Language/></Protected>}/>
+          <Route path='translate' element={<Protected><Translate/></Protected>}/>
+          <Route path='place' element = {<Protected><Place/></Protected>}/>
+          <Route path='region' element ={<Protected><Region/></Protected>}/>
+        </Route>
         <Route path='/contact' element={<Protected><Contact/></Protected>} />
+        <Route path= '/language' element ={<Protected><Language/></Protected>}/>
         <Route path='/filter' element={<Protected><Filter/></Protected>} />
         <Route path='/view' element={<Protected><View/></Protected>} />
         <Route path='/user' element={<Protected><User/></Protected>} />

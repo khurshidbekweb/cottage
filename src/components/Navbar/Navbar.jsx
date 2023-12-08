@@ -68,17 +68,17 @@ const Navbar = () => {
             <img src={Close} width="18.62" height="18.62" alt="close" />
           </button>
 
-          <div className="modal-menu">
-            <select className="modal-select-one" name="dacha" id="dacha">
+          <div className="modal-nav-menu">
+            <select className="modal-nav-select-one" name="dacha" id="dacha">
               <option value="dachi">Дачи</option>
               <option value="piknik">Пикник</option>
               <option value="ribalka">Рыбалка</option>
             </select>
 
-            <Link to="/contact" className="modal-contact">
+            <Link to="/contact" className="modal-nav-contact">
               Контакты
             </Link>
-            <select className="modal-select-two" name="social" id="social">
+            <select className="modal-nav-select-two" name="social" id="social">
               <option hidden value="socials">Социальный сети</option>
               <option value="telegram">Telegram</option>
               <option value="facebook">Facebook</option>
@@ -87,7 +87,7 @@ const Navbar = () => {
             </select>
 
             <select
-              className="modal-select-three"
+              className="modal-nav-select-three"
               name="language"
               id="language"
             >
@@ -96,12 +96,12 @@ const Navbar = () => {
             </select>
 
             {user?.displayName ? (
-              <button className="modal-out" onClick={handleSignOut}>
+              <button className="modal-nav-out" onClick={handleSignOut}>
                 <img src={GoOut} alt="" />
                 Выход
               </button>
             ) : (
-              <Link to="/sign-in" className="modal-btn">
+              <Link to="/sign-in" className="modal-nav-btn">
                 Вход
               </Link>
             )}
@@ -174,10 +174,10 @@ const Navbar = () => {
             isOpen={modalOpen}
             onRequestClose={closeModal}
             contentLabel="Example Modal"
-            overlayClassName="modal-overlay"
-            className="modal-content"
+            overlayClassName="modal-nav-overlay"
+            className="modal-nav-content"
           >
-            <div className="user-modal-top">
+            <div className="user-modal-nav-top">
               <p className="um-top-gmail">User@gmail.com</p>
               <div className="um-top-img"></div>
             </div>
@@ -187,12 +187,12 @@ const Navbar = () => {
 
             <hr />
 
-            <div className="user-modal-profil">
+            <div className="user-modal-nav-profil">
               <img src={UserModal} alt="user" />
               <Link className="um-profil-link" to="/user">Профиль</Link>
             </div>
 
-            <div className="user-modal-out">
+            <div className="user-modal-nav-out">
               <img src={RedGoOut} alt="go-out" />
               <button className="um-out-btn" onClick={handleSignOut}>Выход</button>
             </div>

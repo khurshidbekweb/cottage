@@ -4,7 +4,6 @@ import MiniSearch from "../../assets/images/mini-search.svg";
 import { Link } from "react-router-dom";
 import {
   Navigation,
-  Pagination,
   Scrollbar,
   A11y,
   Autoplay,
@@ -20,7 +19,7 @@ const Header = () => {
     <header className="header">
       <Swiper
       className="swiper"
-        modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay, Parallax]}
+        modules={[Navigation, Scrollbar, A11y, Autoplay, Parallax]}
         spaceBetween={1}
         slidesPerView={1}
         navigation
@@ -29,13 +28,6 @@ const Header = () => {
         }}
         parallax={{
           enabled: true,
-        }}
-        pagination= {{
-          enabled: true,
-          clickable: true,
-          // bulletClass: "circle",
-          // bulletActiveClass: "active",
-          dynamicBullets: true
         }}
       >
         <SwiperSlide>
