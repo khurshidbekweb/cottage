@@ -25,7 +25,7 @@ const Add = () => {
 
           <div className="add-boxes">
             <div className="add-box">
-              <img className="add-imgs" src={Dacha1} alt="" />
+              <img className="add-imgs" src={Dacha1} alt="imgs" />
 
               <h5 className="add-box-header">Дача GTA</h5>
               <p className="add-box-text">Ташкетская область, Акташ</p>

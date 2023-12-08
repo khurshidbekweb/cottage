@@ -4,7 +4,9 @@
 
 @media only screen and (max-width: 576px) {
     .dacha-mini-card {
-        margin: 0 auto;
+        margin: 0 auto;;
+    }
+    .dmc-btn{
         text-align: center;
     }
 }
@@ -46,7 +48,7 @@
 
     .dacha-mini-card {
         position: relative;
-        width: 342px;
+        width:100% ;
         margin: 0 auto;
         padding: 0px 12px 16px 12px;
         display: block;
@@ -55,14 +57,13 @@
         border-radius: 25px;
     }
     .view-img{
-        width: 300px !important;
-        height: 250px !important;
+        width: 275px !important;
     }
 
     .dmc-like {
         position: absolute;
         top: 40px;
-        right: 30px;
+        right: 40px;
         width: 24px;
         margin: 0;
         padding: 0px 5.16px 0px 5.14px;
@@ -118,6 +119,8 @@
         border-radius: 18px;
         border: none;
         text-decoration: none;
+        text-align: center;
+        display: block;
     }
 
     .dmc-btn:hover {

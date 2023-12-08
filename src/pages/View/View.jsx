@@ -50,7 +50,6 @@ const View = () => {
       <div className="container">
         <div className="view">
           <img className="view-img" src={ViewImg} alt="img" />
-
           <div className="view-imgs">
             <img className="view-image" src={ViewImg} alt="img" />
             <img className="view-image" src={ViewImg} alt="img" />

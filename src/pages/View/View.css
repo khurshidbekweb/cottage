@@ -126,13 +126,120 @@
     color: #2C2D2E;
 }
 
+@media only screen and (max-width: 560px) {
+  .view-img {
+    margin: 35px auto 15px;
+    padding: 0;
+    width: 360px;
+    height: 180px;
+    border-radius: 25px;    
+  }
+
+  .view-imgs {
+    display: grid;
+    grid-auto-flow: column;
+    gap: 12px;
+    overflow-y: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+
+  .view-image {
+    width: 111px;
+    height: 100px;
+    border-radius: 15px;
+  }
+
+  .view-main {
+    margin: 24px 0;
+    padding: 0;
+  }
+
+  .view-name {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 34px;
+    color: #2c2d2e;
+  }
+
+  .view-location {
+    margin: 12px 0 24px;
+    padding: 0;
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 26px;
+    color: #2c2d2e;
+  }
+
+  .view-stars {
+    display: flex;
+    gap: 16px;
+  }
+
+  .view-h {
+    margin: 25px 0 16px;
+    padding: 0;
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 24px;
+    color: #2c2d2e;
+  }
+
+  .view-p {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: #2c2d2e;
+  }
+
+  .view-facility-header {
+    margin: 0 0 16px 0;
+    padding: 0;
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 34px;
+    color: #2c2d2e;
+  }
+
+  .view-facility-text {
+    width: 150px;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 26px;
+    color: #2C2D2E;
+}
+
+  .view-facility-box {
+    display: none;
+  }
+}
+
 @media (max-width: 390px) {
   .view-img {
-    margin: 31.68px 0 12.32px;
-    padding: 0;
-    width: 358px;
+    width: 368px;
     height: 180px;
+    margin: 31px 15px 15px;
     border-radius: 25px;
+    text-align: center;
   }
 
   .view-imgs {

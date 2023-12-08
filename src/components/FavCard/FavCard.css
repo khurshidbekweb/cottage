@@ -104,12 +104,12 @@
 
 @media (max-width: 390px) {
     .favcard {
-        position: relative;
-      margin: 0;
-      padding: 12px;
-      background: #ffffff;
-      border: 1px solid rgba(44, 45, 46, 0.25);
-      border-radius: 18px;
+    position: relative;
+    margin: 0;
+    padding: 12px;
+    background: #ffffff;
+    border: 1px solid rgba(44, 45, 46, 0.25);
+    border-radius: 18px;
     }
 
     .favcard-img {

@@ -159,7 +159,7 @@
 @media (max-width: 390px) {
     .footer {
         margin: 48px 0 24px 0;
-        padding: 24px 20px 24px 22px;
+        padding: 24px 10px 24px;
         background: #2C2D2E;
         border-radius: 35px;
     }

@@ -46,7 +46,6 @@ import A37 from '../../assets/images/a37.svg'
 const AddNew = () => {
   return (
     <>
-      <Navbar />
       <div className="container">
         <div className="addnew">
           <h3 className="addnew-header">Фото</h3>
@@ -305,7 +304,6 @@ const AddNew = () => {
           <button className="soxranit">Сохранить</button>
         </div>
       </div>
-      <Footer />
     </>
   );
 };

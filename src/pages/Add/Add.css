@@ -156,13 +156,12 @@ border-radius: 35px;
     color: #FFFFFF;
 }
 
-@media (max-width: 390px) {
+@media only screen and (max-width: 390px) {
     .add-header {
         margin: 32px 0 24px;
         padding: 0;
         display: block;
     }
-
     .add-header-text {
         margin: 0 0 24px 0;
         padding: 0;
@@ -198,8 +197,7 @@ border-radius: 35px;
     }
 
     .add-imgs {
-        width: 148px;
-        height: 120px;
+        width: 100%;
     }
 
     .add-boxes {
@@ -209,7 +207,8 @@ border-radius: 35px;
     }
 
     .add-box {
-        margin: 0;
+        width: 100%;
+        margin: 10px auto;
         padding: 12px;
         border: 1px solid rgba(44, 45, 46, 0.25);
         border-radius: 25px;

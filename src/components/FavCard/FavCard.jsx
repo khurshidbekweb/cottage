@@ -28,7 +28,7 @@ const FavCard = (props) => {
         <p className="favcard-text">{props.sum2}</p>
       </div>
       <Link className="favcard-btn" to="/view">
-      {props.btn}
+        {props.btn}
       </Link>
     </div>
   );
