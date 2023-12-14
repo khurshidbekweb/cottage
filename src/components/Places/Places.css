@@ -8,8 +8,14 @@
     line-height: 60px;
     color: #2C2D2E;
 }
+.places{
+    width: 100%;
+}
 .places-swiper{
     margin-top: 70px;
+}
+.places-swiper-mini{
+    display: none;
 }
 
 .places-cards {
@@ -37,7 +43,9 @@
     border: 1px solid #2C2D2E;
     border-radius: 50%;
 }
-
+.swiper-slide-mini{
+    width: 70px;
+}
 .places-circle {
     width: 12px;
     height: 12px;
@@ -58,7 +66,6 @@
         line-height: 34px;
         color: #2C2D2E;
     }
-
     .places-cards {
         margin: 32px 0 25px;
         padding: 0;
@@ -72,6 +79,10 @@
     }
     .places-swiper{
         margin-top: 50px;
+        display: none;
+    }
+    .places-swiper-mini{
+        display: block;
     }
 
     .places-cards::-webkit-scrollbar {
@@ -102,6 +113,13 @@
         overscroll-behavior-x: contain;
         scroll-snap-type: x mandatory;
         scrollbar-width: none;
+    }
+    .places-swiper{
+        margin-top: 50px;
+        display: none;
+    }
+    .places-swiper-mini{
+        display: block;
     }
 
     .places-cards::-webkit-scrollbar {

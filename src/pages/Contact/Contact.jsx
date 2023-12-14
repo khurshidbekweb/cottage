@@ -1,12 +1,16 @@
+import Footer from '../../components/Footer/Footer';
+import Navbar from '../../components/Navbar/Navbar';
 import './contact.css'
 
 const Contact = () => {
     return (
-        <div className="conatct">
+        <>
+            <Navbar/>
+            <div className="conatct">
             <div className="container">
-                <h2 className='fs-2 fw-bold text-center'>Contact Us</h2>
+                <h2 className='fs-1 fw-bold text-center conatact-title'>Contact Us</h2>
                 <p className='fs-5 text-center'>Any question or remarks? Just write us a message!</p>
-                <div className="contact-inner d-flex bg-white">
+                <div className="contact-inner mt-5 d-flex bg-white">
                     <div className="contact-my-office rounded-2 w-50 p-5 bg-black position-relative">
                         <h2 className="contact fs-2 fw-bold text-white">Contact Information</h2>
                         <p className="text-contact text-white mt-2">Say something to start a live chat!</p>
@@ -25,7 +29,7 @@ const Contact = () => {
                                 <p className="text-white">132 Dartmouth Street Boston, Massachusetts 02156 United States</p>
                             </div>
                         </div>
-                        <div className="offece-set d-flex mt-5">
+                        <div className="offece-set d-flex">
                             <a href="https://instagram.com"><i class='bx bxl-instagram fs-4 text-white'></i></a>
                             <a className="mx-3 d-block" href="https://instagram.com"><i class='bx bxl-twitter fs-4 text-white' ></i></a>
                             <a href="https://instagram.com"><i class='bx bxl-telegram fs-4 text-white' ></i></a>
@@ -59,6 +63,8 @@ const Contact = () => {
                 </div>
             </div>
         </div>
+        <Footer/>
+        </>
     );
 }
 

@@ -6,7 +6,7 @@ function Region() {
     <div>
       <div className='place'>
         <div className="place-haed d-flex justify-content-between">
-            <h2>Language</h2> 
+            <h2>Region</h2> 
             <AddRegion/>      
         </div>
         <div className="language-inner">

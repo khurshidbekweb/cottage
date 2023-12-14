@@ -219,7 +219,7 @@
 @media only screen and (max-width: 576px) {
     .swiper{
         width: 100%;
-        display: block;
+        display: none;
         z-index: -9 !important;
     }
     .header-btn {

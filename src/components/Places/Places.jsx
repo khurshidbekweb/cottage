@@ -58,6 +58,27 @@ const Places = () => {
               <SwiperSlide><PlacesCard name="Другии месты" img={NoNature}/></SwiperSlide>
           </Swiper>
 
+          <Swiper
+              className="places-swiper-mini"
+              modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay, Parallax]}
+              spaceBetween={10}
+              slidesPerView={2}
+              autoplay={{
+                delay: 2000,
+              }}
+              parallax={{
+                enabled: true,
+              }}
+            >
+              <SwiperSlide className="swiper-slide-mini"><PlacesCard name="Бурчумулла" img={Nature1}/></SwiperSlide>
+              <SwiperSlide lassName="swiper-slide-mini"><PlacesCard name="Юсуфхона" img={Nature2}/></SwiperSlide>
+              <SwiperSlide lassName="swiper-slide-mini"><PlacesCard name="Чимган" img={Nature3}/></SwiperSlide>
+              <SwiperSlide><PlacesCard name="Чарвак" img={Nature4}/></SwiperSlide>
+              <SwiperSlide><PlacesCard name="Хумсан" img={Nature5}/></SwiperSlide>
+              <SwiperSlide><PlacesCard name="Акташ" img={Nature6}/></SwiperSlide>
+              <SwiperSlide><PlacesCard name="Чирчик" img={Nature7}/></SwiperSlide>
+              <SwiperSlide><PlacesCard name="Другии месты" img={NoNature}/></SwiperSlide>
+          </Swiper>
 
           <div className="places-cards">
             <PlacesMiniCard name="Бурчумулла" image={Nature8} text='Дачи, Рыбалки, Пикник'/>

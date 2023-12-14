@@ -94,15 +94,16 @@ const Header = () => {
               </div>              
             </div>
           </div>
-        </SwiperSlide>
-        <div className="circles">
-          <div className="circle"></div>
-          <div className="circle"></div>
-          <div className="circle"></div>
-          <div className="circle"></div>
-          <div className="circle"></div>
-        </div>
+        </SwiperSlide>        
       </Swiper>
+        
+      {/* <div className="circles">
+          <div className="circle"></div>
+          <div className="circle"></div>
+          <div className="circle"></div>
+          <div className="circle"></div>
+          <div className="circle"></div>
+        </div> */}
 
       <div className="header-menu">
         <div className="header-inner">

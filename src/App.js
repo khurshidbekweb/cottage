@@ -39,7 +39,6 @@ function App() {
           <Route path='region' element ={<Protected><Region/></Protected>}/>
         </Route>
         <Route path='/contact' element={<Protected><Contact/></Protected>} />
-        <Route path= '/language' element ={<Protected><Language/></Protected>}/>
         <Route path='/filter' element={<Protected><Filter/></Protected>} />
         <Route path='/view' element={<Protected><View/></Protected>} />
         <Route path='/user' element={<Protected><User/></Protected>} />
