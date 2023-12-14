@@ -31,6 +31,7 @@ import Nature13 from '../../assets/images/nature13.png'
 import Nature14 from '../../assets/images/nature14.png'
 
 import 'swiper/css/bundle';
+import { Link, NavLink } from "react-router-dom";
 const Places = () => {
   return (
       <div className="container">
@@ -70,9 +71,9 @@ const Places = () => {
                 enabled: true,
               }}
             >
-              <SwiperSlide className="swiper-slide-mini"><PlacesCard name="Бурчумулла" img={Nature1}/></SwiperSlide>
-              <SwiperSlide lassName="swiper-slide-mini"><PlacesCard name="Юсуфхона" img={Nature2}/></SwiperSlide>
-              <SwiperSlide lassName="swiper-slide-mini"><PlacesCard name="Чимган" img={Nature3}/></SwiperSlide>
+              <SwiperSlide><PlacesCard name="Бурчумулла" img={Nature1}/></SwiperSlide>
+              <SwiperSlide><PlacesCard name="Юсуфхона" img={Nature2}/></SwiperSlide>
+              <SwiperSlide><PlacesCard name="Чимган" img={Nature3}/></SwiperSlide>
               <SwiperSlide><PlacesCard name="Чарвак" img={Nature4}/></SwiperSlide>
               <SwiperSlide><PlacesCard name="Хумсан" img={Nature5}/></SwiperSlide>
               <SwiperSlide><PlacesCard name="Акташ" img={Nature6}/></SwiperSlide>

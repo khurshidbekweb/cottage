@@ -9,7 +9,7 @@ const Tarif = () => {
       <Navbar />
       <div className="container">
         <div className="tarif">
-          <h2 className="tarif-header">Тарифы</h2>
+          <h2 className="tarif-header font-bold">Тарифы</h2>
 
           <div className="tarif-cards">
             <div className="tarif-card">
