@@ -15,7 +15,7 @@ const User = () => {
 
           <div className="user-box">
             <div className="user-l">
-              <button className="user-l-btn">
+              <button className="user-l-btn curson-pointer">
                 <img src={AddImg} alt="img" />
               </button>
             </div>
