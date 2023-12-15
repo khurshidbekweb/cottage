@@ -1,8 +1,6 @@
 import "./Navbar.css";
 import Logo from "../../assets/images/logo.svg";
 import Menu from "../../assets/images/menu.svg";
-import Bell from "../../assets/images/bell.svg";
-import MiniBell from "../../assets/images/mini-bell.svg";
 import Close from "../../assets/images/close.svg";
 import { Link } from "react-router-dom";
 import React, { useState } from "react";
@@ -13,6 +11,7 @@ import UserMenu from "../../assets/images/user-menu.svg";
 import GoOut from "../../assets/images/go-out.svg";
 import UserModal from "../../assets/images/user-modal.svg";
 import RedGoOut from "../../assets/images/red-go-out.svg";
+import Notification from '../../Modals/Natification'
 
 Modal.setAppElement("#root");
 
@@ -140,24 +139,9 @@ const Navbar = () => {
         <div className="icons">
           <Link to="/favorite" className="heart">
             <FiHeart className="heart-icon" />
-          </Link>
+          </Link> 
 
-          <div className="bell">
-            <img
-              className="minibell-img"
-              src={MiniBell}
-              width="14.77"
-              height="16.88"
-              alt="bell"
-            />
-            <img
-              className="bell-img"
-              src={Bell}
-              width="26.25"
-              height="30"
-              alt="bell"
-            />
-          </div>
+          <Notification/>         
 
           {user?.displayName ? (
             <button className="sign-out" onClick={openModal}>

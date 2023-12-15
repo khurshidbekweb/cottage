@@ -132,6 +132,7 @@
     margin: 0;
     padding: 0;
     display: flex;
+    align-items: center;
     gap: 24px;
 }
 
@@ -142,17 +143,17 @@
     border-radius: 50%;
 }
 
-.bell {
+/* .bell {
     margin: 0;
     padding: 13.12px 15.87px 12.88px 13.88px;
     background: #2C2D2E;
     border-radius: 50%;
-    cursor: pointer;
+    cursor: pointer !important;
 }
 
 .minibell-img {
     display: none;
-}
+} */
 
 .sign-in {
     margin: 0;

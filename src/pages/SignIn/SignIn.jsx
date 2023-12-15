@@ -56,7 +56,7 @@ const SignIn = () => {
               <input
                 className="signin-input-text"
                 type="text"
-                placeholder="Телефон или электрон почта"
+                placeholder="Номер телефона"
                 onChange={(e)=> setUserName(e.target.value)}
               />
             </div>
@@ -73,16 +73,16 @@ const SignIn = () => {
             <input  onClick={(e)=> singIn(e)} type="submit" className="signin-submit" value={"Войти"}/>
           </form>
 
-          <div className="signin-socials">
+          {/* <div className="signin-socials">
             <button className="signin-fb"><img src={Facebook} alt="facebook" /></button>
             <button className="signin-tg" onClick={handleGoogleSignIn}><img src={Google} alt="google" /></button>
-          </div>
+          </div> */}
 
-          <p className="signin-hr"></p>
+          {/* <p className="signin-hr"></p>
 
           <p className="signin-pp">У вас нет аккаунта?</p>
 
-          <Link className="signin-up" to="/sign-up">Зарегстрироваться</Link>
+          <Link className="signin-up" to="/sign-up">Зарегстрироваться</Link> */}
         </div>
       </div>
     </div>
