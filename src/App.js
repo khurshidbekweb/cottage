@@ -17,7 +17,7 @@ import {Routes, Route} from "react-router-dom"
 import { AuthContextProvider } from './context/AuthContext';
 import Protected from './components/Protected';
 import Vacation from './pages/Vacation/Vacation';
-import Natification from './Modals/Natification';
+import Natification from './pages/Natifications/Natification';
 
 function App() {
   return (

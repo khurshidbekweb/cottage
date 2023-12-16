@@ -24,9 +24,7 @@ function Natification() {
               alt="bell"
             />
           </div>
-        </button>
-
-       
+        </button>       
         <div class="modal fade modal-natif" ref={notificationModal} id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog modal-natif-dialog modal-dialog-scrollable">
                 <div class="modal-content">
@@ -36,23 +34,24 @@ function Natification() {
                     </div>
                     <div class="modal-body">
                         <p className="text">
-                            Lorem ipsum dolor sit amet consectetur
-                            <Link to='notification'> More info</Link>
+                            Lorem ipsum dolor sit amet consectetur  
+                            {/* <Link to='notification'> More info</Link> */}
                         </p>
                         <hr />
                         <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam ea molestiae laborum debitis deleniti optio perspiciatis itaque praesentium! Dolore dolores ab, culpa nihil maxime esse explicabo laborum eos perspiciatis minima.
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam ea molestiae laborum debitis deleniti.
                         </p>
+                        <hr />
                         <p>
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione rerum esse eligendi repellendus, sit iste enim laboriosam quis fugiat vel alias. Quibusdam iusto fuga placeat eum sit nobis amet suscipit.
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione rerum esse eligendi repellendus. Quibusdam iusto fuga placeat eum sit nobis amet suscipit.
                         </p>
+                        <hr />
                         <p>
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est illum amet fugit eligendi facilis aliquid totam iste sapiente. Illum impedit dolor obcaecati nesciunt, harum praesentium explicabo voluptas quia tempore eveniet!
-                        </p>
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est illum amet fugit eligendi facilis aliquid totam iste sapiente!                       </p>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Understood</button>
+                        {/* <button type="button" class="btn btn-secondary" >Close</button> */}
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Understood</button>
                     </div>
                 </div>
             </div>
