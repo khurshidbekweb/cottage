@@ -2,7 +2,6 @@ import React, { useRef } from 'react'
 import Bell from "../assets/images/bell.svg";
 import MiniBell from "../assets/images/mini-bell.svg";
 import './modal.css'
-import { Link } from 'react-router-dom';
 function Natification() {
     const notificationModal = useRef(null)
   return (

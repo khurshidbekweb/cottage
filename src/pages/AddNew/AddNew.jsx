@@ -310,6 +310,7 @@ const AddNew = () => {
           <button className="soxranit">Сохранить</button>
         </div>
       </div>
+      <Footer/>
     </>
   );
 };
