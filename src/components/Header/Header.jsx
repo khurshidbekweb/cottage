@@ -22,7 +22,6 @@ const Header = () => {
         modules={[Navigation, Scrollbar, A11y, Autoplay, Parallax]}
         spaceBetween={1}
         slidesPerView={1}
-        navigation
         autoplay={{
           delay: 2000,
         }}

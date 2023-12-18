@@ -46,25 +46,31 @@ import A37 from '../../assets/images/a37.svg'
 const AddNew = () => {
   return (
     <>
+      <Navbar/>
       <div className="container">
         <div className="addnew">
           <h3 className="addnew-header">Фото</h3>
 
           <div className="addnew-imgs">
             <div className="addnew-box">
-              <div className="addnew-img-bg">
+              <label className="addnew-img-bg label-input-file">
+                <input type="file" className="input-file" />
                 <p className="addnew-img-text">Главный</p>
-              </div>
+              </label>
               <img className="addnew-img" src={Dacha3} alt="add" />
             </div>
 
-            <div>
+            {/* <label>
+              <input type="file" name="da" id="" />
               <img className="addnew-img" src={Dacha3} alt="add" />
-            </div>
+            </label> */}
 
             <div className="addnew-add">
-              <img src={AddImg} alt="add" />
-              <p className="addnew-add-text">Добавить фото</p>
+              <label className="label-input-file">
+                <input type="file" name="qoshimcha" className="input-file"/>
+                <img src={AddImg} alt="add" />
+                <p className="addnew-add-text">Добавить фото</p>
+              </label>
             </div>
           </div>
 

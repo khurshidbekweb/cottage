@@ -156,7 +156,11 @@
     line-height: 17px;
     color: #FFFFFF;
 }
-
+.swiper{
+    width: 100%;
+    display: none;
+    z-index: -9 !important;
+}
 .header-top-usd {
     margin: 0 0 12px 0;
     padding: 0;

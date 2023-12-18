@@ -18,6 +18,7 @@ import { AuthContextProvider } from './context/AuthContext';
 import Protected from './components/Protected';
 import Vacation from './pages/Vacation/Vacation';
 import Natification from './pages/Natifications/Natification';
+import Announcoment from './pages/Announcement/Announcoment';
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
         <Route path='/add-new' element={<Protected><AddNew/></Protected>} />
         <Route path='/vacation' element={<Protected><Vacation/></Protected>}/>
         <Route path='/notification' element={<Protected><Natification/></Protected>}/>
+        <Route path='/announcement' element={<Protected><Announcoment/></Protected>}/>
       </Routes>
       </AuthContextProvider>
     </div>

@@ -8,7 +8,17 @@
   line-height: 42px;
   color: #2c2d2e;
 }
-
+.input-file{
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+.label-input-file{
+  cursor: pointer;
+}
 .addnew-imgs {
   display: flex;
   flex-wrap: wrap;
@@ -331,6 +341,7 @@
     width: 155px;
     height: 173px;
   }
+
 
   .addnew-img-text {
     margin: 75px 0 0 0;

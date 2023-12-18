@@ -22,7 +22,7 @@
     
     .modal-natif-dialog{
         position: absolute;
-        margin-left: -140px;
+        margin-left: -180px;
         width: 220px !important;
         height: 400px !important;
     }
@@ -47,7 +47,7 @@
     
     .modal-natif-dialog{
         position: absolute;
-        margin-left: -170px;
+        margin-left: -200px;
         width: 220px !important;
         height: 350px !important;
     }

@@ -15,9 +15,11 @@ const User = () => {
 
           <div className="user-box">
             <div className="user-l">
-              <button className="user-l-btn curson-pointer">
+              <label className="file-input__label">
+                <input type="file" className="file-input__input curson-pointer">
+                </input>
                 <img src={AddImg} alt="img" />
-              </button>
+              </label>
             </div>
 
             <div className="user-r">

@@ -166,8 +166,8 @@ const Navbar = () => {
               <div className="um-top-img"></div>
             </div>
 
-            <p className="um-text">Подать объявление</p>
-            <p className="um-text">Мои объявлении </p>
+            <Link to= '/add-new' className="um-text text-decoration-none">Подать объявление</Link>
+            <Link to='/announcement' className="um-text text-decoration-none mt-2 d-block" > Мои объявлении</Link>
 
             <hr />
 

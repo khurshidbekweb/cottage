@@ -73,10 +73,10 @@ const SignIn = () => {
             <input  onClick={(e)=> singIn(e)} type="submit" className="signin-submit" value={"Войти"}/>
           </form>
 
-          {/* <div className="signin-socials">
+          <div className="signin-socials">
             <button className="signin-fb"><img src={Facebook} alt="facebook" /></button>
             <button className="signin-tg" onClick={handleGoogleSignIn}><img src={Google} alt="google" /></button>
-          </div> */}
+          </div>
 
           {/* <p className="signin-hr"></p>
 
