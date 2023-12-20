@@ -184,11 +184,11 @@ const FilterNav = () => {
         </Modal>
       </div>
 
-      <div hidden={index != 0}>
+      <div hidden={index !== 0}>
       <LineCards />
       </div>
 
-      <div hidden={index != 1}>
+      <div hidden={index !== 1}>
       <BlokCards />
       </div>
 

@@ -1,6 +1,7 @@
 import "./Header.css";
 import Search from "../../assets/images/search.svg";
 import MiniSearch from "../../assets/images/mini-search.svg";
+import bgImg from '../../assets/images/bg-img.png'
 import { Link } from "react-router-dom";
 import {
   Navigation,
@@ -19,81 +20,63 @@ const Header = () => {
     <header className="header">
       <Swiper
       className="swiper"
-        modules={[Navigation, Scrollbar, A11y, Autoplay, Parallax]}
+        modules={[Navigation, A11y, Scrollbar, Autoplay, Parallax]}
         spaceBetween={1}
         slidesPerView={1}
         autoplay={{
-          delay: 2000,
+          delay: 2500,
         }}
         parallax={{
           enabled: true,
         }}
-      >
+      >      
         <SwiperSlide>
           <div className="wrap-ads">
-            <div className="wrap-ads-shadow">
+            <img src={bgImg} alt="bgimg" className="bg-img" />            
               <div className="info-card">
                 <h1 className="header-text">Шейхская резиденция</h1>
                 <h2 className="header-num">$200</h2>
                 <Link to="/view" className="header-btn">
                   Просмотреть
                 </Link>
-              </div>
-            </div>
+              </div>            
           </div>
         </SwiperSlide>
         <SwiperSlide>
           <div className="wrap-ads">
-            <div className="wrap-ads-shadow">
+            <img src={bgImg} alt="bgimg" className="bg-img" />            
               <div className="info-card">
                 <h1 className="header-text">Шейхская резиденция</h1>
                 <h2 className="header-num">$200</h2>
                 <Link to="/view" className="header-btn">
                   Просмотреть
                 </Link>
-              </div>
-            </div>
+              </div>            
+          </div>
+        </SwiperSlide><SwiperSlide>
+          <div className="wrap-ads">
+            <img src={bgImg} alt="bgimg" className="bg-img" />            
+              <div className="info-card">
+                <h1 className="header-text">Шейхская резиденция</h1>
+                <h2 className="header-num">$200</h2>
+                <Link to="/view" className="header-btn">
+                  Просмотреть
+                </Link>
+              </div>            
           </div>
         </SwiperSlide>
         <SwiperSlide>
           <div className="wrap-ads">
-            <div className="wrap-ads-shadow">
+            <img src={bgImg} alt="bgimg" className="bg-img" />            
               <div className="info-card">
                 <h1 className="header-text">Шейхская резиденция</h1>
                 <h2 className="header-num">$200</h2>
                 <Link to="/view" className="header-btn">
                   Просмотреть
                 </Link>
-              </div>
-            </div>
+              </div>            
           </div>
         </SwiperSlide>
-        <SwiperSlide>
-          <div className="wrap-ads">
-            <div className="wrap-ads-shadow">
-              <div className="info-card">
-                <h1 className="header-text">Шейхская резиденция</h1>
-                <h2 className="header-num">$200</h2>
-                <Link to="/view" className="header-btn">
-                  Просмотреть
-                </Link>
-              </div>
-            </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="wrap-ads">
-            <div className="wrap-ads-shadow">
-              <div className="info-card">
-                <h1 className="header-text">Шейхская резиденция</h1>
-                <h2 className="header-num">$200</h2>
-                <Link to="/view" className="header-btn">
-                  Просмотреть
-                </Link>
-              </div>              
-            </div>
-          </div>
-        </SwiperSlide>        
       </Swiper>
         
       {/* <div className="circles">

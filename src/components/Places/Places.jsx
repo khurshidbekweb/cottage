@@ -31,7 +31,6 @@ import Nature13 from '../../assets/images/nature13.png'
 import Nature14 from '../../assets/images/nature14.png'
 
 import 'swiper/css/bundle';
-import { Link, NavLink } from "react-router-dom";
 const Places = () => {
   return (
       <div className="container">
@@ -63,7 +62,7 @@ const Places = () => {
               className="places-swiper-mini"
               modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay, Parallax]}
               spaceBetween={10}
-              slidesPerView={2}
+              slidesPerView={1.4}
               autoplay={{
                 delay: 2000,
               }}

@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import React, { useState } from "react";
 import Modal from "react-modal";
 import { FiHeart } from "react-icons/fi";
-import { UserAuth } from "../../context/AuthContext";
+// import { UserAuth } from "../../context/AuthContext";
 import UserMenu from "../../assets/images/user-menu.svg";
 import GoOut from "../../assets/images/go-out.svg";
 import UserModal from "../../assets/images/user-modal.svg";
@@ -16,14 +16,14 @@ import Notification from '../../Modals/Natification'
 Modal.setAppElement("#root");
 
 const Navbar = () => {
-  const { user, logOut } = UserAuth();
-  const handleSignOut = async () => {
-    try {
-      await logOut();
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  // const { user, logOut } = UserAuth();
+  // const handleSignOut = async () => {
+  //   try {
+  //     await logOut();
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
   const [modalOpen, setModalOpen] = useState(false);
@@ -94,7 +94,7 @@ const Navbar = () => {
               <option value="ru">Ру</option>
             </select>
 
-            {user?.displayName ? (
+            {/* {user?.displayName ? (
               <button className="modal-nav-out" onClick={handleSignOut}>
                 <img src={GoOut} alt="" />
                 Выход
@@ -103,7 +103,11 @@ const Navbar = () => {
               <Link to="/sign-in" className="modal-nav-btn">
                 Вход
               </Link>
-            )}
+            )} */}
+            <button className="modal-nav-out">
+                <img src={GoOut} alt="" />
+                Выход
+              </button>
           </div>
         </Modal>
 
@@ -143,7 +147,7 @@ const Navbar = () => {
 
           <Notification/>         
 
-          {user?.displayName ? (
+          {/* {user?.displayName ? (
             <button className="sign-out" onClick={openModal}>
               <img src={UserMenu} alt="" />
               <div className="user-nav"></div>
@@ -152,7 +156,14 @@ const Navbar = () => {
             <Link to="/sign-in" className="sign-in">
               Вход
             </Link>
-          )}
+          )} */}
+          <button className="sign-out" onClick={openModal}>
+              <img src={UserMenu} alt="" />
+              <div className="user-nav"></div>
+            </button>
+            {/* <Link to="/sign-in" className="sign-in">
+              Вход
+            </Link> */}
 
           <Modal
             isOpen={modalOpen}
@@ -178,7 +189,7 @@ const Navbar = () => {
 
             <div className="user-modal-nav-out">
               <img src={RedGoOut} alt="go-out" />
-              <button className="um-out-btn" onClick={handleSignOut}>Выход</button>
+              <button className="um-out-btn" >Выход</button>
             </div>
           </Modal>
         </div>

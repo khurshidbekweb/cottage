@@ -24,25 +24,25 @@ function App() {
   return (
     <div className="App">
       <AuthContextProvider>
-      <Routes>
-        <Route path='/' element={<Home/>} />
-        <Route path='/sign-in' element={<SignIn/>} />
-        <Route path='/sign-up' element={<SignUp/>} />       
-        <Route path='/contact' element={<Protected><Contact/></Protected>} />
-        <Route path='/filter' element={<Protected><Filter/></Protected>} />
-        <Route path='/view' element={<Protected><View/></Protected>} />
-        <Route path='/user' element={<Protected><User/></Protected>} />
-        <Route path='/tarif' element={<Protected><Tarif/></Protected>} />
-        <Route path='/pay' element={<Protected><Pay/></Protected>} />
-        <Route path='/to-pay' element={<Protected><ToPay/></Protected>} />
-        <Route path='/pay-detail' element={<Protected><PayDetail/></Protected>} />
-        <Route path='/favorite' element={<Protected><Favorite/></Protected>} />
-        <Route path='/add' element={<Protected><Add/></Protected>} />
-        <Route path='/add-new' element={<Protected><AddNew/></Protected>} />
-        <Route path='/vacation' element={<Protected><Vacation/></Protected>}/>
-        <Route path='/notification' element={<Protected><Natification/></Protected>}/>
-        <Route path='/announcement' element={<Protected><Announcoment/></Protected>}/>
-      </Routes>
+        <Routes>
+          <Route path='/' element={<Home/>} />
+          <Route path='/sign-in' element={<SignIn/>} />
+          <Route path='/sign-up' element={<SignUp/>} />       
+          <Route path='/contact' element={<Protected><Contact/></Protected>} />
+          <Route path='/filter' element={<Protected><Filter/></Protected>} />
+          <Route path='/view' element={<Protected><View/></Protected>} />
+          <Route path='/user' element={<Protected><User/></Protected>} />
+          <Route path='/tarif' element={<Protected><Tarif/></Protected>} />
+          <Route path='/pay' element={<Protected><Pay/></Protected>} />
+          <Route path='/to-pay' element={<Protected><ToPay/></Protected>} />
+          <Route path='/pay-detail' element={<Protected><PayDetail/></Protected>} />
+          <Route path='/favorite' element={<Protected><Favorite/></Protected>} />
+          <Route path='/add' element={<Protected><Add/></Protected>} />
+          <Route path='/add-new' element={<Protected><AddNew/></Protected>} />
+          <Route path='/vacation' element={<Protected><Vacation/></Protected>}/>
+          <Route path='/notification' element={<Protected><Natification/></Protected>}/>
+          <Route path='/announcement' element={<Protected><Announcoment/></Protected>}/>
+        </Routes>
       </AuthContextProvider>
     </div>
   );
