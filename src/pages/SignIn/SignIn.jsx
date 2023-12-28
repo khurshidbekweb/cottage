@@ -1,62 +1,102 @@
 import "./SignIn.css";
 import Eye from "../../assets/images/eye.svg";
-import Facebook from "../../assets/images/facebook-i.svg"
-import Google from "../../assets/images/google-i.svg"
-// import { Link } from "react-router-dom";
-// import { UserAuth } from "../../context/AuthContext";
+import { useMutation } from "@tanstack/react-query";
+import { authUtils } from "../../utils/auth.utils";
+import { useRef } from "react";
+import toastify from "../../utils/toastify";
 import { useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
 
 const SignIn = () => {
-  // const {googleSignIn, user} = UserAuth()
-  const [userName, setUserName] = useState();
-  const [password, setPassword] = useState();
+
+  const smsForm = useRef(null)
+  const phoneForm = useRef(null)
+
   const navigate = useNavigate()
+  
+  const phone = useMutation({
+    mutationFn: authUtils.smsAuth,
+    onSuccess: () => {
+      toastify.successMessage("Login success")
+    },
+    onError: (err) => {
+      console.log(err);
+    }
+  })
 
- 
-  // const handleGoogleSignIn = async () => {
-  //   try {
-  //     await googleSignIn()
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // }
+  const login = useMutation({
+    mutationFn: authUtils.loginAuth,
+    onSuccess: (data) => {
+      localStorage.setItem("accessToken", data.accessToken)
+      localStorage.setItem("refreshToken", data.refreshToken)
+      toastify.successMessage("Successfully logged in!")
+      navigate("/")
+    },
+    onError: (err) => {
+      console.log(err, "login")
+    }
+  })
 
-  // useEffect(() => {
-  //   if (user != null) {
-  //     navigate('/')
-  //   }
-  // }, [user])
-
+  const handleAuth = (e) => {
+    e.preventDefault()
+    phone.mutate({
+      phone: e.target.phonenumber.value
+    })
+    setTimeout(()=> {
+      phoneForm.current.classList.add('d-none')
+    }, 500)
+    setTimeout(()=> {
+      smsForm.current.classList.remove('d-none')
+    }, 500)
+  }
+  console.log(phone?.data?.smsCode);
+  const handleLogin = (e) => {
+    e.preventDefault()    
+    const code = e.target.smsCode.value
+    const truthCode = phone?.data?.smsCode
+    if(code===truthCode){
+      login.mutate({
+        smsCode: code,
+        userId: phone?.data?.userId
+      })
+    }else{
+      toastify.errorMessage('SMS code notog`ri !!!')
+    }
+    
+  }
   return (
     <div className="signin">
       <div className="background">
         <div className="signin-box">
           <h2 className="signin-header">Вход</h2>
-          <form>
+          <form onSubmit={handleAuth} ref={phoneForm}>
             <div className="input-text">
               <input
                 className="signin-input-text"
                 type="text"
-                placeholder="Номер телефона"               
+                placeholder="Номер телефона"  
+                name="phonenumber"             
               />
             </div>
+            <input  type="submit" className="signin-submit mt-5" value={"Войти"}/>
+          </form>
+
+          <form onSubmit={handleLogin} ref={smsForm} className="d-none">
             <div className="input-password">
               <input
                 className="signin-input-password"
                 type="password"
-                placeholder="Пароль"
+                name="smsCode"
+                placeholder="SMS code"
               />
               <img src={Eye} alt="password" />
             </div>
-            <p className="signin-p">Забыли пароль?</p>
-            <input  type="submit" className="signin-submit" value={"Войти"}/>
+            <input  type="submit" className="signin-submit mt-5" value={"Войти"}/>
           </form>
-
+{/* 
           <div className="signin-socials">
             <button className="signin-fb"><img src={Facebook} alt="facebook" /></button>
             <button className="signin-tg"><img src={Google} alt="google" /></button>
-          </div>
+          </div> */}
 
           {/* <p className="signin-hr"></p>
 

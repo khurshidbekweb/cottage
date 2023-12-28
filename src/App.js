@@ -21,6 +21,12 @@ import Natification from './pages/Natifications/Natification';
 import Announcoment from './pages/Announcement/Announcoment';
 
 function App() {
+
+  const language = localStorage.getItem('language')
+  if(!language){
+    localStorage.setItem('language', 'uz')
+  }
+
   return (
     <div className="App">
       <AuthContextProvider>
@@ -30,7 +36,7 @@ function App() {
           <Route path='/sign-up' element={<SignUp/>} />       
           <Route path='/contact' element={<Protected><Contact/></Protected>} />
           <Route path='/filter' element={<Protected><Filter/></Protected>} />
-          <Route path='/view' element={<Protected><View/></Protected>} />
+          <Route path='/view/:id' element={<Protected><View/></Protected>} />
           <Route path='/user' element={<Protected><User/></Protected>} />
           <Route path='/tarif' element={<Protected><Tarif/></Protected>} />
           <Route path='/pay' element={<Protected><Pay/></Protected>} />

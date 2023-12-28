@@ -34,14 +34,14 @@ const User = () => {
               </div>
 
               <div>
-                <input className="user-input" type="text" placeholder="AA 0000000"/>
-                <p className="user-text">
+                <input className="user-input" name="pssCeria" type="text" placeholder="AA 0000000"/>
+                <p className="user-text ">
                   Что бы вы подать объявлении вам нужно вводить ваш серии номер
                   паспорта.
                 </p>
               </div>
 
-              <button className="user-btn">Сохранить</button>
+              <button className="user-btn mt-5">Сохранить</button>
             </div>
           </div>
         </div>

@@ -129,8 +129,10 @@
   padding: 40px 51px;
   background: #2c2d2e;
   border-radius: 35px;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(2, 300px);
+  row-gap: 16px;
+  column-gap: 90px;
 }
 
 .addnew-objects-l {
@@ -166,6 +168,12 @@
     border: none;
     outline: none;
     border-radius: 35px;
+}
+
+.image-child-wrap{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
 }
 
 .soxranit {

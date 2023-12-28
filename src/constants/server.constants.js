@@ -1,1 +1,1 @@
-export const BASE_URL_SERVER = 'http://192.168.10.23:5000/'
+export const BASE_URL_SERVER = 'https://api.minio.uz/'

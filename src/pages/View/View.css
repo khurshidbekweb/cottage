@@ -1,4 +1,6 @@
 .view-img {
+  width: 1110px;
+  height: 557px;
   margin: 23px 0 17px;
   padding: 0;
 }
@@ -98,11 +100,14 @@
 }
 
 .view-facilitys {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 250px);
     justify-content: space-between;
+    align-items: center;
 }
 
 .view-facility1 {
+    width: 250px;
     margin: 0 0 24px 0;
     padding: 0;
     display: flex;

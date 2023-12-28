@@ -328,7 +328,7 @@
     border-radius: 15px;
     top: 90px;
     left: 71%;
-    z-index: 99999999999999999999999999;
+    z-index: 9 !important;
 }
 
 .user-modal-nav-top {
