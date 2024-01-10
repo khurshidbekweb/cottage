@@ -7,7 +7,7 @@ import { Link } from "react-router-dom"
 
 const MiniNaw = () => {
     return (
-        <div className="container">
+        <div className="wrap-nav">
             <div className="mini-naw">
                 <Link to='/'>
                     <img src={Home} width="24" height='24.98' alt="home" />

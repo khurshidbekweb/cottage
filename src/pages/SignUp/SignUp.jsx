@@ -50,7 +50,6 @@ const SignUp = () => {
                 Я согласен <span className="signup-span">с политикой конфиденциальности</span>
               </label>
             </div>
-
             <input className="signup-submit" type="submit" value="Отправить код" />
           </form>
         </div>

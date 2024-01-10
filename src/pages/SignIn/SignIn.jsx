@@ -10,19 +10,19 @@ const SignIn = () => {
 
   const smsForm = useRef(null)
   const phoneForm = useRef(null)
-
+  const smsInput = useRef(null)
   const navigate = useNavigate()
   
   const phone = useMutation({
     mutationFn: authUtils.smsAuth,
-    onSuccess: () => {
+    onSuccess: (data) => {
+      smsInput.current.value = data.smsCode
       toastify.successMessage("Login success")
     },
     onError: (err) => {
       console.log(err);
     }
   })
-
   const login = useMutation({
     mutationFn: authUtils.loginAuth,
     onSuccess: (data) => {
@@ -48,6 +48,7 @@ const SignIn = () => {
       smsForm.current.classList.remove('d-none')
     }, 500)
   }
+
   const handleLogin = (e) => {
     e.preventDefault()    
     const code = e.target.smsCode.value
@@ -60,7 +61,6 @@ const SignIn = () => {
     }else{
       toastify.errorMessage('SMS code notog`ri !!!')
     }
-    
   }
   return (
     <div className="signin">
@@ -84,8 +84,10 @@ const SignIn = () => {
               <input
                 className="signin-input-password"
                 type="password"
+                ref={smsInput}
                 name="smsCode"
                 placeholder="SMS code"
+                
               />
               <img src={Eye} alt="password" />
             </div>

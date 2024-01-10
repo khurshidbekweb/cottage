@@ -11,16 +11,22 @@ export const authUtils = {
     },
     smsAuth: async ({phone}) => {
         const {data} = await custimAxios.post('/auth/login/sms', {phone})
+        console.log(data.smsCode);
         return data
     },
     refreshAuth: async () => {
         const {data} = await custimAxios.post('/auth/refresh', {
             userAgent: window.navigator.userAgent
-        }, {
+        }, 
+        {
             headers: {
                 "refreshToken": localStorage.getItem("refreshToken")
             }
-        })
+        })        
+        custimAxios.defaults.headers.common[
+            "Authorization"
+        ] = `Bearer ${localStorage.getItem("accessToken")}`;
+
         localStorage.setItem("accessToken", data.accessToken)
         localStorage.setItem("refreshToken", data.refreshToken)
         return data
