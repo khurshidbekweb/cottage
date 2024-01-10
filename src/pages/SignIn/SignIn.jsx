@@ -48,7 +48,6 @@ const SignIn = () => {
       smsForm.current.classList.remove('d-none')
     }, 500)
   }
-  console.log(phone?.data?.smsCode);
   const handleLogin = (e) => {
     e.preventDefault()    
     const code = e.target.smsCode.value
@@ -92,17 +91,6 @@ const SignIn = () => {
             </div>
             <input  type="submit" className="signin-submit mt-5" value={"Войти"}/>
           </form>
-{/* 
-          <div className="signin-socials">
-            <button className="signin-fb"><img src={Facebook} alt="facebook" /></button>
-            <button className="signin-tg"><img src={Google} alt="google" /></button>
-          </div> */}
-
-          {/* <p className="signin-hr"></p>
-
-          <p className="signin-pp">У вас нет аккаунта?</p>
-
-          <Link className="signin-up" to="/sign-up">Зарегстрироваться</Link> */}
         </div>
       </div>
     </div>

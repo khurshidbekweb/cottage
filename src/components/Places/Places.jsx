@@ -63,8 +63,8 @@ const Places = () => {
           {places?.data?.length &&
             places.data.map((place) => {
               return (
-                <SwiperSlide>
-                  <PlacesCard name={place.name} img={place.image} />
+                <SwiperSlide key={place.id}>
+                  <PlacesCard name={place.name} img={place.image} id={place.id}/>
                 </SwiperSlide>
               );
             })}
@@ -90,12 +90,11 @@ const Places = () => {
           }}
         >
           <SwiperSlide>
-            {/* <PlacesCard name="Бурчумулла" img={Nature1} /> */}
             {places?.data?.length &&
               places.data.map((place) => {
                 return (
-                  <SwiperSlide>
-                    <PlacesCard name={place.name} img={place.image} />
+                  <SwiperSlide key={place.id}>
+                    <PlacesCard name={place.name} img={place.image} id={place.id}/>
                   </SwiperSlide>
                 );
               })}

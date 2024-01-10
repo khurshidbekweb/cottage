@@ -1,5 +1,4 @@
 import "./View.css";
-import ViewImg from "../../assets/images/view-img.png";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
 import { AiFillStar } from "react-icons/ai";
@@ -26,7 +25,6 @@ const View = () => {
       childImage.push(e)
     }
   })
-console.log(cottageView);
   
   return (
     <>

@@ -140,16 +140,6 @@ const Navbar = () => {
                 })}
             </select>
 
-            {/* {user?.displayName ? (
-              <button className="modal-nav-out" onClick={handleSignOut}>
-                <img src={GoOut} alt="" />
-                Выход
-              </button>
-            ) : (
-              <Link to="/sign-in" className="modal-nav-btn">
-                Вход
-              </Link>
-            )} */}
             <Link to="/sign-in" className="modal-nav-out">
               <img src={GoOut} alt="" />
               Выход
@@ -221,16 +211,6 @@ const Navbar = () => {
 
           <Notification />
 
-          {/* {user?.displayName ? (
-            <button className="sign-out" onClick={openModal}>
-              <img src={UserMenu} alt="" />
-              <div className="user-nav"></div>
-            </button>
-          ) : (
-            <Link to="/sign-in" className="sign-in">
-              Вход
-            </Link>
-          )} */}
           <button ref={registered} className={accessToken?'sign-out':"sign-out d-none"} onClick={openModal}>
             <img src={UserMenu} alt="" />
             <div className="user-nav"></div>

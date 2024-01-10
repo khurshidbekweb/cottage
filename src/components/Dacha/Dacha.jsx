@@ -1,6 +1,4 @@
 import "./Dacha.css";
-import Like from "../../assets/images/heart.svg";
-import DisLike from "../../assets/images/dark-heart.svg";
 import DachaCard from "../DachaCards/DachaCard";
 import DachaMiniCard from "../DachaMiniCard/DachaMiniCard";
 import MiniDacha1 from "../../assets/images/mini-dacha1.png";
@@ -27,8 +25,8 @@ const Dacha = () => {
             cottage.data.filter(el=> el.cottageStatus==="confirmed").map((e) => {
               return (
                 <DachaCard
+                  key={e.id}
                   cottage={e}
-                  id={e.id}
                   btn="Подробное"
                 />
               );
