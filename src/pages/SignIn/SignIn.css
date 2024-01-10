@@ -155,11 +155,139 @@
   color: #3cd298;
 }
 
+@media (max-width: 576px) {
+  .signin {
+    background-image: url(../../assets/images/mini-mountain.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+  }
+
+  .background {
+    margin: 0;
+    padding: 80px 0;
+  }
+
+  .signin-box {
+    width: 358px;
+    margin: 0 auto;
+    padding: 36px 24px;
+    background: #2c2d2e;
+    box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.1);
+    border-radius: 35px;
+    border: none;
+    text-align: center;
+  }
+
+  .signin-header {
+    margin: 0 0 24px 0;
+    padding: 0;
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 32px;
+    color: #ffffff;
+  }
+
+  .input-text {
+    margin: 0;
+    padding: 24px 8px 12px;
+    opacity: 0.4;
+    border-bottom: 1px solid #ffffff;
+    display: flex;
+    justify-content: start;
+  }
+
+  .signin-input-text {
+    width: 252px;
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #ffffff;
+  }
+
+  .input-password {
+    margin: 0;
+    padding: 24px 8px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    opacity: 0.4;
+    border-bottom: 1px solid #ffffff;
+  }
+
+  .signin-input-password {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #ffffff;
+  }
+
+  .signin-p {
+    margin: 24px 0 32px;
+    padding: 0;
+    display: flex;
+    justify-content: end;
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 28px;
+    color: #ffffff;
+  }
+
+  .signin-submit {
+    margin: 0;
+    padding: 8px 46px;
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 28px;
+    color: #ffffff;
+    background: #3cd298;
+    border: none;
+    border-radius: 18px;
+  }
+
+  .signin-socials {
+    width: 90px;
+    margin: 0 auto;
+    padding: 24px 0 32px;
+    display: flex;
+    gap: 26px;
+  }
+
+  .signin-hr {
+    width: 310px;
+    margin: 0 auto;
+    padding: 0;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+  }
+
+  .signin-pp {
+    margin: 0;
+    padding: 32px 0 12px;
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 28px;
+    color: rgba(255, 255, 255, 0.6);
+  }
+}
+
 @media (max-width: 390px) {
   .signin {
     background-image: url(../../assets/images/mini-mountain.png);
-    background-size: contain;
-    background-repeat: repeat;
+    background-size: cover;
+    background-repeat: no-repeat;
     width: 100%;
     height: 100vh;
   }

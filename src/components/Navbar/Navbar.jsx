@@ -12,7 +12,7 @@ import GoOut from "../../assets/images/go-out.svg";
 import UserModal from "../../assets/images/user-modal.svg";
 import RedGoOut from "../../assets/images/red-go-out.svg";
 import Notification from "../../Modals/Natification";
-import { useQuery, useQueryClient, useMutation } from "@tanstack/react-query";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { languageUtils } from "../../utils/language.utils";
 import { cottageTypeUtils } from "../../utils/cottage-type.utils";
 

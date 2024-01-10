@@ -143,17 +143,6 @@
     border-radius: 50%;
 }
 
-/* .bell {
-    margin: 0;
-    padding: 13.12px 15.87px 12.88px 13.88px;
-    background: #2C2D2E;
-    border-radius: 50%;
-    cursor: pointer !important;
-}
-
-.minibell-img {
-    display: none;
-} */
 
 .sign-in {
     margin: 0;
@@ -428,8 +417,7 @@
     .modal-nav-content{
         z-index: 9999;
     }
-    .logo {
-        margin: 0 45px 0 0;
+    .logo { 
         padding: 0;
         width: 36px;
         height: 36px;
