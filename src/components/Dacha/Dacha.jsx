@@ -31,18 +31,21 @@ const Dacha = () => {
                 />
               );
             })}
+         {/*<DachaCard img={Dacha6} like={Like} name='Дача GTA' location='Ташкетская область, Акташ' sum1='Цена За День: 2,000,000 uzs' sum2='Цена За Выходной День: 3,000,000 uzs' btn='Подробное' /> */}
 
-          {/* <DachaCard img={Dacha2} like={Like} name='Дача GTA' location='Ташкетская область, Акташ' sum1='Цена За День: 2,000,000 uzs' sum2='Цена За Выходной День: 3,000,000 uzs' btn='Подробное' />
 
-                    <DachaCard img={Dacha3} like={DisLike} name='Дача GTA' location='Ташкетская область, Акташ' sum1='Цена За День: 2,000,000 uzs' sum2='Цена За Выходной День: 3,000,000 uzs' btn='Подробное' />
+         {cottage.data?.length &&
+            cottage.data.filter(el=> el.cottageStatus==="confirmed").map((e) => {
+              return (
+                <DachaMiniCard
+                  key={e.id}
+                  cottage={e}
+                  btn="Подробное"
+                />
+              );
+            })}
 
-                    <DachaCard img={Dacha4} like={Like} name='Дача GTA' location='Ташкетская область, Акташ' sum1='Цена За День: 2,000,000 uzs' sum2='Цена За Выходной День: 3,000,000 uzs' btn='Подробное' />
-
-                    <DachaCard img={Dacha5} like={DisLike} name='Дача GTA' location='Ташкетская область, Акташ' sum1='Цена За День: 2,000,000 uzs' sum2='Цена За Выходной День: 3,000,000 uzs' btn='Подробное' />
-
-                    <DachaCard img={Dacha6} like={Like} name='Дача GTA' location='Ташкетская область, Акташ' sum1='Цена За День: 2,000,000 uzs' sum2='Цена За Выходной День: 3,000,000 uzs' btn='Подробное' /> */}
-
-          <DachaMiniCard
+          {/* <DachaMiniCard
             img={MiniDacha1}
             like={MiniRed}
             name="Дача GTA"
@@ -50,37 +53,7 @@ const Dacha = () => {
             sum1="Цена За День: 2,000,000 uzs"
             sum2="Цена За Выходной День: 3,000,000 uzs"
             btn="Подробное"
-          />
-
-          <DachaMiniCard
-            img={MiniDacha2}
-            like={MiniRed}
-            name="Дача GTA"
-            location="Ташкетская область, Акташ"
-            sum1="Цена За День: 2,000,000 uzs"
-            sum2="Цена За Выходной День: 3,000,000 uzs"
-            btn="Подробное"
-          />
-
-          <DachaMiniCard
-            img={MiniDacha3}
-            like={MiniDark}
-            name="Дача GTA"
-            location="Ташкетская область, Акташ"
-            sum1="Цена За День: 2,000,000 uzs"
-            sum2="Цена За Выходной День: 3,000,000 uzs"
-            btn="Подробное"
-          />
-
-          <DachaMiniCard
-            img={MiniDacha4}
-            like={MiniDark}
-            name="Дача GTA"
-            location="Ташкетская область, Акташ"
-            sum1="Цена За День: 2,000,000 uzs"
-            sum2="Цена За Выходной День: 3,000,000 uzs"
-            btn="Подробное"
-          />
+          />         */}
         </div>
       </div>
     </div>

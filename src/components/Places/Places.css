@@ -55,7 +55,7 @@
     border-radius: 50%;
 }
 
-@media only screen  and (max-width: 576px) {
+@media only screen and (max-width: 576px) {
     .places-top {
         margin: 49px 0 0 0;
         padding: 0;

@@ -1,12 +1,14 @@
 import { Link } from 'react-router-dom';
 import './PlacesMiniCard.css'
+import { BASE_URL_SERVER } from '../../constants/server.constants';
 
 const PlacesMiniCard = (props) => {
     return (
         <Link to='/vacation' className="places-mini-card">
-            <p className='places-mini-card-name'>{props.name}</p>
-            <p className='places-mini-card-text'>{props.text}</p>
-            <img className='nature-image' src={props.image} width="235" height="350" alt="nature" />
+                <img className='nature-imaged' src={`${BASE_URL_SERVER}${props.image}`} width="150" height="150" alt="nature" />
+                <div className="mini-card-text">
+                    <p className='places-mini-card-name'>{props.name}</p> 
+                </div>
         </Link>
     );
 }

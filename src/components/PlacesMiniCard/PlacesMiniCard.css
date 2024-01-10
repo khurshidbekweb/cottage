@@ -2,37 +2,73 @@
   display: none;
 }
 
-@media (max-width: 390px) {
+
+@media (max-width: 576px) {
   .places-mini-card {
     display: block;
-    position: relative;
+    height: 180px;
+    text-decoration: none;
   }
-
+  .nature-imaged{
+    border-radius: 50%;
+  }
+  .mini-card-text{
+    background: #ffff;
+    margin-top: -25px;
+    position: relative;
+    z-index: 99;
+  }
   .places-mini-card-name {
-    position: absolute;
-    width: 234px;
-    margin: 32px 0 0 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
+    text-align: center;
     font-family: sans-serif;
     font-style: normal;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 18px;
-    line-height: 28px;
-    color: #ffffff;
+    color: #000;
   }
 
   .places-mini-card-text {
-    position: absolute;
-    margin: 288px 50px 0 50px;
-    padding: 0 0 8px 0;
+    text-align: center;
     font-family: sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 12px;
-    line-height: 22px;
-    color: #ffffff;
-    border-bottom: 1px solid #ffffff;
+    color: #000;
+    margin-top: -10px;
+  }
+}
+
+@media (max-width: 390px) {
+  .places-mini-card {
+    display: block;
+    height: 180px;
+    text-decoration: none;
+  }
+  .nature-imaged{
+    border-radius: 50%;
+  }
+  .mini-card-text{
+    background: #ffff;
+    margin-top: -25px;
+    position: relative;
+    z-index: 99;
+  }
+  .places-mini-card-name {
+    text-align: center;
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    color: #000;
+  }
+
+  .places-mini-card-text {
+    text-align: center;
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    color: #000;
+    margin-top: -10px;
   }
 }

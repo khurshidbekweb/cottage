@@ -3,15 +3,6 @@
 }
 
 @media only screen and (max-width: 576px) {
-    .dacha-mini-card {
-        margin: 0 auto;;
-    }
-    .dmc-btn{
-        text-align: center;
-    }
-}
-
-@media only screen and (max-width: 390px) {
     @keyframes heartbeat {
         0%{
             transform: scale(1);
@@ -45,19 +36,20 @@
         fill: red;
         color: red;
     }
-
+    
     .dacha-mini-card {
         position: relative;
-        width:100% ;
-        margin: 0 auto;
-        padding: 0px 12px 16px 12px;
-        display: block;
+        width: 180px;
         background: #FFFFFF;
-        border: 1px solid rgba(44, 45, 46, 0.25);
-        border-radius: 25px;
+        padding: 0 !important;
+    }
+    .img-wrap{
+        width: 100% !important;
+        padding: 0 !important;
     }
     .view-img{
-        width: 275px !important;
+        width: 100% !important;
+        top: 0;
     }
 
     .dmc-like {
@@ -126,5 +118,133 @@
     .dmc-btn:hover {
         color: #FFFFFF;
     }
+}
 
+@media only screen and (max-width: 390px) {
+    @keyframes heartbeat {
+        0%{
+            transform: scale(1);
+        }
+
+        50%{
+            transform: scale(1.1);
+        }
+
+        100%{
+            transform: scale(1);
+        }
+
+    }
+
+    .dacha-mini-heart-icon {
+        color: #2C2D2E;
+        fill: #2C2D2E;
+        width: 13.7px;
+        height: 10.92px;
+        cursor: pointer;
+    }
+   
+    .dacha-mini-heart-icon:hover {
+        animation: heartbeat 1s infinite;
+        transition: opacity 500ms;
+    }
+
+
+    .dacha-mini-heart-icon:active {
+        fill: red;
+        color: red;
+    }
+    
+    .dacha-mini-card {
+        display: block;
+        width: 160px;
+        background: #FFFFFF;
+        padding: 0 !important;
+        text-decoration: none;
+        border-radius: 20px 20px;
+    }
+    .mini-card-wrap{
+        position: relative;
+    }
+    .mini-card-info{
+        padding: 0 10px;
+    }
+    .img-wrap{
+        width: 100% !important;
+        padding: 0 !important;
+    }
+    .view-img{
+        width: 100% !important;
+        height: 120px !important;
+        top: 0;
+        margin: 0 !important;
+    }
+
+    .dmc-like {
+        position: absolute;
+        top: 100px;
+        right: 20px;
+        width: 24px;
+        margin: 0;
+        padding: 0px 5.16px 0px 5.14px;
+        background: #FFFFFF;
+        border-radius: 50%;
+        box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.25);
+        cursor: pointer;
+        z-index: 999999;
+    }
+
+    .dmc-like:active {
+        background: #2C2D2E;
+    }
+
+    .dmc-name {
+        margin: 3px 0 2px;
+        padding: 0;
+        font-family: sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 26px;
+        color: #2C2D2E;
+    }
+
+    .dmc-text {
+        margin: 0 0 6px 0;
+        padding: 0;
+        font-family: sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 24px;
+        color: #2C2D2E;
+    }
+
+    .dmc-text:last-child {
+        margin-bottom: 20px;
+    }
+
+    .dmc-btn {
+        width: 136px;
+        position: relative;
+        left: 3%;
+        margin: 0 auto;
+        padding: 8px 27px;
+        font-family:  sans-serif;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 15px;
+        line-height: 20px;
+        color: #FFFFFF;
+        background: #3CD298;
+        border-radius: 18px;
+        border: none;
+        text-decoration: none;
+        text-align: center;
+        display: block;
+    }
+
+    .dmc-btn:hover {
+        color: #FFFFFF;
+    }
 }
