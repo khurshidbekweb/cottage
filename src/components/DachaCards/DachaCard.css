@@ -106,6 +106,12 @@ cursor: pointer;
    color: #FFFFFF;
 }
 
+@media (max-width: 576px) {
+    .dacha-card {
+        display: none;
+    }
+}
+
 @media (max-width: 390px) {
     .dacha-card {
         display: none;

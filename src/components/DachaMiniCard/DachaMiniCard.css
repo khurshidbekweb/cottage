@@ -1,6 +1,10 @@
 .dacha-mini-card {
     display: none;
 }
+.mini-card-wrap{
+    display: none;
+}
+
 
 @media only screen and (max-width: 576px) {
     @keyframes heartbeat {
@@ -38,10 +42,19 @@
     }
     
     .dacha-mini-card {
-        position: relative;
+        display: block;
         width: 180px;
         background: #FFFFFF;
         padding: 0 !important;
+        text-decoration: none;
+        border-radius: 20px 20px;
+    }
+    .mini-card-wrap{
+        display: block;
+        position: relative;
+    }
+    .mini-card-info{
+        padding: 0 10px;
     }
     .img-wrap{
         width: 100% !important;
@@ -49,13 +62,15 @@
     }
     .view-img{
         width: 100% !important;
+        height: 140px !important;
         top: 0;
+        margin: 0 !important;
     }
 
     .dmc-like {
         position: absolute;
-        top: 40px;
-        right: 40px;
+        top: 120px;
+        right: 20px;
         width: 24px;
         margin: 0;
         padding: 0px 5.16px 0px 5.14px;
@@ -63,6 +78,7 @@
         border-radius: 50%;
         box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.25);
         cursor: pointer;
+        z-index: 999999;
     }
 
     .dmc-like:active {
@@ -70,11 +86,11 @@
     }
 
     .dmc-name {
-        margin: 12px 0 6px;
+        margin: 3px 0 2px;
         padding: 0;
         font-family: sans-serif;
         font-style: normal;
-        font-weight: 500;
+        font-weight: 700;
         font-size: 16px;
         line-height: 26px;
         color: #2C2D2E;
@@ -164,6 +180,7 @@
         border-radius: 20px 20px;
     }
     .mini-card-wrap{
+        display: block;
         position: relative;
     }
     .mini-card-info{
