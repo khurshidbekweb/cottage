@@ -79,13 +79,6 @@ const Header = () => {
         </SwiperSlide>
       </Swiper>
         
-      {/* <div className="circles">
-          <div className="circle"></div>
-          <div className="circle"></div>
-          <div className="circle"></div>
-          <div className="circle"></div>
-          <div className="circle"></div>
-        </div> */}
 
       <div className="header-menu">
         <div className="header-inner">
@@ -94,12 +87,6 @@ const Header = () => {
 
             <select className="header-select-one" name="place" id="place">
               <option value="chorvoq">Чорвок</option>
-              <option value="chimyon">Чимган</option>
-              <option value="yusufxona">Юсуфхона</option>
-              <option value="burchimulla">Бурчумулла</option>
-              <option value="chirchiq">Чирчик</option>
-              <option value="oqtosh">Акташ</option>
-              <option value="xumson">Хумсан</option>
             </select>
           </div>
 

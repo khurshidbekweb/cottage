@@ -28,6 +28,7 @@
 .addnew-img {
   width: 255px;
   height: 255px;
+  border-radius: 33px;
 }
 
 .addnew-box {
@@ -130,7 +131,7 @@
   background: #2c2d2e;
   border-radius: 35px;
   display: grid;
-  grid-template-columns: repeat(2, 300px);
+  grid-template-columns: repeat(3, 300px);
   row-gap: 16px;
   column-gap: 90px;
 }
@@ -193,7 +194,7 @@
   color: #FFFFFF;
 }
 
-@media only screen and (max-width:560px) {
+@media only screen and (max-width:576px) {
   .addnew-header {
     margin: 32px 0 34px;
     padding: 0;

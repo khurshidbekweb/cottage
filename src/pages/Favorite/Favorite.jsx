@@ -1,12 +1,13 @@
-import FavCard from '../../components/FavCard/FavCard';
 import Footer from '../../components/Footer/Footer';
 import Navbar from '../../components/Navbar/Navbar';
-import Dacha2 from "../../assets/images/dacha2.png"
-import Dacha4 from "../../assets/images/dacha4.png"
-import Dacha6 from "../../assets/images/dacha6.png"
 import './Favorite.css'
+import DachaCard from '../../components/DachaCards/DachaCard';
+import DachaMiniCard from '../../components/DachaMiniCard/DachaMiniCard';
+import { ALL_DATA } from '../../Query/get_all';
 
 const Favorite = () => {
+    const cottage = ALL_DATA.useCottage()
+    console.log(cottage.data);    
     return (
      <>
         <Navbar/>
@@ -15,11 +16,17 @@ const Favorite = () => {
                 <h2 className='favorite-header'>Избранные</h2>
 
                 <div className='favorite-cards'>
-                    <FavCard img={Dacha2} name='Дача GTA' location='Ташкетская область, Акташ' sum1='Цена За День: 2,000,000 uzs' sum2='Цена За Выходной День: 3,000,000 uzs' btn='Подробное' />
-
-                    <FavCard img={Dacha4} name='Дача GTA' location='Ташкетская область, Акташ' sum1='Цена За День: 2,000,000 uzs' sum2='Цена За Выходной День: 3,000,000 uzs' btn='Подробное' />
-
-                    <FavCard img={Dacha6} name='Дача GTA' location='Ташкетская область, Акташ' sum1='Цена За День: 2,000,000 uzs' sum2='Цена За Выходной День: 3,000,000 uzs' btn='Подробное' />
+                { 
+                    cottage.data?.length && cottage.data.filter(e => e.isLiked === true).map(e => {
+                        return <DachaCard key={e.id} cottage={e} 
+                        btn="Подробное"/>
+                    })
+                }
+                {cottage.data?.length && cottage.data.filter(e => e.isLiked === true).map(e => {
+                        return <DachaMiniCard  
+                            key={e.id}
+                            cottage={e} />
+                    })}
                 </div>
             </div>
         </div>

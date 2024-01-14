@@ -12,6 +12,7 @@ import { comfortUtils } from "../../utils/comfort.utils";
 import { IMG_BASE_URL } from "../../constants/img.constants";
 import { cottageUtils } from "../../utils/cottage.utils";
 import { authUtils } from "../../utils/auth.utils";
+import { ALL_DATA } from "../../Query/get_all";
 // import A2 from '../../assets/images/a2.svg'
 // import A3 from '../../assets/images/a3.svg'
 // import A4 from '../../assets/images/a4.svg'
@@ -84,22 +85,10 @@ const AddNew = () => {
     response: [],
   });
   const queryClient = useQueryClient()
-  const region = useQuery({
-    queryKey: ['regions'],
-    queryFn: regionUtils.getRegion
-  })
-  const place = useQuery({
-    queryKey: ['places'],
-    queryFn: placeUtils.getPlace
-  })
-  const cottageType = useQuery({
-    queryKey: ["cottagetypes"],
-    queryFn: cottageTypeUtils.getCottageType
-  })
-  const comforts = useQuery({
-    queryKey: ['comforts'],
-    queryFn: comfortUtils.getComfort
-  })
+  const region = ALL_DATA.useRegion()
+  const place = ALL_DATA.usePlace()
+  const cottageType = ALL_DATA.useCottageType()
+  const comforts = ALL_DATA.useComforts()
   const cottage = useMutation({
     mutationFn: cottageUtils.postCottage,
     onSuccess: () => {
@@ -171,7 +160,7 @@ const AddNew = () => {
       longitude: "" || undefined,
     });
   };
-  console.log(cottage.data);
+  console.log(cottage);
   const handleMainImage = async (e) => {
     const mainImgUrl = await getBase64Full(e.target.files[0]);
     mainImage.current.classList.remove("d-none");

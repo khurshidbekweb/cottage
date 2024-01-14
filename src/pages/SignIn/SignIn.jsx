@@ -72,6 +72,7 @@ const SignIn = () => {
               <input
                 className="signin-input-text"
                 type="text"
+                required
                 placeholder="Номер телефона"  
                 name="phonenumber"             
               />

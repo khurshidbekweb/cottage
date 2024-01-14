@@ -4,10 +4,12 @@
 
 
 @media (max-width: 576px) {
-  .places-mini-card {
+  .places-mini-card { 
+    position: relative;
     display: block;
     height: 180px;
     text-decoration: none;
+    z-index: 1;
   }
   .nature-imaged{
     border-radius: 50%;

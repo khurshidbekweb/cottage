@@ -13,8 +13,8 @@ import UserModal from "../../assets/images/user-modal.svg";
 import RedGoOut from "../../assets/images/red-go-out.svg";
 import Notification from "../../Modals/Natification";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
-import { languageUtils } from "../../utils/language.utils";
 import { cottageTypeUtils } from "../../utils/cottage-type.utils";
+import { ALL_DATA } from "../../Query/get_all";
 
 Modal.setAppElement("#root");
 
@@ -24,10 +24,7 @@ const Navbar = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const defaultLang = localStorage.getItem("language");
   const queryClient = useQueryClient();
-  const language = useQuery({
-    queryKey: ["languages"],
-    queryFn: languageUtils.getLanguage,
-  });
+  const language = ALL_DATA.useLanguage()
   const cottageType = useQuery({
     queryKey: ["cottagetypes"],
     queryFn: cottageTypeUtils.getCottageType,
@@ -37,7 +34,7 @@ const Navbar = () => {
     localStorage.setItem("language", e.target.value);
     queryClient.invalidateQueries({ type: "all" });
   };
-
+  
 
 
 
@@ -59,7 +56,12 @@ const Navbar = () => {
     localStorage.removeItem("accessToken")
     localStorage.removeItem('refreshToken')
     setModalOpen(false);
+    setModalIsOpen(false)
+    window.location.reload()
     navigate('/')
+  }
+  const jumpLink = (e) => {
+    window.location = e.target.value
   }
   return (
     <div className="container">
@@ -140,10 +142,13 @@ const Navbar = () => {
                 })}
             </select>
 
-            <Link to="/sign-in" className="modal-nav-out">
-              <img src={GoOut} alt="" />
-              Выход
+            <Link to="/sign-in" className={accessToken && refreshToken ? "modal-nav-out d-none" : "modal-nav-out d-block"}>              
+              Вход
             </Link>
+            <button onClick={logoutBtn} className={accessToken && refreshToken ? "modal-nav-out" : "modal-nav-out d-none"}>
+              <img src={GoOut} alt="" />
+                Выход
+            </button>
           </div>
         </Modal>
 
@@ -153,7 +158,7 @@ const Navbar = () => {
 
         <div className="navs align-items-center">
           <select
-            className="select fs-5 form-select border-0"
+            className="select fs-5 border-0"
             name="dacha"
             id="dacha"
           >
@@ -171,14 +176,14 @@ const Navbar = () => {
             Контакты
           </Link>
 
-          <select className="select-two" name="social" id="social">
-            <option hidden value="socials">
+          <select className="select-two form-select" name="social" id="social" onChange={jumpLink}>
+            <option selected value="socials">
               Социальный сети
             </option>
-            <option value="telegram">Telegram</option>
-            <option value="facebook">Facebook</option>
-            <option value="instagram">Instagram</option>
-            <option value="youtube">Youtube</option>
+            <option value="https://t.me/dachi_v_gorax">Telegram</option>
+            <option value="https://facebook.com">Facebook</option>
+            <option value="https://instagram.com">Instagram</option>
+            <option value="https://youtube.com">Youtube</option>
           </select>
 
           <select
@@ -238,7 +243,6 @@ const Navbar = () => {
               to="/announcement"
               className="um-text text-decoration-none mt-2 d-block"
             >
-              {" "}
               Мои объявлении
             </Link>
 

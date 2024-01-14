@@ -4,10 +4,15 @@ import Like from '../../assets/images/like.svg'
 import Plus from '../../assets/images/plus.svg'
 import User from '../../assets/images/user.svg'
 import { Link } from "react-router-dom"
+import { useRef } from "react"
 
 const MiniNaw = () => {
+    const miniNav  = useRef(null)
+    const accessAToken = localStorage.getItem("accessToken")
+    const refreshToken = localStorage.getItem("refreshToken")
+    // }
     return (
-        <div className="wrap-nav">
+        <div ref={miniNav} className={accessAToken && refreshToken ? "wrap-nav" : "wrap-nav d-none"}>
             <div className="mini-naw">
                 <Link to='/'>
                     <img src={Home} width="24" height='24.98' alt="home" />

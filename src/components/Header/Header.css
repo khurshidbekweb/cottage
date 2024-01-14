@@ -272,9 +272,9 @@
 
     .header-menu {
         position: relative;
-        width: auto;
+        width: 370px;
         height: 360px;
-        margin: 36px 0 31px;
+        margin: 36px auto 31px;
         padding: 16px 32px 20px;
         display: block;
         background: #2C2D2E;
