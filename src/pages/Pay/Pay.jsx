@@ -4,6 +4,7 @@ import Payme from '../../assets/images/payme.svg';
 import Click from '../../assets/images/click.svg';
 import './Pay.css'
 import { Link } from 'react-router-dom';
+import MiniNaw from '../../components/MiniNaw/MiniNaw';
 
 const Pay = () => {
     return (
@@ -24,6 +25,7 @@ const Pay = () => {
                 </div>
             </div>
         </div>
+        <MiniNaw/>
         <Footer/>
         </>
      );

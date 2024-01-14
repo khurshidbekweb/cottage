@@ -4,15 +4,12 @@ import Dacha3 from "../../assets/images/dacha3.png";
 import AddImg from "../../assets/images/add-img.svg";
 import "./AddNew.css";
 import { useRef, useState } from "react";
-import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import { regionUtils } from "../../utils/region.utils";
-import { placeUtils } from "../../utils/place.utils";
-import { cottageTypeUtils } from "../../utils/cottage-type.utils";
-import { comfortUtils } from "../../utils/comfort.utils";
+import { useMutation,  useQueryClient } from "@tanstack/react-query";
 import { IMG_BASE_URL } from "../../constants/img.constants";
 import { cottageUtils } from "../../utils/cottage.utils";
 import { authUtils } from "../../utils/auth.utils";
 import { ALL_DATA } from "../../Query/get_all";
+import MiniNaw from "../../components/MiniNaw/MiniNaw";
 // import A2 from '../../assets/images/a2.svg'
 // import A3 from '../../assets/images/a3.svg'
 // import A4 from '../../assets/images/a4.svg'
@@ -257,6 +254,7 @@ const AddNew = () => {
               </form>
         </div>
       </div>
+      <MiniNaw/>
       <Footer/>
     </>
   );

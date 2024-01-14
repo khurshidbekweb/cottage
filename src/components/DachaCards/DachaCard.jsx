@@ -1,6 +1,6 @@
 import "./DachaCard.css";
 import { FiHeart } from "react-icons/fi";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { IMG_BASE_URL } from "../../constants/img.constants";
 import { useQueryClient } from "@tanstack/react-query";
 import { QUERY_KEYS } from "../../Query/query-keys";
@@ -11,18 +11,26 @@ const DachaCard = (props) => {
     (e) => e.isMainImage === true
   ).image;
   const liked = [];
+  const navigate = useNavigate()
+  const accessToken = localStorage.getItem("accessToken")
+  const refreshToken = localStorage.getItem("refreshToken")
   const favoriteCottage = (id) => {
-    let LocalLiked = JSON.parse(localStorage.getItem("liked"));    
-    liked.push(...LocalLiked || "");
-    if (!liked.includes(id)) {
-      liked.push(id);
-      localStorage.setItem("liked", JSON.stringify(liked));
-    } else if (liked.includes(id)) {
-      const likedCottages = liked.filter((e) => e !== id);
-      localStorage.setItem("liked", JSON.stringify(likedCottages));
+    if(accessToken && refreshToken){
+        let LocalLiked = JSON.parse(localStorage.getItem("liked"));    
+          liked.push(...LocalLiked || "");
+          if (!liked.includes(id)) {
+            liked.push(id);
+            localStorage.setItem("liked", JSON.stringify(liked));
+          } else if (liked.includes(id)) {
+            const likedCottages = liked.filter((e) => e !== id);
+            localStorage.setItem("liked", JSON.stringify(likedCottages));
+          }
+          queryClient.invalidateQueries({ queryKey: [QUERY_KEYS.cottages] });
+        }
+        else{
+          navigate('/sign-in')
+        }
     }
-    queryClient.invalidateQueries({ queryKey: [QUERY_KEYS.cottages] });
-  };
   return (
     <div className="dacha-card" key={props.cottage.id}>
       <div>

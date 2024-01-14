@@ -1,4 +1,5 @@
 import Footer from "../../components/Footer/Footer";
+import MiniNaw from "../../components/MiniNaw/MiniNaw";
 import Navbar from "../../components/Navbar/Navbar";
 import "./PayDetail.css";
 
@@ -129,6 +130,7 @@ const PayDetail = () => {
           <button className="pay-detail-btn">Удалить</button>
         </div>
       </div>
+      <MiniNaw/>
       <Footer />
     </>
   );

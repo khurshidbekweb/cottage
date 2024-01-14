@@ -1,6 +1,7 @@
 
 import Dacha from "../../components/Dacha/Dacha"
 import Footer from "../../components/Footer/Footer"
+import MiniNaw from "../../components/MiniNaw/MiniNaw"
 import Navbar from "../../components/Navbar/Navbar"
 
 
@@ -15,6 +16,7 @@ function Announcoment() {
                     </div>
                 </div>
             </div>
+            <MiniNaw/>
         <Footer/>
     </>
   )

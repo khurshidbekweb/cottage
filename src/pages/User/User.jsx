@@ -2,6 +2,7 @@ import "./User.css";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
 import AddImg from "../../assets/images/add-img.svg";
+import MiniNaw from "../../components/MiniNaw/MiniNaw";
 
 const User = () => {
 
@@ -46,6 +47,7 @@ const User = () => {
           </div>
         </div>
       </div>
+      <MiniNaw/>
       <Footer />
     </div>
   );

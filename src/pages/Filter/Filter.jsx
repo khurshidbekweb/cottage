@@ -3,6 +3,7 @@ import Navbar from '../../components/Navbar/Navbar'
 import Filters from '../../components/Filters/Filters'
 import Footer from "../../components/Footer/Footer";
 import FilterNav from "../../components/FilterNav/FilterNav";
+import MiniNaw from "../../components/MiniNaw/MiniNaw";
 
 const Filter = () => {
   return (
@@ -10,6 +11,7 @@ const Filter = () => {
       <Navbar/>
       <Filters/>
       <FilterNav/>
+      <MiniNaw/>
       <Footer/>
     </>
   );

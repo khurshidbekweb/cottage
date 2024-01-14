@@ -1,5 +1,6 @@
 
 import Footer from '../../components/Footer/Footer';
+import MiniNaw from '../../components/MiniNaw/MiniNaw';
 import Navbar from '../../components/Navbar/Navbar';
 
 function Vacation() {
@@ -19,6 +20,7 @@ function Vacation() {
                 </div>
             </div>
         </div>
+        <MiniNaw/>
         <Footer/>
     </>
   )

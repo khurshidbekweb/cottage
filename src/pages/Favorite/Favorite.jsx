@@ -4,6 +4,7 @@ import './Favorite.css'
 import DachaCard from '../../components/DachaCards/DachaCard';
 import DachaMiniCard from '../../components/DachaMiniCard/DachaMiniCard';
 import { ALL_DATA } from '../../Query/get_all';
+import MiniNaw from '../../components/MiniNaw/MiniNaw';
 
 const Favorite = () => {
     const cottage = ALL_DATA.useCottage()
@@ -30,6 +31,7 @@ const Favorite = () => {
                 </div>
             </div>
         </div>
+        <MiniNaw/>
         <Footer/>
     </> );
 }

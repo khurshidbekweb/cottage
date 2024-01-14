@@ -6,6 +6,7 @@ import { AiFillStar } from "react-icons/ai";
 import { IMG_BASE_URL } from "../../constants/img.constants";
 import { useParams } from "react-router-dom";
 import { ALL_DATA } from "../../Query/get_all";
+import MiniNaw from "../../components/MiniNaw/MiniNaw";
 
 const View = () => {
   const params = useParams();
@@ -70,7 +71,7 @@ const View = () => {
                 </div>
           </div>
       </div>
-
+      <MiniNaw/>
       <Footer />
     </>
   );

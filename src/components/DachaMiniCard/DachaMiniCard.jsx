@@ -1,6 +1,6 @@
 import "./DachaMiniCard.css";
 import { FiHeart } from 'react-icons/fi'
-import { Link} from "react-router-dom";
+import { Link, useNavigate} from "react-router-dom";
 import { BASE_URL_SERVER } from "../../constants/server.constants";
 import { useQueryClient } from "@tanstack/react-query";
 import { QUERY_KEYS } from "../../Query/query-keys";
@@ -9,8 +9,12 @@ const DachaMiniCard = (props) => {
   const mainImg = props.cottage.images.find(e=> e.isMainImage === true).image 
   const queryClient = useQueryClient()
   let liked = []
+  const accessToken = localStorage.getItem("accessToken")
+  const refreshToken = localStorage.getItem("refreshToken")
+  const navigate = useNavigate(null)
   const handlLiked = (id) => {
-    const likedCottage = JSON.parse(localStorage.getItem("liked"))
+    if(accessToken && refreshToken){
+      const likedCottage = JSON.parse(localStorage.getItem("liked"))
     liked.push(...likedCottage || "")
     if(!liked?.includes(id)){
         liked.push(id)
@@ -20,6 +24,9 @@ const DachaMiniCard = (props) => {
       localStorage.setItem("liked", JSON.stringify(isLiked))
     }
     queryClient.invalidateQueries({queryKey: [QUERY_KEYS.cottages]})
+    }else{
+      navigate('/sign-in')
+    }
   }
   return (
     <div className="mini-card-wrap"  key={props.cottage.id}>

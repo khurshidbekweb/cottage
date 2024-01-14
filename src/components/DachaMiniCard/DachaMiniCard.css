@@ -182,7 +182,10 @@
         fill: red;
         color: red;
     }
-    
+    .dacha-mini-heart-active {
+        fill: red;
+        color: red;
+    }               
     .dacha-mini-card {
         display: block;
         max-width: 166px;
@@ -227,6 +230,9 @@
     .dmc-like:active {
         background: #2C2D2E;
     }
+    .dmc-like-active {
+        background: #2C2D2E;
+    }   
 
     .dmc-name {
         margin: 3px 0 2px;
@@ -287,6 +293,14 @@
         text-decoration: none;
         border-radius: 20px 20px 10px 10px;
     }
+    .dacha-mini-heart-active {
+        fill: red;
+        color: red;
+    }
+    .dmc-like-active {
+        background: #2C2D2E;
+    }   
+
     .img-wrap{
         width: 100% !important;
         padding: 0 !important;
