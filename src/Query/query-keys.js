@@ -4,5 +4,6 @@ export const QUERY_KEYS = {
     places: "places",
     regions: "regions",
     cottageType: "cottagetypes",
-    comforts: "comforts"
+    comforts: "comforts",
+    users: "users"
 }

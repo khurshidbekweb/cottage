@@ -12,8 +12,7 @@ import GoOut from "../../assets/images/go-out.svg";
 import UserModal from "../../assets/images/user-modal.svg";
 import RedGoOut from "../../assets/images/red-go-out.svg";
 import Notification from "../../Modals/Natification";
-import { useQuery, useQueryClient } from "@tanstack/react-query";
-import { cottageTypeUtils } from "../../utils/cottage-type.utils";
+import { useQueryClient } from "@tanstack/react-query";
 import { ALL_DATA } from "../../Query/get_all";
 
 Modal.setAppElement("#root");
@@ -25,17 +24,16 @@ const Navbar = () => {
   const defaultLang = localStorage.getItem("language");
   const queryClient = useQueryClient();
   const language = ALL_DATA.useLanguage()
-  const cottageType = useQuery({
-    queryKey: ["cottagetypes"],
-    queryFn: cottageTypeUtils.getCottageType,
-  });
+  const cottageType = ALL_DATA.useCottageType()
+
   const changetLang = (e) => {
     e.preventDefault();
     localStorage.setItem("language", e.target.value);
     queryClient.invalidateQueries({ type: "all" });
   };
   
-
+  const cottage = ALL_DATA.useCottage()
+  const fovariteCottage = cottage?.data?.length && cottage?.data?.filter(e => e.isLiked===true)?.length
 
 
   function openModal() {
@@ -212,6 +210,7 @@ const Navbar = () => {
         <div className="icons">
           <Link to="/favorite" className="heart">
             <FiHeart className="heart-icon" />
+            <span className={fovariteCottage ===0 ? "fovarite-num d-none" : "fovarite-num"}>{fovariteCottage}</span>
           </Link>
 
           <Notification />

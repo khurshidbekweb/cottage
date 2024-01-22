@@ -1,22 +1,36 @@
 
+import { useParams } from 'react-router-dom';
 import Footer from '../../components/Footer/Footer';
 import MiniNaw from '../../components/MiniNaw/MiniNaw';
 import Navbar from '../../components/Navbar/Navbar';
+import { ALL_DATA } from '../../Query/get_all';
+import DachaCard from '../../components/DachaCards/DachaCard';
+import DachaMiniCard from '../../components/DachaMiniCard/DachaMiniCard';
 
 function Vacation() {
+  const parmas = useParams()
+  const cottage = ALL_DATA.useCottage()
+  const place = ALL_DATA.usePlace()
+  const sortPlace = cottage?.data.filter(e => e.place.id === parmas.id)
+  const placeName = place?.data.find(e => e.id === parmas.id).name
   return (
     <>
        <Navbar/>
         <div className='container'>
             <div className="favorite">
-                <h2 className='favorite-header'>Бурчумулла</h2>
+                <h2 className='favorite-header'>{placeName}</h2>
 
-                <div className='favorite-cards'>
-                    {/* <FavCard img={Dacha2} name='Дача GTA' location='Ташкетская область, Акташ' sum1='Цена За День: 2,000,000 uzs' sum2='Цена За Выходной День: 3,000,000 uzs' btn='Подробное' />
-
-                    <FavCard img={Dacha4} name='Дача GTA' location='Ташкетская область, Акташ' sum1='Цена За День: 2,000,000 uzs' sum2='Цена За Выходной День: 3,000,000 uzs' btn='Подробное' />
-
-                    <FavCard img={Dacha6} name='Дача GTA' location='Ташкетская область, Акташ' sum1='Цена За День: 2,000,000 uzs' sum2='Цена За Выходной День: 3,000,000 uzs' btn='Подробное' /> */}
+                <div className='favorite-cards'> 
+                  <div className="place-card-sort">
+                    {sortPlace?.length && sortPlace.map(e => {
+                      return <DachaCard key={e.id} cottage={e} btn="Подробное"/>
+                    })}
+                  </div>  
+                  <div className="place-card-mini-sort">
+                    {sortPlace?.length && sortPlace.map(e => {
+                      return <DachaMiniCard key={e.id} cottage={e}/>
+                    })}
+                  </div>
                 </div>
             </div>
         </div>

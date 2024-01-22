@@ -19,6 +19,19 @@
         z-index: 99999999;
         
     }
+    .favorite{
+        position: relative;
+    }
+    .favarite-num-mini{
+        position: absolute;
+        background: red;
+        color: white;
+        padding: 0 5px;
+        font-size: 12px;
+        border-radius: 50%;
+        top: -5px;
+        left: 24px;
+    }
 }
 
 @media (max-width: 390px) {

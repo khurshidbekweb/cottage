@@ -16,8 +16,21 @@
     flex-wrap: wrap;
     gap: 27px;
 }
+.place-card-sort{
+    display: block;
+}
+.place-card-mini-sort{
+    display: none;
+}
+
 
 @media (max-width: 390px) {
+    .place-card-sort{
+        display: none;
+    }
+    .place-card-mini-sort{
+        display: block;
+    }
     .favorite-header {
         margin: 32px 0 24px;
         padding: 0;

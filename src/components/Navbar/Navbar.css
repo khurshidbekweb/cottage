@@ -141,6 +141,16 @@
     padding: 16px 12.04px 14.53px 12px;
     background: #2C2D2E;
     border-radius: 50%;
+    position: relative;
+}
+.fovarite-num{
+    position: absolute;
+    background: red;
+    color: white;
+    padding: 0 5px;
+    border-radius: 50%;
+    top: 0;
+    font-size: 14px;
 }
 
 

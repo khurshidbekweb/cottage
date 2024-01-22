@@ -3,10 +3,11 @@ import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
 import AddImg from "../../assets/images/add-img.svg";
 import MiniNaw from "../../components/MiniNaw/MiniNaw";
+import { ALL_DATA } from "../../Query/get_all";
 
 const User = () => {
-
-  console.log();
+  const users = ALL_DATA.useUsers()
+  console.log(users.data);
   return (
     <div>
       <Navbar />

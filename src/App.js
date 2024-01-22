@@ -45,7 +45,7 @@ function App() {
           <Route path='/favorite' element={<Protected><Favorite/></Protected>} />
           <Route path='/add' element={<Protected><Add/></Protected>} />
           <Route path='/add-new' element={<Protected><AddNew/></Protected>} />
-          <Route path='/vacation' element={<Protected><Vacation/></Protected>}/>
+          <Route path='/vacation/:id' element={<Protected><Vacation/></Protected>}/>
           <Route path='/notification' element={<Protected><Natification/></Protected>}/>
           <Route path='/announcement' element={<Protected><Announcoment/></Protected>}/>
         </Routes>

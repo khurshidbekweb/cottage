@@ -21,8 +21,7 @@ const View = () => {
     if(e.isMainImage !==true){
       childImage.push(e)
     }
-  })
-  
+  })  
   return (
     <>
       <Navbar />

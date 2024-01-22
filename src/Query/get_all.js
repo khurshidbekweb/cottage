@@ -6,6 +6,7 @@ import { placeUtils } from "../utils/place.utils";
 import { regionUtils } from "../utils/region.utils";
 import { comfortUtils } from "../utils/comfort.utils";
 import { cottageTypeUtils } from "../utils/cottage-type.utils";
+import { userUtils } from "../utils/user.utils";
 
 export const ALL_DATA = {
   useCottage: () => {
@@ -63,4 +64,10 @@ export const ALL_DATA = {
       queryFn: cottageTypeUtils.getCottageType,
     });
   },
+  useUsers: ()=>{
+    return useQuery({
+      queryKey: [QUERY_KEYS.users],
+      queryFn: userUtils.getUsers,
+    })
+  }
 };
