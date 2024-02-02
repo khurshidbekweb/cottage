@@ -7,6 +7,7 @@ import { regionUtils } from "../utils/region.utils";
 import { comfortUtils } from "../utils/comfort.utils";
 import { cottageTypeUtils } from "../utils/cottage-type.utils";
 import { userUtils } from "../utils/user.utils";
+import { notificationUtils } from "../utils/notification.utilis";
 
 export const ALL_DATA = {
   useCottage: () => {
@@ -68,6 +69,18 @@ export const ALL_DATA = {
     return useQuery({
       queryKey: [QUERY_KEYS.users],
       queryFn: userUtils.getUsers,
+    })
+  },
+  useSingleUser: () => {
+    return useQuery({
+      queryKey: [QUERY_KEYS.users],
+      queryFn:userUtils.getSingleUser
+    })
+  },
+  useNotification: () => {
+    return useQuery({
+      queryKey: ["notifications"],
+      queryFn: notificationUtils.getNotification
     })
   }
 };

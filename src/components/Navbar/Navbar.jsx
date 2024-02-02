@@ -14,10 +14,12 @@ import RedGoOut from "../../assets/images/red-go-out.svg";
 import Notification from "../../Modals/Natification";
 import { useQueryClient } from "@tanstack/react-query";
 import { ALL_DATA } from "../../Query/get_all";
+import { IMG_BASE_URL } from "../../constants/img.constants";
 
 Modal.setAppElement("#root");
 
 const Navbar = () => {  
+  const userImg = ALL_DATA.useSingleUser()?.data?.image
   const navigate = useNavigate()
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
@@ -217,7 +219,7 @@ const Navbar = () => {
 
           <button ref={registered} className={accessToken?'sign-out':"sign-out d-none"} onClick={openModal}>
             <img src={UserMenu} alt="" />
-            <div className="user-nav"></div>
+            <img src={`${IMG_BASE_URL}${userImg}`} className="user-nav" alt="" />
           </button>
           <Link ref={signIn} to="/sign-in" className={accessToken && refreshToken ? "sign-in d-none" : "sign-in"}>
             Вход
@@ -232,7 +234,7 @@ const Navbar = () => {
           >
             <div className="user-modal-nav-top">
               <p className="um-top-gmail">User@gmail.com</p>
-              <div className="um-top-img"></div>
+              <img src={`${IMG_BASE_URL}${userImg}`} className="um-top-img" alt="" />
             </div>
 
             <Link to="/add-new" className="um-text text-decoration-none">

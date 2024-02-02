@@ -2,8 +2,11 @@ import React, { useRef } from 'react'
 import Bell from "../assets/images/bell.svg";
 import MiniBell from "../assets/images/mini-bell.svg";
 import './modal.css'
+import { ALL_DATA } from '../Query/get_all';
 function Natification() {
     const notificationModal = useRef(null)
+    const notification = ALL_DATA.useNotification()?.data
+    console.log(notification);
   return (
     <>       
         <button className="btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
@@ -32,24 +35,16 @@ function Natification() {
                         <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div className="modal-body">
-                        <p className="text">
-                            Lorem ipsum dolor sit amet consectetur  
-                            {/* <Link to='notification'> More info</Link> */}
-                        </p>
-                        <hr />
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam ea molestiae laborum debitis deleniti.
-                        </p>
-                        <hr />
-                        <p>
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione rerum esse eligendi repellendus. Quibusdam iusto fuga placeat eum sit nobis amet suscipit.
-                        </p>
-                        <hr />
-                        <p>
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est illum amet fugit eligendi facilis aliquid totam iste sapiente!                       </p>
+                        {notification?.length && notification.filter(notif => notif.type === "public").map(mes => {
+                            return <div key={mes.id}>
+                                        <p className="text">
+                                            {mes.message}
+                                        </p>
+                                        <hr />
+                                    </div>
+                        })}               
                     </div>
                     <div className="modal-footer">
-                        {/* <button type="button" class="btn btn-secondary" >Close</button> */}
                         <button type="button" className="btn btn-primary" data-bs-dismiss="modal">Understood</button>
                     </div>
                 </div>

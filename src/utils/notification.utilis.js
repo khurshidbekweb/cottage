@@ -2,17 +2,16 @@ import  custimAxios  from "../configs/axios.config"
 
 
 export const notificationUtils = {
-    getNotification:  async (id) => {
+    getNotification: async () => {
+        const {data} = await custimAxios.get("/notification/all")
+        return data
+    },
+    getUserNotification:  async (id) => {
         const {data} = custimAxios.get(`/notification/${id}`)
         return data
     },
     postNatification: async ({message, type, userId}) => {
-        const {data} = custimAxios.post('/notification/add', 
-        {
-            headers: {
-                "access-token": localStorage.getItem("access-token")
-            }
-        },
+        const {data} = custimAxios.post('/notification/add',        
         {
             message: message,
             type: type,
@@ -23,11 +22,6 @@ export const notificationUtils = {
     },
     patchNatification: async ({id, watchedUserId, status}) => {
         const {data} = custimAxios.patch(`/notification/update/${id}`, 
-        {
-            headers: {
-                "access-token": localStorage.getItem("access-token")
-            }
-        },
         {
             watchedUserId: watchedUserId,
             status: status

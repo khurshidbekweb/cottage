@@ -8,7 +8,6 @@ import MiniNaw from '../../components/MiniNaw/MiniNaw';
 
 const Favorite = () => {
     const cottage = ALL_DATA.useCottage()
-    console.log(cottage.data);    
     return (
      <>
         <Navbar/>

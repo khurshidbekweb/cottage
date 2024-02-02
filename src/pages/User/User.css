@@ -8,6 +8,21 @@
     line-height: 42px;
     color: #2C2D2E;
 }
+.add-user-image-icons{
+    position: absolute;
+    background: rgb(38, 9, 224);
+    padding: 15px;
+    left: 0;
+    top: 0;
+    border-radius: 0 0 15px 0;
+}
+.image-user-single{
+    position: absolute;
+    z-index: 9;
+    width: 100%;
+    height: 100%;
+    left: 0;
+}
 
 .user-box {
     display: flex;
@@ -17,10 +32,11 @@
 .user-l {
     position: relative;
     margin: 24px 0 0 0;
-    width: 350px;
-    height: 350px;
+    width: 300px;
+    height: 300px;
     background: #00ABF2;
     border-radius: 35px;
+    overflow: hidden;
 }
 
 .user-l-btn {
