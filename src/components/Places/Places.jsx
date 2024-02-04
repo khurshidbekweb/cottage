@@ -46,9 +46,9 @@ const Places = () => {
               return (
                 <SwiperSlide key={place.id}>
                   <PlacesCard
+                    id={place.id}
                     name={place.name}
                     img={place.image}
-                    id={place.id}
                   />
                 </SwiperSlide>
               );
@@ -57,7 +57,7 @@ const Places = () => {
 
         <div className="places-cards">
           {places.data?.length &&
-            places.data.map((place) => {
+            places?.data.map((place) => {
               return (
                 <PlacesMiniCard
                   key={place.id}

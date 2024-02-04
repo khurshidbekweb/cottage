@@ -1,12 +1,12 @@
-import React, { useRef } from 'react'
+
 import Bell from "../assets/images/bell.svg";
 import MiniBell from "../assets/images/mini-bell.svg";
 import './modal.css'
 import { ALL_DATA } from '../Query/get_all';
 function Natification() {
-    const notificationModal = useRef(null)
-    const notification = ALL_DATA.useNotification()?.data
-    console.log(notification);
+    const userId = ALL_DATA.useSingleUser()?.data?.id
+    const notification = ALL_DATA.useNotificationUser(userId)?.data
+    console.log(notification, userId);
   return (
     <>       
         <button className="btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
@@ -27,7 +27,7 @@ function Natification() {
             />
           </div>
         </button>       
-        <div className="modal fade modal-natif" ref={notificationModal} id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabIndex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div className="modal fade modal-natif" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabIndex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div className="modal-dialog modal-natif-dialog modal-dialog-scrollable">
                 <div className="modal-content">
                     <div className="modal-header">

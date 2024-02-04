@@ -39,14 +39,14 @@ const User = () => {
   const handleUser =(e) => {
     e.preventDefault()
     userEdit.mutate({
-      id: user.data?.id || undefined,
-      phone: e.target.phone.value || undefined,
-      email: e.target.email.value || undefined,
-      username: e.target.username.value || undefined,
-      name: e.target.name.value || undefined,
-      image: e.target.userImage.files[0] || undefined
+      id: user.data?.id,
+      phone: e.target.phone.value,
+      email: e.target.email.value,
+      username: e.target.username.value,
+      name: e.target.name.value,
+      image: e.target.userImage.files[0]
     })
-    console.log(userEdit.variables.image);
+    console.log(userEdit.variables);
   }
   const handleIsMianImage = async (e) => {
     ismainImage.current.src = await getBase64Full(e.target.files[0])
@@ -65,7 +65,7 @@ const User = () => {
                 <input onChange={handleIsMianImage} type="file" name="userImage" className="file-input__input curson-pointer"/>                
                 <img className="add-user-image-icons" src={AddImg} alt="img" />
               </label>
-              <img className={userImg?"image-user-single":"d-none image-user-single"} ref={ismainImage} src={userImg?`${IMG_BASE_URL}${userImg}`:""} alt="img" />              
+              <img className={userImg ? "image-user-single" : "d-none image-user-single" } ref={ismainImage} src={userImg?`${IMG_BASE_URL}${userImg}`:""} alt="img" />              
             </div>
 
             <div className="user-r">

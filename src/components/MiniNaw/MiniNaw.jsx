@@ -22,10 +22,10 @@ const MiniNaw = () => {
 
                 <Link to='/favorite' className="favorite">
                     <img src={Like} width="31.96" height='25.47' alt="like" />
-                    <span className="favarite-num-mini">{favoriteCottage}</span>
+                    <span className={favoriteCottage?"favarite-num-mini":"favarite-num-mini d-none"}>{favoriteCottage}</span>
                 </Link>
 
-                <Link to='/add'>
+                <Link to='/add-new'>
                     <img src={Plus} width="32" height='32' alt="plus" />
                 </Link>
 

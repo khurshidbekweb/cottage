@@ -1,12 +1,25 @@
 .contact-inp{
     margin-top: 10px;
-    border: none;
-    border-bottom: 2px solid black ;
     display: block;
+    border: 0px solid;
+    border-bottom: 1px solid black;
     width: 250px;
+}
+.conatct{
+    overflow: hidden;
+}
+.contact-my-office{
+    width: 50%;
+    padding: 40px 20px;
+}
+.contact-inp:focus{
+    border: 0;
 }
 .label-conatct{
     display: block;
+}
+.contact-inner{
+    display: flex;
 }
 .btn-sentMasseage{
     margin-right: auto;
@@ -28,4 +41,29 @@
 }
 .offece-set{
     margin-top: 70px;
+}
+.contact-for-user{
+    padding: 40px;
+}
+.contact-top-connect{
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+@media only screen and (max-width: 556px){
+.contact-inner{
+    display: flex;
+}
+.contact-my-office{
+    width: 50%;
+    padding: 25px 10px;
+}
+.contact-top-connect{
+    display: block;
+}
+.contact-for-user{
+    width: 50%;
+    
+    margin: -40px 0 0 -20px;
+}
 }

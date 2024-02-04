@@ -29,7 +29,7 @@ const DachaMiniCard = (props) => {
     }
   }
   return (
-    <div className="mini-card-wrap"  key={props.cottage.id}>
+    <div className="mini-card-wrap">
       <Link to={`/view/${props.cottage.id}`} className="dacha-mini-card shadow">
       <div className="img-wrap">
         <img className="view-img" src={`${BASE_URL_SERVER}${mainImg}`}  alt="dacha" />        

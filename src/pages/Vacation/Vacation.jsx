@@ -18,19 +18,18 @@ function Vacation() {
         <div className='container'>
             <div className="favorite">
                 <h2 className='favorite-header'>{placeName}</h2>
-
-                <div className='favorite-cards'> 
+                
                   <div className="place-card-sort">
                     {cottages?.data?.length && cottages.data.map(e => {
                       return <DachaCard key={e.id} cottage={e} btn="Подробное"/>
                     })}
                   </div>  
+                  
                   <div className="place-card-mini-sort">
                     {cottages?.data?.length && cottages.data.map(e => {
                       return <DachaMiniCard key={e.id} cottage={e}/>
                     })}
-                  </div>
-                </div>
+                  </div>                
             </div>
         </div>
         <MiniNaw/>

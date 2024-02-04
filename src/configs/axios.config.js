@@ -1,5 +1,6 @@
 import axios from "axios";
 import { BASE_URL_SERVER } from "../constants/server.constants";
+import { authUtils } from "../utils/auth.utils";
 
 const custimAxios = axios.create({
   baseURL: BASE_URL_SERVER,
@@ -8,6 +9,15 @@ const custimAxios = axios.create({
     Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
   },
 });
+
+custimAxios.interceptors.response.use(
+  (res) => res,
+  (err) => {
+    if (err?.response?.status === 406) {
+      authUtils.refreshAuth() 
+    }
+  }
+);
 
 custimAxios.defaults.headers.common[
   "Authorization"

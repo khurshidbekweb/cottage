@@ -15,6 +15,7 @@ import Notification from "../../Modals/Natification";
 import { useQueryClient } from "@tanstack/react-query";
 import { ALL_DATA } from "../../Query/get_all";
 import { IMG_BASE_URL } from "../../constants/img.constants";
+// import userImagaDefault from '../../assets/images/user.svg'
 
 Modal.setAppElement("#root");
 
@@ -219,7 +220,9 @@ const Navbar = () => {
 
           <button ref={registered} className={accessToken?'sign-out':"sign-out d-none"} onClick={openModal}>
             <img src={UserMenu} alt="" />
-            <img src={`${IMG_BASE_URL}${userImg}`} className="user-nav" alt="" />
+            <div className="user-nav">
+                <img src={`${IMG_BASE_URL}${userImg}`} className={userImg? "user-nav" : "user-nav d-none"} alt="" />
+            </div>
           </button>
           <Link ref={signIn} to="/sign-in" className={accessToken && refreshToken ? "sign-in d-none" : "sign-in"}>
             Вход
@@ -234,7 +237,7 @@ const Navbar = () => {
           >
             <div className="user-modal-nav-top">
               <p className="um-top-gmail">User@gmail.com</p>
-              <img src={`${IMG_BASE_URL}${userImg}`} className="um-top-img" alt="" />
+              <img src={`${IMG_BASE_URL}${userImg}`} className={userImg ? "um-top-img" : "d-none um-top-img"} alt="userImg" />
             </div>
 
             <Link to="/add-new" className="um-text text-decoration-none">

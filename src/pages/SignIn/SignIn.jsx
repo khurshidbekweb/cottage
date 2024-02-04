@@ -29,7 +29,7 @@ const SignIn = () => {
       localStorage.setItem("accessToken", data.accessToken)
       localStorage.setItem("refreshToken", data.refreshToken)
       toastify.successMessage("Successfully logged in!")
-      navigate("/")
+      navigate("/user")
     },
     onError: (err) => {
       console.log(err, "login")

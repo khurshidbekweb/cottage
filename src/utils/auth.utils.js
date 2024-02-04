@@ -15,25 +15,18 @@ export const authUtils = {
         return data
     },
     refreshAuth: async () => {
+        console.log("ok,ok")
         const {data} = await custimAxios.post('/auth/refresh', {
             userAgent: window.navigator.userAgent
-        }, 
-        {
+        }, {
             headers: {
                 "refreshToken": localStorage.getItem("refreshToken")
             }
-        })        
-        custimAxios.defaults.headers.common[
-            "Authorization"
-        ] = `Bearer ${localStorage.getItem("accessToken")}`;
-
+        })
+        console.log(data, "data")
         localStorage.setItem("accessToken", data.accessToken)
         localStorage.setItem("refreshToken", data.refreshToken)
         return data
     },
-
-
-
-
-
+    
 }

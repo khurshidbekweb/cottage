@@ -32,7 +32,7 @@ const DachaCard = (props) => {
         }
     }
   return (
-    <div className="dacha-card" key={props.cottage.id}>
+    <div className="dacha-card">
       <div>
         <img
           className="main-img-dacha"

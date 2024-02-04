@@ -11,8 +11,8 @@ const Contact = () => {
             <div className="container">
                 <h2 className='fs-1 fw-bold text-center conatact-title'>Contact Us</h2>
                 <p className='fs-5 text-center'>Any question or remarks? Just write us a message!</p>
-                <div className="contact-inner mt-5 d-flex bg-white">
-                    <div className="contact-my-office rounded-2 w-50 p-5 bg-black position-relative">
+                <div className="contact-inner mt-5 bg-white">
+                    <div className="contact-my-office rounded-2 bg-black position-relative">
                         <h2 className="contact fs-2 fw-bold text-white">Contact Information</h2>
                         <p className="text-contact text-white mt-2">Say something to start a live chat!</p>
 
@@ -36,17 +36,17 @@ const Contact = () => {
                             <a href="https://instagram.com"><i class='bx bxl-telegram fs-4 text-white' ></i></a>
                         </div>
                     </div>
-                    <div className="contact-for-user p-5">
+                    <div className="contact-for-user">
                         <form>
-                            <div className="contact-top-connect d-flex gap-5">
+                            <div className="contact-top-connect">
                                 <label className='label-conatct'> First Name
-                                    <input className="contact-inp" type="text" name="firstname" id="firsName" />
+                                    <input className="contact-inp" type="text" name="firstname" id="firsName" />                                    
                                 </label>
                                 <label className='label-conatct gap-3'> Last Name
                                     <input className="contact-inp" type="text" name="lastname" id="lastName" />
                                 </label>
                             </div>
-                            <div className="contact-top-connect d-flex gap-5 mt-5">
+                            <div className="contact-top-connect">
                                 <label className='label-conatct'> Email
                                     <input className="contact-inp" type="email" name="email" id="userEmail" />
                                 </label>
@@ -55,10 +55,10 @@ const Contact = () => {
                                 </label>
                             </div>
 
-                                <label className='label-conatct gap-3 mt-5'> Message
-                                    <input className="contact-inp w-100 mt-3" type="text" name="number" id="userNamber" placeholder='Write your message..'/>
-                                </label>
-                                <button type='submit' className='btn-sentMasseage'>Send Message</button>
+                            <label className='label-conatct gap-3 mt-5'> Message
+                                <input className="contact-inp w-100 mt-3" type="text" name="number" id="userNamber" placeholder='Write your message..'/>
+                            </label>
+                            <button type='submit' className='btn-sentMasseage'>Send Message</button>
                         </form>
                     </div>
                 </div>

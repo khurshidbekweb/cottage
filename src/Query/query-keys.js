@@ -6,5 +6,6 @@ export const QUERY_KEYS = {
     regions: "regions",
     cottageType: "cottagetypes",
     comforts: "comforts",
-    users: "users"
+    users: "users",
+    notification: "notifications"
 }

@@ -14,8 +14,12 @@ import {
 import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/css/bundle";
+import { ALL_DATA } from "../../Query/get_all";
+import { BASE_URL_SERVER } from "../../constants/server.constants";
 
 const Header = () => {
+  const cottageTop = ALL_DATA.useCottage()?.data
+  console.log(cottageTop);
   return (
     <header className="header">
       <Swiper
@@ -30,53 +34,20 @@ const Header = () => {
           enabled: true,
         }}
       >      
-        <SwiperSlide>
-          <div className="wrap-ads">
-            <img src={bgImg} alt="bgimg" className="bg-img" />            
-              <div className="info-card">
-                <h1 className="header-text">Шейхская резиденция</h1>
-                <h2 className="header-num">$200</h2>
-                <Link to="/view" className="header-btn">
-                  Просмотреть
-                </Link>
-              </div>            
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="wrap-ads">
-            <img src={bgImg} alt="bgimg" className="bg-img" />            
-              <div className="info-card">
-                <h1 className="header-text">Шейхская резиденция</h1>
-                <h2 className="header-num">$200</h2>
-                <Link to="/view" className="header-btn">
-                  Просмотреть
-                </Link>
-              </div>            
-          </div>
-        </SwiperSlide><SwiperSlide>
-          <div className="wrap-ads">
-            <img src={bgImg} alt="bgimg" className="bg-img" />            
-              <div className="info-card">
-                <h1 className="header-text">Шейхская резиденция</h1>
-                <h2 className="header-num">$200</h2>
-                <Link to="/view" className="header-btn">
-                  Просмотреть
-                </Link>
-              </div>            
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="wrap-ads">
-            <img src={bgImg} alt="bgimg" className="bg-img" />            
-              <div className="info-card">
-                <h1 className="header-text">Шейхская резиденция</h1>
-                <h2 className="header-num">$200</h2>
-                <Link to="/view" className="header-btn">
-                  Просмотреть
-                </Link>
-              </div>            
-          </div>
-        </SwiperSlide>
+        {cottageTop?.length && cottageTop.filter(topCott => topCott.isTop === true).map(el => {
+          return <SwiperSlide key={el.id}>
+                    <div className="wrap-ads">
+                      <img src={`${BASE_URL_SERVER}${el.images.find(mainIm => mainIm.isMainImage=== true).image}`} alt="bgimg" className="bg-img" />            
+                        <div className="info-card">
+                          <h1 className="header-text">Шейхская резиденция</h1>
+                          <h2 className="header-num">${el.price}</h2>
+                          <Link to={`/view/${el.id}`} className="header-btn">
+                            Просмотреть
+                          </Link>
+                        </div>            
+                    </div>
+                  </SwiperSlide>
+        })}
       </Swiper>
         
 

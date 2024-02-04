@@ -9,15 +9,11 @@
     color: #2C2D2E;
 }
 
-.favorite-cards {
-    margin: 0;
-    padding: 0;
+.place-card-sort{
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     gap: 27px;
-}
-.place-card-sort{
-    display: block;
 }
 .place-card-mini-sort{
     display: none;

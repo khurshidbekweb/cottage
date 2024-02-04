@@ -10,43 +10,8 @@ import { cottageUtils } from "../../utils/cottage.utils";
 import { authUtils } from "../../utils/auth.utils";
 import { ALL_DATA } from "../../Query/get_all";
 import MiniNaw from "../../components/MiniNaw/MiniNaw";
-// import A2 from '../../assets/images/a2.svg'
-// import A3 from '../../assets/images/a3.svg'
-// import A4 from '../../assets/images/a4.svg'
-// import A5 from '../../assets/images/a5.svg'
-// import A6 from '../../assets/images/a6.svg'
-// import A7 from '../../assets/images/a7.svg'
-// import A8 from '../../assets/images/a8.svg'
-// import A9 from '../../assets/images/a9.svg'
-// import A10 from '../../assets/images/a10.svg'
-// import A11 from '../../assets/images/a11.svg'
-// import A12 from '../../assets/images/a12.svg'
-// import A13 from '../../assets/images/a13.svg'
-// import A14 from '../../assets/images/a14.svg'
-// import A15 from '../../assets/images/a15.svg'
-// import A16 from '../../assets/images/a16.svg'
-// import A17 from '../../assets/images/a17.svg'
-// import A18 from '../../assets/images/a18.svg'
-// import A19 from '../../assets/images/a19.svg'
-
-// import A20 from '../../assets/images/a20.svg'
-// import A21 from '../../assets/images/a21.svg'
-// import A22 from '../../assets/images/a22.svg'
-// import A23 from '../../assets/images/a23.svg'
-// import A24 from '../../assets/images/a24.svg'
-// import A25 from '../../assets/images/a25.svg'
-// import A26 from '../../assets/images/a26.svg'
-// import A27 from '../../assets/images/a27.svg'
-// import A28 from '../../assets/images/a28.svg'
-// import A29 from '../../assets/images/a29.svg'
-// import A30 from '../../assets/images/a30.svg'
-// import A31 from '../../assets/images/a31.svg'
-// import A32 from '../../assets/images/a32.svg'
-// import A33 from '../../assets/images/a33.svg'
-// import A34 from '../../assets/images/a34.svg'
-// import A35 from '../../assets/images/a35.svg'
-// import A36 from '../../assets/images/a36.svg'
-// import A37 from '../../assets/images/a37.svg'
+import { useNavigate } from "react-router-dom";
+import toastify from "../../utils/toastify";
 
 async function getBase64(file) {
   return new Promise((resolve, reject) => {
@@ -73,6 +38,7 @@ async function getBase64Full(file) {
 const AddNew = () => {
   const mainImage = useRef(null)
   const childImagesWrapper =useRef(null)
+  const navigate = useNavigate()
   const [cottageInfo, setCottageInfo] = useState({
     dachaType: [],
     response: [],
@@ -90,13 +56,14 @@ const AddNew = () => {
     mutationFn: cottageUtils.postCottage,
     onSuccess: () => {
       queryClient.invalidateQueries({queryKey: ['cotteges']})
+      toastify.successMessage("Dacha muvaffaqiyat qo'shildi 😍")
     },
     onError: (err) => {
       if(err?.response?.status === 406){
         authUtils.refreshAuth()
       }
     }
-  })
+  });
   const handlChoseCottageType = (e) => {
     const { value, checked } = e.target;
     const { dachaType } = cottageInfo;
@@ -126,26 +93,17 @@ const AddNew = () => {
         response: comforts.filter((e) => e !== value),
       });
     }
-    console.log(value)
   };
   const handlCottage = async (e) => {
     e.preventDefault();
-    const images = []
-    images.push({
-        image: await getBase64(e.target.mainImage.files[0]),
-        isMain: true
-    })
+    const images = [];
     for (let i = 0; i < e.target.childimg.files.length; i++) {
-        images.push(
-            {
-                image: await getBase64(e.target.childimg.files[i]),
-                isMain: false,
-            }
-        )
-      }
+      images.push(e.target.childimg.files[i]);
+    }
     cottage.mutate({
       name: e.target.cottagename.value,
       images: images,
+      mainImage: e.target.mainImage.files[0],
       placeId: e.target.place.value,
       regionId: e.target.region.value,
       price: +e.target.price.value,
@@ -153,11 +111,17 @@ const AddNew = () => {
       cottageType: cottageInfo.response,
       comforts: cottageComforts.response,
       description: e.target.discription.value,
-      latitude: "" || undefined,
+      lattitude: "" || undefined,
       longitude: "" || undefined,
     });
+    navigate("/add-new")
+    e.target.cottagename.value = ""
+    e.target.childimg.files = [];
+    e.target.price.value = "";
+    e.target.priceweekend.value = ""
+    e.target.discription.value = ""
   };
-  console.log(cottage);
+  console.log(cottage.variables);
   const handleMainImage = async (e) => {
     const mainImgUrl = await getBase64Full(e.target.files[0]);
     mainImage.current.classList.remove("d-none");
