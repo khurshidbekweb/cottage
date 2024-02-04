@@ -24,10 +24,8 @@ async function getBase64Full(file) {
 const User = () => {
   const user = ALL_DATA.useSingleUser()
   const userImg = ALL_DATA.useSingleUser().data?.image
-  console.log(user.data);
-
+  console.log(userImg);
   const ismainImage = useRef(null)
-  const ismainImageTrue = useRef(null)
   const userEdit = useMutation({
     mutationFn: userUtils.patchUser,
     onSuccess: () => {
@@ -48,7 +46,7 @@ const User = () => {
       name: e.target.name.value || undefined,
       image: e.target.userImage.files[0] || undefined
     })
-    console.log(userEdit.variables);
+    console.log(userEdit.variables.image);
   }
   const handleIsMianImage = async (e) => {
     ismainImage.current.src = await getBase64Full(e.target.files[0])

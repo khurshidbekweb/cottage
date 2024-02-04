@@ -9,6 +9,14 @@ export const cottageUtils = {
     });
     return data;
   },
+  getCottageByPlace: async (placeId) => {
+    const { data } = await custimAxios.get(`/cottage/place/${placeId}`, {
+      headers: {
+        'accept-language': localStorage.getItem("language")
+      },
+    });
+    return data;
+  },
   postCottage: async ({
     comforts,
     cottageType,

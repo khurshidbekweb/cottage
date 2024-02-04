@@ -35,6 +35,31 @@ export const ALL_DATA = {
     }
     return { ...cottages };
   },
+  useCottageByPlace: (placeId) => {
+    const cottages = useQuery({
+      queryKey: [QUERY_KEYS.cottages_by_place],
+      queryFn: async () => await cottageUtils.getCottageByPlace(placeId),
+    });
+
+    const likedCottages = JSON.parse(localStorage.getItem("liked"));
+    if (cottages.data?.length) {
+      const data = cottages.data.map((e) => {
+        if (likedCottages?.includes(e.id)) {
+          return {
+            ...e,
+            isLiked: true,
+          };
+        } else {
+          return {
+            ...e,
+            isLiked: false,
+          };
+        }
+      });
+      return { ...cottages, data: data };
+    }
+    return { ...cottages };
+  },
   useLanguage() {
     return useQuery({
       queryKey: [QUERY_KEYS.languages],
