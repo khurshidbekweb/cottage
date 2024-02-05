@@ -19,7 +19,6 @@ import { BASE_URL_SERVER } from "../../constants/server.constants";
 
 const Header = () => {
   const cottageTop = ALL_DATA.useCottage()?.data
-  console.log(cottageTop);
   return (
     <header className="header">
       <Swiper

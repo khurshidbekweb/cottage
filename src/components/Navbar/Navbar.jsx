@@ -19,7 +19,8 @@ import { IMG_BASE_URL } from "../../constants/img.constants";
 
 Modal.setAppElement("#root");
 
-const Navbar = () => {  
+const Navbar = () => {
+  // const user = JSON.parse(localStorage.getItem("user"))  
   const userImg = ALL_DATA.useSingleUser()?.data?.image
   const navigate = useNavigate()
   const [modalIsOpen, setModalIsOpen] = useState(false);

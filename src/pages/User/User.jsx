@@ -22,14 +22,16 @@ async function getBase64Full(file) {
 }
 
 const User = () => {
-  const user = ALL_DATA.useSingleUser()
-  const userImg = ALL_DATA.useSingleUser().data?.image
-  console.log(userImg);
+  const userData = ALL_DATA.useSingleUser()
+  const user = JSON.parse(localStorage.getItem("user"))
+  const userImg = userData?.data?.image
+  const fovarite = JSON.parse(localStorage.getItem("liked"))
   const ismainImage = useRef(null)
   const userEdit = useMutation({
     mutationFn: userUtils.patchUser,
     onSuccess: () => {
       toastify.successMessage("User muvaffaqiyatli tahrirlandi")
+      localStorage.setItem("user", JSON.stringify(userData?.data))
     },
     onError: (err) => {
       toastify.errorMessage("Hatolik mavjud!!!")
@@ -39,14 +41,15 @@ const User = () => {
   const handleUser =(e) => {
     e.preventDefault()
     userEdit.mutate({
-      id: user.data?.id,
-      phone: e.target.phone.value,
+      id: user.id,
+      phone: e.target.phone.value.slice(4),
       email: e.target.email.value,
-      username: e.target.username.value,
       name: e.target.name.value,
-      image: e.target.userImage.files[0]
+      username: e.target.username.value,
+      image: e.target.userImage.files[0],
+      password: e.target.password.value,
+      favoriteCottages: fovarite
     })
-    console.log(userEdit.variables);
   }
   const handleIsMianImage = async (e) => {
     ismainImage.current.src = await getBase64Full(e.target.files[0])
@@ -65,22 +68,22 @@ const User = () => {
                 <input onChange={handleIsMianImage} type="file" name="userImage" className="file-input__input curson-pointer"/>                
                 <img className="add-user-image-icons" src={AddImg} alt="img" />
               </label>
-              <img className={userImg ? "image-user-single" : "d-none image-user-single" } ref={ismainImage} src={userImg?`${IMG_BASE_URL}${userImg}`:""} alt="img" />              
+              <img className={ userImg ? "image-user-single" : "d-none image-user-single" } ref={ismainImage} src={`${IMG_BASE_URL}${userImg}`} alt="img" />              
             </div>
 
             <div className="user-r">
               <div className="user-r-inner">
-                <input className="user-input" value={"+998"+user.data?.phone} name="phone" type="tel" placeholder="Nomer" />
-                <input className="user-input" name="email" type="email" placeholder="Email" />
+                <input className="user-input" defaultValue={"+998"+user?.phone} name="phone" type="tel" placeholder="Nomer" />
+                <input className="user-input" defaultValue={user?.email?user.email:""} name="email" type="email" placeholder="Email" />
               </div>
 
               <div className="user-r-inner">
-                <input className="user-input" name="name" type="text" placeholder="Имя"/>
-                <input className="user-input" name="username" type="text"placeholder="Фамиля"/>
+                <input className="user-input" defaultValue={user?.name?user.name:""} name="username" type="text"placeholder="Фамиля"/>
+                <input className="user-input" defaultValue={user?.username?user.username:""} name="name" type="text" placeholder="Имя"/>
               </div>
 
               <div>
-                <input className="user-input" name="pssCeria" type="text" placeholder="AA 0000000"/>
+                <input className="user-input" defaultValue={user?.smsCode ? user?.smsCode : ""} name="password" type="text" placeholder="password"/>
                 <p className="user-text d-none">
                   Что бы вы подать объявлении вам нужно вводить ваш серии номер
                   паспорта.

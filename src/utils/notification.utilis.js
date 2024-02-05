@@ -7,11 +7,11 @@ export const notificationUtils = {
         return data
     },
     getUserNotification:  async (id) => {
-        const {data} = custimAxios.get(`/notification/${id}`)
+        const {data} = await custimAxios.get(`/notification/${id}`)
         return data
     },
     postNatification: async ({message, type, userId}) => {
-        const {data} = custimAxios.post('/notification/add',        
+        const {data} = await custimAxios.post('/notification/add',        
         {
             message: message,
             type: type,
@@ -21,7 +21,7 @@ export const notificationUtils = {
         return data
     },
     patchNatification: async ({id, watchedUserId, status}) => {
-        const {data} = custimAxios.patch(`/notification/update/${id}`, 
+        const {data} = await custimAxios.patch(`/notification/update/${id}`, 
         {
             watchedUserId: watchedUserId,
             status: status

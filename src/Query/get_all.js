@@ -102,10 +102,13 @@ export const ALL_DATA = {
       queryFn:userUtils.getSingleUser
     })
   },
-  useNotificationUser: (notifId) => {
+  useNotificationUser: (userId) => {
     return useQuery({
-      queryKey: [QUERY_KEYS.notification],
-      queryFn: async () => await notificationUtils.getUserNotification(notifId)
+      queryKey: [QUERY_KEYS.notification, userId],
+      queryFn: async () => {
+        const data = await notificationUtils.getUserNotification(userId)
+        return data
+      }
     })
   },
 };

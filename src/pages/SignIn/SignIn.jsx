@@ -39,7 +39,7 @@ const SignIn = () => {
   const handleAuth = (e) => {
     e.preventDefault()
     phone.mutate({
-      phone: e.target.phonenumber.value
+      phone: e.target.phonenumber.value.slice(4)
     })
     setTimeout(()=> {
       phoneForm.current.classList.add('d-none')
@@ -74,7 +74,8 @@ const SignIn = () => {
                 type="text"
                 required
                 placeholder="Номер телефона"  
-                name="phonenumber"             
+                name="phonenumber" 
+                defaultValue="+998"            
               />
             </div>
             <input  type="submit" className="signin-submit mt-5" value={"Войти"}/>
