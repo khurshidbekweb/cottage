@@ -9,10 +9,9 @@
     color: #2C2D2E;
 }
 
-.place-card-sort{
+.place-card-sort-big{
     width: 100%;
     display: flex;
-    flex-wrap: wrap;
     gap: 27px;
 }
 .place-card-mini-sort{
@@ -21,7 +20,7 @@
 
 
 @media (max-width: 390px) {
-    .place-card-sort{
+    .place-card-sort-big{
         display: none;
     }
     .place-card-mini-sort{

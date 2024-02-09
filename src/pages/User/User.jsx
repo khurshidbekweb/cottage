@@ -7,8 +7,9 @@ import { ALL_DATA } from "../../Query/get_all";
 import { useMutation } from "@tanstack/react-query";
 import { userUtils } from "../../utils/user.utils";
 import toastify from "../../utils/toastify";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { IMG_BASE_URL } from "../../constants/img.constants";
+import EditImageIcon from '../../assets/images/edit.svg'
 
 async function getBase64Full(file) {
   return new Promise((resolve, reject) => {
@@ -27,11 +28,17 @@ const User = () => {
   const userImg = userData?.data?.image
   const fovarite = JSON.parse(localStorage.getItem("liked"))
   const ismainImage = useRef(null)
+  const saveData = useRef(null)
+  const editImage = useRef(null)
+  const [edit, setEdit] = useState(true)
   const userEdit = useMutation({
     mutationFn: userUtils.patchUser,
     onSuccess: () => {
       toastify.successMessage("User muvaffaqiyatli tahrirlandi")
       localStorage.setItem("user", JSON.stringify(userData?.data))
+      saveData.current.classList.add("d-none")
+      editImage.current.classList.add("d-none")
+      setEdit(true)
     },
     onError: (err) => {
       toastify.errorMessage("Hatolik mavjud!!!")
@@ -66,27 +73,29 @@ const User = () => {
             <div className="user-l">
               <label className="file-input__label">
                 <input onChange={handleIsMianImage} type="file" name="userImage" className="file-input__input curson-pointer"/>                
-                <img className="add-user-image-icons" src={AddImg} alt="img" />
+                <img ref={editImage} className={edit?"add-user-image-icons d-none":"add-user-image-icons"} src={AddImg} alt="img" />
               </label>
               <img className={ userImg ? "image-user-single" : "d-none image-user-single" } ref={ismainImage} src={`${IMG_BASE_URL}${userImg}`} alt="img" />              
             </div>
 
             <div className="user-info-wrap">
             <div className="user-r">
-                <input className="user-input" defaultValue={user?.name?user.name:""} name="username" type="text"placeholder="Фамиля"/>
-                <input className="user-input" defaultValue={user?.username?user.username:""} name="name" type="text" placeholder="Имя"/>
-                <input className="user-input" defaultValue={user?.email?user.email:""} name="email" type="email" placeholder="Email" />
-                <input className="user-input" defaultValue={"+998"+user?.phone} name="phone" type="tel" placeholder="Nomer" />
-              
-                <input className="user-input" defaultValue={user?.smsCode ? user?.smsCode : ""} name="password" type="text" placeholder="password"/>
+                <input disabled={edit}  className="user-input" defaultValue={user?.name?user.name:""} name="username" type="text"placeholder="Фамиля"/>
+                <input disabled={edit}  className="user-input" defaultValue={user?.username?user.username:""} name="name" type="text" placeholder="Имя"/>
+                <input disabled={edit} className="user-input" defaultValue={user?.email?user.email:""} name="email" type="email" placeholder="Email" />
+                <input disabled={edit}  className="user-input" defaultValue={"+998"+user?.phone} name="phone" type="tel" placeholder="Nomer" />              
+                <input className="user-input" disabled={edit}  defaultValue={user?.smsCode ? user?.smsCode : ""} name="password" type="text" placeholder="password"/>
                 <p className="user-text d-none">
                   Что бы вы подать объявлении вам нужно вводить ваш серии номер
                   паспорта.
                 </p>
             </div>
-            <button type="submit" className="user-btn mt-5">Сохранить</button>
+            <button ref={saveData} type="submit" className={edit?"user-btn mt-5 d-none":"user-btn mt-5"}>Сохранить</button>
             </div>
           </form>
+          <button onClick={()=>setEdit(false)} className={edit?"user-edit-btn btn":"user-edit-btn btn d-none"} >
+            <img className="img-icon-edit" src={EditImageIcon} alt="imgicons"/>
+          </button>
         </div>
       </div>
       <MiniNaw/>

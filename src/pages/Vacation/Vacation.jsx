@@ -6,6 +6,7 @@ import Navbar from '../../components/Navbar/Navbar';
 import { ALL_DATA } from '../../Query/get_all';
 import DachaCard from '../../components/DachaCards/DachaCard';
 import DachaMiniCard from '../../components/DachaMiniCard/DachaMiniCard';
+import './Vacation.css'
 
 function Vacation() {
   const params = useParams()
@@ -19,7 +20,7 @@ function Vacation() {
             <div className="favorite">
                 <h2 className='favorite-header'>{placeName}</h2>
                 
-                  <div className="place-card-sort">
+                  <div className="place-card-sort-big">
                     {cottages?.data?.length && cottages.data.map(e => {
                       return <DachaCard key={e.id} cottage={e} btn="Подробное"/>
                     })}

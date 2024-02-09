@@ -8,8 +8,18 @@
     line-height: 42px;
     color: #2C2D2E;
 }
-.add-user-image-icons{
+.user{
+    position: relative;
+}
+.user-edit-btn{
     position: absolute;
+    bottom: -10px;
+    left: 350px; 
+    font-size: 55px;   
+    font-weight: 900;
+}
+.add-user-image-icons{
+    position: relative;
     background: rgb(38, 9, 224);
     padding: 15px ;
     bottom: 0;
@@ -17,6 +27,24 @@
     border-radius: 10px 0 0 0;
     width: 60px;
     z-index: 1;    
+}
+.img-icon-edit{
+    width: 30px;
+}
+.user-edit-btn::after{
+    content: "";
+    display: block;
+    transition: all 1s;
+    background: #000;
+    height: 3px;
+    width: 0;
+}
+
+.user-edit-btn:hover::after{       
+    width: 100%;
+}
+.user-edit-btn:active{
+    background: green;
 }
 .image-user-single{
     position: absolute;
@@ -139,7 +167,32 @@
         line-height: 34px;
         color: #2C2D2E;
     }
-
+    .user-info-wrap{
+        margin-top: 50px;
+    }
+    .user-edit-btn{
+        position: relative;
+        bottom: 550px;
+        left: 270px; 
+        display: block;
+        font-size: 30px;   
+        font-weight: 900;
+    }
+    .img-icon-edit{
+        width: 35px;
+    }
+    .user-edit-btn::after{
+        content: "";
+        display: block;
+        transform: rotate(0.5turn);
+        transition: all 1s;
+        background: #000;
+        height: 3px;
+        width: 0;
+    }
+    .user-edit-btn:hover::after{       
+        width: 100%;
+    }
     .user-box {
         display: block;
     }
