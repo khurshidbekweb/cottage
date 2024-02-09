@@ -71,26 +71,20 @@ const User = () => {
               <img className={ userImg ? "image-user-single" : "d-none image-user-single" } ref={ismainImage} src={`${IMG_BASE_URL}${userImg}`} alt="img" />              
             </div>
 
+            <div className="user-info-wrap">
             <div className="user-r">
-              <div className="user-r-inner">
-                <input className="user-input" defaultValue={"+998"+user?.phone} name="phone" type="tel" placeholder="Nomer" />
-                <input className="user-input" defaultValue={user?.email?user.email:""} name="email" type="email" placeholder="Email" />
-              </div>
-
-              <div className="user-r-inner">
                 <input className="user-input" defaultValue={user?.name?user.name:""} name="username" type="text"placeholder="Фамиля"/>
                 <input className="user-input" defaultValue={user?.username?user.username:""} name="name" type="text" placeholder="Имя"/>
-              </div>
-
-              <div>
+                <input className="user-input" defaultValue={user?.email?user.email:""} name="email" type="email" placeholder="Email" />
+                <input className="user-input" defaultValue={"+998"+user?.phone} name="phone" type="tel" placeholder="Nomer" />
+              
                 <input className="user-input" defaultValue={user?.smsCode ? user?.smsCode : ""} name="password" type="text" placeholder="password"/>
                 <p className="user-text d-none">
                   Что бы вы подать объявлении вам нужно вводить ваш серии номер
                   паспорта.
                 </p>
-              </div>
-
-              <button type="submit" className="user-btn mt-5">Сохранить</button>
+            </div>
+            <button type="submit" className="user-btn mt-5">Сохранить</button>
             </div>
           </form>
         </div>

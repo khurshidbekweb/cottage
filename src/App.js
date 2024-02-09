@@ -17,7 +17,6 @@ import {Routes, Route} from "react-router-dom"
 import { AuthContextProvider } from './context/AuthContext';
 import Protected from './components/Protected';
 import Vacation from './pages/Vacation/Vacation';
-import Natification from './pages/Natifications/Natification';
 import Announcoment from './pages/Announcement/Announcoment';
 
 function App() {
@@ -46,7 +45,6 @@ function App() {
           <Route path='/add' element={<Protected><Add/></Protected>} />
           <Route path='/add-new' element={<Protected><AddNew/></Protected>} />
           <Route path='/vacation/:id' element={<Protected><Vacation/></Protected>}/>
-          <Route path='/notification' element={<Protected><Natification/></Protected>}/>
           <Route path='/announcement' element={<Protected><Announcoment/></Protected>}/>
         </Routes>
       </AuthContextProvider>

@@ -17,6 +17,42 @@ export const cottageUtils = {
     });
     return data;
   },
+  getCottageTop: async () => {
+    const {data} = await custimAxios.get('/cottage/top', {
+      headers: {
+        'accept-language': localStorage.getItem("language")
+      },
+    })
+    return data
+  },
+  getCottageType: async (type) => {
+    const {data} = await custimAxios.get(`/cottage/cottage-type/${type}`, {
+      headers: {
+        'accept-language': localStorage.getItem("language")
+      },
+    })
+    return data
+  },
+  getCottageUser: async () => {
+    const {data} = await custimAxios.get('cottage/user', {
+      headers: {
+        'accept-language': localStorage.getItem("language")
+      },
+    })
+    return data
+  },
+  getCottageFilter: async ({type, region, price}) => {
+    const {data} = await custimAxios.get('/cottage/filter/', {
+      type: type,
+      region: region,
+      price: price,
+
+      headers: {
+        'accept-language': localStorage.getItem("language")
+      }
+    })
+    return data
+  },
   postCottage: async ({
     comforts,
     cottageType,

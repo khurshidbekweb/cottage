@@ -111,4 +111,13 @@ export const ALL_DATA = {
       }
     })
   },
+  useCottageFilter: ({type, region, price}) => {
+    return useQuery({
+      queryKey: [QUERY_KEYS.cottage_by_filter, type, region,price],
+      queryFn: async () => {
+        const data = await cottageUtils.getCottageFilter(type, region, price)
+        return data
+      }
+    })
+  }
 };

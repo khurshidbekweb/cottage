@@ -31,7 +31,7 @@ function Natification() {
         </div>
       </button>
       <div
-        className="modal fade modal-natif"
+        className="modal modal-notification fade modal-natif"
         id="staticBackdrop"
         data-bs-backdrop="static"
         data-bs-keyboard="false"
@@ -56,10 +56,10 @@ function Natification() {
               {notification?.data?.length &&
                 notification.data.map((mes) => {
                   return (
-                    <div key={mes.id}>
-                      <p className="text">{mes.message}</p>
+                    <div className="d-flex justify-content-between  align-items-center" key={mes.id}>
+                      <p className="text-notif w-75">{mes.message}</p>
+                      {mes.type === "personal" ? <span className="pesonal-notif btn text-white d-block btn-sm btn-success">{mes.type}</span> : ""}
                       <hr />
-                      {mes.type === "personal" ? <span className="btn btn-sm btn-warning">{mes.type}</span> : ""}
                     </div>
                   );
                 })}
@@ -67,7 +67,7 @@ function Natification() {
             <div className="modal-footer">
               <button
                 type="button"
-                className="btn btn-primary"
+                className="btn-notif btn btn-primary"
                 data-bs-dismiss="modal"
               >
                 Understood

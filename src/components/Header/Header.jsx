@@ -19,6 +19,18 @@ import { BASE_URL_SERVER } from "../../constants/server.constants";
 
 const Header = () => {
   const cottageTop = ALL_DATA.useCottage()?.data
+  const cottageType = ALL_DATA.useCottageType()?.data
+  const place = ALL_DATA.usePlace()?.data
+
+
+  const handleFilterCottage = (e) => {
+    e.preventDefault()
+
+    const region = e.target.region.value;
+    const cottageType = e.target.cottageType.value;
+    const price = e.target.price.value    
+  }
+
   return (
     <header className="header">
       <Swiper
@@ -50,37 +62,36 @@ const Header = () => {
       </Swiper>
         
 
-      <div className="header-menu">
+      <form className="header-menu" onSubmit={handleFilterCottage}>
         <div className="header-inner">
           <div className="header-inner-box">
             <p className="header-top">Расположение</p>
-
             <select className="header-select-one" name="place" id="place">
-              <option value="chorvoq">Чорвок</option>
+                {place?.length && place.map(el => {
+                  return <option key={el.id} value={el.id}>{el.name}</option>
+                })}
             </select>
           </div>
-
           <div className="header-inner-box">
             <p className="header-top">Тип отдыха</p>
-
             <select className="header-select-two" name="dacha" id="dacha">
-              <option value="dacha">Дача</option>
-              <option value="piknik">Пикник</option>
-              <option value="ribalka">Рыбалка</option>
+                {cottageType?.length && cottageType.map(el => {
+                    return <option key={el.id} value={el.id}>{el.name}</option>
+                })}
             </select>
           </div>
-
           <div className="header-inner-box">
             <p className="header-top-usd">Цена</p>
             <input
               className="header-nums"
               type="text"
+              name="price"
               placeholder="300$ - 800$"
             />
           </div>
         </div>
 
-        <Link to="/filter" className="header-search">
+        <button type="submit" className="header-search">
           <img
             className="mini-search"
             src={MiniSearch}
@@ -95,8 +106,8 @@ const Header = () => {
             height="34.45"
             alt="search"
           />
-        </Link>
-      </div>
+        </button>
+      </form>
 
       
     </header>

@@ -10,12 +10,19 @@
     display: none;
 }
 
+.modal-notification::-webkit-scrollbar{
+    display: none;
+}
+
 .modal-natif-dialog{
     position: relative;
     top: 60px;
     left: 340px;
     height: 450px !important;
     width: 450px;
+}
+.pesonal-notif{
+    width: 70px;
 }
 
 @media only screen and (max-width: 576px) {
@@ -40,6 +47,17 @@
 
     .minibell-img {
         display: block;
+    }
+    .pesonal-notif{
+        width: 50px;
+        font-size: 9px;
+    }
+    .text-notif{
+        font-size: 11px;
+    }
+    .btn-notif{
+        width: 85px;
+        font-size: 12px;
     }
 }
 @media only screen and (max-width: 390px) {

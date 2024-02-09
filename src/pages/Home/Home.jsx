@@ -8,13 +8,12 @@ import { ALL_DATA } from "../../Query/get_all";
 
 const Home = () => {
   const userData = ALL_DATA.useSingleUser();
-  console.log(userData.data);
   if (userData?.data) localStorage.setItem("user", JSON.stringify(userData?.data));
   return (
     <>
       <Navbar />
-      <Header />
       <MiniNaw />
+      <Header />
       <Places />
       <Dacha />
       <Footer />
