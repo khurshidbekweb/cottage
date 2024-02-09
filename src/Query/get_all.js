@@ -60,6 +60,21 @@ export const ALL_DATA = {
     }
     return { ...cottages };
   },
+  useCottageFilter: ({type, region, price}) => {
+    return useQuery({
+      queryKey: [QUERY_KEYS.cottage_by_filter, type, region,price],
+      queryFn: async () => {
+        const data = await cottageUtils.getCottageFilter(type, region, price)
+        return data
+      }
+    })
+  },
+  useCottageUSerId: () => {
+    return useQuery({
+      queryKey: [QUERY_KEYS.cottage_by_UserId],
+      queryFn: cottageUtils.getCottageUser
+    })
+  },
   useLanguage() {
     return useQuery({
       queryKey: [QUERY_KEYS.languages],
@@ -110,14 +125,5 @@ export const ALL_DATA = {
         return data
       }
     })
-  },
-  useCottageFilter: ({type, region, price}) => {
-    return useQuery({
-      queryKey: [QUERY_KEYS.cottage_by_filter, type, region,price],
-      queryFn: async () => {
-        const data = await cottageUtils.getCottageFilter(type, region, price)
-        return data
-      }
-    })
-  }
+  },  
 };
