@@ -7,61 +7,61 @@ import toastify from "../../utils/toastify";
 import { useNavigate } from "react-router-dom";
 
 const SignIn = () => {
+  const smsForm = useRef(null);
+  const phoneForm = useRef(null);
+  const smsInput = useRef(null);
+  const navigate = useNavigate();
 
-  const smsForm = useRef(null)
-  const phoneForm = useRef(null)
-  const smsInput = useRef(null)
-  const navigate = useNavigate()
-  
   const phone = useMutation({
     mutationFn: authUtils.smsAuth,
     onSuccess: (data) => {
-      smsInput.current.value = data.smsCode
-      toastify.successMessage("Login success")
+      smsInput.current.value = data.smsCode;
+      toastify.successMessage("Login success");
     },
     onError: (err) => {
       console.log(err);
-    }
-  })
+    },
+  });
   const login = useMutation({
     mutationFn: authUtils.loginAuth,
     onSuccess: (data) => {
-      localStorage.setItem("accessToken", data.accessToken)
-      localStorage.setItem("refreshToken", data.refreshToken)
-      toastify.successMessage("Successfully logged in!")
-      navigate("/user")
+      localStorage.setItem("accessToken", data.accessToken);
+      localStorage.setItem("refreshToken", data.refreshToken);
+      localStorage.setItem("user", JSON.stringify(data?.user));
+      toastify.successMessage("Successfully logged in!");
+      navigate("/user");
     },
     onError: (err) => {
-      console.log(err, "login")
-    }
-  })
+      console.log(err, "login");
+    },
+  });
 
   const handleAuth = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     phone.mutate({
-      phone: e.target.phonenumber.value.slice(4)
-    })
-    setTimeout(()=> {
-      phoneForm.current.classList.add('d-none')
-    }, 500)
-    setTimeout(()=> {
-      smsForm.current.classList.remove('d-none')
-    }, 500)
-  }
+      phone: e.target.phonenumber.value.slice(4),
+    });
+    setTimeout(() => {
+      phoneForm.current.classList.add("d-none");
+    }, 500);
+    setTimeout(() => {
+      smsForm.current.classList.remove("d-none");
+    }, 500);
+  };
 
   const handleLogin = (e) => {
-    e.preventDefault()    
-    const code = e.target.smsCode.value
-    const truthCode = phone?.data?.smsCode
-    if(code===truthCode){
+    e.preventDefault();
+    const code = e.target.smsCode.value;
+    const truthCode = phone?.data?.smsCode;
+    if (code === truthCode) {
       login.mutate({
         smsCode: code,
-        userId: phone?.data?.userId
-      })
-    }else{
-      toastify.errorMessage('SMS code notog`ri !!!')
+        userId: phone?.data?.userId,
+      });
+    } else {
+      toastify.errorMessage("SMS code notog`ri !!!");
     }
-  }
+  };
   return (
     <div className="signin">
       <div className="background">
@@ -73,12 +73,16 @@ const SignIn = () => {
                 className="signin-input-text"
                 type="text"
                 required
-                placeholder="Номер телефона"  
-                name="phonenumber" 
-                defaultValue="+998"            
+                placeholder="Номер телефона"
+                name="phonenumber"
+                defaultValue="+998"
               />
             </div>
-            <input  type="submit" className="signin-submit mt-5" value={"Войти"}/>
+            <input
+              type="submit"
+              className="signin-submit mt-5"
+              value={"Войти"}
+            />
           </form>
 
           <form onSubmit={handleLogin} ref={smsForm} className="d-none">
@@ -89,11 +93,14 @@ const SignIn = () => {
                 ref={smsInput}
                 name="smsCode"
                 placeholder="SMS code"
-                
               />
               <img src={Eye} alt="password" />
             </div>
-            <input  type="submit" className="signin-submit mt-5" value={"Войти"}/>
+            <input
+              type="submit"
+              className="signin-submit mt-5"
+              value={"Войти"}
+            />
           </form>
         </div>
       </div>

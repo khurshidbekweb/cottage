@@ -15,7 +15,6 @@ export const authUtils = {
         return data
     },
     refreshAuth: async () => {
-        console.log("ok,ok")
         const {data} = await custimAxios.post('/auth/refresh', {
             userAgent: window.navigator.userAgent
         }, {

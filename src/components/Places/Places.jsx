@@ -61,6 +61,7 @@ const Places = () => {
               return (
                 <PlacesMiniCard
                   key={place.id}
+                  id={place.id}
                   name={place.name}
                   image={place.image}
                 />

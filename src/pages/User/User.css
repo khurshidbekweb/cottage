@@ -13,8 +13,8 @@
 }
 .user-edit-btn{
     position: absolute;
-    bottom: -10px;
-    left: 350px; 
+    top: 30px;
+    right: 150px; 
     font-size: 55px;   
     font-weight: 900;
 }
@@ -45,6 +45,7 @@
 }
 .user-edit-btn:active{
     background: green;
+    border: 0;
 }
 .image-user-single{
     position: absolute;
@@ -172,7 +173,7 @@
     }
     .user-edit-btn{
         position: relative;
-        bottom: 550px;
+        top: -350px;
         left: 270px; 
         display: block;
         font-size: 30px;   

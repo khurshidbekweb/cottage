@@ -35,8 +35,10 @@ export const userUtils = {
   }) => {
     const formData = new FormData();
     formData.append("email", email);
-    for (const fC of favoriteCottages) {
-      formData.append("favoriteCottages", fC);
+    if (Array.isArray(favoriteCottages) && favoriteCottages.length) {
+      for (const fC of favoriteCottages) {
+        formData.append("favoriteCottages", fC);
+      }
     }
     formData.append("image", image);
     formData.append("name", name);

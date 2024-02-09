@@ -38,8 +38,8 @@ const User = () => {
       localStorage.setItem("user", JSON.stringify(userData?.data))
       saveData.current.classList.add("d-none")
       editImage.current.classList.add("d-none")
-      setEdit(true)
       await userUtils.getSingleUser()
+      setEdit(true)
     },
     onError: (err) => {
       toastify.errorMessage("Hatolik mavjud!!!")
@@ -50,7 +50,7 @@ const User = () => {
     e.preventDefault()
     userEdit.mutate({
       id: user.id,
-      phone: e.target.phone.value.slice(4) || "",
+      phone: e.target.phone.value.slice(4) === user.phone ? "" : e.target.phone.value.slice(4) ,
       email: e.target.email.value || "",
       name: e.target.name.value || "",
       image: e.target.userImage.files[0],
@@ -79,11 +79,9 @@ const User = () => {
 
             <div className="user-info-wrap">
             <div className="user-r">
-                <input disabled={edit}  className="user-input" defaultValue={user?.name?user.name:""} name="username" type="text"placeholder="Фамиля"/>
-                <input disabled={edit}  className="user-input" defaultValue={user?.username?user.username:""} name="name" type="text" placeholder="Имя"/>
-                <input disabled={edit} className="user-input" defaultValue={user?.email?user.email:""} name="email" type="email" placeholder="Email" />
+                <input disabled={edit}  className="user-input" defaultValue={user?.name?user.name:""} name="name" type="text"placeholder="Фамиля"/>
                 <input disabled={edit}  className="user-input" defaultValue={"+998"+user?.phone} name="phone" type="tel" placeholder="Nomer" />              
-                <input className="user-input" disabled={edit}  defaultValue={user?.smsCode ? user?.smsCode : ""} name="password" type="text" placeholder="password"/>
+                <input disabled={edit} className="user-input" defaultValue={user?.email?user.email:""} name="email" type="email" placeholder="Email" />
                 <p className="user-text d-none">
                   Что бы вы подать объявлении вам нужно вводить ваш серии номер
                   паспорта.

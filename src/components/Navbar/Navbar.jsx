@@ -55,8 +55,7 @@ const Navbar = () => {
   const logoutBtn =() => {
     signIn.current.classList.remove('d-none')
     registered.current.classList.add('d-none')  
-    localStorage.removeItem("accessToken")
-    localStorage.removeItem('refreshToken')
+    localStorage.clear()
     setModalOpen(false);
     setModalIsOpen(false)
     window.location.reload()

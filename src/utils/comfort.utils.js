@@ -18,7 +18,6 @@ export const comfortUtils = {
         return data
     },
     patchComfort: async ({id, image, name}) => {
-        console.log(name, id);
         const  {data} = await custimAxios.patch(`comfort/edit/${id}`, {
             image: image || undefined,
             name: name || undefined

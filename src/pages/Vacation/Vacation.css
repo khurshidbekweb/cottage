@@ -19,6 +19,36 @@
 }
 
 
+@media (max-width: 565px) {
+    .place-card-sort-big{
+        display: none;
+    }
+    .place-card-mini-sort{
+        display: block;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 17px;
+    }
+    .favorite-header {
+        margin: 32px 0 24px;
+        padding: 0;
+        font-family: sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 34px;
+        color: #2C2D2E;
+    }
+
+    .favorite-cards {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+}
+
 @media (max-width: 390px) {
     .place-card-sort-big{
         display: none;

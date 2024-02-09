@@ -69,7 +69,7 @@ export const ALL_DATA = {
       }
     })
   },
-  useCottageUSerId: () => {
+  useCottageUserId: () => {
     return useQuery({
       queryKey: [QUERY_KEYS.cottage_by_UserId],
       queryFn: cottageUtils.getCottageUser
