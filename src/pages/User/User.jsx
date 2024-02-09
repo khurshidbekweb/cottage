@@ -33,12 +33,13 @@ const User = () => {
   const [edit, setEdit] = useState(true)
   const userEdit = useMutation({
     mutationFn: userUtils.patchUser,
-    onSuccess: () => {
+    onSuccess: async () => {
       toastify.successMessage("User muvaffaqiyatli tahrirlandi")
       localStorage.setItem("user", JSON.stringify(userData?.data))
       saveData.current.classList.add("d-none")
       editImage.current.classList.add("d-none")
       setEdit(true)
+      await userUtils.getSingleUser()
     },
     onError: (err) => {
       toastify.errorMessage("Hatolik mavjud!!!")
@@ -49,12 +50,10 @@ const User = () => {
     e.preventDefault()
     userEdit.mutate({
       id: user.id,
-      phone: e.target.phone.value.slice(4),
-      email: e.target.email.value,
-      name: e.target.name.value,
-      username: e.target.username.value,
+      phone: e.target.phone.value.slice(4) || "",
+      email: e.target.email.value || "",
+      name: e.target.name.value || "",
       image: e.target.userImage.files[0],
-      password: e.target.password.value,
       favoriteCottages: fovarite
     })
   }

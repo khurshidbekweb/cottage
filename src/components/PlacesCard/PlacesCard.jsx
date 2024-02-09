@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import './PlacesCard.css'
 import { IMG_BASE_URL } from '../../constants/img.constants';
 const PlacesCard = (props) => {
+    console.log(props.id);
     return (
         <Link to={`/vacation/${props.id}`} className='places-card'>
             <p className='places-card-name'>{props.name}</p>

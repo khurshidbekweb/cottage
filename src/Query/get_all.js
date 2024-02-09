@@ -64,7 +64,7 @@ export const ALL_DATA = {
     return useQuery({
       queryKey: [QUERY_KEYS.cottage_by_filter, type, region,price],
       queryFn: async () => {
-        const data = await cottageUtils.getCottageFilter(type, region, price)
+        const data = await cottageUtils.getCottageFilter({type, region, price})
         return data
       }
     })

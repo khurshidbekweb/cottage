@@ -42,7 +42,7 @@ export const cottageUtils = {
     return data
   },
   getCottageFilter: async ({type, region, price}) => {
-    const {data} = await custimAxios.get('/cottage/filter/', {
+    const {data} = await custimAxios.get(`/cottage/filter/?type=${type}&region=${region}&price=${price}`, {
       type: type,
       region: region,
       price: price,

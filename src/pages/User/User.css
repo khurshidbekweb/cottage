@@ -19,7 +19,7 @@
     font-weight: 900;
 }
 .add-user-image-icons{
-    position: relative;
+    position: absolute;
     background: rgb(38, 9, 224);
     padding: 15px ;
     bottom: 0;

@@ -1,5 +1,4 @@
-import  custimAxios  from "../configs/axios.config"
-
+import custimAxios from "../configs/axios.config";
 
 export const userUtils = {
   getUsers: async () => {
@@ -7,8 +6,9 @@ export const userUtils = {
     return data;
   },
   getSingleUser: async () => {
-    const {data} = await custimAxios.get("/user/single")
-    return data
+    const { data } = await custimAxios.get("/user/single");
+    localStorage.setItem("user", JSON.stringify(data));
+    return data;
   },
   getUserDevice: async (userId) => {
     const { data } = await custimAxios.get(`user/user-device/${userId}`);
@@ -33,15 +33,15 @@ export const userUtils = {
     phone,
     username,
   }) => {
-    const formData = new FormData()
-    formData.append("email", email)
-    formData.append("favoriteCottages", favoriteCottages)
-    formData.append("image", image)
-    formData.append("name", name)
-    formData.append("password", password)
-    formData.append("phone", phone)
-    formData.append("username", username)
-    const { data } = await custimAxios.patch(`user/edit/${id}`, formData)
+    const formData = new FormData();
+    formData.append("email", email);
+    for (const fC of favoriteCottages) {
+      formData.append("favoriteCottages", fC);
+    }
+    formData.append("image", image);
+    formData.append("name", name);
+    formData.append("phone", phone);
+    const { data } = await custimAxios.patch(`user/edit/${id}`, formData);
     return data;
   },
   deletUser: async (id) => {
