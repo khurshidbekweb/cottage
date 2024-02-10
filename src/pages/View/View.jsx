@@ -45,8 +45,8 @@ const View = () => {
                   <div className="view-stars">
                     <AiFillStar className="view-star-active" />
                     <AiFillStar className="view-star-active" />
-                    <AiFillStar className="view-star" />
-                    <AiFillStar className="view-star" />
+                    <AiFillStar className="view-star-active" />
+                    <AiFillStar className="view-star-active" />
                     <AiFillStar className="view-star" />
                   </div>
 
