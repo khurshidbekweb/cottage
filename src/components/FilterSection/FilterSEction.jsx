@@ -1,12 +1,11 @@
 import React from 'react'
-import { ALL_DATA } from '../../Query/get_all';
 import DachaCard from '../DachaCards/DachaCard';
 import DachaMiniCard from '../DachaMiniCard/DachaMiniCard';
 
-function FilterSEction() {
-    const cottage = ALL_DATA.useCottage()
+function FilterSEction({cottageFilter}) {
+    const cottage = cottageFilter
   return (
-    <div className="container d-none">
+    <div className={cottage.data?.length?"container":"container d-none"}>
       <div className="dacha">
         <h2 className="dacha-top">Раздел Фильтр</h2>
 

@@ -15,12 +15,12 @@ import Notification from "../../Modals/Natification";
 import { useQueryClient } from "@tanstack/react-query";
 import { ALL_DATA } from "../../Query/get_all";
 import { IMG_BASE_URL } from "../../constants/img.constants";
+import { cottageUtils } from "../../utils/cottage.utils";
 // import userImagaDefault from '../../assets/images/user.svg'
 
 Modal.setAppElement("#root");
 
 const Navbar = () => {
-  // const user = JSON.parse(localStorage.getItem("user"))  
   const userImg = ALL_DATA.useSingleUser()?.data?.image
   const navigate = useNavigate()
   const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -49,6 +49,11 @@ const Navbar = () => {
   }
   const registered = useRef(null)
   const signIn = useRef(null)
+  const handleCottageType = async (e) => {
+    const type = await cottageUtils.getCottageType(e.target.value)
+    console.log(type);
+  }
+
 
   const accessToken = localStorage.getItem('accessToken')
   const refreshToken = localStorage.getItem('refreshToken')
@@ -96,7 +101,7 @@ const Navbar = () => {
           </button>
 
           <div className="modal-nav-menu">
-            <select className="modal-nav-select-one" name="dacha" id="dacha">
+            <select onChange={handleCottageType} className="modal-nav-select-one" name="dacha" id="dacha">
               {cottageType.data?.length &&
                 cottageType.data.map((e) => {
                   return (
@@ -162,6 +167,7 @@ const Navbar = () => {
             className="select fs-5 border-0"
             name="dacha"
             id="dacha"
+            onChange={handleCottageType}
           >
             {cottageType.data?.length &&
               cottageType.data.map((e) => {

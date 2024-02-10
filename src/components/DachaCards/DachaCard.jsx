@@ -41,6 +41,7 @@ const DachaCard = (props) => {
           height="278"
           alt="dacha"
         />
+        <div className="here-icons-wrap">
         <div className={`dacha-card-like ${props.cottage.isLiked?"dacha-card-like-active":""}`}>
           <FiHeart
             onClick={() => favoriteCottage(props.cottage.id)}
@@ -48,6 +49,7 @@ const DachaCard = (props) => {
               props.cottage.isLiked ? "dacha-heart-icon-active" : ""
             }`}
           />
+        </div>
         </div>
       </div>
       <div>

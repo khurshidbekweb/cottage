@@ -69,6 +69,12 @@ export const ALL_DATA = {
       }
     })
   },
+  useCottageByType: (type) => {
+    return useQuery({
+      queryKey: [QUERY_KEYS.cottageType_by_Id],
+      queryFn: async () => await cottageUtils.getCottageType(type)   
+    })
+  },
   useCottageUserId: () => {
     return useQuery({
       queryKey: [QUERY_KEYS.cottage_by_UserId],

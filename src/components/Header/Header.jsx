@@ -24,18 +24,17 @@ const Header = () => {
   const cottageType = ALL_DATA.useCottageType()?.data
   const place = ALL_DATA.usePlace()?.data
   const [filter, setFilter] = useState({
-    region: "",
+    place: "",
     type: "",
     price: ""
   })
   const cottageFilter = ALL_DATA.useCottageFilter(filter)
-  console.log(cottageFilter);
   const handleFilterCottage = (e) => {
     e.preventDefault()
     setFilter({
+      place: e.target.place.value,
+      type: e.target.type.value,
       price: e.target.price.value,
-      region: e.target.region.value,
-      type: e.target.cottageType.value
     })  
   }  
 
@@ -83,7 +82,7 @@ const Header = () => {
               </div>
               <div className="header-inner-box">
                 <p className="header-top">Тип отдыха</p>
-                <select className="header-select-two" name="dacha" id="dacha">
+                <select className="header-select-two" name="type" id="dacha">
                     {cottageType?.length && cottageType.map(el => {
                         return <option key={el.id} value={el.id}>{el.name}</option>
                     })}
@@ -118,7 +117,8 @@ const Header = () => {
             </button>
           </form>      
         </header>
-        <FilterSEction/>
+
+        <FilterSEction cottageFilter = {cottageFilter}/>
     </>
   );
 };
