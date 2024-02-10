@@ -30,18 +30,22 @@ const DachaMiniCard = (props) => {
   }
   return (
     <div className="mini-card-wrap">
-      <Link to={`/view/${props.cottage.id}`} className="dacha-mini-card shadow">
-      <div className="img-wrap">
-        <img className="view-img" src={`${BASE_URL_SERVER}${mainImg}`}  alt="dacha" />        
+        <Link to={`/view/${props.cottage.id}`} className="dacha-mini-card shadow">
+        <div className="img-wrap">
+          <img className="view-img" src={`${BASE_URL_SERVER}${mainImg}`}  alt="dacha" /> 
+          <p className={props.cottage.cottageStatus === "progress"? "no-active-text-mini":"d-none"}>Не активное</p>
+          <div className={props.cottage.cottageStatus === "progress" ? "overlay-img-card" : "d-none"}></div>
+        </div>
+        <div className="mini-card-info">
+          <h5 className="dmc-name">{props.cottage.name}</h5>
+          <p className="dmc-text">{props.cottage.region.name} {props.cottage.place.name}</p>
+        </div>
+      </Link>
+      <div className={props.cottage.cottageStatus === "progress" ? "d-none" : "mini-cart-heart-wrap"}>
+          <div className={`dmc-like ${props.cottage?.isLiked===true ? "dmc-like-active":""}`}>
+                <FiHeart onClick={()=> handlLiked(props.cottage.id)} className={`dacha-mini-heart-icon ${props.cottage.isLiked ===true ? "dacha-mini-heart-active" : ""}`} />
+          </div> 
       </div>
-      <div className="mini-card-info">
-        <h5 className="dmc-name">{props.cottage.name}</h5>
-        <p className="dmc-text">{props.cottage.region.name} {props.cottage.place.name}</p>
-      </div>
-    </Link>
-    <div className={`dmc-like ${props.cottage?.isLiked===true ? "dmc-like-active":""}`}>
-          <FiHeart onClick={()=> handlLiked(props.cottage.id)} className={`dacha-mini-heart-icon ${props.cottage.isLiked ===true ? "dacha-mini-heart-active" : ""}`} />
-    </div> 
     </div>
   );
 };

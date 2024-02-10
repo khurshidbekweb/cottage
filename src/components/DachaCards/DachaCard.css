@@ -46,7 +46,28 @@
     border: 1px solid rgba(44, 45, 46, 0.25);
     border-radius: 35px;
 }
-
+.main-img-head-card{
+    position: relative;
+}
+.overlay-main-image-card{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(54, 53, 53, 0.605);
+    z-index: 2;
+    border-radius: 15px 15px 5px 5px;
+}
+.no-active-text{
+    position: absolute;
+    top: 120px;
+    color: white;
+    font-weight: 800;
+    font-size: 20px;
+    left: 95px;
+    z-index: 3;
+}
 .dacha-card-like {
     position: absolute;
     top: 262px;

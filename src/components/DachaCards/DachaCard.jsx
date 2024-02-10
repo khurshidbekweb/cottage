@@ -33,7 +33,7 @@ const DachaCard = (props) => {
     }
   return (
     <div className="dacha-card">
-      <div>
+      <div className="main-img-head-card">        
         <img
           className="main-img-dacha"
           src={`${IMG_BASE_URL}${mainImage}`}
@@ -41,16 +41,18 @@ const DachaCard = (props) => {
           height="278"
           alt="dacha"
         />
-        <div className="here-icons-wrap">
-        <div className={`dacha-card-like ${props.cottage.isLiked?"dacha-card-like-active":""}`}>
-          <FiHeart
-            onClick={() => favoriteCottage(props.cottage.id)}
-            className={`dacha-heart-icon ${
-              props.cottage.isLiked ? "dacha-heart-icon-active" : ""
-            }`}
-          />
+        <div className={props.cottage.cottageStatus === "progress" ? "here-icons-wrap d-none" : "here-icons-wrap"}>
+            <div className={`dacha-card-like ${props.cottage.isLiked?"dacha-card-like-active":""}`}>
+              <FiHeart
+                onClick={() => favoriteCottage(props.cottage.id)}
+                className={`dacha-heart-icon ${
+                  props.cottage.isLiked ? "dacha-heart-icon-active" : ""
+                }`}
+              />
+            </div>
         </div>
-        </div>
+        <p className={props.cottage.cottageStatus === "progress"? "no-active-text":"no-active-text d-none"}>Не активное</p>
+        <div className={props.cottage.cottageStatus === "progress" ? "overlay-main-image-card" : "overlay-main-image-card d-none"}></div>
       </div>
       <div>
         <h5 className="dacha-card-name">{props.cottage.name}</h5>
