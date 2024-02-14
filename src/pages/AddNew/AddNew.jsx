@@ -39,7 +39,6 @@ async function getBase64Full(file) {
 const AddNew = () => {
   const mainImage = useRef(null)
   const childImagesWrapper =useRef(null)
-  const navigate = useNavigate()
   const [cottageInfo, setCottageInfo] = useState({
     dachaType: [],
     response: [],
@@ -97,7 +96,7 @@ const AddNew = () => {
   };
   const handlCottage = async (e) => {
     e.preventDefault();
-    const images = [];
+    let images = [];
     for (let i = 0; i < e.target.childimg.files.length; i++) {
       images.push(e.target.childimg.files[i]);
     }
@@ -115,12 +114,9 @@ const AddNew = () => {
       lattitude: "" || undefined,
       longitude: "" || undefined,
     });
-    navigate("/add-new")
-    e.target.cottagename.value = ""
-    e.target.childimg.files = [];
-    e.target.price.value = "";
-    e.target.priceweekend.value = ""
-    e.target.discription.value = ""
+    childImagesWrapper.current.innerHTML= ""
+    mainImage.current.classList.add("d-none");
+    e.target.reset();
   };
   console.log(cottage.variables);
   const handleMainImage = async (e) => {
@@ -136,6 +132,7 @@ const AddNew = () => {
       for(const image of images){
           childImagesWrapper.current.insertAdjacentHTML("beforeend", `<img src=${image} width="100" height="100" alt="child image" className="overflow-hidden"/>`)
       }
+
     };
 
   return (
@@ -143,7 +140,7 @@ const AddNew = () => {
       <Navbar/>
       <div className="container">
         <div className="addnew">
-          <Link to='/announcement' className="my-cottage-link">My cottage</Link>
+          <Link to='/announcement' className="my-cottage-link">My cottages</Link>
             <h3 className="addnew-header">Фото</h3>            
             <form onSubmit={handlCottage}>
                   <div className="addnew-imgs">
@@ -161,34 +158,39 @@ const AddNew = () => {
                         <p className="addnew-add-text">Добавить фото</p>
                       </label>
                     </div>
-                    <div ref={childImagesWrapper} className="image-child-wrap ">
-                      
+                    <div ref={childImagesWrapper} className="image-child-wrap ">                      
                     </div>
                   </div>
 
                   <div>
                       <h3 className="addnew-header">Регион и тип отдыха</h3>     
                       <h5>Cottage name</h5>
-                    <input type="text" name="cottagename" className="form-control w-50 my-4" placeholder="Name"/>
-                      <h3 className="addnew-label mb-3">Viloyat</h3>                      
-                      <select name="region" className="addnew-select d-block form-select w-25">
-                        {region.data?.length && region.data.map(e => {
-                          return <option key={e.id}  value={e.id}>{e.name}</option>
-                        })}
-                      </select>
-                      <hr className="addnew-hr" />
+                      <input type="text" name="cottagename" className="add-new-title-main my-4" placeholder="Name"/>
+                      <div className="wrap-region-place">
 
-                      <h3 className="addnew-label mb-3">Joylashuv</h3>
-                      <select name="place" className="addnew-select">
-                        {place.data?.length && place.data.map(e => {
-                          return <option key={e.id} name='place' value={e.id}>{e.name}</option>
-                        })}
-                      </select>
-                      <hr className="addnew-hr" />
+                          <div className="mini-wrap-select">
+                            <h3 className="addnew-label mb-3">Viloyat</h3>                      
+                            <select name="region" className="addnew-select form-select w-100">
+                              {region.data?.length && region.data.map(e => {
+                                return <option key={e.id}  value={e.id}>{e.name}</option>
+                              })}
+                            </select>
+                          </div>
+                          
+                          <div className="mini-wrap-select">
+                            <h3 className="addnew-label mb-3">Joylashuv</h3>
+                            <select name="place" className="addnew-select  d-block form-select w-100">
+                              {place.data?.length && place.data.map(e => {
+                                return <option key={e.id} name='place' value={e.id}>{e.name}</option>
+                              })}
+                            </select>
+                          </div>
+                      </div>
+
                       <h5>Price</h5>
-                      <div className="price-wrap w-50 d-flex gap-2 mb-4">
-                          <input type="number" name="price" className="form-control" placeholder="Price"/>
-                          <input type="number" name="priceweekend" className="form-control" placeholder="Peice Weekend"/>
+                      <div className="price-wrap  d-flex gap-2 mb-4">
+                          <input type="number" name="price" className="form-control w-100" placeholder="Price"/>
+                          <input type="number" name="priceweekend" className="form-control w-100" placeholder="Peice Weekend"/>
                       </div>
 
                       <h3 className="addnew-label mb-3">Dacha turi</h3>
