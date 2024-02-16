@@ -115,10 +115,9 @@ const AddNew = () => {
       longitude: "" || undefined,
     });
     childImagesWrapper.current.innerHTML= ""
-    mainImage.current.classList.add("d-none");
+    mainImage.current.setAttribute("src", Dacha3);
     e.target.reset();
   };
-  console.log(cottage.variables);
   const handleMainImage = async (e) => {
     const mainImgUrl = await getBase64Full(e.target.files[0]);
     mainImage.current.classList.remove("d-none");
