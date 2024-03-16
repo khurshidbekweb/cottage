@@ -5,7 +5,9 @@ import Places from "../../components/Places/Places";
 import Dacha from "../../components/Dacha/Dacha";
 import Footer from "../../components/Footer/Footer";
 
-const Home = () => {
+const 
+
+Home = () => {
   return (
     <>
       <Navbar />
