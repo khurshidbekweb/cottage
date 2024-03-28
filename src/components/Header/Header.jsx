@@ -88,7 +88,7 @@ const Header = () => {
                     })}
                 </select>
               </div>
-              <div className="header-inner-box">
+              <div className="header-inner-box-search">
                 <p className="header-top-usd">Цена</p>
                 <input
                   className="header-nums"

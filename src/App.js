@@ -18,6 +18,7 @@ import { AuthContextProvider } from './context/AuthContext';
 import Protected from './components/Protected';
 import Vacation from './pages/Vacation/Vacation';
 import Announcoment from './pages/Announcement/Announcoment';
+import Loader from './components/Loader/Loader';
 
 function App() {
 
