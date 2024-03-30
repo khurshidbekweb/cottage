@@ -19,8 +19,7 @@ const Home = () => {
     queryFn: cottageUtils.getCottageTop,
     enabled: false
   })
-  console.log(isLoading);
-
+  
   if(isLoading)
   return <Loader/>
 

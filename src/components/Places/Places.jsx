@@ -5,14 +5,18 @@ import PlacesMiniCard from "../PlacesMiniCard/PlacesMiniCard";
 import {
   Navigation,
   Pagination,
-  Scrollbar,
   A11y,
   Autoplay,
+  Keyboard,
   Parallax,
 } from "swiper/modules";
 
 import PlacesCard from "../PlacesCard/PlacesCard";
-import "swiper/css/bundle";
+// import "swiper/css/bundle";
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/effect-coverflow';
+import 'swiper/css/pagination';
 
 import { ALL_DATA } from "../../Query/get_all";
 const Places = () => {
@@ -27,7 +31,6 @@ const Places = () => {
           modules={[
             Navigation,
             Pagination,
-            Scrollbar,
             A11y,
             Autoplay,
             Parallax,
@@ -55,7 +58,36 @@ const Places = () => {
             })}
         </Swiper>
 
-        <div className="places-cards">
+        <Swiper
+            className="swipper"            
+            slidesPerView={3}
+            spaceBetween={30}
+            keyboard={{
+              enabled: true,
+            }}
+            pagination={{
+              clickable: true,
+            }}
+            navigation={true}
+            modules={[Keyboard, Pagination, Navigation]}
+          >
+            {places.data?.length &&
+              places?.data.map((place) => {
+                return (
+                  <SwiperSlide key={place.id}>
+                      <PlacesMiniCard
+                      key={place.id}
+                      id={place.id}
+                      name={place.name}
+                      image={place.image}
+                    />
+                  </SwiperSlide>
+                );
+            })}
+          </Swiper>
+
+
+        {/* <div className="places-cards">
           {places.data?.length &&
             places?.data.map((place) => {
               return (
@@ -67,7 +99,7 @@ const Places = () => {
                 />
               );
             })}
-        </div>
+        </div> */}
       </div>
     </div>
   );

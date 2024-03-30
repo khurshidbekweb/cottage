@@ -88,7 +88,7 @@ const Header = () => {
                     })}
                 </select>
               </div>
-              <div className="header-inner-box-search">
+              <div className="header-inner-box">
                 <p className="header-top-usd">Цена</p>
                 <input
                   className="header-nums"
@@ -99,7 +99,7 @@ const Header = () => {
               </div>
             </div>
 
-            <button type="submit" className="header-search">
+            <button type="submit" className="header-search btn">
               <img
                 className="mini-search"
                 src={MiniSearch}
