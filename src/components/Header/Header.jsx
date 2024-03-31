@@ -47,7 +47,7 @@ const Header = () => {
             spaceBetween={1}
             slidesPerView={1}
             autoplay={{
-              delay: 2500,
+              delay: 5000,
             }}
             parallax={{
               enabled: true,
