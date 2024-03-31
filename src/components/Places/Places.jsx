@@ -1,105 +1,93 @@
 import "./Places.css";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-import PlacesMiniCard from "../PlacesMiniCard/PlacesMiniCard";
 import {
   Navigation,
-  Pagination,
-  A11y,
-  Autoplay,
   Keyboard,
-  Parallax,
 } from "swiper/modules";
 
+
 import PlacesCard from "../PlacesCard/PlacesCard";
-// import "swiper/css/bundle";
 // Import Swiper styles
+import "swiper/css/bundle";
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 
 import { ALL_DATA } from "../../Query/get_all";
+import { useRef } from "react";
 const Places = () => {
   const places = ALL_DATA.usePlace()
+  const prevPlaceElm = useRef(null)
+  const nextPlaceElm = useRef(null)
   return (
     <div className="container">
       <div className="places">
         <h2 className="places-top">Месты Отдыха</h2>
-
         <Swiper
-          className="places-swiper"
-          modules={[
-            Navigation,
-            Pagination,
-            A11y,
-            Autoplay,
-            Parallax,
-          ]}
-          spaceBetween={30}
-          slidesPerView={4}
-          autoplay={{
-            delay: 2000,
-          }}
-          parallax={{
-            enabled: true,
-          }}
-        >
-          {places?.data?.length &&
-            places.data.map((place) => {
-              return (
-                <SwiperSlide key={place.id}>
-                  <PlacesCard
-                    id={place.id}
-                    name={place.name}
-                    img={place.image}
-                  />
-                </SwiperSlide>
-              );
-            })}
-        </Swiper>
-
-        <Swiper
-            className="swipper"            
-            slidesPerView={3}
-            spaceBetween={30}
+            className="swiper-place"            
+            slidesPerView={5}
+            spaceBetween={25}
             keyboard={{
               enabled: true,
             }}
-            pagination={{
-              clickable: true,
+            navigation={{
+              prevEl: prevPlaceElm.current,
+              nextEl:nextPlaceElm.current
             }}
-            navigation={true}
-            modules={[Keyboard, Pagination, Navigation]}
+            onBeforeInit={(swiper) => {
+              swiper.params.navigation.prevEl = prevPlaceElm.current
+              swiper.params.navigation.nextEl = nextPlaceElm.current
+            }}
+            modules={[Keyboard, Navigation]}
           >
             {places.data?.length &&
               places?.data.map((place) => {
                 return (
-                  <SwiperSlide key={place.id}>
-                      <PlacesMiniCard
-                      key={place.id}
-                      id={place.id}
-                      name={place.name}
-                      image={place.image}
-                    />
+                  <SwiperSlide key={place.id} className="swiper-slide">
+                      <PlacesCard
+                        id={place.id}
+                        name={place.name}
+                        img={place.image}
+                      />
                   </SwiperSlide>
                 );
             })}
           </Swiper>
-
-
-        {/* <div className="places-cards">
-          {places.data?.length &&
-            places?.data.map((place) => {
-              return (
-                <PlacesMiniCard
-                  key={place.id}
-                  id={place.id}
-                  name={place.name}
-                  image={place.image}
-                />
-              );
+          {/* Swiper mini */}
+          <Swiper
+            className="swiper-place-mini"            
+            slidesPerView={3}
+            spaceBetween={10}
+            keyboard={{
+              enabled: true,
+            }}
+            navigation={{
+              prevEl: prevPlaceElm.current,
+              nextEl:nextPlaceElm.current
+            }}
+            onBeforeInit={(swiper) => {
+              swiper.params.navigation.prevEl = prevPlaceElm.current
+              swiper.params.navigation.nextEl = nextPlaceElm.current
+            }}
+            modules={[Keyboard, Navigation]}
+          >
+            {places.data?.length &&
+              places?.data.map((place) => {
+                return (
+                  <SwiperSlide key={place.id} className="swiper-slide-place">
+                      <PlacesCard
+                        id={place.id}
+                        name={place.name}
+                        img={place.image}
+                      />
+                  </SwiperSlide>
+                );
             })}
-        </div> */}
+          </Swiper>
+          
+          <div ref={prevPlaceElm} className="prevPlace"><i class='bx bx-left-arrow-alt' ></i></div>
+          <div ref={nextPlaceElm} className="nextPlace"><i class='bx bx-right-arrow-alt'></i></div>
       </div>
     </div>
   );

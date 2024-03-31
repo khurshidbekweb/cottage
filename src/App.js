@@ -18,7 +18,8 @@ import { AuthContextProvider } from './context/AuthContext';
 import Protected from './components/Protected';
 import Vacation from './pages/Vacation/Vacation';
 import Announcoment from './pages/Announcement/Announcoment';
-import Loader from './components/Loader/Loader';
+import SwiperPage from './pages/View/SwiperPage';
+// import Swiper './'
 
 function App() {
 
@@ -47,6 +48,7 @@ function App() {
           <Route path='/add-new' element={<Protected><AddNew/></Protected>} />
           <Route path='/vacation/:id' element={<Protected><Vacation/></Protected>}/>
           <Route path='/announcement' element={<Protected><Announcoment/></Protected>}/>
+          <Route path='/swiper' element={<SwiperPage/>}/>
         </Routes>
       </AuthContextProvider>
     </div>

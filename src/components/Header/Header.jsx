@@ -42,7 +42,7 @@ const Header = () => {
     <>
         <header className="header">
           <Swiper
-          className="swiper"
+          className="swiper-header"
             modules={[Navigation, A11y, Scrollbar, Autoplay, Parallax]}
             spaceBetween={1}
             slidesPerView={1}
@@ -54,7 +54,7 @@ const Header = () => {
             }}
           >      
             {cottageTop?.length && cottageTop.filter(topCott => topCott.isTop === true).map(el => {
-              return <SwiperSlide key={el.id}>
+              return <SwiperSlide key={el.id} className="swiper-slide-header">
                         <div className="wrap-ads">
                           <img src={`${BASE_URL_SERVER}${el.images.find(mainIm => mainIm.isMainImage=== true).image}`} alt="bgimg" className="bg-img" />            
                             <div className="info-card">

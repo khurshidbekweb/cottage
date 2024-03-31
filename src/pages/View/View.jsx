@@ -7,11 +7,20 @@ import { IMG_BASE_URL } from "../../constants/img.constants";
 import { useParams } from "react-router-dom";
 import { ALL_DATA } from "../../Query/get_all";
 import MiniNaw from "../../components/MiniNaw/MiniNaw";
+import Swiper from "swiper";
+import { SwiperSlide } from "swiper/react";
+import { FreeMode, Navigation, Thumbs } from 'swiper/modules';
+import { useState } from "react";
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/free-mode';
+import 'swiper/css/navigation';
+import 'swiper/css/thumbs';
 
 const View = () => {
   const params = useParams();
 
-  const cottage = ALL_DATA.useCottage()
+  const cottage = ALL_DATA.useCottage();
   const cottageView = cottage?.data?.find((e) => e.id === params.id);
   const mainImage = cottageView?.images?.find(
     (e) => e.isMainImage === true
