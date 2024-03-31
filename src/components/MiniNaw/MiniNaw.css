@@ -9,14 +9,14 @@
 @media (max-width: 576px) {
     .mini-naw {
         position: fixed;
-        bottom: 0;
+        bottom: -3px;
         width: 100%;
         padding: 20px;
         display: flex;
         align-items: center;
         justify-content: space-between;
         background-color: aliceblue;
-        z-index: 99999999;
+        z-index: 999999999999;
         
     }
     .favorite{
