@@ -1,0 +1,9 @@
+.dacha-filter{
+    margin-top: 150px;
+}
+
+@media only  screen and (max-width: 560px) {
+    .dacha-filter{
+        margin-top: 90px;
+    }
+}

@@ -19,6 +19,7 @@ import Protected from './components/Protected';
 import Vacation from './pages/Vacation/Vacation';
 import Announcoment from './pages/Announcement/Announcoment';
 import SwiperPage from './pages/View/SwiperPage';
+import ErrorPage from './pages/ErrorPage/ErrorPage';
 // import Swiper './'
 
 function App() {
@@ -49,6 +50,7 @@ function App() {
           <Route path='/vacation/:id' element={<Protected><Vacation/></Protected>}/>
           <Route path='/announcement' element={<Protected><Announcoment/></Protected>}/>
           <Route path='/swiper' element={<SwiperPage/>}/>
+          <Route path='*' element={<ErrorPage/>} />
         </Routes>
       </AuthContextProvider>
     </div>

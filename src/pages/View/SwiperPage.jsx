@@ -17,6 +17,7 @@ const SwiperPage = () => {
 
     return (
         <>
+        <h1>Hello</h1>
         <Swiper
             style={{
               '--swiper-navigation-color': '#fff',
@@ -30,6 +31,7 @@ const SwiperPage = () => {
           >
         <SwiperSlide>
           <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+          <h1>Salom</h1>
         </SwiperSlide>
         <SwiperSlide>
           <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
