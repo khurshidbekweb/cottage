@@ -18,8 +18,9 @@ import { ALL_DATA } from "../../Query/get_all";
 import { BASE_URL_SERVER } from "../../constants/server.constants";
 import { useState } from "react";
 import FilterSEction from "../FilterSection/FilterSEction";
+import { HeaderLang } from '../../configs/language'
 
-const Header = () => {
+const Header = ({language}) => {
   const cottageTop = ALL_DATA.useCottage()?.data
   const cottageType = ALL_DATA.useCottageType()?.data
   const place = ALL_DATA.usePlace()?.data
@@ -37,7 +38,6 @@ const Header = () => {
       price: e.target.price.value,
     })  
   }  
-
   return (
     <>
         <header className="header">
@@ -58,10 +58,10 @@ const Header = () => {
                         <div className="wrap-ads">
                           <img src={`${BASE_URL_SERVER}${el.images.find(mainIm => mainIm.isMainImage=== true).image}`} alt="bgimg" className="bg-img" />            
                             <div className="info-card">
-                              <h1 className="header-text">Шейхская резиденция</h1>
+                              <h1 className="header-text"> {HeaderLang[language].title} </h1>;     
                               <h2 className="header-num">${el.price}</h2>
                               <Link to={`/view/${el.id}`} className="header-btn">
-                                Просмотреть
+                                  {HeaderLang[language].btn}
                               </Link>
                             </div>            
                         </div>

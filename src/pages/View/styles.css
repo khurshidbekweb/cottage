@@ -60,6 +60,10 @@
   .mySwiper .swiper-slide-thumb-active {
     opacity: 1;
   }
+
+  .swiper-slide-active{
+    opacity: 1;
+  }
   
   .swiper-slide img {
     display: block;

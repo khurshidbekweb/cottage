@@ -38,20 +38,21 @@
     position: absolute;
     padding: 80px 0;
     top: 0;
+    width: 600px;
     margin: 0 auto;
-    left: 450px;
+    left: 430px;
     z-index: 999999999999999999999;
 }
 
 .header-text {
-    margin: 0;
-    padding: 0;
     font-family: sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 56px;
     line-height: 68px;
     color: #FFFFFF;
+    margin: 0;
+    padding: 0;
 }
 
 .header-num {
@@ -245,8 +246,9 @@
         position: absolute;
         padding: 80px 0;
         margin: 0 auto;
+        width: inherit;
         top: -50px;
-        left: 80px;
+        left: 0px;
         z-index: 999999999999999999999;
     }
     .bg-img{
@@ -296,7 +298,7 @@
     }
     
     .header-num {
-        margin: 12px 0 24px;
+        margin: 0px 0 24px;
         padding: 0;
         font-family: sans-serif;
         font-style: normal;
@@ -435,13 +437,13 @@
         position: absolute;
         padding: 80px 0;
         margin: 0 auto;
+        width: inherit;
         top: -30px;
-        left: 65px;
         z-index: 999999999999999999999;
     }
 
     .header-text {
-        margin: 0;
+        margin: -20px 0;
         padding: 0;
         font-family: sans-serif;
         font-style: normal;

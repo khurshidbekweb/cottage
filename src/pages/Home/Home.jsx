@@ -12,7 +12,7 @@ import { cottageUtils } from "../../utils/cottage.utils";
 
 
 
-const Home = () => {
+const Home = ({language}) => {
 
   const {isLoading} = useQuery({
     queryKey: [QUERY_KEYS.cottages],
@@ -27,7 +27,7 @@ const Home = () => {
     <>
       <Navbar />
       <MiniNaw />
-      <Header />
+      <Header language ={language} />
       <Places />
       <Dacha />
       <Footer />
