@@ -25,11 +25,11 @@ const Home = ({language}) => {
 
   return (
     <>
-      <Navbar />
+      <Navbar language ={language} />
       <MiniNaw />
       <Header language ={language} />
-      <Places />
-      <Dacha />
+      <Places language = {language} />
+      <Dacha language ={language} />
       <Footer />
     </>
   );

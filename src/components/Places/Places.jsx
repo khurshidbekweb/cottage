@@ -16,14 +16,15 @@ import 'swiper/css/pagination';
 
 import { ALL_DATA } from "../../Query/get_all";
 import { useRef } from "react";
-const Places = () => {
+import { PlaseLeng } from "../../configs/language";
+const Places = ({language}) => {
   const places = ALL_DATA.usePlace()
   const prevPlaceElm = useRef(null)
   const nextPlaceElm = useRef(null)
   return (
     <div className="container">
       <div className="places">
-        <h2 className="places-top">Месты Отдыха</h2>
+        <h2 className="places-top">{PlaseLeng[language]}</h2>
         <Swiper
             className="swiper-place"            
             slidesPerView={5}

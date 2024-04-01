@@ -1,23 +1,18 @@
-export const NavLeng = [
-    {
-        id: 1,
-        content: {
-            uz: "Kontakt",
-            ru: "Контакт",
-            en: "Contact"
+export const NavLeng = {
+        uz: {
+            contact: "Kontaket",
+            set: "Ijtimoiy tarmoqlar"
         },
-        to: '/contact'
-    },
-    {
-        id: 2,
-        content: {
-            uz: "Ijtimoiy tarmoqlar",
-            ru: "Социальный сети",
-            en: "Social networks"
+        ru: {
+            contact : "Контакт",
+            set: "Социальный сети",
+        },
+        en: {
+            contact : "Contact",
+            set: "Social networks",
         }
-    }
-]
-export const HeaderLang = {    
+}
+export const HeaderLang = {  
     uz: {
         title: "Shaxsiy dacha",
         btn: "Ko'rish"
@@ -30,4 +25,14 @@ export const HeaderLang = {
         title: "Sheikh's residence",
         btn: "View"
     }    
-    }
+}
+export const PlaseLeng = {
+    uz: "Dam olish maskanlari",
+    ru: "Месты Отдыха",
+    en: "Vacation Place"
+}
+export const RecamudetLeng = {
+    uz: "Tavsiya etilgan",
+    ru: "Рекомендуемые",
+    en: "Recommended"
+}

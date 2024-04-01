@@ -16,11 +16,12 @@ import { useQueryClient } from "@tanstack/react-query";
 import { ALL_DATA } from "../../Query/get_all";
 import { IMG_BASE_URL } from "../../constants/img.constants";
 import { cottageUtils } from "../../utils/cottage.utils";
+import { NavLeng } from "../../configs/language";
 // import userImagaDefault from '../../assets/images/user.svg'
 
 Modal.setAppElement("#root");
 
-const Navbar = () => {
+const Navbar = (props) => {
   const userImg = ALL_DATA.useSingleUser()?.data?.image
   const navigate = useNavigate()
   const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -113,11 +114,11 @@ const Navbar = () => {
             </select>
 
             <Link to="/contact" className="modal-nav-contact">
-              Контакты
+              {NavLeng[props.language].contact}
             </Link>
-            <select className="modal-nav-select-two" name="social" id="social">
+            <select defaultValue="socials" className="modal-nav-select-two" name="social" id="social">
               <option hidden value="socials">
-                Социальный сети
+              {NavLeng[props.language].set}
               </option>
               <option value="telegram">Telegram</option>
               <option value="facebook">Facebook</option>
@@ -180,12 +181,12 @@ const Navbar = () => {
           </select>
 
           <Link to="/contact" className="contact d-block">
-            Контакты
+            {NavLeng[props.language].contact}
           </Link>
 
           <select className="select-two form-select" name="social" id="social" onChange={jumpLink}>
             <option selected value="socials">
-              Социальный сети
+            {NavLeng[props.language].set}
             </option>
             <option value="https://t.me/dachi_v_gorax">Telegram</option>
             <option value="https://facebook.com">Facebook</option>
