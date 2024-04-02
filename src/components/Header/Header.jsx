@@ -18,7 +18,7 @@ import { ALL_DATA } from "../../Query/get_all";
 import { BASE_URL_SERVER } from "../../constants/server.constants";
 import { useState } from "react";
 import FilterSEction from "../FilterSection/FilterSEction";
-import { HeaderLang } from '../../configs/language'
+import { FilterLeng, HeaderLang } from '../../configs/language'
 
 const Header = ({language}) => {
   const cottageTop = ALL_DATA.useCottage()?.data
@@ -58,7 +58,7 @@ const Header = ({language}) => {
                         <div className="wrap-ads">
                           <img src={`${BASE_URL_SERVER}${el.images.find(mainIm => mainIm.isMainImage=== true).image}`} alt="bgimg" className="bg-img" />            
                             <div className="info-card">
-                              <h1 className="header-text"> {HeaderLang[language].title} </h1>;     
+                              <h1 className="header-text"> {el.name} </h1>;     
                               <h2 className="header-num">${el.price}</h2>
                               <Link to={`/view/${el.id}`} className="header-btn">
                                   {HeaderLang[language].btn}
@@ -73,7 +73,7 @@ const Header = ({language}) => {
           <form className="header-menu" onSubmit={handleFilterCottage}>
             <div className="header-inner">
               <div className="header-inner-box">
-                <p className="header-top">Расположение</p>
+                <p className="header-top">{FilterLeng[language].place}</p>
                 <select className="header-select-one" name="place" id="place">
                     {place?.length && place.map(el => {
                       return <option key={el.id} value={el.id}>{el.name}</option>
@@ -81,7 +81,7 @@ const Header = ({language}) => {
                 </select>
               </div>
               <div className="header-inner-box">
-                <p className="header-top">Тип отдыха</p>
+                <p className="header-top">{FilterLeng[language].tip}</p>
                 <select className="header-select-two" name="type" id="dacha">
                     {cottageType?.length && cottageType.map(el => {
                         return <option key={el.id} value={el.id}>{el.name}</option>
@@ -89,7 +89,7 @@ const Header = ({language}) => {
                 </select>
               </div>
               <div className="header-inner-box">
-                <p className="header-top-usd">Цена</p>
+                <p className="header-top-usd">{FilterLeng[language].price}</p>
                 <input
                   className="header-nums"
                   type="text"

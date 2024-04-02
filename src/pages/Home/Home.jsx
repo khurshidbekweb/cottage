@@ -8,7 +8,6 @@ import Loader from "../../components/Loader/Loader";
 import { useQuery } from "@tanstack/react-query";
 import { QUERY_KEYS } from "../../Query/query-keys";
 import { cottageUtils } from "../../utils/cottage.utils";
-// import { createFileRoute } from '@tanstack/react-router'
 
 
 
@@ -30,7 +29,7 @@ const Home = ({language}) => {
       <Header language ={language} />
       <Places language = {language} />
       <Dacha language ={language} />
-      <Footer />
+      <Footer language ={language} />
     </>
   );
 };

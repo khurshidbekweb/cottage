@@ -114,11 +114,13 @@ const Navbar = (props) => {
             </select>
 
             <Link to="/contact" className="modal-nav-contact">
-              {NavLeng[props.language].contact}
+              {/* {NavLeng[props.language].connection} */}
+              contact
             </Link>
             <select defaultValue="socials" className="modal-nav-select-two" name="social" id="social">
               <option hidden value="socials">
-              {NavLeng[props.language].set}
+              {/* {NavLeng[props.language].set} */}
+              Социальный сети
               </option>
               <option value="telegram">Telegram</option>
               <option value="facebook">Facebook</option>
@@ -181,12 +183,14 @@ const Navbar = (props) => {
           </select>
 
           <Link to="/contact" className="contact d-block">
-            {NavLeng[props.language].contact}
+              {/* {NavLeng[props.language].connection} */}
+              Контакты
           </Link>
 
           <select className="select-two form-select" name="social" id="social" onChange={jumpLink}>
             <option selected value="socials">
-            {NavLeng[props.language].set}
+            {/* {NavLeng[props.language].set} */}
+            Социальный сети
             </option>
             <option value="https://t.me/dachi_v_gorax">Telegram</option>
             <option value="https://facebook.com">Facebook</option>

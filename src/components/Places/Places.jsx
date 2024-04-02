@@ -87,8 +87,8 @@ const Places = ({language}) => {
             })}
           </Swiper>
           
-          <div ref={prevPlaceElm} className="prevPlace"><i class='bx bx-left-arrow-alt' ></i></div>
-          <div ref={nextPlaceElm} className="nextPlace"><i class='bx bx-right-arrow-alt'></i></div>
+          <div ref={prevPlaceElm} className="prevPlace"><i className='bx bx-left-arrow-alt' ></i></div>
+          <div ref={nextPlaceElm} className="nextPlace"><i className='bx bx-right-arrow-alt'></i></div>
       </div>
     </div>
   );

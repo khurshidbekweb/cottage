@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { IMG_BASE_URL } from "../../constants/img.constants";
 import { useQueryClient } from "@tanstack/react-query";
 import { QUERY_KEYS } from "../../Query/query-keys";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const DachaCard = (props) => {
   const queryClient = useQueryClient();
@@ -34,12 +35,13 @@ const DachaCard = (props) => {
   return (
     <div className="dacha-card">
       <div className="main-img-head-card">        
-        <img
+        <LazyLoadImage
           className="main-img-dacha"
           src={`${IMG_BASE_URL}${mainImage}`}
           width="326"
           height="278"
           alt="dacha"
+          effect="blur"
         />
         <div className={props.cottage.cottageStatus === "progress" ? "here-icons-wrap d-none" : "here-icons-wrap"}>
             <div className={`dacha-card-like ${props.cottage.isLiked?"dacha-card-like-active":""}`}>

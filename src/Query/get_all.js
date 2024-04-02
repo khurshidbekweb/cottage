@@ -131,5 +131,14 @@ export const ALL_DATA = {
         return data
       }
     })
-  },  
+  },
+  useAllNotification: () => {
+    return useQuery({
+      queryKey: [QUERY_KEYS.all_notification],
+      queryFn: async () => {
+        const data = await notificationUtils.getNotification()
+        return data
+      }
+    })
+  }  
 };

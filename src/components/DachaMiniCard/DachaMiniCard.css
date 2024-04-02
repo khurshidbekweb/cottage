@@ -202,28 +202,30 @@
     .dacha-mini-heart-active {
         fill: red;
         color: red;
-    }               
+    }  
+    .mini-card-wrap{
+        display: block;
+        position: relative;
+        width: 47% !important;
+        padding: 0 !important;
+    }             
     .dacha-mini-card {
         display: block;
-        max-width: 166px;
+        width: 100% !important;
         background: #FFFFFF;
         padding: 0 !important;
         text-decoration: none;
         border-radius: 20px 20px 10px 10px;
-    }
-    .mini-card-wrap{
-        display: block;
-        position: relative;
-    }
+    }    
     .mini-card-info{
         padding: 0 10px;
     }
     .img-wrap{
-        width: 100% !important;
+        width: 166px !important;
         padding: 0 !important;
     }
     .view-img{
-        width: 166px !important;
+        max-width: 160px !important;
         height: 150px !important;
         top: 0;
         border-radius: 10px 10px 0 0 !important;
@@ -323,10 +325,10 @@
         padding: 0 !important;
     }
     .view-img{
-        width: 100% !important;
+        max-width: 154px !important;
         height: 150px !important;
         top: 0;
         border-radius: 10px 10px 0 0 !important;
-        margin: 0 !important;
+        margin: 0 auto !important;
     }
 }

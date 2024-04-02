@@ -7,9 +7,10 @@ import { ALL_DATA } from "../../Query/get_all";
 import { useMutation } from "@tanstack/react-query";
 import { userUtils } from "../../utils/user.utils";
 import toastify from "../../utils/toastify";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { IMG_BASE_URL } from "../../constants/img.constants";
 import EditImageIcon from '../../assets/images/edit.svg'
+import { useNavigate } from "react-router-dom";
 
 async function getBase64Full(file) {
   return new Promise((resolve, reject) => {
@@ -30,6 +31,7 @@ const User = () => {
   const ismainImage = useRef(null)
   const saveData = useRef(null)
   const editImage = useRef(null)
+  const navigation = useNavigate()
   const [edit, setEdit] = useState(true)
   const userEdit = useMutation({
     mutationFn: userUtils.patchUser,
@@ -61,6 +63,10 @@ const User = () => {
     ismainImage.current.src = await getBase64Full(e.target.files[0])
     ismainImage.current.classList.remove("d-none")
   }
+  useEffect(()=>{
+    if(!user) navigation('/')
+  }, [navigation])
+  if(!user)  navigation('/')
   return (
     <div>
       <Navbar />

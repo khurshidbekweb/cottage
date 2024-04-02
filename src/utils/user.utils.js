@@ -6,9 +6,9 @@ export const userUtils = {
     return data;
   },
   getSingleUser: async () => {
-    const { data } = await custimAxios.get("/user/single");
-    localStorage.setItem("user", JSON.stringify(data));
-    return data;
+      const { data } = await custimAxios.get("/user/single");
+      localStorage.setItem("user", JSON.stringify(data));
+      return data;
   },
   getUserDevice: async (userId) => {
     const { data } = await custimAxios.get(`user/user-device/${userId}`);
@@ -29,9 +29,7 @@ export const userUtils = {
     favoriteCottages,
     image,
     name,
-    password,
     phone,
-    username,
   }) => {
     const formData = new FormData();
     formData.append("email", email);
@@ -43,6 +41,7 @@ export const userUtils = {
     formData.append("image", image);
     formData.append("name", name);
     formData.append("phone", phone);
+    console.log(phone);
     const { data } = await custimAxios.patch(`user/edit/${id}`, formData);
     return data;
   },
