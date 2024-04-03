@@ -5,6 +5,7 @@ import { authUtils } from "../../utils/auth.utils";
 import { useRef } from "react";
 import toastify from "../../utils/toastify";
 import { useNavigate } from "react-router-dom";
+import Cleave from "cleave.js/react";
 
 const SignIn = () => {
   const smsForm = useRef(null);
@@ -36,10 +37,18 @@ const SignIn = () => {
     },
   });
 
+  //   const cleave = new Cleave('.input-element', {
+  //     prefix: 'PREFIX',
+  //     delimiter: '-',
+  //     blocks: [6, 4, 4, 4],
+  //     uppercase: true
+  // });
+
   const handleAuth = (e) => {
     e.preventDefault();
+    console.log(e.target.phonenumber.value.replaceAll(" ","").slice(4));
     phone.mutate({
-      phone: e.target.phonenumber.value.slice(4),
+      phone: e.target.phonenumber.value.replaceAll(" ","").slice(4),
     });
     setTimeout(() => {
       phoneForm.current.classList.add("d-none");
@@ -69,14 +78,21 @@ const SignIn = () => {
           <h2 className="signin-header">Вход</h2>
           <form onSubmit={handleAuth} ref={phoneForm}>
             <div className="input-text">
-              <input
-                className="signin-input-text"
-                type="text"
-                required
-                placeholder="Номер телефона"
-                name="phonenumber"
-                defaultValue="+998"
-              />
+              <label className="d-flex flex-column gap-3">
+                <span className="text-light label-text ">Enter your phone: </span>
+                  <Cleave
+                    options={{
+                      prefix: "+998",
+                        delimiter: " ",
+                        blocks: [4, 2,  3, 2, 2],
+                        numericOnly: true,
+                      }}
+                      placeholder="Phone number"
+                      className="signin-input-text"
+                      name="phonenumber"
+                      required
+                    />
+              </label>
             </div>
             <input
               type="submit"

@@ -29,7 +29,7 @@ const MiniNaw = () => {
                     <img src={Plus} width="32" height='32' alt="plus" />
                 </Link>
 
-                <Link to='/user'>
+                <Link to='/profil'>
                     <img src={User} width="28" height='28' alt="user" />
                 </Link>
             </div>

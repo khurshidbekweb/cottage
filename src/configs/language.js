@@ -1,5 +1,7 @@
 import { v4 as uuidv4 } from 'uuid';
 
+
+//=============================== Header language
 export const NavLeng = {
         uz: {
             connection: "Kontaket",
@@ -28,6 +30,30 @@ export const HeaderLang = {
         btn: "View"
     }    
 }
+export const NavberLinks = {
+    uz: {
+        add: "E'lon qo'shish",
+        cottage: "Mening dachalarim",
+        profil: "Profil",
+        services: "Hizmatlar",
+        exit: "Chiqish",
+    },
+    ru: {
+        add: "Подать объявление",
+        cottage: "Мои объявлении",
+        profil: "Профиль",
+        services: "Услуги",
+        exit: "Выход",
+    },
+    en: {
+        add: "Post an add",
+        cottage: "My ads",
+        profil: "Profile",
+        services: "Services",
+        exit: "Exit",
+    }
+}
+//=============================== Place language
 export const PlaseLeng = {
     uz: "Dam olish maskanlari",
     ru: "Месты Отдыха",
@@ -37,6 +63,12 @@ export const RecamudetLeng = {
     uz: "Tavsiya etilgan",
     ru: "Рекомендуемые",
     en: "Recommended"
+}
+// ============================== Filter language
+export const FilterSectionLeng = {
+    uz: "Filter bo'limi",
+    ru: "Раздел Фильтр",
+    en: "Filter section"
 }
 export const FilterLeng = {
     uz: {
@@ -55,23 +87,43 @@ export const FilterLeng = {
         price: "Price"
     }
 }
+// =============================== Cottage language
 export const CottageLeng ={ 
     uz: {
-        region: "viloyat",
+        region: "viloyati",
         price: "Kunlin narx: ",
-        weekendPrice: "Dam olish kunlari uchun narx: "
+        weekendPrice: "Dam olish kunlari uchun narx: ",
+        btn: "Ko'rish"
     },
     ru: {
         region: "область",
         price: "Цена За День: ",
-        weekendPrice: "Цена За Выходной День: "
+        weekendPrice: "Цена За Выходной День: ",
+        btn: "Подробное"
     },
     en: {
         region: "region",
-        price: "Price per Day",
-        weekendPrice: "Price per Weekend: "
+        price: "Price per Day: ",
+        weekendPrice: "Price per Weekend: ",
+        btn: "View "
     }
 }
+// =============================== Servises language
+export const ProfileLeng = {
+    uz: {
+        text: "Profil",
+        btn: "Saqlash"
+    },
+    ru: {
+        text: "Профиль",
+        btn: "Сохранить"
+    },
+    en: {
+        text:"Profile",
+        btn: "Save"
+    }
+}
+// =============================== Footer language
 export const FooterLink1 = [
     {
         id: uuidv4(),
@@ -164,4 +216,9 @@ export const FooterHeadLeng = {
         link2: "Copany",
         link3: "Cooperation"
     }
+}
+export const FooterMiniLang = {
+    uz: "Toshkent, Amir Temur 7",
+    ru: "Ташкент, Амир Tемура 7",
+    en: "Tashkent, Amir Temur 7"
 }

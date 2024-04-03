@@ -16,11 +16,12 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css/bundle";
 import { ALL_DATA } from "../../Query/get_all";
 import { BASE_URL_SERVER } from "../../constants/server.constants";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import FilterSEction from "../FilterSection/FilterSEction";
 import { FilterLeng, HeaderLang } from '../../configs/language'
+import { LanguageContext } from "../../helper/languageContext";
 
-const Header = ({language}) => {
+const Header = () => {
   const cottageTop = ALL_DATA.useCottage()?.data
   const cottageType = ALL_DATA.useCottageType()?.data
   const place = ALL_DATA.usePlace()?.data
@@ -38,6 +39,8 @@ const Header = ({language}) => {
       price: e.target.price.value,
     })  
   }  
+  // useContext
+  const {languageChange}  = useContext(LanguageContext)
   return (
     <>
         <header className="header">
@@ -61,7 +64,7 @@ const Header = ({language}) => {
                               <h1 className="header-text"> {el.name} </h1>;     
                               <h2 className="header-num">${el.price}</h2>
                               <Link to={`/view/${el.id}`} className="header-btn">
-                                  {HeaderLang[language].btn}
+                                  {HeaderLang[languageChange].btn}
                               </Link>
                             </div>            
                         </div>
@@ -73,7 +76,7 @@ const Header = ({language}) => {
           <form className="header-menu" onSubmit={handleFilterCottage}>
             <div className="header-inner">
               <div className="header-inner-box">
-                <p className="header-top">{FilterLeng[language].place}</p>
+                <p className="header-top">{FilterLeng[languageChange].place}</p>
                 <select className="header-select-one" name="place" id="place">
                     {place?.length && place.map(el => {
                       return <option key={el.id} value={el.id}>{el.name}</option>
@@ -81,7 +84,7 @@ const Header = ({language}) => {
                 </select>
               </div>
               <div className="header-inner-box">
-                <p className="header-top">{FilterLeng[language].tip}</p>
+                <p className="header-top">{FilterLeng[languageChange].tip}</p>
                 <select className="header-select-two" name="type" id="dacha">
                     {cottageType?.length && cottageType.map(el => {
                         return <option key={el.id} value={el.id}>{el.name}</option>
@@ -89,7 +92,7 @@ const Header = ({language}) => {
                 </select>
               </div>
               <div className="header-inner-box">
-                <p className="header-top-usd">{FilterLeng[language].price}</p>
+                <p className="header-top-usd">{FilterLeng[languageChange].price}</p>
                 <input
                   className="header-nums"
                   type="text"

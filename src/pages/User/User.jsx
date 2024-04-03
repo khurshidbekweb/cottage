@@ -7,10 +7,12 @@ import { ALL_DATA } from "../../Query/get_all";
 import { useMutation } from "@tanstack/react-query";
 import { userUtils } from "../../utils/user.utils";
 import toastify from "../../utils/toastify";
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { IMG_BASE_URL } from "../../constants/img.constants";
 import EditImageIcon from '../../assets/images/edit.svg'
 import { useNavigate } from "react-router-dom";
+import { ProfileLeng } from "../../configs/language";
+import { LanguageContext } from "../../helper/languageContext";
 
 async function getBase64Full(file) {
   return new Promise((resolve, reject) => {
@@ -66,13 +68,14 @@ const User = () => {
   useEffect(()=>{
     if(!user) navigation('/')
   }, [navigation])
-  if(!user)  navigation('/')
+// User profile language
+const {languageChange} = useContext(LanguageContext)
   return (
     <div>
       <Navbar />
       <div className="container">
         <div className="user">
-          <h2 className="user-header">Профиль</h2>
+          <h2 className="user-header">{ProfileLeng[languageChange].text}</h2>
 
           <form onSubmit={handleUser} className="user-box">
             <div className="user-l">
@@ -93,7 +96,7 @@ const User = () => {
                   паспорта.
                 </p>
             </div>
-            <button ref={saveData} type="submit" className={edit?"user-btn mt-5 d-none":"user-btn mt-5"}>Сохранить</button>
+            <button ref={saveData} type="submit" className={edit?"user-btn mt-5 d-none":"user-btn mt-5"}>{ProfileLeng[languageChange].btn}</button>
             </div>
           </form>
           <button onClick={()=>setEdit(false)} className={edit?"user-edit-btn btn":"user-edit-btn btn d-none"} >

@@ -160,9 +160,6 @@
   line-height: 26px;
   color: #ffffff;
 }
-.my-cottage-link{
-  display: none;
-}
 
 .addnew-message {
     width: 100%;
@@ -279,12 +276,6 @@
     z-index: 0;
     background: rgba(0, 0, 0, 0.6);
     border-radius: 30px;
-  }
-  .my-cottage-link{
-    display: block;
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: 600;
   }
   .addnew-add {
     width: 173px;

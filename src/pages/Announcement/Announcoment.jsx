@@ -4,6 +4,7 @@ import DachaMiniCard from "../../components/DachaMiniCard/DachaMiniCard";
 import Footer from "../../components/Footer/Footer";
 import MiniNaw from "../../components/MiniNaw/MiniNaw";
 import Navbar from "../../components/Navbar/Navbar";
+import './Announcoment.css'
 
 function Announcoment() {
   const userCottage = ALL_DATA.useCottageUserId();

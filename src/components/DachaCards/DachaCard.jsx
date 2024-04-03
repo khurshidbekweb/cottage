@@ -5,6 +5,9 @@ import { IMG_BASE_URL } from "../../constants/img.constants";
 import { useQueryClient } from "@tanstack/react-query";
 import { QUERY_KEYS } from "../../Query/query-keys";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import { useContext } from "react";
+import { LanguageContext } from "../../helper/languageContext";
+import { CottageLeng } from "../../configs/language";
 
 const DachaCard = (props) => {
   const queryClient = useQueryClient();
@@ -32,6 +35,9 @@ const DachaCard = (props) => {
           navigate('/sign-in')
         }
     }
+
+    // Language UseState
+    const {languageChange} = useContext(LanguageContext);
   return (
     <div className="dacha-card">
       <div className="main-img-head-card">        
@@ -59,15 +65,15 @@ const DachaCard = (props) => {
       <div>
         <h5 className="dacha-card-name">{props.cottage.name}</h5>
         <p className="dacha-card-text">
-          {props.cottage.region.name} viloyati {props.cottage.place.name}
+          {props.cottage.region.name} {CottageLeng[languageChange].region} {props.cottage.place.name}
         </p>
-        <p className="dacha-card-text">Narxi: {props.cottage.price}$</p>
+        <p className="dacha-card-text">{CottageLeng[languageChange].price} {props.cottage.price}$</p>
         <p className="dacha-card-text">
-          Dam olish kunlari: {props.cottage.priceWeekend}$
+          {CottageLeng[languageChange].weekendPrice} {props.cottage.priceWeekend}$
         </p>
       </div>
       <Link to={`/view/${props.cottage.id}`} className="dacha-card-btn">
-        {props.btn}
+        {CottageLeng[languageChange].btn}
       </Link>
     </div>
   );

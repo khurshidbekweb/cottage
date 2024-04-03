@@ -15,16 +15,19 @@ import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 
 import { ALL_DATA } from "../../Query/get_all";
-import { useRef } from "react";
+import { useContext, useRef } from "react";
 import { PlaseLeng } from "../../configs/language";
-const Places = ({language}) => {
+import { LanguageContext } from "../../helper/languageContext";
+const Places = () => {
   const places = ALL_DATA.usePlace()
   const prevPlaceElm = useRef(null)
   const nextPlaceElm = useRef(null)
+  // useContext language
+  const {languageChange} = useContext(LanguageContext)
   return (
     <div className="container">
       <div className="places">
-        <h2 className="places-top">{PlaseLeng[language]}</h2>
+        <h2 className="places-top">{PlaseLeng[languageChange]}</h2>
         <Swiper
             className="swiper-place"            
             slidesPerView={5}
