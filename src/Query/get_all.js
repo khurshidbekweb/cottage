@@ -8,6 +8,7 @@ import { comfortUtils } from "../utils/comfort.utils";
 import { cottageTypeUtils } from "../utils/cottage-type.utils";
 import { userUtils } from "../utils/user.utils";
 import { notificationUtils } from "../utils/notification.utilis";
+import { ServiceUtils } from "../utils/service.utils";
 
 export const ALL_DATA = {
   useCottage: () => {
@@ -140,5 +141,14 @@ export const ALL_DATA = {
         return data
       }
     })
-  }  
+  }  ,
+  useServices: () => {
+    return useQuery({
+      queryKey: [QUERY_KEYS.services],
+      queryFn: async () => {
+        const data = await ServiceUtils.getService()
+        return data
+      }
+    })
+  }
 };
