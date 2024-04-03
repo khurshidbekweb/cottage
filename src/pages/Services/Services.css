@@ -1,13 +1,16 @@
 .services-wrap{
     margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 .services-card{
     width: 350px;
     border-radius: 5px;
     overflow: hidden;
-    -webkit-box-shadow: 1px -2px 16px 4px rgba(170,194,194,1);
-    -moz-box-shadow: 1px -2px 16px 4px rgba(170,194,194,1);
-    box-shadow: 1px -2px 16px 4px rgba(170,194,194,1);
+    -webkit-box-shadow: inset 1px -2px 16px 4px rgba(170,194,194,0.69);
+    -moz-box-shadow: inset 1px -2px 16px 4px rgba(170,194,194,0.69);
+    box-shadow: inset 1px -2px 16px 4px rgba(170,194,194,0.69);
 }
 .services-caer-img{
     width: 100%;    
@@ -15,10 +18,10 @@
     background: #00ABF2;
 }
 .services-card-name{
-    padding: 10px;
+    padding: 0px 15px;
 }
 .services-card-description{
-    padding: 0 7px;
+    padding: 0 15px;
 }
 .services-card-link{
     display: inline-block;

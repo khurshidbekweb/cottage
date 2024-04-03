@@ -194,6 +194,14 @@
         transition: opacity 500ms;
     }
 
+    .overlay-img-card{
+        position: absolute;
+        top: 0;
+        width: 97%;
+        height: 100%;
+        background-color: rgba(54, 53, 53, 0.605);
+        border-radius: 10px 10px 0 0 !important;
+    }
 
     .dacha-mini-heart-icon:active {
         fill: red;
@@ -231,7 +239,15 @@
         border-radius: 10px 10px 0 0 !important;
         margin: 0 !important;
     }
-
+    .no-active-text-mini{
+        position: absolute;
+        top: 70px;
+        left: 25px;
+        font-size: 18px;
+        font-weight: 600;
+        color: white;
+        z-index: 1;
+    }
     .dmc-like {
         position: absolute;
         top: 138px;
@@ -319,7 +335,14 @@
     .dmc-like-active {
         background: #2C2D2E;
     }   
-
+    .overlay-img-card{
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(54, 53, 53, 0.605);
+        border-radius: 10px 10px 0 0 !important;
+    }
     .img-wrap{
         width: 100% !important;
         padding: 0 !important;

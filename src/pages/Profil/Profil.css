@@ -4,10 +4,10 @@
 @media (max-width: 576px) {
     .profil-wrap{
         display: block;
-        width: 390px;
+        width: 370px;
     }
     .profil-card{
-        width: 92%;
+        width: 90%;
         margin: 10px auto;
         padding: 5px 8px;
         display: flex;
