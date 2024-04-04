@@ -9,6 +9,7 @@ import { cottageTypeUtils } from "../utils/cottage-type.utils";
 import { userUtils } from "../utils/user.utils";
 import { notificationUtils } from "../utils/notification.utilis";
 import { ServiceUtils } from "../utils/service.utils";
+import { TariffUtils } from "../utils/tariff.utilis";
 
 export const ALL_DATA = {
   useCottage: () => {
@@ -147,6 +148,15 @@ export const ALL_DATA = {
       queryKey: [QUERY_KEYS.services],
       queryFn: async () => {
         const data = await ServiceUtils.getService();
+        return data
+      }
+    })
+  },
+  useTariff: () => {
+    return useQuery({
+      queryKey: [QUERY_KEYS.tariff],
+      queryFn: async () => {
+        const data = await TariffUtils.getTariff()
         return data
       }
     })

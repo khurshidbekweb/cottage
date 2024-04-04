@@ -20,6 +20,7 @@ import { useContext, useState } from "react";
 import FilterSEction from "../FilterSection/FilterSEction";
 import { FilterLeng, HeaderLang } from '../../configs/language'
 import { LanguageContext } from "../../helper/languageContext";
+import { IMG_BASE_URL } from "../../constants/img.constants";
 
 const Header = () => {
   const cottageTop = ALL_DATA.useCottage()?.data
@@ -59,9 +60,9 @@ const Header = () => {
             {cottageTop?.length && cottageTop.filter(topCott => topCott.isTop === true).map(el => {
               return <SwiperSlide key={el.id} className="swiper-slide-header">
                         <div className="wrap-ads">
-                          <img src={`${BASE_URL_SERVER}${el.images.find(mainIm => mainIm.isMainImage=== true).image}`} alt="bgimg" className="bg-img" />            
+                          <img src={`${IMG_BASE_URL}${el.images.find(mainIm => mainIm.isMainImage=== true).image}`} alt="bgimg" className="bg-img" />            
                             <div className="info-card">
-                              <h1 className="header-text"> {el.name} </h1>;     
+                              <h1 className="header-text"> {el.name} </h1>    
                               <h2 className="header-num">${el.price}</h2>
                               <Link to={`/view/${el.id}`} className="header-btn">
                                   {HeaderLang[languageChange].btn}

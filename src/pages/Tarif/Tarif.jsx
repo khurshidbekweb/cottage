@@ -4,9 +4,12 @@ import Navbar from "../../components/Navbar/Navbar";
 import "./Tarif.css";
 import { Link } from "react-router-dom";
 import Tariff from "../../Modals/Tariff";
+import { ALL_DATA } from "../../Query/get_all";
 
 const Tarif = () => {
   const [modal, setModal] = useState(false)
+  const tariff = ALL_DATA.useTariff()
+  console.log(tariff.data);
   return (
     <>
       <Navbar />
@@ -15,20 +18,22 @@ const Tarif = () => {
           <h2 className="tarif-header font-bold">Тарифы</h2>
 
           <div className="tarif-cards">
-            <div className="tarif-card">
-              <p className="tarif-name">Стандарт</p>
-              <div className="tarif-date1">15 <br /> дней</div>
-              <p className="tarif-text">На тарифе стандарт ваши объявление будет активно в течении 15 дней</p>
-              <Link className="tarif-btn" to='/pay'>Активировать за 50,000 UZS</Link>
-            </div>
-
+            {tariff.data?.length && tariff.data.map(el =>{
+              return <div key={el.id} className="tarif-card">
+                        <p className="tarif-name">Стандарт</p>
+                        <div className="tarif-date1">{el.days} <br /> дней</div>
+                        <p className="tarif-text">{el.description}</p>
+                        <button className="tarif-btn border-0" el={el} onClick={()=>setModal(true)}>Активировать за {el.price}$</button>
+                      </div>
+            })}
             <div className="tarif-line"></div>
+
 
             <div className="tarif-card">
               <p className="tarif-name">Премиум</p>
               <div className="tarif-date2">1 <br /> месяц</div>
               <p className="tarif-text">На тарифе стандарт ваши объявление будет активно в течении 30 дней</p>
-              <Link className="tarif-btn" to='/pay'>Активировать за 65,000 UZS</Link>
+              <button onClick={()=>setModal(true)} className="tarif-btn border-0 ">Активировать за 65,000 UZS</button>
             </div>
 
             <div className="tarif-line"></div>
@@ -42,7 +47,7 @@ const Tarif = () => {
           </div>
         </div>
       </div>
-      <Tariff modal={modal} modalFn={setModal}/>
+      <Tariff tariff={tariff} modal={modal} modalFn={setModal}/>
       <Footer />
     </>
   );

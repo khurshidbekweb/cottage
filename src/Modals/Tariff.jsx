@@ -17,10 +17,11 @@ const Tariff = (props) => {
             toastify.successMessage("Muvaffaqiyat qo'shildi 😍")
         }
     })
+    console.log(props.tariff.data);
     const handleCottage = (e) => {
         addCottage.mutate({
             cottageId: e.target.tariff_cottage.value,
-            tariffId: "",
+            tariffId: props.tariff.data.id,
         })
         activete.current.classList.remove('disabled')
     }
@@ -39,7 +40,7 @@ const Tariff = (props) => {
                 <hr className='text-light'/>
                 <h5 className='px-3'>Dachani tanlang</h5>
                 <form onSubmit={handleCottage}>
-                <select defaultValue='default' name="tariff_cottage" className='mb-3 w-100 w-lg-50  mx-auto  form-select form-select-sm mt-3'>
+                <select onChange={()=> activete.current.classList.remove('disabled')} defaultValue='default' name="tariff_cottage" className='mb-3 w-100 w-lg-50  mx-auto  form-select form-select-sm mt-3'>
                     <option value='default' selected>Dachani tanlang</option>
                     {userCottage.data?.length && userCottage.data.map(el => {
                         return <option value={el.id} className=''>{el.name}</option>
