@@ -12,5 +12,6 @@ export const QUERY_KEYS = {
     users: "users",
     notification: "notifications",
     all_notification: "all_notification",
-    services: "services"
+    services: "services",
+    tariff: "tariffs"
 }

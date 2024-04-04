@@ -1,1 +1,1 @@
-export const BASE_URL_SERVER = 'https://api.dachivgorax.uz/'
+export const BASE_URL_SERVER = 'https://api.dachivgorax.uz'

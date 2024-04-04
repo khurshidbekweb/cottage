@@ -141,12 +141,12 @@ export const ALL_DATA = {
         return data
       }
     })
-  }  ,
+  },
   useServices: () => {
     return useQuery({
       queryKey: [QUERY_KEYS.services],
       queryFn: async () => {
-        const data = await ServiceUtils.getService()
+        const data = await ServiceUtils.getService();
         return data
       }
     })

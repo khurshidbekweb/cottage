@@ -112,7 +112,7 @@
     border: 1px solid rgba(44, 45, 46, 0.25);
 }
 
-@media (max-width: 390px) {
+@media (max-width: 576px) {
     .tarif-header {
         margin: 32px 0 0 0;
         padding: 0;
@@ -145,4 +145,39 @@
         line-height: 26px;
         color: #2c2d2e;
       }
+}
+
+@media (max-width: 390px) {
+  .tarif-header {
+      margin: 32px 0 0 0;
+      padding: 0;
+      font-family: sans-serif;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 34px;
+      color: #2c2d2e;
+    }
+
+  .tarif-cards {
+      display: block;
+  }
+
+  .tarif-card {
+      text-align: center;
+      margin: 0;
+      padding: 36px 0;
+  }
+
+  .tarif-text {
+      width: 302px;
+      padding: 16px 0 36px;
+      margin: 0 auto;
+      font-family: sans-serif;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 26px;
+      color: #2c2d2e;
+    }
 }

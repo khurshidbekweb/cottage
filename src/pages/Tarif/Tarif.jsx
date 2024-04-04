@@ -1,9 +1,12 @@
+import { useState } from "react";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
 import "./Tarif.css";
 import { Link } from "react-router-dom";
+import Tariff from "../../Modals/Tariff";
 
 const Tarif = () => {
+  const [modal, setModal] = useState(false)
   return (
     <>
       <Navbar />
@@ -34,11 +37,12 @@ const Tarif = () => {
               <p className="tarif-name">Бизнес</p>
               <div className="tarif-date3">2 <br /> месяц</div>
               <p className="tarif-text">На тарифе стандарт ваши объявление будет активно в течении 60 дней</p>
-              <Link className="tarif-btn" to='/pay'>Активировать за 100,000 UZS</Link>
+              <button onClick={()=>setModal(true)} className="tarif-btn d-inline-block border-0">Активировать за 100,000 UZS</button>
             </div>
           </div>
         </div>
       </div>
+      <Tariff modal={modal} modalFn={setModal}/>
       <Footer />
     </>
   );
