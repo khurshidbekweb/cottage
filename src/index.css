@@ -4,12 +4,16 @@
   box-sizing: border-box;
 }
 
+@import url(https://fonts.googleapis.com/css2?family=Lora:wght@100;200;300;400;500;600;700&display=swap);
+
 body {
   display: flex;
   flex-direction: column;
   height: 100%;
   margin: 0;
   padding: 0;
+  font-family: 'Lora', serif;
+  font-size: medium;
 }
 
 .container {
@@ -23,3 +27,4 @@ body {
 Link{
   z-index: 9999999999999;
 }
+

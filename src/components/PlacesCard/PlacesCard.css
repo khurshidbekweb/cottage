@@ -2,6 +2,10 @@
     position: relative;   
     width: 150px !important;
     display: block;
+    color: black;
+}
+.places-card:hover{
+    color: black;
 }
 
 .places-card-name {

@@ -38,12 +38,12 @@
     top: 0;
     left: 0;
     z-index: 1;
-    background: #282727ab;
+    background: #28272744;
 }
 .close-btn-modal{
     position: absolute;
-    top: 20px;
-    right: 15px;
+    top: 5px;
+    right: 5px;
 }
 .tarif-info{
     width: 80%;

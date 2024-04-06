@@ -26,12 +26,6 @@ const Services = () => {
                                     <Link className='services-card-link' to='/tarif'>View tariff</Link>
                                 </div>
                     })}
-                    <div className="services-card">
-                        <img src={isTop} alt="" className="services-caer-img" />
-                        <h4 className='services-card-name'>Top</h4>
-                        <p className='services-card-description'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magni, assumenda illum nostrum vitae perferendis inventore, architecto aliquam tenetur cum!</p>
-                        <Link className='services-card-link' to='/tarif'>View tariff</Link>
-                    </div>
                 </div>
             </div>
             <MiniNaw/>

@@ -68,6 +68,8 @@ const User = () => {
   useEffect(()=>{
     if(!user) navigation('/')
   }, [navigation])
+  if(!user) navigation('/')
+
 // User profile language
 const {languageChange} = useContext(LanguageContext)
   return (
