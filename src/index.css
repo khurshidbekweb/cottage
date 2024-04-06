@@ -4,7 +4,6 @@
   box-sizing: border-box;
 }
 
-@import url(https://fonts.googleapis.com/css2?family=Lora:wght@100;200;300;400;500;600;700&display=swap);
 
 body {
   display: flex;
@@ -12,10 +11,23 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
-  font-family: 'Lora', serif;
-  font-size: medium;
+  font-family: 'Roboto', sans-serif;
+  
 }
-
+@font-face {
+  font-family: Roboto;
+  src: url(../src/fonts/Roboto-Regular.ttf);
+}
+.roboto{
+  font-family: Roboto;
+}
+@font-face {
+  font-family: Oswald ;
+  src: url(../src/fonts/Oswald-Regular.ttf);
+}
+.oswald{
+  font-family: Oswald;
+}
 .container {
   max-width: 1142px;
   margin: 0 auto;

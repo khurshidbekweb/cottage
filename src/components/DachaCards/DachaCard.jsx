@@ -63,7 +63,7 @@ const DachaCard = (props) => {
         <div className={props.cottage.cottageStatus === "progress" ? "overlay-main-image-card" : "overlay-main-image-card d-none"}></div>
       </div>
       <div>
-        <h5 className="dacha-card-name">{props.cottage.name}</h5>
+        <h5 className="oswald dacha-card-name">{props.cottage.name}</h5>
         <p className="dacha-card-text">
           {props.cottage.region.name} {CottageLeng[languageChange].region} {props.cottage.place.name}
         </p>

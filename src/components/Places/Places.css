@@ -87,14 +87,14 @@
     .prevPlace{
         position: absolute;
         top: 10px;
-        left:  280px;
+        left:  270px;
         font-size: 25px;
         z-index: 999999;
         display: inline-block;
         background: #000;
         color: white;
         border-radius: 20px;
-        padding: 0px 7px;
+        padding: 0px 8px;
     }
     .nextPlace{
         position: absolute;
@@ -106,7 +106,7 @@
         background: #000;
         color: white;
         border-radius: 20px;
-        padding: 0px 7px;
+        padding: 0px 8px;
     }
 }
 
@@ -129,15 +129,15 @@
     .prevPlace{
         position: absolute;
         top: 10px;
-        left:  250px;
+        left:  245px;
         border-radius: 50%;
-        padding: 0px 6px;
+        padding: 0px 8px;
     }
     .nextPlace{
         position: absolute;
         top: 10px;
         border-radius: 50%;
         right: -5px; 
-        padding: 0px 6px;
+        padding: 0px 8px;
     }
 }

@@ -90,8 +90,8 @@ const Places = () => {
             })}
           </Swiper>
           
-          <div ref={prevPlaceElm} className="prevPlace"><i className='bx mt-1 bx-left-arrow-alt' ></i></div>
-          <div ref={nextPlaceElm} className="nextPlace"><i className='bx mt-1 bx-right-arrow-alt'></i></div>
+          <div ref={prevPlaceElm} className="prevPlace"><i className='bx mt-2 bx-left-arrow-alt' ></i></div>
+          <div ref={nextPlaceElm} className="nextPlace"><i className='bx mt-2 bx-right-arrow-alt'></i></div>
       </div>
     </div>
   );

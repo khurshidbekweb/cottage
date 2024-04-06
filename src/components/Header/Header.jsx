@@ -62,9 +62,9 @@ const Header = () => {
                         <div className="wrap-ads">
                           <img src={`${IMG_BASE_URL}${el.images.find(mainIm => mainIm.isMainImage=== true).image}`} alt="bgimg" className="bg-img" />            
                             <div className="info-card">
-                              <h1 className="header-text"> {el.name} </h1>    
-                              <h2 className="header-num">${el.price}</h2>
-                              <Link to={`/view/${el.id}`} className="header-btn">
+                              <h1 className="oswald header-text"> {el.name} </h1>    
+                              <h2 className="oswald header-num">${el.price}</h2>
+                              <Link to={`/view/${el.id}`} className="header-btn oswald">
                                   {HeaderLang[languageChange].btn}
                               </Link>
                             </div>            

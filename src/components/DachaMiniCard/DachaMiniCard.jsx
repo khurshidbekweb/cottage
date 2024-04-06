@@ -39,7 +39,7 @@ const DachaMiniCard = (props) => {
             <div className={props.cottage.cottageStatus === "progress" ? "overlay-img-card" : "d-none"}></div>
           </div>
           <div className="mini-card-info">
-            <h5 className="dmc-name">{props.cottage.name}</h5>
+            <h5 className="dmc-name oswald">{props.cottage.name}</h5>
             <p className="dmc-text">{props.cottage.region.name} {props.cottage.place.name}</p>
           </div>
       </Link>
