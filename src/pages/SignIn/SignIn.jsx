@@ -82,7 +82,7 @@ const SignIn = () => {
                 <span className="text-light label-text ">Enter your phone: </span>
                   <Cleave
                     options={{
-                      prefix: "+998",
+                        prefix: "+998",
                         delimiter: " ",
                         blocks: [4, 2,  3, 2, 2],
                         numericOnly: true,

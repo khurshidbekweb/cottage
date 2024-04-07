@@ -68,7 +68,11 @@
     border-radius: 35px;
     overflow: hidden;
 }
-
+.input-name-lable{
+    display: block;
+    font-size: 18px;
+    font-weight: 600;
+}
 .user-l-btn {
     position: absolute;
     width: 100%;
@@ -85,11 +89,12 @@
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
+    margin-top: -15px;
 }
 .user-input {
     width: 350px;
     margin: 0;
-    padding: 24px 0 12px;
+    padding: 10px 0 12px;
     border: none;
     border-bottom:  1px solid rgba(44, 45, 46, 0.25);
     outline: none;
@@ -173,7 +178,7 @@
     }
     .user-edit-btn{
         position: relative;
-        top: -350px;
+        top: -400px;
         left: 270px; 
         display: block;
         font-size: 30px;   
@@ -222,6 +227,9 @@
 
     .user-r-inner {
         display: block;
+    }
+    .user-r{
+        margin-top: 0;
     }
 
     .user-input {

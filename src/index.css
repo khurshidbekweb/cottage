@@ -20,6 +20,7 @@ body {
 }
 .roboto{
   font-family: Roboto;
+  font-style: normal;
 }
 @font-face {
   font-family: Oswald ;
@@ -27,6 +28,7 @@ body {
 }
 .oswald{
   font-family: Oswald;
+  font-style: normal;
 }
 .container {
   max-width: 1142px;

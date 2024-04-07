@@ -90,9 +90,18 @@ const {languageChange} = useContext(LanguageContext)
 
             <div className="user-info-wrap">
             <div className="user-r">
-                <input disabled={edit}  className="user-input" defaultValue={user?.name?user.name:""} name="name" type="text"placeholder="Имя"/>
-                <input disabled={edit}  className="user-input" defaultValue={"+998"+user?.phone} name="phone" type="tel" placeholder="Nomer" />              
-                <input disabled={edit} className="user-input" defaultValue={user?.email?user.email:""} name="email" type="email" placeholder="Email" />
+                <label className="w-100">
+                  <span className="input-name-lable">Name</span>
+                  <input disabled={edit}  className="user-input" defaultValue={user?.name?user.name:""} name="name" type="text"placeholder="Имя"/>
+                </label>
+                <label className="w-100">
+                  <span className="input-name-lable">Number</span>
+                  <input disabled={edit}  className="user-input" defaultValue={"+998"+user?.phone} name="phone" type="tel" placeholder="Nomer" />   
+                </label>
+                <label className="w-100">
+                <span className="input-name-lable">Email</span>
+                  <input disabled={edit} className="user-input" defaultValue={user?.email?user.email:""} name="email" type="email" placeholder="Email" />
+                </label>
                 <p className="user-text d-none">
                   Что бы вы подать объявлении вам нужно вводить ваш серии номер
                   паспорта.

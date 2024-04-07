@@ -6,13 +6,14 @@ import toastify from "../utils/toastify";
 import { ALL_DATA } from "../Query/get_all";
 
 const Tariff = (props) => {
+  const userCottage = ALL_DATA.useCottageUserId();
+  const singleUser = ALL_DATA.useSingleUser()?.data
   const [isOpen, setIsOpen] = useState(false)
-  console.log(props);
+  // console.log(props);
   const activete = useRef();
   const queryClient = useQueryClient();
-  const userCottage = ALL_DATA.useCottageUserId();
   const addCottage = useMutation({
-    mutationFn: TariffUtils.deletTariffDisable,
+    mutationFn: TariffUtils.addTariffActive,
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: [QUERY_KEYS.tariff] });
       toastify.successMessage("Muvaffaqiyatli ulandi 😍");
@@ -24,13 +25,14 @@ const Tariff = (props) => {
       console.log(err.response.data.message.message);
     }
   });
-  console.log(props.id);
   const handleCottage = (e) => {
     e.preventDefault()
     addCottage.mutate({
       cottageId: e.target.tariff_cottage.value,
       tariffId: props.tariff.id,
+      assignedBy: singleUser.id
     });
+    console.log(addCottage.variables);
     activete.current.classList.remove("disabled");
   };
   return (

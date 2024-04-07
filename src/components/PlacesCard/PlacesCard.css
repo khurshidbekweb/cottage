@@ -43,7 +43,7 @@
     }
     .places-card-name {
         position: absolute;
-        font-family: sans-serif;
+        /* font-family: sans-serif; */
         font-style: normal;
         font-weight: 500;
         font-size: 16px;
@@ -70,5 +70,6 @@
     .places-card-name{
         position: absolute;
         top: 59px;
+        width: 100%;
     }
 }

@@ -20,7 +20,7 @@ export const TariffUtils = {
         return data
     },
     addTariffActive: async ({assignedBy, cottageId, tariffId}) => {
-        const {data} = await custimAxios.post('/tariff/active', {
+        const {data} = await custimAxios.post('tariff/activate', {
             assignedBy,
             cottageId,
             tariffId

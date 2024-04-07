@@ -16,7 +16,6 @@ const Tarif = () => {
 
           <div className="tarif-cards wrap-tarif-cards">
             {tariff.data?.length && tariff.data.map((el, i) =>{
-              console.log(el, "odofo");
               return <div key={el.id} className="tarif-cards">
                         <div  className={i>=3?"tarif-card mt-4":"tarif-card"} >
                             <p className="tarif-name">{el.service.serviceCode}</p>
