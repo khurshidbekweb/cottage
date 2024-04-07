@@ -5,15 +5,12 @@
     border-radius: 50%;
     cursor: pointer !important;
 }
-
 .minibell-img {
     display: none;
 }
-
 .modal-notification::-webkit-scrollbar{
     display: none;
 }
-
 .modal-natif-dialog{
     position: relative;
     top: 60px;
@@ -24,9 +21,35 @@
 .pesonal-notif{
     width: 70px;
 }
-
-@media only screen and (max-width: 576px) {
+/*  ================================== Tariff Css */
+.tariff-modal-wrap{
+    position: fixed;
+    top: 90px;
+    width: 550px;
+    left: 450px;
+    background: #282727f8;
+    border-radius: 10px;
+    z-index: 2;
+}
+.modal-wrap{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background: #28272744;
+}
+.close-btn-modal{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+.tarif-info{
+    width: 80%;
     
+}
+@media only screen and (max-width: 576px) {    
     .modal-natif-dialog{
         position: absolute;
         margin-left: -180px;
@@ -59,10 +82,18 @@
         width: 85px;
         font-size: 12px;
     }
+    /* ================Traffik Css */
+    .tariff-modal-wrap{
+        position: fixed;
+        top: 90px;
+        width: 350px;
+        left: 20px;
+        background: #282727f8;
+        border-radius: 10px;
+        z-index: 2;
+    }
 }
-@media only screen and (max-width: 390px) {
-
-    
+@media only screen and (max-width: 390px) {    
     .modal-natif-dialog{
         position: absolute;
         margin-left: -200px;

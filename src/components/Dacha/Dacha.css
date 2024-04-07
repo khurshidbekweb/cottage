@@ -1,5 +1,5 @@
 .dacha{
-  margin-top: 150px;
+  margin: 150px auto ;
 }
 
 .dacha-top {
@@ -22,7 +22,9 @@
 
 @media (max-width: 576px) {
   .dacha{
-    margin-top: -50px;
+    display: block;
+    margin: -20px auto 0;
+
   }
   .dacha-top {
     padding: 0;
@@ -34,7 +36,32 @@
     color: #2c2d2e;
   }
   .dacha-cards {
-    margin: 0;
+    margin: 0 0 0 20px;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+  }
+}
+
+@media (max-width: 414px) {
+  .dacha{
+    display: block;
+    margin: -50px auto 0;
+
+  }
+  .dacha-top {
+    padding: 0;
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 34px;
+    color: #2c2d2e;
+  }
+  .dacha-cards {
+    margin: 0 auto;
     padding: 0;
     display: flex;
     flex-wrap: wrap;

@@ -36,6 +36,7 @@ const Contact = () => {
                             <a href="https://instagram.com"><i class='bx bxl-telegram fs-4 text-white' ></i></a>
                         </div>
                     </div>
+                    
                     <div className="contact-for-user">
                         <form>
                             <div className="contact-top-connect">

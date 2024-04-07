@@ -10,9 +10,8 @@ import { cottageUtils } from "../../utils/cottage.utils";
 import { authUtils } from "../../utils/auth.utils";
 import { ALL_DATA } from "../../Query/get_all";
 import MiniNaw from "../../components/MiniNaw/MiniNaw";
-import { Link, useNavigate } from "react-router-dom";
+import { Link} from "react-router-dom";
 import toastify from "../../utils/toastify";
-import Announcoment from "../Announcement/Announcoment";
 
 async function getBase64(file) {
   return new Promise((resolve, reject) => {
@@ -139,7 +138,6 @@ const AddNew = () => {
       <Navbar/>
       <div className="container">
         <div className="addnew">
-          <Link to='/announcement' className="my-cottage-link">My cottages</Link>
             <h3 className="addnew-header">Фото</h3>            
             <form onSubmit={handlCottage}>
                   <div className="addnew-imgs">

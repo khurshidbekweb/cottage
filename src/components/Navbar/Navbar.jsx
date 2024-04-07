@@ -3,7 +3,7 @@ import Logo from "../../assets/images/logo.svg";
 import Menu from "../../assets/images/menu.svg";
 import Close from "../../assets/images/close.svg";
 import { Link, useNavigate } from "react-router-dom";
-import React, { useRef, useState } from "react";
+import React, { useContext, useRef, useState } from "react";
 import Modal from "react-modal";
 import { FiHeart } from "react-icons/fi";
 // import { UserAuth } from "../../context/AuthContext";
@@ -16,25 +16,22 @@ import { useQueryClient } from "@tanstack/react-query";
 import { ALL_DATA } from "../../Query/get_all";
 import { IMG_BASE_URL } from "../../constants/img.constants";
 import { cottageUtils } from "../../utils/cottage.utils";
+import { NavLeng, NavberLinks } from "../../configs/language";
+import { LanguageContext } from "../../helper/languageContext";
 // import userImagaDefault from '../../assets/images/user.svg'
 
 Modal.setAppElement("#root");
 
-const Navbar = () => {
+const Navbar = (props) => {
   const userImg = ALL_DATA.useSingleUser()?.data?.image
   const navigate = useNavigate()
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
-  const defaultLang = localStorage.getItem("language");
-  const queryClient = useQueryClient();
+  const defaultLang = localStorage.getItem("language");  
   const language = ALL_DATA.useLanguage()
   const cottageType = ALL_DATA.useCottageType()
 
-  const changetLang = (e) => {
-    e.preventDefault();
-    localStorage.setItem("language", e.target.value);
-    queryClient.invalidateQueries({ type: "all" });
-  };
+  
   
   const cottage = ALL_DATA.useCottage()
   const fovariteCottage = cottage?.data?.length && cottage?.data?.filter(e => e.isLiked===true)?.length
@@ -69,6 +66,9 @@ const Navbar = () => {
   const jumpLink = (e) => {
     window.location = e.target.value
   }
+
+  // language change
+  const {languageChange, toggleLanguage} = useContext(LanguageContext)
   return (
     <div className="container">
       <div className="navbar">
@@ -113,11 +113,11 @@ const Navbar = () => {
             </select>
 
             <Link to="/contact" className="modal-nav-contact">
-              Контакты
+              {NavLeng[languageChange].connection}
             </Link>
-            <select className="modal-nav-select-two" name="social" id="social">
+            <select defaultValue="socials" className="modal-nav-select-two" name="social" id="social">
               <option hidden value="socials">
-                Социальный сети
+              {NavLeng[languageChange].set}
               </option>
               <option value="telegram">Telegram</option>
               <option value="facebook">Facebook</option>
@@ -129,7 +129,7 @@ const Navbar = () => {
               className="modal-nav-select-three"
               name="language"
               id="language"
-              onChange={changetLang}
+              onChange={toggleLanguage}
             >
               {language.data?.length &&
                 language.data.map((e) => {
@@ -180,12 +180,12 @@ const Navbar = () => {
           </select>
 
           <Link to="/contact" className="contact d-block">
-            Контакты
+              {NavLeng[languageChange].connection}
           </Link>
 
           <select className="select-two form-select" name="social" id="social" onChange={jumpLink}>
             <option selected value="socials">
-              Социальный сети
+            {NavLeng[languageChange].set}
             </option>
             <option value="https://t.me/dachi_v_gorax">Telegram</option>
             <option value="https://facebook.com">Facebook</option>
@@ -196,7 +196,7 @@ const Navbar = () => {
           <select
             className="select-three"
             name="language"
-            onChange={changetLang}
+            onChange={toggleLanguage}
           >
             {language.data?.length &&
               language.data.map((e) => {
@@ -247,13 +247,19 @@ const Navbar = () => {
             </div>
 
             <Link to="/add-new" className="um-text text-decoration-none">
-              Подать объявление
+              {NavberLinks[languageChange].add}
             </Link>
             <Link
               to="/announcement"
               className="um-text text-decoration-none mt-2 d-block"
             >
-              Мои объявлении
+              {NavberLinks[languageChange].cottage}
+            </Link>
+            <Link
+              to="/services"
+              className="um-text text-decoration-none mt-2 d-block"
+            >
+              {NavberLinks[languageChange].services}
             </Link>
 
             <hr />
@@ -261,13 +267,13 @@ const Navbar = () => {
             <div className="user-modal-nav-profil">
               <img src={UserModal} alt="user" />
               <Link className="um-profil-link" to="/user">
-                Профиль
+                {NavberLinks[languageChange].profil}
               </Link>
             </div>
 
             <Link to="/" className="user-modal-nav-out">
               <img src={RedGoOut} alt="go-out" />
-              <button onClick={logoutBtn} className="um-out-btn">Выход</button>
+              <button onClick={logoutBtn} className="um-out-btn">{NavberLinks[languageChange].exit}</button>
             </Link>
           </Modal>
         </div>

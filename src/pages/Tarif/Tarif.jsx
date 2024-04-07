@@ -1,9 +1,12 @@
+
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
 import "./Tarif.css";
-import { Link } from "react-router-dom";
+import Tariff from "../../Modals/Tariff";
+import { ALL_DATA } from "../../Query/get_all";
 
 const Tarif = () => {
+  const tariff = ALL_DATA.useTariff()
   return (
     <>
       <Navbar />
@@ -11,31 +14,18 @@ const Tarif = () => {
         <div className="tarif">
           <h2 className="tarif-header font-bold">Тарифы</h2>
 
-          <div className="tarif-cards">
-            <div className="tarif-card">
-              <p className="tarif-name">Стандарт</p>
-              <div className="tarif-date1">15 <br /> дней</div>
-              <p className="tarif-text">На тарифе стандарт ваши объявление будет активно в течении 15 дней</p>
-              <Link className="tarif-btn" to='/pay'>Активировать за 50,000 UZS</Link>
-            </div>
-
-            <div className="tarif-line"></div>
-
-            <div className="tarif-card">
-              <p className="tarif-name">Премиум</p>
-              <div className="tarif-date2">1 <br /> месяц</div>
-              <p className="tarif-text">На тарифе стандарт ваши объявление будет активно в течении 30 дней</p>
-              <Link className="tarif-btn" to='/pay'>Активировать за 65,000 UZS</Link>
-            </div>
-
-            <div className="tarif-line"></div>
-
-            <div className="tarif-card">
-              <p className="tarif-name">Бизнес</p>
-              <div className="tarif-date3">2 <br /> месяц</div>
-              <p className="tarif-text">На тарифе стандарт ваши объявление будет активно в течении 60 дней</p>
-              <Link className="tarif-btn" to='/pay'>Активировать за 100,000 UZS</Link>
-            </div>
+          <div className="tarif-cards wrap-tarif-cards">
+            {tariff.data?.length && tariff.data.map((el, i) =>{
+              return <div key={el.id} className="tarif-cards">
+                        <div  className={i>=3?"tarif-card mt-4":"tarif-card"} >
+                            <p className="tarif-name">{el.service.serviceCode}</p>
+                            <div className="tarif-date1">{el.days} <br /> дней</div>
+                            <p className="tarif-text">{el.description}</p>
+                            <Tariff tariff={el} id={el.id}/>
+                        </div>
+                      <div  className={tariff.data.length === i+1 || i===2 ? "tarif-line d-none":"tarif-line"}></div>        
+              </div>
+            })}
           </div>
         </div>
       </div>

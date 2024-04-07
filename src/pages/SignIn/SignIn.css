@@ -9,15 +9,17 @@
 .background {
   margin: 0;
   padding: 48px;
+  height: 100vh;
+  backdrop-filter: blur(3px);
 }
 
 .signin-box {
-  width: 540px;
-  margin: 0 auto;
+  width: 450px;
+  margin: 40px auto;
   padding: 52px 48px;
-  background: #2c2d2e;
-  box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.1);
-  border-radius: 35px;
+  background: #2c2d2ee7;
+  box-shadow: 1px -2px 16px 4px rgba(59,56,59,1);
+  border-radius: 15px;
   border: none;
   text-align: center;
 }
@@ -35,7 +37,7 @@
 
 .input-text {
   margin: 0;
-  padding: 24px 12px 16px;
+  padding: 12px 12px 16px;
   opacity: 0.8;
   border-bottom: 1px solid #ffffff;
   display: flex;
@@ -50,11 +52,19 @@
   outline: none;
   background: transparent;
   color: #ffffff;
+  font-size: 20px;
+  font-weight: 700;
 }
-
+.label-text{
+  margin-left: 0;
+  display: block;
+  text-align: start;
+  font-size: 20px;
+  font-weight: 700;
+}
 .input-password {
   margin: 0;
-  padding: 24px 12px 16px;
+  padding: 12px 12px 16px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -174,8 +184,8 @@
     margin: 0 auto;
     padding: 36px 24px;
     background: #2c2d2e;
-    box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.1);
-    border-radius: 35px;
+  box-shadow: 1px -2px 4px 4px rgba(59,56,59,1);
+    border-radius: 15px;
     border: none;
     text-align: center;
   }

@@ -7,9 +7,12 @@ import { ALL_DATA } from "../../Query/get_all";
 import { useMutation } from "@tanstack/react-query";
 import { userUtils } from "../../utils/user.utils";
 import toastify from "../../utils/toastify";
-import { useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { IMG_BASE_URL } from "../../constants/img.constants";
 import EditImageIcon from '../../assets/images/edit.svg'
+import { useNavigate } from "react-router-dom";
+import { ProfileLeng } from "../../configs/language";
+import { LanguageContext } from "../../helper/languageContext";
 
 async function getBase64Full(file) {
   return new Promise((resolve, reject) => {
@@ -30,6 +33,7 @@ const User = () => {
   const ismainImage = useRef(null)
   const saveData = useRef(null)
   const editImage = useRef(null)
+  const navigation = useNavigate()
   const [edit, setEdit] = useState(true)
   const userEdit = useMutation({
     mutationFn: userUtils.patchUser,
@@ -61,12 +65,19 @@ const User = () => {
     ismainImage.current.src = await getBase64Full(e.target.files[0])
     ismainImage.current.classList.remove("d-none")
   }
+  useEffect(()=>{
+    if(!user) navigation('/')
+  }, [navigation])
+  if(!user) navigation('/')
+
+// User profile language
+const {languageChange} = useContext(LanguageContext)
   return (
     <div>
       <Navbar />
       <div className="container">
         <div className="user">
-          <h2 className="user-header">Профиль</h2>
+          <h2 className="user-header">{ProfileLeng[languageChange].text}</h2>
 
           <form onSubmit={handleUser} className="user-box">
             <div className="user-l">
@@ -79,15 +90,24 @@ const User = () => {
 
             <div className="user-info-wrap">
             <div className="user-r">
-                <input disabled={edit}  className="user-input" defaultValue={user?.name?user.name:""} name="name" type="text"placeholder="Имя"/>
-                <input disabled={edit}  className="user-input" defaultValue={"+998"+user?.phone} name="phone" type="tel" placeholder="Nomer" />              
-                <input disabled={edit} className="user-input" defaultValue={user?.email?user.email:""} name="email" type="email" placeholder="Email" />
+                <label className="w-100">
+                  <span className="input-name-lable">Name</span>
+                  <input disabled={edit}  className="user-input" defaultValue={user?.name?user.name:""} name="name" type="text"placeholder="Имя"/>
+                </label>
+                <label className="w-100">
+                  <span className="input-name-lable">Number</span>
+                  <input disabled={edit}  className="user-input" defaultValue={"+998"+user?.phone} name="phone" type="tel" placeholder="Nomer" />   
+                </label>
+                <label className="w-100">
+                <span className="input-name-lable">Email</span>
+                  <input disabled={edit} className="user-input" defaultValue={user?.email?user.email:""} name="email" type="email" placeholder="Email" />
+                </label>
                 <p className="user-text d-none">
                   Что бы вы подать объявлении вам нужно вводить ваш серии номер
                   паспорта.
                 </p>
             </div>
-            <button ref={saveData} type="submit" className={edit?"user-btn mt-5 d-none":"user-btn mt-5"}>Сохранить</button>
+            <button ref={saveData} type="submit" className={edit?"user-btn mt-5 d-none":"user-btn mt-5"}>{ProfileLeng[languageChange].btn}</button>
             </div>
           </form>
           <button onClick={()=>setEdit(false)} className={edit?"user-edit-btn btn":"user-edit-btn btn d-none"} >

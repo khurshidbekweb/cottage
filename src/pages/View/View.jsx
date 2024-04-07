@@ -7,15 +7,7 @@ import { IMG_BASE_URL } from "../../constants/img.constants";
 import { useParams } from "react-router-dom";
 import { ALL_DATA } from "../../Query/get_all";
 import MiniNaw from "../../components/MiniNaw/MiniNaw";
-import Swiper from "swiper";
-import { SwiperSlide } from "swiper/react";
-import { FreeMode, Navigation, Thumbs } from 'swiper/modules';
-import { useState } from "react";
-// Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/free-mode';
-import 'swiper/css/navigation';
-import 'swiper/css/thumbs';
+import Loader from '../../components/Loader/Loader'
 
 const View = () => {
   const params = useParams();
@@ -30,7 +22,10 @@ const View = () => {
     if(e.isMainImage !==true){
       childImage.push(e)
     }
-  })  
+  }) 
+  
+  if(!mainImage)
+    return <Loader/>
   return (
     <>
       <Navbar />

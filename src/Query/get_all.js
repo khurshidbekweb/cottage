@@ -8,6 +8,8 @@ import { comfortUtils } from "../utils/comfort.utils";
 import { cottageTypeUtils } from "../utils/cottage-type.utils";
 import { userUtils } from "../utils/user.utils";
 import { notificationUtils } from "../utils/notification.utilis";
+import { ServiceUtils } from "../utils/service.utils";
+import { TariffUtils } from "../utils/tariff.utilis";
 
 export const ALL_DATA = {
   useCottage: () => {
@@ -131,5 +133,32 @@ export const ALL_DATA = {
         return data
       }
     })
-  },  
+  },
+  useAllNotification: () => {
+    return useQuery({
+      queryKey: [QUERY_KEYS.all_notification],
+      queryFn: async () => {
+        const data = await notificationUtils.getNotification()
+        return data
+      }
+    })
+  },
+  useServices: () => {
+    return useQuery({
+      queryKey: [QUERY_KEYS.services],
+      queryFn: async () => {
+        const data = await ServiceUtils.getService();
+        return data
+      }
+    })
+  },
+  useTariff: () => {
+    return useQuery({
+      queryKey: [QUERY_KEYS.tariff],
+      queryFn: async () => {
+        const data = await TariffUtils.getTariff()
+        return data
+      }
+    })
+  }
 };

@@ -2,8 +2,11 @@ import Bell from "../assets/images/bell.svg";
 import MiniBell from "../assets/images/mini-bell.svg";
 import "./modal.css";
 import { ALL_DATA } from "../Query/get_all";
+
 function Natification() {
-  const user = JSON.parse(localStorage.getItem("user"));
+  const user = JSON.parse(localStorage.getItem("user")) || undefined;
+
+
   const notification = ALL_DATA.useNotificationUser(user?.id);
 
   return (
@@ -56,9 +59,18 @@ function Natification() {
               {notification?.data?.length &&
                 notification.data.map((mes) => {
                   return (
-                    <div className="d-flex justify-content-between  align-items-center" key={mes.id}>
+                    <div
+                      className="d-flex justify-content-between  align-items-center"
+                      key={mes.id}
+                    >
                       <p className="text-notif w-75">{mes.message}</p>
-                      {mes.type === "personal" ? <span className="pesonal-notif btn text-white d-block btn-sm btn-success">{mes.type}</span> : ""}
+                      {mes.type === "personal" ? (
+                        <span className="pesonal-notif btn text-white d-block btn-sm btn-success">
+                          {mes.type}
+                        </span>
+                      ) : (
+                        ""
+                      )}
                       <hr />
                     </div>
                   );
