@@ -17,8 +17,7 @@ const Favorite = () => {
         queryFn: cottageUtils.getCottageTop,
         enabled: false
     })      
-    if(isLoading)
-        return <Loader/>
+    if(isLoading) <Loader/>
     return (
      <>
         <Navbar/>
