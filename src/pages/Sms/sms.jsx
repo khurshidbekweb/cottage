@@ -1,30 +1,28 @@
 import "./SignIn.css";
 import Eye from "../../assets/images/eye.svg";
-import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { useMutation } from "@tanstack/react-query";
 import { authUtils } from "../../utils/auth.utils";
 import { useState } from "react";
 
 const SmsPage = () => {
-    const [time, setTime] = useState(120)
+  const [time, setTime] = useState(120);
   const login = useMutation({
     mutationFn: authUtils.loginAuth,
     onSuccess: (data) => {
-        console.log(data)
-      alert("Login success")
+      console.log(data);
+      alert("Login success");
     },
     onError: (err) => {
       console.log(err);
-    }
-  })
+    },
+  });
 
-  setInterval(() => {
-
-  }, 1000)
+  setInterval(() => {}, 1000);
 
   const handleSms = (e) => {
-    e.preventDefault(e)
-    login.mutate({smsCode: e.target.smsCode, userId: ""})
-  }
+    e.preventDefault(e);
+    login.mutate({ smsCode: e.target.smsCode, userId: "" });
+  };
   return (
     <div className="signin">
       <div className="background">
@@ -39,7 +37,11 @@ const SmsPage = () => {
               />
               <img src={Eye} alt="password" />
             </div>
-            <input  type="submit" className="signin-submit mt-5" value={"Войти"}/>
+            <input
+              type="submit"
+              className="signin-submit mt-5"
+              value={"Войти"}
+            />
           </form>
         </div>
       </div>

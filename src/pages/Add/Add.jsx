@@ -6,7 +6,7 @@ import Dacha2 from "../../assets/images/dacha2.png";
 import Dacha3 from "../../assets/images/dacha3.png";
 import { Link } from "react-router-dom";
 import { AiFillStar } from "react-icons/ai";
-import MiniNav from '../../components/MiniNaw/MiniNaw'
+import MiniNav from "../../components/MiniNaw/MiniNaw";
 import "./Add.css";
 
 const Add = () => {
@@ -121,7 +121,7 @@ const Add = () => {
           </div>
         </div>
       </div>
-      <MiniNav/>
+      <MiniNav />
       <Footer />
     </>
   );

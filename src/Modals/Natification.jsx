@@ -6,7 +6,6 @@ import { ALL_DATA } from "../Query/get_all";
 function Natification() {
   const user = JSON.parse(localStorage.getItem("user")) || undefined;
 
-
   const notification = ALL_DATA.useNotificationUser(user?.id);
 
   return (
@@ -33,6 +32,7 @@ function Natification() {
           />
         </div>
       </button>
+
       <div
         className="modal modal-notification fade modal-natif"
         id="staticBackdrop"
