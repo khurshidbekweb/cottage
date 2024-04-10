@@ -1,8 +1,10 @@
 import "./SignIn.css";
 import Eye from "../../assets/images/eye.svg";
+import EyeSlash from "../../assets/images/eyeSlash.svg";
+
 import { useMutation } from "@tanstack/react-query";
 import { authUtils } from "../../utils/auth.utils";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import toastify from "../../utils/toastify";
 import { useNavigate } from "react-router-dom";
 import Cleave from "cleave.js/react";
@@ -12,6 +14,9 @@ const SignIn = () => {
   const phoneForm = useRef(null);
   const smsInput = useRef(null);
   const navigate = useNavigate();
+
+  // eye btn
+  const [passwordShow, setPasswordShow] = useState(true);
 
   const phone = useMutation({
     mutationFn: authUtils.smsAuth,
@@ -23,6 +28,7 @@ const SignIn = () => {
       console.log(err);
     },
   });
+
   const login = useMutation({
     mutationFn: authUtils.loginAuth,
     onSuccess: (data) => {
@@ -37,18 +43,11 @@ const SignIn = () => {
     },
   });
 
-  //   const cleave = new Cleave('.input-element', {
-  //     prefix: 'PREFIX',
-  //     delimiter: '-',
-  //     blocks: [6, 4, 4, 4],
-  //     uppercase: true
-  // });
-
   const handleAuth = (e) => {
     e.preventDefault();
-    console.log(e.target.phonenumber.value.replaceAll(" ","").slice(4));
+    console.log(e.target.phonenumber.value.replaceAll(" ", "").slice(4));
     phone.mutate({
-      phone: e.target.phonenumber.value.replaceAll(" ","").slice(4),
+      phone: e.target.phonenumber.value.replaceAll(" ", "").slice(4),
     });
     setTimeout(() => {
       phoneForm.current.classList.add("d-none");
@@ -71,6 +70,7 @@ const SignIn = () => {
       toastify.errorMessage("SMS code notog`ri !!!");
     }
   };
+
   return (
     <div className="signin">
       <div className="background">
@@ -79,44 +79,52 @@ const SignIn = () => {
           <form onSubmit={handleAuth} ref={phoneForm}>
             <div className="input-text">
               <label className="d-flex flex-column gap-3">
-                <span className="text-light label-text ">Enter your phone: </span>
-                  <Cleave
-                    options={{
-                        prefix: "+998",
-                        delimiter: " ",
-                        blocks: [4, 2,  3, 2, 2],
-                        numericOnly: true,
-                      }}
-                      placeholder="Phone number"
-                      className="signin-input-text"
-                      name="phonenumber"
-                      required
-                    />
+                <span className="text-light label-text ">
+                  Enter your phone:{" "}
+                </span>
+                <Cleave
+                  options={{
+                    prefix: "+998",
+                    delimiter: " ",
+                    blocks: [4, 2, 3, 2, 2],
+                    numericOnly: true,
+                  }}
+                  placeholder="Phone number"
+                  className="signin-input-text"
+                  name="phonenumber"
+                  required
+                />
               </label>
             </div>
-            <input
-              type="submit"
-              className="signin-submit mt-5"
-              value={"Войти"}
-            />
+            <button type="submit" className="signin-submit mt-5">
+              Войти
+            </button>
           </form>
 
           <form onSubmit={handleLogin} ref={smsForm} className="d-none">
             <div className="input-password">
               <input
                 className="signin-input-password"
-                type="password"
+                type={`${passwordShow ? "password" : "text"}`}
                 ref={smsInput}
                 name="smsCode"
                 placeholder="SMS code"
               />
-              <img src={Eye} alt="password" />
+              <button
+                type="button"
+                className="passwordBtn"
+                onClick={() => setPasswordShow((prev) => !prev)}
+              >
+                <img
+                  src={passwordShow ? Eye : EyeSlash}
+                  alt="password"
+                  className="passwordIcon"
+                />
+              </button>
             </div>
-            <input
-              type="submit"
-              className="signin-submit mt-5"
-              value={"Войти"}
-            />
+            <button type="submit" className="signin-submit mt-5">
+              Войти
+            </button>
           </form>
         </div>
       </div>

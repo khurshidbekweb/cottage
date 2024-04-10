@@ -18,7 +18,7 @@
   margin: 40px auto;
   padding: 52px 48px;
   background: #2c2d2ee7;
-  box-shadow: 1px -2px 16px 4px rgba(59,56,59,1);
+  box-shadow: 1px -2px 16px 4px rgba(59, 56, 59, 1);
   border-radius: 15px;
   border: none;
   text-align: center;
@@ -55,7 +55,7 @@
   font-size: 20px;
   font-weight: 700;
 }
-.label-text{
+.label-text {
   margin-left: 0;
   display: block;
   text-align: start;
@@ -184,7 +184,7 @@
     margin: 0 auto;
     padding: 36px 24px;
     background: #2c2d2e;
-  box-shadow: 1px -2px 4px 4px rgba(59,56,59,1);
+    box-shadow: 1px -2px 4px 4px rgba(59, 56, 59, 1);
     border-radius: 15px;
     border: none;
     text-align: center;
@@ -419,4 +419,16 @@
     line-height: 28px;
     color: rgba(255, 255, 255, 0.6);
   }
+}
+
+.passwordIcon {
+  width: 30px;
+  height: 30px;
+  color: white;
+}
+
+.passwordBtn {
+  border: none;
+  outline: none;
+  background: transparent;
 }

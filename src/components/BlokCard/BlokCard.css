@@ -1,92 +1,92 @@
 .blokcard {
-    margin: 0;
-    padding: 24px;
-    background: #FFFFFF;
-    border: 1px solid rgba(44, 45, 46, 0.25);
-    border-radius: 35px;
+  margin: 0;
+  padding: 24px;
+  background: #ffffff;
+  border: 1px solid rgba(44, 45, 46, 0.25);
+  border-radius: 35px;
 }
 
 .blokcard-l {
-    position: relative;
-    width: 492px;
-    height: 356px;
+  position: relative;
+  width: 492px;
+  height: 356px;
 }
 
 .blokcard-img {
-    width: 100%;
-    height: 100%;
-    border-radius: 35px;
-  }
+  width: 100%;
+  height: 100%;
+  border-radius: 35px;
+}
 
 .blokcard-r {
-    margin: 24px 0 0 0;
-    padding: 0;
-    width: 492px;
+  margin: 24px 0 0 0;
+  padding: 0;
+  width: 492px;
 }
 
 .bc-btn2 {
-    width: 220px;
+  width: 220px;
+  margin: 0;
+  padding: 10px 0;
+  font-family: sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 36px;
+  text-align: center;
+  color: #3cd298;
+  background: #ffffff;
+  border: 1px solid #3cd298;
+  border-radius: 35px;
+  text-decoration: none;
+}
+
+@media (max-width: 390px) {
+  .blokcard {
     margin: 0;
-    padding: 10px 0;
+    padding: 12px;
+    background: #ffffff;
+    border: 1px solid rgba(44, 45, 46, 0.25);
+    border-radius: 25px;
+  }
+
+  .blokcard-l {
+    position: relative;
+    width: 148px;
+    height: 120px;
+  }
+
+  .blokcard-r {
+    margin: 12px 0 0 0;
+    padding: 0;
+    width: 148px;
+  }
+
+  .blokcard-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+  }
+
+  .bc-btn2 {
+    width: 138px;
+    margin: 12px 0 0 5px;
+    padding: 8px 15px;
     font-family: sans-serif;
     font-style: normal;
     font-weight: 600;
-    font-size: 18px;
-    line-height: 36px;
-    text-align: center;
+    font-size: 15px;
+    line-height: 20px;
     color: #3cd298;
     background: #ffffff;
     border: 1px solid #3cd298;
-    border-radius: 35px;
+    border-radius: 18px;
     text-decoration: none;
   }
 
-@media (max-width: 390px) {
-    .blokcard {
-        margin: 0;
-        padding: 12px;
-        background: #FFFFFF;
-        border: 1px solid rgba(44, 45, 46, 0.25);
-        border-radius: 25px;
-    }
-
-    .blokcard-l {
-        position: relative;
-        width: 148px;
-        height: 120px;
-    }
-
-    .blokcard-r {
-        margin: 12px 0 0 0;
-        padding: 0;
-        width: 148px;
-    }
-
-    .blokcard-img {
-        width: 100%;
-        height: 100%;
-        border-radius: 25px;
-    }
-
-    .bc-btn2 {
-        width: 138px;
-        margin: 12px 0 0 5px;
-        padding: 8px 15px;
-        font-family: sans-serif;
-        font-style: normal;
-        font-weight: 600;
-        font-size: 15px;
-        line-height: 20px;
-        color: #3cd298;
-        background: #ffffff;
-        border: 1px solid #3cd298;
-        border-radius: 18px;
-        text-decoration: none;
-      }
-
-      .blokcard-img {
-        width: 100%;
-        height: 100%;
-        border-radius: 25px;
-      }
+  .blokcard-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+  }
 }

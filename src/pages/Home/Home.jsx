@@ -9,30 +9,25 @@ import { useQuery } from "@tanstack/react-query";
 import { QUERY_KEYS } from "../../Query/query-keys";
 import { cottageUtils } from "../../utils/cottage.utils";
 
-
-
-const Home = ({language}) => {
-
-  const {isLoading} = useQuery({
+const Home = ({ language }) => {
+  const { isLoading } = useQuery({
     queryKey: [QUERY_KEYS.cottages],
     queryFn: cottageUtils.getCottageTop,
-    enabled: false
-  })
-  
-  if(isLoading)
-  return <Loader/>
+    enabled: false,
+  });
+
+  if (isLoading) return <Loader />;
 
   return (
     <>
-      <Navbar language ={language} />
+      <Navbar language={language} />
       <MiniNaw />
-      <Header language ={language} />
-      <Places language = {language} />
-      <Dacha language ={language} />
-      <Footer language ={language} />
+      <Header language={language} />
+      <Places language={language} />
+      <Dacha language={language} />
+      <Footer language={language} />
     </>
   );
 };
-
 
 export default Home;

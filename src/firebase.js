@@ -11,7 +11,7 @@ const firebaseConfig = {
   projectId: "dvt--auth",
   storageBucket: "dvt--auth.appspot.com",
   messagingSenderId: "749660803612",
-  appId: "1:749660803612:web:4bd58c7ea8ab565eb185d9"
+  appId: "1:749660803612:web:4bd58c7ea8ab565eb185d9",
 };
 
 // Initialize Firebase

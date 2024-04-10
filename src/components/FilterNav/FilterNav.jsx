@@ -1,6 +1,8 @@
 import "./FilterNav.css";
 import FilterIcon from "../../assets/images/filter-icon.svg";
+
 import Close from "../../assets/images/close.svg";
+
 import FilterSearch from "../../assets/images/filter-search.svg";
 import { HiMenu } from "react-icons/hi";
 import { AiFillAppstore } from "react-icons/ai";
@@ -12,7 +14,7 @@ import BlokCards from "../BlokCards/BlokCards";
 const FilterNav = () => {
   const [modal, setModal] = useState(false);
   const [num, setNum] = useState(0);
-  const [index, setIndex] = useState(0)
+  const [index, setIndex] = useState(0);
 
   return (
     <div className="container">
@@ -20,8 +22,18 @@ const FilterNav = () => {
         <p className="filter-nav-header">Дачи</p>
 
         <div className="filter-nav-inner">
-          <HiMenu className="list-icon" onClick={() =>{setIndex(0)}} />
-          <AiFillAppstore className="blok-icon" onClick={() =>{setIndex(1)}} />
+          <HiMenu
+            className="list-icon"
+            onClick={() => {
+              setIndex(0);
+            }}
+          />
+          <AiFillAppstore
+            className="blok-icon"
+            onClick={() => {
+              setIndex(1);
+            }}
+          />
 
           <button onClick={() => setModal(true)} className="filter-nav-btn">
             <img src={FilterIcon} alt="icon" />
@@ -31,7 +43,7 @@ const FilterNav = () => {
 
         <Modal
           isOpen={modal}
-          className='fnav-modal'
+          className="fnav-modal"
           style={{
             overlay: { background: "#2C2D2E" },
             content: {
@@ -84,19 +96,23 @@ const FilterNav = () => {
             </div>
 
             <div>
-                <label className="fnav-label" htmlFor="fname">Регион</label>
-                <br />
-                <select className="fnav-select" name="" id="">
-                    <option value="region">Выберите регион</option>
-                </select>
+              <label className="fnav-label" htmlFor="fname">
+                Регион
+              </label>
+              <br />
+              <select className="fnav-select" name="" id="">
+                <option value="region">Выберите регион</option>
+              </select>
             </div>
 
             <div>
-                <label className="fnav-label" htmlFor="fname">Удобство</label>
-                <br />
-                <select className="fnav-select" name="" id="">
-                    <option value="region">0 выбран</option>
-                </select>
+              <label className="fnav-label" htmlFor="fname">
+                Удобство
+              </label>
+              <br />
+              <select className="fnav-select" name="" id="">
+                <option value="region">0 выбран</option>
+              </select>
             </div>
 
             <div className="fnav-nums">
@@ -174,24 +190,25 @@ const FilterNav = () => {
             </div>
 
             <div>
-                <label className="fnav-label" htmlFor="fname">Сортировать по</label>
-                <br />
-                <select className="fnav-select" name="" id="">
-                    <option value="region">Цены</option>
-                </select>
+              <label className="fnav-label" htmlFor="fname">
+                Сортировать по
+              </label>
+              <br />
+              <select className="fnav-select" name="" id="">
+                <option value="region">Цены</option>
+              </select>
             </div>
           </div>
         </Modal>
       </div>
 
       <div hidden={index !== 0}>
-      <LineCards />
+        <LineCards />
       </div>
 
       <div hidden={index !== 1}>
-      <BlokCards />
+        <BlokCards />
       </div>
-
     </div>
   );
 };
