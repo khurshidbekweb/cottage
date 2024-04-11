@@ -62,10 +62,10 @@ const DachaCard = (props) => {
             }`}
           >
             <FiHeart
-              onClick={() => favoriteCottage(props.cottage.id)}
               className={`dacha-heart-icon ${
                 props.cottage.isLiked ? "dacha-heart-icon-active" : ""
               }`}
+              onClick={() => favoriteCottage(props.cottage.id)}
             />
           </div>
         </div>

@@ -4,10 +4,12 @@ import Footer from "../../components/Footer/Footer";
 import { AiFillStar } from "react-icons/ai";
 
 import { IMG_BASE_URL } from "../../constants/img.constants";
-import { useParams } from "react-router-dom";
+import {  useParams } from "react-router-dom";
 import { ALL_DATA } from "../../Query/get_all";
 import MiniNaw from "../../components/MiniNaw/MiniNaw";
 import Loader from "../../components/Loader/Loader";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+
 
 import React, { useState } from "react";
 // Import Swiper React components
@@ -22,6 +24,7 @@ import "swiper/css/thumbs";
 
 
 const View = () => {
+
   const params = useParams();
   const [viewCottage, setViewCottage] = useState(null);
 
@@ -40,7 +43,7 @@ const View = () => {
   if (!mainImage) return <Loader />;
   console.log(cottageView?.images);
   return (
-    <>
+    <div className="viewWrapper">
       <Navbar />
 
       <div className="container">
@@ -117,7 +120,7 @@ const View = () => {
                 cottageView.comforts.map((e) => {
                   return (
                     <div key={e.id} className="view-facility1">
-                      <img src={`${IMG_BASE_URL}${e.image}`} alt="img" />
+                      <LazyLoadImage src={`${IMG_BASE_URL}${e.image}`} alt="img" effect="blur" />
                       <p className="view-facility-text">{e.name}</p>
                     </div>
                   );
@@ -128,7 +131,7 @@ const View = () => {
       </div>
       <MiniNaw />
       <Footer />
-    </>
+    </div>
   );
 };
 
