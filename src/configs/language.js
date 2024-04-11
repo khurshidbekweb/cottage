@@ -201,6 +201,7 @@ export const FooterLink3 = [
     to: "#palce",
   },
 ];
+
 export const FooterHeadLeng = {
   uz: {
     link1: "Qo'llab-quvvatlash",
@@ -218,6 +219,7 @@ export const FooterHeadLeng = {
     link3: "Cooperation",
   },
 };
+
 export const FooterMiniLang = {
   uz: "Toshkent, Amir Temur 7",
   ru: "Ташкент, Амир Tемура 7",
