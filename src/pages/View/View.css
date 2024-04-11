@@ -1,3 +1,7 @@
+.viewWrapper {
+  scroll-behavior: smooth;
+}
+
 .view-imgmain {
   width: 1110px;
   height: 557px;
@@ -101,39 +105,39 @@
 }
 
 .view-facilitys {
-    display: grid;
-    grid-template-columns: repeat(3, 250px);
-    justify-content: space-between;
-    align-items: center;
+  display: grid;
+  grid-template-columns: repeat(3, 250px);
+  justify-content: space-between;
+  align-items: center;
 }
 
 .view-facility1 {
-    width: 250px;
-    margin: 0 0 24px 0;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    gap: 10px;
+  width: 250px;
+  margin: 0 0 24px 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .view-facility1:last-child {
-    margin: 0;
+  margin: 0;
 }
 
 .view-facility-text {
-    width: 334px;
-    margin: 0;
-    padding: 0;
-    font-family: sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 24px;
-    line-height: 36px;
-    color: #2C2D2E;
+  width: 334px;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 36px;
+  color: #2c2d2e;
 }
 
 @media (max-width: 576px) {
-  .view{
+  .view {
     overflow: hidden;
   }
   .view-imgmain {
@@ -141,7 +145,7 @@
     padding: 0;
     width: 100%;
     height: 180px;
-    border-radius: 5px;    
+    border-radius: 5px;
   }
 
   .view-imgs {
@@ -213,7 +217,7 @@
     line-height: 20px;
     color: #2c2d2e;
   }
-  .view-facilitys{
+  .view-facilitys {
     display: grid;
     grid-template-columns: repeat(2, 150px);
   }
@@ -237,8 +241,8 @@
     font-weight: 500;
     font-size: 16px;
     line-height: 26px;
-    color: #2C2D2E;
-}
+    color: #2c2d2e;
+  }
 
   .view-facility-box {
     display: none;
@@ -323,7 +327,7 @@
     line-height: 20px;
     color: #2c2d2e;
   }
-  .view-facilitys{
+  .view-facilitys {
     display: grid;
     grid-template-columns: repeat(2, 150px);
   }
@@ -347,8 +351,8 @@
     font-weight: 500;
     font-size: 16px;
     line-height: 26px;
-    color: #2C2D2E;
-}
+    color: #2c2d2e;
+  }
 
   .view-facility-box {
     display: none;
