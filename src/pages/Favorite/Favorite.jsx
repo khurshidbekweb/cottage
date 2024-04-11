@@ -11,7 +11,6 @@ import { cottageUtils } from "../../utils/cottage.utils";
 import { QUERY_KEYS } from "../../Query/query-keys";
 
 const Favorite = () => {
-<<<<<<< HEAD
     const cottage = ALL_DATA.useCottage()
     const {isLoading} = useQuery({
         queryKey: [QUERY_KEYS.cottages],
@@ -19,45 +18,36 @@ const Favorite = () => {
         enabled: false
     })      
     if(isLoading) <Loader/>
-    return (
-     <>
-        <Navbar/>
-        <div className="container">
-            <div className="favorite">
-                <h2 className='favorite-header'>Избранные</h2>
-=======
-  const cottage = ALL_DATA.useCottage();
->>>>>>> 800a87f42a85a5f1f1afcf59c0ba54e85a48895e
-
-  const { isLoading } = useQuery({
-    queryKey: [QUERY_KEYS.cottages],
-    queryFn: cottageUtils.getCottageTop,
-    enabled: false,
-  });
-
-  if (isLoading) return <Loader />;
-
   return (
     <>
       <Navbar />
       <div className="container">
         <div className="favorite">
-          <h2 className="favorite-header">Избранные</h2>
+            {cottage.data && cottage.data.length ? 
+            <>
+                <h2 className="favorite-header">Избранные</h2>
 
-          <div className="favorite-cards">
-            {cottage.data?.length &&
-              cottage.data
-                .filter((e) => e.isLiked === true)
-                .map((e) => {
-                  return <DachaCard key={e.id} cottage={e} btn="Подробное" />;
-                })}
-            {cottage.data?.length &&
-              cottage.data
-                .filter((e) => e.isLiked === true)
-                .map((e) => {
-                  return <DachaMiniCard key={e.id} cottage={e} />;
-                })}
-          </div>
+                <div className="favorite-cards">
+                {cottage.data?.length &&
+                    cottage.data
+                    .filter((e) => e.isLiked === true)
+                    .map((e) => {
+                        return <DachaCard key={e.id} cottage={e} btn="Подробное" />;
+                    })}
+                {cottage.data?.length &&
+                    cottage.data
+                    .filter((e) => e.isLiked === true)
+                    .map((e) => {
+                        return <DachaMiniCard key={e.id} cottage={e} />;
+                    })}
+                </div>
+            </>
+            :
+            <>
+                <h2 className="favorite-header">Избранные</h2>
+                <p className="text-danger">You have this page home for empte</p>
+            </>
+        }
         </div>
       </div>
       <MiniNaw />

@@ -22,9 +22,12 @@
 
 .view-image {
   display: block;
-  width: 350px;
-  height: 250px;
-  border-radius: 35px;
+  height: 450px !important;
+  border-radius: 35px;  
+}
+.view-image-child{
+  height: 150px !important;
+  border-radius: 3px;
 }
 
 .view-main {
@@ -66,7 +69,9 @@
 .view-star-active {
   color: #ffd400;
 }
-
+.cottage-images{
+  width: 75%;
+}
 .view-h {
   margin: 58px 0 48px;
   padding: 0;
@@ -132,6 +137,74 @@
     color: #2C2D2E;
 }
 
+
+/* Swiper Css */
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}  
+.swiper {
+  width: 100%;
+  height: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.swiper-slide {
+  background-size: cover;
+  background-position: center;
+}
+
+.mySwiper2 {
+  height: 80%;
+  width: 100%;
+}
+
+.mySwiper {
+  height: 20%;
+  box-sizing: border-box;
+  padding: 10px 0;
+}
+
+.mySwiper .swiper-slide {
+  width: 25%;
+  height: 100%;
+  opacity: 0.5;
+}
+
+.mySwiper .swiper-slide-thumb-active {
+  opacity: 1;
+}
+
+.swiper-slide-active{
+  opacity: 1;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+
 @media (max-width: 576px) {
   .view{
     overflow: hidden;
@@ -143,7 +216,9 @@
     height: 180px;
     border-radius: 5px;    
   }
-
+  .cottage-images{
+    width: 100%;
+  }
   .view-imgs {
     display: grid;
     grid-auto-flow: column;
@@ -156,8 +231,12 @@
 
   .view-image {
     width: 111px;
-    height: 100px;
-    border-radius: 15px;
+    height: 200px !important;
+    border-radius: 5px;
+  }
+  .view-image-child{
+    height: 80px !important;
+    border-radius: 3px;
   }
 
   .view-main {
@@ -243,6 +322,9 @@
   .view-facility-box {
     display: none;
   }
+  .text-area-mini{
+    display: none;
+  }
 }
 
 @media (max-width: 390px) {
@@ -269,7 +351,10 @@
     height: 100px;
     border-radius: 15px;
   }
-
+  .view-image-child{
+    height: 60px !important;
+    border-radius: 3px;
+  }
   .view-main {
     margin: 24px 0;
     padding: 0;

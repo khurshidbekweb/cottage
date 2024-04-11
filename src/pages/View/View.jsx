@@ -9,8 +9,21 @@ import { ALL_DATA } from "../../Query/get_all";
 import MiniNaw from "../../components/MiniNaw/MiniNaw";
 import Loader from "../../components/Loader/Loader";
 
+import React, { useState } from "react";
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+// import required modules
+import { FreeMode, Navigation, Thumbs } from "swiper/modules";
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/free-mode";
+import "swiper/css/navigation";
+import "swiper/css/thumbs";
+
+
 const View = () => {
   const params = useParams();
+  const [viewCottage, setViewCottage] = useState(null);
 
   const cottage = ALL_DATA.useCottage();
   const cottageView = cottage?.data?.find((e) => e.id === params.id);
@@ -25,31 +38,60 @@ const View = () => {
   });
 
   if (!mainImage) return <Loader />;
+  console.log(cottageView?.images);
   return (
     <>
       <Navbar />
 
       <div className="container">
         <div className="view">
-          <img
-            className="view-imgmain"
-            src={`${IMG_BASE_URL}${mainImage}`}
-            alt="img"
-          />
-          <div className="view-imgs">
-            {childImage?.length &&
-              childImage.map((e) => {
-                return (
-                  <img
-                    key={e.id}
-                    className="view-image"
-                    src={`${IMG_BASE_URL}${e.image}`}
-                    alt="img"
-                  />
-                );
-              })}
+          <div className="imag-and-desc-wrap w-100 gap-3 d-flex">
+            <div className="cottage-images">
+                <Swiper
+                  style={{
+                    "--swiper-navigation-color": "#fff",
+                    "--swiper-pagination-color": "#fff",
+                  }}
+                  loop={true}
+                  spaceBetween={10}
+                  navigation={true}
+                  thumbs ={ {swiper: viewCottage}}
+                  modules={[FreeMode, Navigation, Thumbs]}
+                  className="mySwiper2"
+                >
+                  {cottageView?.images && cottageView.images.map(img => {
+                    return <SwiperSlide key={img.id}>
+                              <img className="view-image" src={`${IMG_BASE_URL}${img.image}`} alt="img"/>
+                            </SwiperSlide>
+                  })}  
+                </Swiper>
+                <Swiper
+                  onSwiper={
+                    setViewCottage
+                  }
+                  spaceBetween={10}
+                  slidesPerView={4}
+                  freeMode={true}
+                  watchSlidesProgress
+                  modules={[FreeMode, Navigation, Thumbs]}
+                  className="mySwiper"
+                >
+                  {cottageView?.images && cottageView.images.map(img => {
+                    return <SwiperSlide key={img.id}>
+                              <img
+                                  className="view-image-child"
+                                  src={`${IMG_BASE_URL}${img.image}`}
+                                  alt="img"
+                                />
+                            </SwiperSlide>
+                  })}         
+                </Swiper>
+            </div>
+            <div className="">
+                <textarea className="mt-4 form-control text-area-mini" name="" id="" cols="40" rows="23"></textarea>
+                <button type="submit" className="btn bg-success text-white mt-3 d-block ms-auto">Submit</button>
+            </div>
           </div>
-
           <div className="view-main">
             <h2 className="view-name">{cottageView?.name}</h2>
             <p className="view-location">

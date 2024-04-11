@@ -18,7 +18,6 @@ import { AuthContextProvider } from "./context/AuthContext";
 import Protected from "./components/Protected";
 import Vacation from "./pages/Vacation/Vacation";
 import Announcoment from "./pages/Announcement/Announcoment";
-import SwiperPage from "./pages/View/SwiperPage";
 import ErrorPage from "./pages/ErrorPage/ErrorPage";
 import { LanguageContext } from "./helper/languageContext";
 import { useState } from "react";
@@ -162,7 +161,6 @@ function App() {
               }
             />
             <Route path="/services" element={<Services />} />
-            <Route path="/swiper" element={<SwiperPage />} />
             <Route path="*" element={<ErrorPage />} />
           </Routes>
         </LanguageContext.Provider>
