@@ -222,6 +222,6 @@ export const FooterHeadLeng = {
 
 export const FooterMiniLang = {
   uz: "Toshkent, Amir Temur 7",
-  ru: "Ташкент, Амир Tемура 7",
+  ru: "Ташкент, Амир Tемура  7",
   en: "Tashkent, Amir Temur 7",
 };
