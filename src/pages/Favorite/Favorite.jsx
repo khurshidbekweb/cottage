@@ -10,8 +10,9 @@ import { useQuery } from "@tanstack/react-query";
 import { cottageUtils } from "../../utils/cottage.utils";
 import { QUERY_KEYS } from "../../Query/query-keys";
 
+
 const Favorite = () => {
-<<<<<<< HEAD
+
     const cottage = ALL_DATA.useCottage()
     const {isLoading} = useQuery({
         queryKey: [QUERY_KEYS.cottages],
@@ -25,9 +26,9 @@ const Favorite = () => {
         <div className="container">
             <div className="favorite">
                 <h2 className='favorite-header'>Избранные</h2>
-=======
+
   const cottage = ALL_DATA.useCottage();
->>>>>>> 800a87f42a85a5f1f1afcf59c0ba54e85a48895e
+
 
   const { isLoading } = useQuery({
     queryKey: [QUERY_KEYS.cottages],

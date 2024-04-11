@@ -4,12 +4,15 @@ import Footer from "../../components/Footer/Footer";
 import { AiFillStar } from "react-icons/ai";
 
 import { IMG_BASE_URL } from "../../constants/img.constants";
-import { useParams } from "react-router-dom";
+import {  useParams } from "react-router-dom";
 import { ALL_DATA } from "../../Query/get_all";
 import MiniNaw from "../../components/MiniNaw/MiniNaw";
 import Loader from "../../components/Loader/Loader";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+
 
 const View = () => {
+
   const params = useParams();
 
   const cottage = ALL_DATA.useCottage();
@@ -26,25 +29,27 @@ const View = () => {
 
   if (!mainImage) return <Loader />;
   return (
-    <>
+    <div className="viewWrapper">
       <Navbar />
 
       <div className="container">
         <div className="view">
-          <img
+          <LazyLoadImage
             className="view-imgmain"
             src={`${IMG_BASE_URL}${mainImage}`}
             alt="img"
+            effect="blur"
           />
           <div className="view-imgs">
             {childImage?.length &&
               childImage.map((e) => {
                 return (
-                  <img
+                  <LazyLoadImage
                     key={e.id}
                     className="view-image"
                     src={`${IMG_BASE_URL}${e.image}`}
                     alt="img"
+                    effect="blur"
                   />
                 );
               })}
@@ -75,7 +80,7 @@ const View = () => {
                 cottageView.comforts.map((e) => {
                   return (
                     <div key={e.id} className="view-facility1">
-                      <img src={`${IMG_BASE_URL}${e.image}`} alt="img" />
+                      <LazyLoadImage src={`${IMG_BASE_URL}${e.image}`} alt="img" effect="blur" />
                       <p className="view-facility-text">{e.name}</p>
                     </div>
                   );
@@ -86,7 +91,7 @@ const View = () => {
       </div>
       <MiniNaw />
       <Footer />
-    </>
+    </div>
   );
 };
 
