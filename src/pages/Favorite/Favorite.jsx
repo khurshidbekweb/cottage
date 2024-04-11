@@ -13,7 +13,22 @@ import { QUERY_KEYS } from "../../Query/query-keys";
 
 const Favorite = () => {
 
+    const cottage = ALL_DATA.useCottage()
+    const {isLoading} = useQuery({
+        queryKey: [QUERY_KEYS.cottages],
+        queryFn: cottageUtils.getCottageTop,
+        enabled: false
+    })      
+    if(isLoading) <Loader/>
+    return (
+     <>
+        <Navbar/>
+        <div className="container">
+            <div className="favorite">
+                <h2 className='favorite-header'>Избранные</h2>
+
   const cottage = ALL_DATA.useCottage();
+
 
   const { isLoading } = useQuery({
     queryKey: [QUERY_KEYS.cottages],
