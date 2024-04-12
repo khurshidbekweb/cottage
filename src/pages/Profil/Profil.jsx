@@ -1,8 +1,13 @@
 import React from 'react';
+
 import './Profil.css'
+
 import Navbar from '../../components/Navbar/Navbar';
 import MiniNaw from '../../components/MiniNaw/MiniNaw';
+
 import { Link } from 'react-router-dom';
+
+
 const Profil = () => {
     return <>
         <Navbar/>

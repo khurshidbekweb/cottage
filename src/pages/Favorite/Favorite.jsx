@@ -10,14 +10,18 @@ import { useQuery } from "@tanstack/react-query";
 import { cottageUtils } from "../../utils/cottage.utils";
 import { QUERY_KEYS } from "../../Query/query-keys";
 
+
 const Favorite = () => {
-    const cottage = ALL_DATA.useCottage()
-    const {isLoading} = useQuery({
-        queryKey: [QUERY_KEYS.cottages],
-        queryFn: cottageUtils.getCottageTop,
-        enabled: false
-    })      
-    if(isLoading) <Loader/>
+
+  const cottage = ALL_DATA.useCottage();
+  const { isLoading } = useQuery({
+    queryKey: [QUERY_KEYS.cottages],
+    queryFn: cottageUtils.getCottageTop,
+    enabled: false,
+  });
+
+  if (isLoading) return <Loader />;
+
   return (
     <>
       <Navbar />

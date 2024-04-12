@@ -13,18 +13,17 @@ import PayDetail from "./pages/PayDetail/PayDetail";
 import Favorite from "./pages/Favorite/Favorite";
 import Add from "./pages/Add/Add";
 import AddNew from "./pages/AddNew/AddNew";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import { AuthContextProvider } from "./context/AuthContext";
 import Protected from "./components/Protected";
 import Vacation from "./pages/Vacation/Vacation";
 import Announcoment from "./pages/Announcement/Announcoment";
 import ErrorPage from "./pages/ErrorPage/ErrorPage";
 import { LanguageContext } from "./helper/languageContext";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useQueryClient } from "@tanstack/react-query";
 import Services from "./pages/Services/Services";
 import Profil from "./pages/Profil/Profil";
-// import Swiper './'
 
 function App() {
   if (!localStorage.getItem("language")) localStorage.setItem("language", "uz");
@@ -39,6 +38,12 @@ function App() {
     setLanguageChange(e.target.value);
     queryClient.invalidateQueries({ type: "all" });
   };
+
+  const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "instant" });
+  }, [location.pathname]);
 
   return (
     <div className="App">
