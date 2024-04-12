@@ -4,11 +4,7 @@ import Footer from "../../components/Footer/Footer";
 import { AiFillStar } from "react-icons/ai";
 
 import { IMG_BASE_URL } from "../../constants/img.constants";
-<<<<<<< HEAD
 import { Link, useParams } from "react-router-dom";
-=======
-import {  useParams } from "react-router-dom";
->>>>>>> 36690287252d13f20c0955e01c63ed8eafbab0ea
 import { ALL_DATA } from "../../Query/get_all";
 import MiniNaw from "../../components/MiniNaw/MiniNaw";
 import Loader from "../../components/Loader/Loader";
