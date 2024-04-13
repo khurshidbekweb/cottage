@@ -4,11 +4,7 @@ import Footer from "../../components/Footer/Footer";
 import { AiFillStar } from "react-icons/ai";
 
 import { IMG_BASE_URL } from "../../constants/img.constants";
-
 import { Link, useParams } from "react-router-dom";
-
-import { useParams } from "react-router-dom";
-
 import { ALL_DATA } from "../../Query/get_all";
 import MiniNaw from "../../components/MiniNaw/MiniNaw";
 import Loader from "../../components/Loader/Loader";
@@ -25,8 +21,6 @@ import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
 import { FiPhoneCall, FiUser } from "react-icons/fi";
-
-
 
 const View = () => {
   const params = useParams();
@@ -45,86 +39,75 @@ const View = () => {
   });
 
   if (!mainImage) return <Loader />;
-
-
-
   console.log(cottageView?.images);
-
   return (
     <div className="viewWrapper">
       <Navbar />
 
       <div className="container">
         <div className="view">
-
-          <LazyLoadImage
-            className="view-imgmain"
-            src={`${IMG_BASE_URL}${mainImage}`}
-            alt="img"
-            effect="blur"
-          />
-
-          <div className="view-imgs">
-            {childImage?.length &&
-              childImage.map((e) => {
-                return (
-                  <LazyLoadImage
-                    key={e.id}
-                    className="view-image"
-                    src={`${IMG_BASE_URL}${e.image}`}
-                    alt="img"
-                    effect="blur"
-                  />
-                );
-              })}
-
           <div className="imag-and-desc-wrap w-100 gap-3 d-flex">
             <div className="cottage-images">
-                <Swiper
-                  style={{
-                    "--swiper-navigation-color": "#fff",
-                    "--swiper-pagination-color": "#fff",
-                  }}
-                  loop={true}
-                  spaceBetween={10}
-                  navigation={true}
-                  thumbs ={ {swiper: viewCottage}}
-                  modules={[FreeMode, Navigation, Thumbs]}
-                  className="mySwiper2"
-                >
-                  {cottageView?.images && cottageView.images.map(img => {
-                    return <SwiperSlide key={img.id}>
-                              <img className="view-image" src={`${IMG_BASE_URL}${img.image}`} alt="img"/>
-                            </SwiperSlide>
-                  })}  
-                </Swiper>
-                <Swiper
-                  onSwiper={
-                    setViewCottage
-                  }
-                  spaceBetween={10}
-                  slidesPerView={4}
-                  freeMode={true}
-                  watchSlidesProgress
-                  modules={[FreeMode, Navigation, Thumbs]}
-                  className="mySwiper"
-                >
-                  {cottageView?.images && cottageView.images.map(img => {
-                    return <SwiperSlide key={img.id}>
-                              <img
-                                  className="view-image-child"
-                                  src={`${IMG_BASE_URL}${img.image}`}
-                                  alt="img"
-                                />
-                            </SwiperSlide>
-                  })}         
-                </Swiper>
+              <Swiper
+                style={{
+                  "--swiper-navigation-color": "#fff",
+                  "--swiper-pagination-color": "#fff",
+                }}
+                loop={true}
+                spaceBetween={10}
+                navigation={true}
+                thumbs={{ swiper: viewCottage }}
+                modules={[FreeMode, Navigation, Thumbs]}
+                className="mySwiper2"
+              >
+                {cottageView?.images &&
+                  cottageView.images.map((img) => {
+                    return (
+                      <SwiperSlide key={img.id}>
+                        <img
+                          className="view-image"
+                          src={`${IMG_BASE_URL}${img.image}`}
+                          alt="img"
+                        />
+                      </SwiperSlide>
+                    );
+                  })}
+              </Swiper>
+              <Swiper
+                onSwiper={setViewCottage}
+                spaceBetween={10}
+                slidesPerView={4}
+                freeMode={true}
+                watchSlidesProgress
+                modules={[FreeMode, Navigation, Thumbs]}
+                className="mySwiper"
+              >
+                {cottageView?.images &&
+                  cottageView.images.map((img) => {
+                    return (
+                      <SwiperSlide key={img.id}>
+                        <img
+                          className="view-image-child"
+                          src={`${IMG_BASE_URL}${img.image}`}
+                          alt="img"
+                        />
+                      </SwiperSlide>
+                    );
+                  })}
+              </Swiper>
             </div>
             <div className="contact-me">
-                <Link to="tel:+998971082004" className="mt-3 fs-4 text-decoration-none fw-bold d-flex align-items-center gap-2 border p-2 px-4 rounded bg-warning text-black "><FiUser/> Xurshidbek</Link>
-                <Link to="tel:+998971082004" className="call-me mt-3 text-center"> <FiPhoneCall/>  <p className="mt-3 fw-bold">Telefon qilish</p></Link>
+              <Link
+                to="tel:+998971082004"
+                className="mt-3 fs-4 text-decoration-none fw-bold d-flex align-items-center gap-2 border p-2 px-4 rounded bg-warning text-black "
+              >
+                <FiUser /> Xurshidbek
+              </Link>
+              <Link to="tel:+998971082004" className="call-me mt-3 text-center">
+                {" "}
+                <FiPhoneCall /> <p className="mt-3 fw-bold">Telefon qilish</p>
+              </Link>
             </div>
-
           </div>
           <div className="view-main">
             <h2 className="view-name">{cottageView?.name}</h2>
@@ -132,6 +115,7 @@ const View = () => {
               {cottageView?.region?.name} viloyati, {cottageView?.place?.name}
             </p>
             <div className="view-stars">
+              {" "}
               <AiFillStar className="view-star-active" />
               <AiFillStar className="view-star-active" />
               <AiFillStar className="view-star-active" />

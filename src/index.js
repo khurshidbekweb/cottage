@@ -9,13 +9,13 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ToastContainer } from "react-toastify";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-const quertClient = new QueryClient()
+const quertClient = new QueryClient();
 root.render(
-    <QueryClientProvider client={quertClient}>
-      <BrowserRouter>
-        <App />
-        <ToastContainer position="top-right" autoClose={2000}/>
-      </BrowserRouter>
-    </QueryClientProvider>
+  <QueryClientProvider client={quertClient}>
+    <BrowserRouter>
+      <App />
+      <ToastContainer position="top-right" autoClose={2000} />
+    </BrowserRouter>
+  </QueryClientProvider>
 );
 reportWebVitals();
