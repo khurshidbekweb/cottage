@@ -208,6 +208,25 @@
   height: 100%;
 }
 
+.call-me{
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 2px 15px;
+  width: 100%;
+  border-radius: 10px;
+  background: green;
+  color: white;
+  font-size: 23px;
+}
+.call-me:hover{
+  color: white;
+}
+.contact-me{
+  margin: 15px auto;
+  text-align: center;
+}
 
 @media (max-width: 576px) {
   .view {

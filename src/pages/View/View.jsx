@@ -4,7 +4,11 @@ import Footer from "../../components/Footer/Footer";
 import { AiFillStar } from "react-icons/ai";
 
 import { IMG_BASE_URL } from "../../constants/img.constants";
+
+import { Link, useParams } from "react-router-dom";
+
 import { useParams } from "react-router-dom";
+
 import { ALL_DATA } from "../../Query/get_all";
 import MiniNaw from "../../components/MiniNaw/MiniNaw";
 import Loader from "../../components/Loader/Loader";
@@ -20,6 +24,7 @@ import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
+import { FiPhoneCall, FiUser } from "react-icons/fi";
 
 
 
@@ -115,9 +120,9 @@ const View = () => {
                   })}         
                 </Swiper>
             </div>
-            <div className="">
-                <textarea className="mt-4 form-control text-area-mini" name="" id="" cols="40" rows="23"></textarea>
-                <button type="submit" className="btn bg-success text-white mt-3 d-block ms-auto">Submit</button>
+            <div className="contact-me">
+                <Link to="tel:+998971082004" className="mt-3 fs-4 text-decoration-none fw-bold d-flex align-items-center gap-2 border p-2 px-4 rounded bg-warning text-black "><FiUser/> Xurshidbek</Link>
+                <Link to="tel:+998971082004" className="call-me mt-3 text-center"> <FiPhoneCall/>  <p className="mt-3 fw-bold">Telefon qilish</p></Link>
             </div>
 
           </div>
