@@ -1,11 +1,11 @@
 import "./FilterNav.css";
+
 import FilterIcon from "../../assets/images/filter-icon.svg";
-
 import Close from "../../assets/images/close.svg";
-
 import FilterSearch from "../../assets/images/filter-search.svg";
 import { HiMenu } from "react-icons/hi";
 import { AiFillAppstore } from "react-icons/ai";
+
 import Modal from "react-modal";
 import React, { useState } from "react";
 import LineCards from "../LineCards/LineCards";

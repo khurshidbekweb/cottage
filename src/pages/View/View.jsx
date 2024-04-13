@@ -4,12 +4,15 @@ import Footer from "../../components/Footer/Footer";
 import { AiFillStar } from "react-icons/ai";
 
 import { IMG_BASE_URL } from "../../constants/img.constants";
+
 import { Link, useParams } from "react-router-dom";
+
+import { useParams } from "react-router-dom";
+
 import { ALL_DATA } from "../../Query/get_all";
 import MiniNaw from "../../components/MiniNaw/MiniNaw";
 import Loader from "../../components/Loader/Loader";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-
 
 import React, { useState } from "react";
 // Import Swiper React components
@@ -25,8 +28,8 @@ import { FiPhoneCall, FiUser } from "react-icons/fi";
 import BreacdCrumbs from "../../components/BreadCrumbs/BreacdCrumbs";
 
 
-const View = () => {
 
+const View = () => {
   const params = useParams();
   const [viewCottage, setViewCottage] = useState(null);
 
@@ -43,11 +46,41 @@ const View = () => {
   });
   console.log(cottageView);
   if (!mainImage) return <Loader />;
+<<<<<<< HEAD
+=======
+
+
+
+  console.log(cottageView?.images);
+
+>>>>>>> 27e83ccf05e28d84f540c9dd50bfdf72c0935380
   return (
     <div className="viewWrapper">
       <div className="container">
         <BreacdCrumbs/>
         <div className="view">
+
+          <LazyLoadImage
+            className="view-imgmain"
+            src={`${IMG_BASE_URL}${mainImage}`}
+            alt="img"
+            effect="blur"
+          />
+
+          <div className="view-imgs">
+            {childImage?.length &&
+              childImage.map((e) => {
+                return (
+                  <LazyLoadImage
+                    key={e.id}
+                    className="view-image"
+                    src={`${IMG_BASE_URL}${e.image}`}
+                    alt="img"
+                    effect="blur"
+                  />
+                );
+              })}
+
           <div className="imag-and-desc-wrap w-100 gap-3 d-flex">
             <div className="cottage-images">
                 <Swiper
@@ -94,6 +127,7 @@ const View = () => {
                 <Link to="tel:+998971082004" className="mt-3 fs-4 text-decoration-none fw-bold d-flex align-items-center gap-2 border p-2 px-4 rounded bg-warning text-black "><FiUser/> Xurshidbek</Link>
                 <Link to="tel:+998971082004" className="call-me mt-3 text-center"> <FiPhoneCall/>  <p className="mt-3 fw-bold">Telefon qilish</p></Link>
             </div>
+
           </div>
           <div className="view-main">
             <h2 className="view-name">{cottageView?.name}</h2>
@@ -120,7 +154,11 @@ const View = () => {
                 cottageView.comforts.map((e) => {
                   return (
                     <div key={e.id} className="view-facility1">
-                      <LazyLoadImage src={`${IMG_BASE_URL}${e.image}`} alt="img" effect="blur" />
+                      <LazyLoadImage
+                        src={`${IMG_BASE_URL}${e.image}`}
+                        alt="img"
+                        effect="blur"
+                      />
                       <p className="view-facility-text">{e.name}</p>
                     </div>
                   );
