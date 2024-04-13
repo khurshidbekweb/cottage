@@ -16,10 +16,13 @@ import { PlaseLeng } from "../../configs/language";
 import { LanguageContext } from "../../helper/languageContext";
 const Places = () => {
   const places = ALL_DATA.usePlace();
+
   const prevPlaceElm = useRef(null);
   const nextPlaceElm = useRef(null);
+
   // useContext language
   const { languageChange } = useContext(LanguageContext);
+
   return (
     <div className="container">
       <div className="places">

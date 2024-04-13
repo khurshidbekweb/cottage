@@ -1,75 +1,74 @@
 .places-card {
-    position: relative;   
-    width: 150px !important;
-    display: block;
-    color: black;
+  position: relative;
+  width: 150px !important;
+  display: block;
+  color: black;
 }
-.places-card:hover{
-    color: black;
+
+.places-card:hover {
+  color: black;
 }
 
 .places-card-name {
+  position: absolute;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 30px;
+  text-align: center;
+  background: #fff;
+  width: 100%;
+  padding: 0 0 10px;
+  top: 115px;
+  display: block;
+}
+
+.nature-img {
+  width: 100%;
+  height: 150px !important;
+  border-radius: 50%;
+  display: block;
+}
+
+@media (max-width: 576px) {
+  .places-card {
+    width: 90px !important;
+    height: 80px !important;
+  }
+  .nature-img {
+    width: 100%;
+    height: 90px !important;
+    border-radius: 50%;
+    display: block;
+  }
+  .places-card-name {
     position: absolute;
     /* font-family: sans-serif; */
     font-style: normal;
     font-weight: 500;
-    font-size: 24px;
-    line-height: 30px;
+    font-size: 16px;
+    line-height: 20px;
     text-align: center;
-    background: #fff;
+    background: #ffffff;
     width: 100%;
-    padding: 0 0 10px;
-    top:115px;
+    padding: 5px 0;
+    top: 65px;
     display: block;
-}
-
-.nature-img{
-    width: 100%;
-    height: 150px !important;
-    border-radius: 50%;
-    display: block;
-}
-
-@media (max-width: 576px) {
-    .places-card {
-        width: 90px !important;
-        height: 80px !important;
-    }
-    .nature-img{
-        width: 100%;
-        height: 90px !important;
-        border-radius: 50%;
-        display: block;
-    }
-    .places-card-name {
-        position: absolute;
-        /* font-family: sans-serif; */
-        font-style: normal;
-        font-weight: 500;
-        font-size: 16px;
-        line-height: 20px;
-        text-align: center;
-        background: #ffffff;
-        width: 100%;
-        padding: 5px 0;
-        top:65px;
-        display: block;
-    }
+  }
 }
 
 @media (max-width: 390px) {
-    .places-card {
-        width: 80px !important;
-    }
-    .nature-img{
-        width: 100%;
-        height: 80px !important;
-        border-radius: 50%;
-        display: block;
-    }
-    .places-card-name{
-        position: absolute;
-        top: 59px;
-        width: 100%;
-    }
+  .places-card {
+    width: 80px !important;
+  }
+  .nature-img {
+    width: 100%;
+    height: 80px !important;
+    border-radius: 50%;
+    display: block;
+  }
+  .places-card-name {
+    position: absolute;
+    top: 59px;
+    width: 100%;
+  }
 }

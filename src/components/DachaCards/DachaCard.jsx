@@ -12,13 +12,18 @@ import { CottageLeng } from "../../configs/language";
 
 const DachaCard = (props) => {
   const queryClient = useQueryClient();
+
   const mainImage = props.cottage.images.find(
     (e) => e.isMainImage === true
   ).image;
   const liked = [];
+
   const navigate = useNavigate();
+
   const accessToken = localStorage.getItem("accessToken");
+
   const refreshToken = localStorage.getItem("refreshToken");
+
   const favoriteCottage = (id) => {
     if (accessToken && refreshToken) {
       let LocalLiked = JSON.parse(localStorage.getItem("liked"));
@@ -38,6 +43,7 @@ const DachaCard = (props) => {
 
   // Language UseState
   const { languageChange } = useContext(LanguageContext);
+
   return (
     <div className="dacha-card">
       <div className="main-img-head-card">
@@ -49,6 +55,7 @@ const DachaCard = (props) => {
           alt="dacha"
           effect="blur"
         />
+
         <div
           className={
             props.cottage.cottageStatus === "progress"
@@ -87,7 +94,7 @@ const DachaCard = (props) => {
         ></div>
       </div>
       <div>
-        <h5 className="oswald dacha-card-name">{props.cottage.name}</h5>
+        <h5 className="dacha-card-name">{props.cottage.name}</h5>
         <p className="dacha-card-text">
           {props.cottage.region.name} {CottageLeng[languageChange].region}{" "}
           {props.cottage.place.name}
