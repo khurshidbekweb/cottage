@@ -3,11 +3,17 @@ import Navbar from "../../components/Navbar/Navbar";
 import "./Tarif.css";
 import Tariff from "../../Modals/Tariff";
 import { ALL_DATA } from "../../Query/get_all";
+import { Helmet } from "react-helmet-async";
 
 const Tarif = () => {
   const tariff = ALL_DATA.useTariff();
   return (
     <>
+      <Helmet>
+        <title>Tariff</title>
+        <meta name="description" content="Tariff page" />
+        <link rel="canonical" href="/Tariff" />
+      </Helmet>
       <Navbar />
       <div className="container">
         <div className="tarif">

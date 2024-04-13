@@ -6,6 +6,7 @@ import { ALL_DATA } from "../../Query/get_all";
 import DachaCard from "../../components/DachaCards/DachaCard";
 import DachaMiniCard from "../../components/DachaMiniCard/DachaMiniCard";
 import "./Vacation.css";
+import { Helmet } from "react-helmet-async";
 
 function Vacation() {
   const params = useParams();
@@ -18,6 +19,11 @@ function Vacation() {
 
   return (
     <>
+      <Helmet>
+        <title>Vacation</title>
+        <meta name="description" content="cottage places" />
+        <link rel="canonical" href="/vacation" />
+      </Helmet>
       <Navbar />
       <div className="container">
         <div className="favorite">

@@ -13,6 +13,7 @@ import EditImageIcon from "../../assets/images/edit.svg";
 import { useNavigate } from "react-router-dom";
 import { ProfileLeng } from "../../configs/language";
 import { LanguageContext } from "../../helper/languageContext";
+import { Helmet } from "react-helmet-async";
 
 async function getBase64Full(file) {
   return new Promise((resolve, reject) => {
@@ -75,103 +76,117 @@ const User = () => {
 
   // User profile language
   const { languageChange } = useContext(LanguageContext);
-  return (
-    <div>
-      <Navbar />
-      <div className="container">
-        <div className="user">
-          <h2 className="user-header">{ProfileLeng[languageChange].text}</h2>
 
-          <form onSubmit={handleUser} className="user-box">
-            <div className="user-l">
-              <label className="file-input__label">
-                <input
-                  onChange={handleIsMianImage}
-                  type="file"
-                  name="userImage"
-                  className="file-input__input curson-pointer"
-                />
+  return (
+    <>
+      <Helmet>
+        <title>User Profil</title>
+        <meta name="description" content="user page" />
+        <link rel="canonical" href="/user" />
+      </Helmet>
+      <div>
+        <Navbar />
+        <div className="container">
+          <div className="user">
+            <h2 className="user-header">{ProfileLeng[languageChange].text}</h2>
+
+            <form onSubmit={handleUser} className="user-box">
+              <div className="user-l">
+                <label className="file-input__label">
+                  <input
+                    onChange={handleIsMianImage}
+                    type="file"
+                    name="userImage"
+                    className="file-input__input curson-pointer"
+                  />
+                  <img
+                    ref={editImage}
+                    className={
+                      edit
+                        ? "add-user-image-icons d-none"
+                        : "add-user-image-icons"
+                    }
+                    src={AddImg}
+                    alt="img"
+                  />
+                </label>
                 <img
-                  ref={editImage}
                   className={
-                    edit
-                      ? "add-user-image-icons d-none"
-                      : "add-user-image-icons"
+                    userImg ? "image-user-single" : "d-none image-user-single"
                   }
-                  src={AddImg}
+                  ref={ismainImage}
+                  src={`${IMG_BASE_URL}${userImg}`}
                   alt="img"
                 />
-              </label>
-              <img
-                className={
-                  userImg ? "image-user-single" : "d-none image-user-single"
-                }
-                ref={ismainImage}
-                src={`${IMG_BASE_URL}${userImg}`}
-                alt="img"
-              />
-            </div>
-
-            <div className="user-info-wrap">
-              <div className="user-r">
-                <label className="w-100">
-                  <span className="input-name-lable">Name</span>
-                  <input
-                    disabled={edit}
-                    className="user-input"
-                    defaultValue={user?.name ? user.name : ""}
-                    name="name"
-                    type="text"
-                    placeholder="Имя"
-                  />
-                </label>
-                <label className="w-100">
-                  <span className="input-name-lable">Number</span>
-                  <input
-                    disabled={edit}
-                    className="user-input"
-                    defaultValue={"+998" + user?.phone}
-                    name="phone"
-                    type="tel"
-                    placeholder="Nomer"
-                  />
-                </label>
-                <label className="w-100">
-                  <span className="input-name-lable">Email</span>
-                  <input
-                    disabled={edit}
-                    className="user-input"
-                    defaultValue={user?.email ? user.email : ""}
-                    name="email"
-                    type="email"
-                    placeholder="Email"
-                  />
-                </label>
-                <p className="user-text d-none">
-                  Что бы вы подать объявлении вам нужно вводить ваш серии номер
-                  паспорта.
-                </p>
               </div>
-              <button
-                ref={saveData}
-                type="submit"
-                className={edit ? "user-btn mt-5 d-none" : "user-btn mt-5"}
-              >
-                {ProfileLeng[languageChange].btn}
-              </button>
-            </div>
-          </form>
-          <button
-            onClick={() => setEdit(false)}
-            className={edit ? "user-edit-btn btn" : "user-edit-btn btn d-none"}
-          >
-            <img className="img-icon-edit" src={EditImageIcon} alt="imgicons" />
-          </button>
+
+              <div className="user-info-wrap">
+                <div className="user-r">
+                  <label className="w-100">
+                    <span className="input-name-lable">Name</span>
+                    <input
+                      disabled={edit}
+                      className="user-input"
+                      defaultValue={user?.name ? user.name : ""}
+                      name="name"
+                      type="text"
+                      placeholder="Имя"
+                    />
+                  </label>
+                  <label className="w-100">
+                    <span className="input-name-lable">Number</span>
+                    <input
+                      disabled={edit}
+                      className="user-input"
+                      defaultValue={"+998" + user?.phone}
+                      name="phone"
+                      type="tel"
+                      placeholder="Nomer"
+                    />
+                  </label>
+                  <label className="w-100">
+                    <span className="input-name-lable">Email</span>
+                    <input
+                      disabled={edit}
+                      className="user-input"
+                      defaultValue={user?.email ? user.email : ""}
+                      name="email"
+                      type="email"
+                      placeholder="Email"
+                    />
+                  </label>
+                  <p className="user-text d-none">
+                    Что бы вы подать объявлении вам нужно вводить ваш серии
+                    номер паспорта.
+                  </p>
+                </div>
+                <button
+                  ref={saveData}
+                  type="submit"
+                  className={edit ? "user-btn mt-5 d-none" : "user-btn mt-5"}
+                >
+                  {ProfileLeng[languageChange].btn}
+                </button>
+              </div>
+            </form>
+            <button
+              onClick={() => setEdit(false)}
+              className={
+                edit ? "user-edit-btn btn" : "user-edit-btn btn d-none"
+              }
+            >
+              <img
+                className="img-icon-edit"
+                src={EditImageIcon}
+                alt="imgicons"
+              />
+            </button>
+          </div>
         </div>
+        <MiniNaw />
+        <Footer />
       </div>
-      <MiniNaw />
-      <Footer />
-    </div>
+    </>
   );
 };
 

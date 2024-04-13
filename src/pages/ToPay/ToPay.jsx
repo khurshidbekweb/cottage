@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
 import "./ToPay.css";
@@ -6,6 +7,11 @@ import { Link } from "react-router-dom";
 const ToPay = () => {
   return (
     <>
+      <Helmet>
+        <title>Payment</title>
+        <meta name="description" content="payment page" />
+        <link rel="canonical" href="/ToPay" />
+      </Helmet>
       <Navbar />
       <div className="container">
         <div className="to-pay">
@@ -40,8 +46,10 @@ const ToPay = () => {
             </p>
 
             <div className="to-pay-btns">
-            <Link className="to-pay-btn" to='/pay-detail'>Подробное</Link>
-            <button className="to-pay-delete">Удалить</button>
+              <Link className="to-pay-btn" to="/pay-detail">
+                Подробное
+              </Link>
+              <button className="to-pay-delete">Удалить</button>
             </div>
           </div>
 
@@ -74,8 +82,10 @@ const ToPay = () => {
             </p>
 
             <div className="to-pay-btns">
-            <Link className="to-pay-btn" to='/pay-detail'>Подробное</Link>
-            <button className="to-pay-delete">Удалить</button>
+              <Link className="to-pay-btn" to="/pay-detail">
+                Подробное
+              </Link>
+              <button className="to-pay-delete">Удалить</button>
             </div>
           </div>
 
@@ -108,8 +118,10 @@ const ToPay = () => {
             </p>
 
             <div className="to-pay-btns">
-            <Link className="to-pay-btn" to='/pay-detail'>Подробное</Link>
-            <button className="to-pay-delete">Удалить</button>
+              <Link className="to-pay-btn" to="/pay-detail">
+                Подробное
+              </Link>
+              <button className="to-pay-delete">Удалить</button>
             </div>
           </div>
         </div>
