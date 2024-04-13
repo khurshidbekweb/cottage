@@ -4,14 +4,15 @@ import Dacha3 from "../../assets/images/dacha3.png";
 import AddImg from "../../assets/images/add-img.svg";
 import "./AddNew.css";
 import { useRef, useState } from "react";
-import { useMutation,  useQueryClient } from "@tanstack/react-query";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { IMG_BASE_URL } from "../../constants/img.constants";
 import { cottageUtils } from "../../utils/cottage.utils";
 import { authUtils } from "../../utils/auth.utils";
 import { ALL_DATA } from "../../Query/get_all";
 import MiniNaw from "../../components/MiniNaw/MiniNaw";
-import { Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import toastify from "../../utils/toastify";
+import { Helmet } from "react-helmet-async";
 
 async function getBase64(file) {
   return new Promise((resolve, reject) => {
@@ -36,8 +37,8 @@ async function getBase64Full(file) {
 }
 
 const AddNew = () => {
-  const mainImage = useRef(null)
-  const childImagesWrapper =useRef(null)
+  const mainImage = useRef(null);
+  const childImagesWrapper = useRef(null);
   const [cottageInfo, setCottageInfo] = useState({
     dachaType: [],
     response: [],
@@ -46,22 +47,22 @@ const AddNew = () => {
     comforts: [],
     response: [],
   });
-  const queryClient = useQueryClient()
-  const region = ALL_DATA.useRegion()
-  const place = ALL_DATA.usePlace()
-  const cottageType = ALL_DATA.useCottageType()
-  const comforts = ALL_DATA.useComforts()
+  const queryClient = useQueryClient();
+  const region = ALL_DATA.useRegion();
+  const place = ALL_DATA.usePlace();
+  const cottageType = ALL_DATA.useCottageType();
+  const comforts = ALL_DATA.useComforts();
   const cottage = useMutation({
     mutationFn: cottageUtils.postCottage,
     onSuccess: () => {
-      queryClient.invalidateQueries({queryKey: ['cotteges']})
-      toastify.successMessage("Dacha muvaffaqiyat qo'shildi 😍")
+      queryClient.invalidateQueries({ queryKey: ["cotteges"] });
+      toastify.successMessage("Dacha muvaffaqiyat qo'shildi 😍");
     },
     onError: (err) => {
-      if(err?.response?.status === 406){
-        authUtils.refreshAuth()
+      if (err?.response?.status === 406) {
+        authUtils.refreshAuth();
       }
-    }
+    },
   });
   const handlChoseCottageType = (e) => {
     const { value, checked } = e.target;
@@ -113,7 +114,7 @@ const AddNew = () => {
       lattitude: "" || undefined,
       longitude: "" || undefined,
     });
-    childImagesWrapper.current.innerHTML= ""
+    childImagesWrapper.current.innerHTML = "";
     mainImage.current.setAttribute("src", Dacha3);
     e.target.reset();
   };
@@ -123,104 +124,185 @@ const AddNew = () => {
     mainImage.current.setAttribute("src", mainImgUrl);
   };
   const handlmultipleImg = async (e) => {
-      const images = []
-      for (let i = 0; i < e.target.files.length; i++) {
-        images.push(await getBase64Full(e.target.files[i]))
-      }
-      for(const image of images){
-          childImagesWrapper.current.insertAdjacentHTML("beforeend", `<img src=${image} width="100" height="100" alt="child image" className="overflow-hidden"/>`)
-      }
-
-    };
+    const images = [];
+    for (let i = 0; i < e.target.files.length; i++) {
+      images.push(await getBase64Full(e.target.files[i]));
+    }
+    for (const image of images) {
+      childImagesWrapper.current.insertAdjacentHTML(
+        "beforeend",
+        `<img src=${image} width="100" height="100" alt="child image" className="overflow-hidden"/>`
+      );
+    }
+  };
 
   return (
     <>
-      <Navbar/>
+      <Helmet>
+        <title>Announcoment</title>
+        <meta name="description" content="addnew page" />
+        <link rel="canonical" href="/addnew" />
+      </Helmet>
+      <Navbar />
       <div className="container">
         <div className="addnew">
-            <h3 className="addnew-header">Фото</h3>            
-            <form onSubmit={handlCottage}>
-                  <div className="addnew-imgs">
-                    <div className="addnew-box">
-                      <label className="addnew-img-bg label-input-file">
-                        <input type="file" name="mainImage" className="input-file" onChange={handleMainImage}/>
-                        <p className="addnew-img-text">Главный</p>
+          <h3 className="addnew-header">Фото</h3>
+          <form onSubmit={handlCottage}>
+            <div className="addnew-imgs">
+              <div className="addnew-box">
+                <label className="addnew-img-bg label-input-file">
+                  <input
+                    type="file"
+                    name="mainImage"
+                    className="input-file"
+                    onChange={handleMainImage}
+                  />
+                  <p className="addnew-img-text">Главный</p>
+                </label>
+                <img
+                  ref={mainImage}
+                  className="addnew-img"
+                  src={Dacha3}
+                  alt="add"
+                />
+              </div>
+              <div className="addnew-add">
+                <label className="label-input-file">
+                  <input
+                    type="file"
+                    name="childimg"
+                    multiple
+                    className="input-file"
+                    onChange={handlmultipleImg}
+                  />
+                  <img src={AddImg} alt="add" />
+                  <p className="addnew-add-text">Добавить фото</p>
+                </label>
+              </div>
+              <div ref={childImagesWrapper} className="image-child-wrap "></div>
+            </div>
+
+            <div>
+              <h3 className="addnew-header">Регион и тип отдыха</h3>
+              <h5>Cottage name</h5>
+              <input
+                type="text"
+                name="cottagename"
+                className="add-new-title-main my-4"
+                placeholder="Name"
+              />
+              <div className="wrap-region-place">
+                <div className="mini-wrap-select">
+                  <h3 className="addnew-label mb-3">Viloyat</h3>
+                  <select
+                    name="region"
+                    className="addnew-select form-select w-100"
+                  >
+                    {region.data?.length &&
+                      region.data.map((e) => {
+                        return (
+                          <option key={e.id} value={e.id}>
+                            {e.name}
+                          </option>
+                        );
+                      })}
+                  </select>
+                </div>
+
+                <div className="mini-wrap-select">
+                  <h3 className="addnew-label mb-3">Joylashuv</h3>
+                  <select
+                    name="place"
+                    className="addnew-select  d-block form-select w-100"
+                  >
+                    {place.data?.length &&
+                      place.data.map((e) => {
+                        return (
+                          <option key={e.id} name="place" value={e.id}>
+                            {e.name}
+                          </option>
+                        );
+                      })}
+                  </select>
+                </div>
+              </div>
+
+              <h5>Price</h5>
+              <div className="price-wrap  d-flex gap-2 mb-4">
+                <input
+                  type="number"
+                  name="price"
+                  className="form-control w-100"
+                  placeholder="Price"
+                />
+                <input
+                  type="number"
+                  name="priceweekend"
+                  className="form-control w-100"
+                  placeholder="Peice Weekend"
+                />
+              </div>
+
+              <h3 className="addnew-label mb-3">Dacha turi</h3>
+              <div className="addnew-inner">
+                {cottageType.data?.length &&
+                  cottageType.data.map((e) => {
+                    return (
+                      <label key={e.id} className="addnew-inner-check">
+                        <input
+                          className="addnew-check"
+                          type="checkbox"
+                          value={e.id}
+                          name="cottagetype"
+                          onChange={handlChoseCottageType}
+                        />
+                        <span>{e.name}</span>
                       </label>
-                      <img ref={mainImage} className="addnew-img" src={Dacha3} alt="add" />
+                    );
+                  })}
+              </div>
+            </div>
+
+            <h3 className="addnew-header">Qulayliklar</h3>
+
+            <div className="addnew-objects">
+              {comforts.data?.length &&
+                comforts.data.map((e) => {
+                  return (
+                    <div key={e.id} className="addnew-object">
+                      <input
+                        className="addnew-check"
+                        type="checkbox"
+                        value={e.id}
+                        onChange={handleCottageComforts}
+                      />
+                      <img
+                        className="bg-white rounded-1"
+                        width={20}
+                        src={`${IMG_BASE_URL}${e.image}`}
+                        alt="img"
+                      />
+                      <p className="addnew-object-text">{e.name}</p>
                     </div>
-                    <div className="addnew-add">
-                      <label className="label-input-file">
-                        <input type="file" name="childimg" multiple className="input-file" onChange={handlmultipleImg}/>
-                        <img src={AddImg} alt="add" />
-                        <p className="addnew-add-text">Добавить фото</p>
-                      </label>
-                    </div>
-                    <div ref={childImagesWrapper} className="image-child-wrap ">                      
-                    </div>
-                  </div>
+                  );
+                })}
+            </div>
 
-                  <div>
-                      <h3 className="addnew-header">Регион и тип отдыха</h3>     
-                      <h5>Cottage name</h5>
-                      <input type="text" name="cottagename" className="add-new-title-main my-4" placeholder="Name"/>
-                      <div className="wrap-region-place">
-
-                          <div className="mini-wrap-select">
-                            <h3 className="addnew-label mb-3">Viloyat</h3>                      
-                            <select name="region" className="addnew-select form-select w-100">
-                              {region.data?.length && region.data.map(e => {
-                                return <option key={e.id}  value={e.id}>{e.name}</option>
-                              })}
-                            </select>
-                          </div>
-                          
-                          <div className="mini-wrap-select">
-                            <h3 className="addnew-label mb-3">Joylashuv</h3>
-                            <select name="place" className="addnew-select  d-block form-select w-100">
-                              {place.data?.length && place.data.map(e => {
-                                return <option key={e.id} name='place' value={e.id}>{e.name}</option>
-                              })}
-                            </select>
-                          </div>
-                      </div>
-
-                      <h5>Price</h5>
-                      <div className="price-wrap  d-flex gap-2 mb-4">
-                          <input type="number" name="price" className="form-control w-100" placeholder="Price"/>
-                          <input type="number" name="priceweekend" className="form-control w-100" placeholder="Peice Weekend"/>
-                      </div>
-
-                      <h3 className="addnew-label mb-3">Dacha turi</h3>
-                      <div className="addnew-inner">
-                        {cottageType.data?.length && cottageType.data.map(e => {
-                          return <label key={e.id} className="addnew-inner-check">
-                                    <input className="addnew-check" type="checkbox" value={e.id} name="cottagetype" onChange={handlChoseCottageType}/>
-                                    <span>{e.name}</span>
-                                  </label> 
-                        })}                      
-                      </div>                    
-                  </div>
-
-                  <h3 className="addnew-header">Qulayliklar</h3>
-
-                  <div className="addnew-objects">
-                        {comforts.data?.length && comforts.data.map(e => {
-                          return <div key={e.id} className="addnew-object">
-                                      <input className="addnew-check" type="checkbox" value={e.id} onChange={handleCottageComforts}/>
-                                      <img className="bg-white rounded-1" width={20} src={`${IMG_BASE_URL}${e.image}`} alt="img" />
-                                      <p className="addnew-object-text">{e.name}</p>
-                                  </div> 
-                        })}                   
-                  </div>
-
-                  <h3 className="addnew-header">Описание</h3>
-                  <textarea type="text" name="discription" className="addnew-message" placeholder="Кратко опищите о вашый месте" />
-                  <button type="submit" className="soxranit">Сохранить</button>
-              </form>
+            <h3 className="addnew-header">Описание</h3>
+            <textarea
+              type="text"
+              name="discription"
+              className="addnew-message"
+              placeholder="Кратко опищите о вашый месте"
+            />
+            <button type="submit" className="soxranit">
+              Сохранить
+            </button>
+          </form>
         </div>
       </div>
-      <MiniNaw/>
-      <Footer/>
+      <MiniNaw />
+      <Footer />
     </>
   );
 };

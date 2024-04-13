@@ -36,11 +36,10 @@ body {
 Link {
   z-index: 9999999999999;
 }
-.mini-naw .active{
+.mini-naw .active {
   display: block;
   color: aqua !important;
   opacity: 1;
   padding: 0;
   box-shadow: inset;
 }
-

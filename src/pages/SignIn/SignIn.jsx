@@ -8,6 +8,7 @@ import { useRef, useState } from "react";
 import toastify from "../../utils/toastify";
 import { useNavigate } from "react-router-dom";
 import Cleave from "cleave.js/react";
+import { Helmet } from "react-helmet-async";
 
 const SignIn = () => {
   const smsForm = useRef(null);
@@ -72,63 +73,70 @@ const SignIn = () => {
   };
 
   return (
-    <div className="signin">
-      <div className="background">
-        <div className="signin-box">
-          <h2 className="signin-header">Вход</h2>
-          <form onSubmit={handleAuth} ref={phoneForm}>
-            <div className="input-text">
-              <label className="d-flex flex-column gap-3">
-                <span className="text-light label-text ">
-                  Enter your phone:{" "}
-                </span>
-                <Cleave
-                  options={{
-                    prefix: "+998",
-                    delimiter: " ",
-                    blocks: [4, 2, 3, 2, 2],
-                    numericOnly: true,
-                  }}
-                  placeholder="Phone number"
-                  className="signin-input-text"
-                  name="phonenumber"
-                  required
-                />
-              </label>
-            </div>
-            <button type="submit" className="signin-submit mt-5">
-              Войти
-            </button>
-          </form>
-
-          <form onSubmit={handleLogin} ref={smsForm} className="d-none">
-            <div className="input-password">
-              <input
-                className="signin-input-password"
-                type={`${passwordShow ? "password" : "text"}`}
-                ref={smsInput}
-                name="smsCode"
-                placeholder="SMS code"
-              />
-              <button
-                type="button"
-                className="passwordBtn"
-                onClick={() => setPasswordShow((prev) => !prev)}
-              >
-                <img
-                  src={passwordShow ? Eye : EyeSlash}
-                  alt="password"
-                  className="passwordIcon"
-                />
+    <>
+      <Helmet>
+        <title>Sign In</title>
+        <meta name="description" content="Sign In page" />
+        <link rel="canonical" href="/signin" />
+      </Helmet>
+      <div className="signin">
+        <div className="background">
+          <div className="signin-box">
+            <h2 className="signin-header">Вход</h2>
+            <form onSubmit={handleAuth} ref={phoneForm}>
+              <div className="input-text">
+                <label className="d-flex flex-column gap-3">
+                  <span className="text-light label-text ">
+                    Enter your phone:{" "}
+                  </span>
+                  <Cleave
+                    options={{
+                      prefix: "+998",
+                      delimiter: " ",
+                      blocks: [4, 2, 3, 2, 2],
+                      numericOnly: true,
+                    }}
+                    placeholder="Phone number"
+                    className="signin-input-text"
+                    name="phonenumber"
+                    required
+                  />
+                </label>
+              </div>
+              <button type="submit" className="signin-submit mt-5">
+                Войти
               </button>
-            </div>
-            <button type="submit" className="signin-submit mt-5">
-              Войти
-            </button>
-          </form>
+            </form>
+
+            <form onSubmit={handleLogin} ref={smsForm} className="d-none">
+              <div className="input-password">
+                <input
+                  className="signin-input-password"
+                  type={`${passwordShow ? "password" : "text"}`}
+                  ref={smsInput}
+                  name="smsCode"
+                  placeholder="SMS code"
+                />
+                <button
+                  type="button"
+                  className="passwordBtn"
+                  onClick={() => setPasswordShow((prev) => !prev)}
+                >
+                  <img
+                    src={passwordShow ? Eye : EyeSlash}
+                    alt="password"
+                    className="passwordIcon"
+                  />
+                </button>
+              </div>
+              <button type="submit" className="signin-submit mt-5">
+                Войти
+              </button>
+            </form>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
