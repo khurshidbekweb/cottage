@@ -1,77 +1,76 @@
 .favorite-header {
-    margin: 120px 0 48px;
+  margin: 120px 0 48px;
+  padding: 0;
+  font-family: sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 42px;
+  color: #2c2d2e;
+}
+
+.place-card-sort-big {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 27px;
+  width: 100%;
+}
+.place-card-mini-sort {
+  display: none;
+}
+
+@media (max-width: 565px) {
+  .place-card-sort-big {
+    display: none;
+  }
+  .place-card-mini-sort {
+    display: block;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 17px;
+  }
+  .favorite-header {
+    margin: 32px 0 24px;
     padding: 0;
     font-family: sans-serif;
     font-style: normal;
     font-weight: 500;
-    font-size: 32px;
-    line-height: 42px;
-    color: #2C2D2E;
-}
+    font-size: 24px;
+    line-height: 34px;
+    color: #2c2d2e;
+  }
 
-.place-card-sort-big{
-    width: 100%;
+  .favorite-cards {
+    margin: 0;
+    padding: 0;
     display: flex;
-    gap: 27px;
-}
-.place-card-mini-sort{
-    display: none;
-}
-
-
-@media (max-width: 565px) {
-    .place-card-sort-big{
-        display: none;
-    }
-    .place-card-mini-sort{
-        display: block;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 17px;
-    }
-    .favorite-header {
-        margin: 32px 0 24px;
-        padding: 0;
-        font-family: sans-serif;
-        font-style: normal;
-        font-weight: 500;
-        font-size: 24px;
-        line-height: 34px;
-        color: #2C2D2E;
-    }
-
-    .favorite-cards {
-        margin: 0;
-        padding: 0;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-    }
+    flex-wrap: wrap;
+    gap: 10px;
+  }
 }
 
 @media (max-width: 390px) {
-    .place-card-sort-big{
-        display: none;
-    }
-    .place-card-mini-sort{
-        display: block;
-    }
-    .favorite-header {
-        margin: 32px 0 24px;
-        padding: 0;
-        font-family: sans-serif;
-        font-style: normal;
-        font-weight: 500;
-        font-size: 24px;
-        line-height: 34px;
-        color: #2C2D2E;
-    }
+  .place-card-mini-sort {
+    display: flex;
+    flex-wrap: wrap;
+  }
 
-    .favorite-cards {
-        margin: 0;
-        padding: 0;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-    }
+  .favorite-header {
+    margin: 32px 0 24px;
+    padding: 0;
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 34px;
+    color: #2c2d2e;
+  }
+
+  .favorite-cards {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
 }

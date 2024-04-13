@@ -180,7 +180,7 @@ const Navbar = (props) => {
         </Link>
         <div className="navs align-items-center">
           <select
-            className="select fs-5 border-0"
+            className="select data_type_select fs-5"
             name="dacha"
             id="dacha"
             onChange={handleCottageType}
