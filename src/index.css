@@ -30,9 +30,19 @@ body {
   margin: 0 auto;
   padding: 0 16px;
 }
+
+=======
 .swiper {
   z-index: 1 !important;
 }
 Link {
   z-index: 9999999999999;
 }
+.mini-naw .active{
+  display: block;
+  color: aqua !important;
+  opacity: 1;
+  padding: 0;
+  box-shadow: inset;
+}
+
