@@ -1,13 +1,10 @@
 import "./View.css";
-import Navbar from "../../components/Navbar/Navbar";
-import Footer from "../../components/Footer/Footer";
 import { AiFillStar } from "react-icons/ai";
 
 import { IMG_BASE_URL } from "../../constants/img.constants";
 
 import { Link, useParams } from "react-router-dom";
 
-import { useParams } from "react-router-dom";
 
 import { ALL_DATA } from "../../Query/get_all";
 import MiniNaw from "../../components/MiniNaw/MiniNaw";
@@ -46,14 +43,6 @@ const View = () => {
   });
   console.log(cottageView);
   if (!mainImage) return <Loader />;
-<<<<<<< HEAD
-=======
-
-
-
-  console.log(cottageView?.images);
-
->>>>>>> 27e83ccf05e28d84f540c9dd50bfdf72c0935380
   return (
     <div className="viewWrapper">
       <div className="container">
@@ -168,6 +157,7 @@ const View = () => {
         </div>
       </div>
       <MiniNaw />
+    </div>
     </div>
   );
 };
