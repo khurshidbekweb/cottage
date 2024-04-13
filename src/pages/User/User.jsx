@@ -1,6 +1,4 @@
 import "./User.css";
-import Navbar from "../../components/Navbar/Navbar";
-import Footer from "../../components/Footer/Footer";
 import AddImg from "../../assets/images/add-img.svg";
 import MiniNaw from "../../components/MiniNaw/MiniNaw";
 import { ALL_DATA } from "../../Query/get_all";
@@ -13,6 +11,7 @@ import EditImageIcon from "../../assets/images/edit.svg";
 import { useNavigate } from "react-router-dom";
 import { ProfileLeng } from "../../configs/language";
 import { LanguageContext } from "../../helper/languageContext";
+import BreacdCrumbs from "../../components/BreadCrumbs/BreacdCrumbs";
 
 async function getBase64Full(file) {
   return new Promise((resolve, reject) => {
@@ -77,8 +76,8 @@ const User = () => {
   const { languageChange } = useContext(LanguageContext);
   return (
     <div>
-      <Navbar />
       <div className="container">
+        <BreacdCrumbs/>
         <div className="user">
           <h2 className="user-header">{ProfileLeng[languageChange].text}</h2>
 
@@ -170,7 +169,6 @@ const User = () => {
         </div>
       </div>
       <MiniNaw />
-      <Footer />
     </div>
   );
 };

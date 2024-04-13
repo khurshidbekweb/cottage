@@ -100,7 +100,7 @@ const DachaCard = (props) => {
           {props.cottage.priceWeekend}$
         </p>
       </div>
-      <Link to={`/view/${props.cottage.id}`} className="dacha-card-btn">
+      <Link to={`/home/view/${props.cottage.id}`} className="dacha-card-btn">
         {CottageLeng[languageChange].btn}
       </Link>
     </div>

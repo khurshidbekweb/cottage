@@ -1,5 +1,5 @@
 .favorite-header {
-    margin: 120px 0 48px;
+    margin: 60px 0 18px !important;
     padding: 0;
     font-family: sans-serif;
     font-style: normal;
@@ -30,7 +30,7 @@
         gap: 17px;
     }
     .favorite-header {
-        margin: 32px 0 24px;
+        margin: 22px 0 14px !important;
         padding: 0;
         font-family: sans-serif;
         font-style: normal;
@@ -57,7 +57,7 @@
         display: block;
     }
     .favorite-header {
-        margin: 32px 0 24px;
+        margin: 32px 0 14px;
         padding: 0;
         font-family: sans-serif;
         font-style: normal;

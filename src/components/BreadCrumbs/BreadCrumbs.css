@@ -1,0 +1,33 @@
+.breadCrumbs{
+    display: flex;
+    gap: 10px;
+}
+.curmbs{
+    text-decoration: none;
+    display: block; 
+    color: black;
+    text-transform: uppercase;
+}
+/* breadcrumbs */
+.breadcrumbs {
+    max-width: 1200px;
+    margin: 20px auto;
+  }
+  .crumb{
+    text-transform: uppercase;
+  }
+  .breadcrumbs > *{
+    display: inline-block;
+    margin-right: 10px;
+  }
+  .breadcrumbs .crumb:after {
+    content: '>';
+    margin-left: 10px;
+  }
+  .breadcrumbs .crumb:last-child:after {
+    display: none;
+  }
+  .breadcrumbs .crumb a {
+    color: #6e6b6b;    
+    text-decoration: none;
+  }

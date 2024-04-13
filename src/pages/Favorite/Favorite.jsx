@@ -9,6 +9,7 @@ import Loader from "../../components/Loader/Loader";
 import { useQuery } from "@tanstack/react-query";
 import { cottageUtils } from "../../utils/cottage.utils";
 import { QUERY_KEYS } from "../../Query/query-keys";
+import BreacdCrumbs from "../../components/BreadCrumbs/BreacdCrumbs";
 
 
 const Favorite = () => {
@@ -24,8 +25,8 @@ const Favorite = () => {
 
   return (
     <>
-      <Navbar />
       <div className="container">
+        <BreacdCrumbs/>
         <div className="favorite">
             {cottage.data && cottage.data.length ? 
             <>
@@ -55,7 +56,6 @@ const Favorite = () => {
         </div>
       </div>
       <MiniNaw />
-      <Footer />
     </>
   );
 };

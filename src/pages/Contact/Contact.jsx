@@ -1,14 +1,14 @@
+import BreacdCrumbs from '../../components/BreadCrumbs/BreacdCrumbs';
 import Footer from '../../components/Footer/Footer';
 import MiniNaw from '../../components/MiniNaw/MiniNaw';
-import Navbar from '../../components/Navbar/Navbar';
 import './contact.css'
 
 const Contact = () => {
     return (
         <>
-            <Navbar/>
             <div className="conatct">
             <div className="container">
+            <BreacdCrumbs/>
                 <h2 className='fs-1 fw-bold text-center conatact-title'>Contact Us</h2>
                 <p className='fs-5 text-center'>Any question or remarks? Just write us a message!</p>
                 <div className="contact-inner mt-5 bg-white">
@@ -66,7 +66,6 @@ const Contact = () => {
             </div>
         </div>
         <MiniNaw/>
-        <Footer/>
     </>
     );
 }

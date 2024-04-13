@@ -22,6 +22,7 @@ import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
 import { FiPhoneCall, FiUser } from "react-icons/fi";
+import BreacdCrumbs from "../../components/BreadCrumbs/BreacdCrumbs";
 
 
 const View = () => {
@@ -40,14 +41,12 @@ const View = () => {
       childImage.push(e);
     }
   });
-
+  console.log(cottageView);
   if (!mainImage) return <Loader />;
-  console.log(cottageView?.images);
   return (
     <div className="viewWrapper">
-      <Navbar />
-
       <div className="container">
+        <BreacdCrumbs/>
         <div className="view">
           <div className="imag-and-desc-wrap w-100 gap-3 d-flex">
             <div className="cottage-images">
@@ -131,7 +130,6 @@ const View = () => {
         </div>
       </div>
       <MiniNaw />
-      <Footer />
     </div>
   );
 };

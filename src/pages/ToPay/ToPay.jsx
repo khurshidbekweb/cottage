@@ -1,13 +1,13 @@
-import Footer from "../../components/Footer/Footer";
-import Navbar from "../../components/Navbar/Navbar";
+import BreacdCrumbs from "../../components/BreadCrumbs/BreacdCrumbs";
+import MiniNaw from "../../components/MiniNaw/MiniNaw";
 import "./ToPay.css";
 import { Link } from "react-router-dom";
 
 const ToPay = () => {
   return (
     <>
-      <Navbar />
       <div className="container">
+        <BreacdCrumbs/>
         <div className="to-pay">
           <h2 className="to-pay-header">Оповещение</h2>
 
@@ -114,7 +114,7 @@ const ToPay = () => {
           </div>
         </div>
       </div>
-      <Footer />
+      <MiniNaw/>
     </>
   );
 };

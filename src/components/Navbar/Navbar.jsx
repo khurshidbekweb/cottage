@@ -2,7 +2,7 @@ import "./Navbar.css";
 import Logo from "../../assets/images/logo.svg";
 import Menu from "../../assets/images/menu.svg";
 import Close from "../../assets/images/close.svg";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, Outlet, useNavigate } from "react-router-dom";
 import React, { useContext, useRef, useState } from "react";
 import Modal from "react-modal";
 import { FiHeart } from "react-icons/fi";
@@ -70,34 +70,121 @@ const Navbar = (props) => {
   const { languageChange, toggleLanguage } = useContext(LanguageContext);
 
   return (
-    <div className="container">
-      <div className="navbar">
-        <button onClick={() => setModalIsOpen(true)} className="menu">
-          <img
-            className="menu-img"
-            src={Menu}
-            width="14"
-            height="12"
-            alt="menu"
-          />
-          <p className="menu-text">Меню</p>
-        </button>
-
-        {/*  hamburger menu */}
-        <div
-          className={`hamburgerMenu ${
-            modalIsOpen ? "hamburgerMenuActive" : "hamburgerMenuClose"
-          }`}
-        >
-          <button className="close" onClick={() => setModalIsOpen(false)}>
-            <img src={Close} width="18.62" height="18.62" alt="close" />
+    <>
+      <div className="container">
+        <div className="navbar">
+          <button onClick={() => setModalIsOpen(true)} className="menu">
+            <img
+              className="menu-img"
+              src={Menu}
+              width="14"
+              height="12"
+              alt="menu"
+            />
+            <p className="menu-text">Меню</p>
           </button>
-          <div className="modal-nav-menu">
+
+          {/*  hamburger menu */}
+          <div
+            className={`hamburgerMenu ${
+              modalIsOpen ? "hamburgerMenuActive" : "hamburgerMenuClose"
+            }`}
+          >
+            <button className="close" onClick={() => setModalIsOpen(false)}>
+              <img src={Close} width="18.62" height="18.62" alt="close" />
+            </button>
+            <div className="modal-nav-menu">
+              <select
+                onChange={handleCottageType}
+                className="modal-nav-select-one"
+                name="dacha"
+                id="dacha"
+              >
+                {cottageType.data?.length &&
+                  cottageType.data.map((e) => {
+                    return (
+                      <option key={e.id} value={e.id}>
+                        {e.name}
+                      </option>
+                    );
+                  })}
+              </select>
+
+              <Link to="/home/contact" className="modal-nav-contact">
+                {NavLeng[languageChange].connection}
+              </Link>
+              <select
+                defaultValue="socials"
+                className="modal-nav-select-two"
+                name="social"
+                id="social"
+              >
+                <option hidden value="socials">
+                  {NavLeng[languageChange].set}
+                </option>
+                <option value="telegram">Telegram</option>
+                <option value="facebook">Facebook</option>
+                <option value="instagram">Instagram</option>
+                <option value="youtube">Youtube</option>
+              </select>
+
+              <select
+                className="modal-nav-select-three"
+                name="language"
+                id="language"
+                onChange={toggleLanguage}
+              >
+                {language.data?.length &&
+                  language.data.map((e) => {
+                    if (e.code === defaultLang) {
+                      return (
+                        <option key={e.id} selected value={e.code}>
+                          {e.code}
+                        </option>
+                      );
+                    }
+                    return (
+                      <option key={e.id} value={e.code}>
+                        {e.code}
+                      </option>
+                    );
+                  })}
+              </select>
+
+              <Link
+                to="/sign-in"
+                className={
+                  accessToken && refreshToken
+                    ? "modal-nav-out d-none"
+                    : "modal-nav-out d-block"
+                }
+              >
+                Вход
+              </Link>
+              <button
+                onClick={logoutBtn}
+                className={
+                  accessToken && refreshToken
+                    ? "modal-nav-out"
+                    : "modal-nav-out d-none"
+                }
+              >
+                <img src={GoOut} alt="" />
+                Выход
+              </button>
+            </div>
+          </div>
+          {/*  hamburger menu */}
+
+          <Link to="/">
+            <img className="logo" src={Logo} width="65" height="64" alt="logo" />
+          </Link>
+          <div className="navs align-items-center">
             <select
-              onChange={handleCottageType}
-              className="modal-nav-select-one"
+              className="select fs-5 border-0"
               name="dacha"
               id="dacha"
+              onChange={handleCottageType}
             >
               {cottageType.data?.length &&
                 cottageType.data.map((e) => {
@@ -109,28 +196,28 @@ const Navbar = (props) => {
                 })}
             </select>
 
-            <Link to="/contact" className="modal-nav-contact">
+            <Link to="/home/contact" className="contact d-block">
               {NavLeng[languageChange].connection}
             </Link>
+
             <select
-              defaultValue="socials"
-              className="modal-nav-select-two"
+              className="select-two form-select"
               name="social"
               id="social"
+              onChange={jumpLink}
             >
-              <option hidden value="socials">
+              <option selected value="socials">
                 {NavLeng[languageChange].set}
               </option>
-              <option value="telegram">Telegram</option>
-              <option value="facebook">Facebook</option>
-              <option value="instagram">Instagram</option>
-              <option value="youtube">Youtube</option>
+              <option value="https://t.me/dachi_v_gorax">Telegram</option>
+              <option value="https://facebook.com">Facebook</option>
+              <option value="https://instagram.com">Instagram</option>
+              <option value="https://youtube.com">Youtube</option>
             </select>
 
             <select
-              className="modal-nav-select-three"
+              className="select-three"
               name="language"
-              id="language"
               onChange={toggleLanguage}
             >
               {language.data?.length &&
@@ -149,182 +236,98 @@ const Navbar = (props) => {
                   );
                 })}
             </select>
+          </div>
+          <div className="icons">
+            <Link to="/home/favorite" className="heart">
+              <FiHeart className="heart-icon" />
+              <span
+                className={
+                  fovariteCottage === 0 ? "fovarite-num d-none" : "fovarite-num"
+                }
+              >
+                {fovariteCottage}
+              </span>
+            </Link>
 
+            <Notification />
+
+            <button
+              ref={registered}
+              className={accessToken ? "sign-out" : "sign-out d-none"}
+              onClick={openModal}
+            >
+              <img src={UserMenu} alt="" />
+              <div className="user-nav">
+                <img
+                  src={`${IMG_BASE_URL}${userImg}`}
+                  className={userImg ? "user-nav" : "user-nav d-none"}
+                  alt=""
+                />
+              </div>
+            </button>
             <Link
+              ref={signIn}
               to="/sign-in"
               className={
-                accessToken && refreshToken
-                  ? "modal-nav-out d-none"
-                  : "modal-nav-out d-block"
+                accessToken && refreshToken ? "sign-in d-none" : "sign-in"
               }
             >
               Вход
             </Link>
-            <button
-              onClick={logoutBtn}
-              className={
-                accessToken && refreshToken
-                  ? "modal-nav-out"
-                  : "modal-nav-out d-none"
-              }
+
+            <Modal
+              isOpen={modalOpen}
+              onRequestClose={closeModal}
+              contentLabel="Example Modal"
+              overlayClassName="modal-nav-overlay"
+              className="modal-nav-content"
             >
-              <img src={GoOut} alt="" />
-              Выход
-            </button>
+              <div className="user-modal-nav-top">
+                <p className="um-top-gmail">User@gmail.com</p>
+                <img
+                  src={`${IMG_BASE_URL}${userImg}`}
+                  className={userImg ? "um-top-img" : "d-none um-top-img"}
+                  alt="userImg"
+                />
+              </div>
+
+              <Link to="/home/profile/add-new" className="um-text text-decoration-none">
+                {NavberLinks[languageChange].add}
+              </Link>
+              <Link
+                to="/home/profile/announcement"
+                className="um-text text-decoration-none mt-2 d-block"
+              >
+                {NavberLinks[languageChange].cottage}
+              </Link>
+              <Link
+                to="/home/profile/services"
+                className="um-text text-decoration-none mt-2 d-block"
+              >
+                {NavberLinks[languageChange].services}
+              </Link>
+
+              <hr />
+
+              <div className="user-modal-nav-profil">
+                <img src={UserModal} alt="user" />
+                <Link className="um-profil-link" to="/home/profile/user">
+                  {NavberLinks[languageChange].profil}
+                </Link>
+              </div>
+
+              <Link to="/" className="user-modal-nav-out">
+                <img src={RedGoOut} alt="go-out" />
+                <button onClick={logoutBtn} className="um-out-btn">
+                  {NavberLinks[languageChange].exit}
+                </button>
+              </Link>
+            </Modal>
           </div>
         </div>
-        {/*  hamburger menu */}
-
-        <Link to="/">
-          <img className="logo" src={Logo} width="65" height="64" alt="logo" />
-        </Link>
-        <div className="navs align-items-center">
-          <select
-            className="select fs-5 border-0"
-            name="dacha"
-            id="dacha"
-            onChange={handleCottageType}
-          >
-            {cottageType.data?.length &&
-              cottageType.data.map((e) => {
-                return (
-                  <option key={e.id} value={e.id}>
-                    {e.name}
-                  </option>
-                );
-              })}
-          </select>
-
-          <Link to="/contact" className="contact d-block">
-            {NavLeng[languageChange].connection}
-          </Link>
-
-          <select
-            className="select-two form-select"
-            name="social"
-            id="social"
-            onChange={jumpLink}
-          >
-            <option selected value="socials">
-              {NavLeng[languageChange].set}
-            </option>
-            <option value="https://t.me/dachi_v_gorax">Telegram</option>
-            <option value="https://facebook.com">Facebook</option>
-            <option value="https://instagram.com">Instagram</option>
-            <option value="https://youtube.com">Youtube</option>
-          </select>
-
-          <select
-            className="select-three"
-            name="language"
-            onChange={toggleLanguage}
-          >
-            {language.data?.length &&
-              language.data.map((e) => {
-                if (e.code === defaultLang) {
-                  return (
-                    <option key={e.id} selected value={e.code}>
-                      {e.code}
-                    </option>
-                  );
-                }
-                return (
-                  <option key={e.id} value={e.code}>
-                    {e.code}
-                  </option>
-                );
-              })}
-          </select>
-        </div>
-        <div className="icons">
-          <Link to="/favorite" className="heart">
-            <FiHeart className="heart-icon" />
-            <span
-              className={
-                fovariteCottage === 0 ? "fovarite-num d-none" : "fovarite-num"
-              }
-            >
-              {fovariteCottage}
-            </span>
-          </Link>
-
-          <Notification />
-
-          <button
-            ref={registered}
-            className={accessToken ? "sign-out" : "sign-out d-none"}
-            onClick={openModal}
-          >
-            <img src={UserMenu} alt="" />
-            <div className="user-nav">
-              <img
-                src={`${IMG_BASE_URL}${userImg}`}
-                className={userImg ? "user-nav" : "user-nav d-none"}
-                alt=""
-              />
-            </div>
-          </button>
-          <Link
-            ref={signIn}
-            to="/sign-in"
-            className={
-              accessToken && refreshToken ? "sign-in d-none" : "sign-in"
-            }
-          >
-            Вход
-          </Link>
-
-          <Modal
-            isOpen={modalOpen}
-            onRequestClose={closeModal}
-            contentLabel="Example Modal"
-            overlayClassName="modal-nav-overlay"
-            className="modal-nav-content"
-          >
-            <div className="user-modal-nav-top">
-              <p className="um-top-gmail">User@gmail.com</p>
-              <img
-                src={`${IMG_BASE_URL}${userImg}`}
-                className={userImg ? "um-top-img" : "d-none um-top-img"}
-                alt="userImg"
-              />
-            </div>
-
-            <Link to="/add-new" className="um-text text-decoration-none">
-              {NavberLinks[languageChange].add}
-            </Link>
-            <Link
-              to="/announcement"
-              className="um-text text-decoration-none mt-2 d-block"
-            >
-              {NavberLinks[languageChange].cottage}
-            </Link>
-            <Link
-              to="/services"
-              className="um-text text-decoration-none mt-2 d-block"
-            >
-              {NavberLinks[languageChange].services}
-            </Link>
-
-            <hr />
-
-            <div className="user-modal-nav-profil">
-              <img src={UserModal} alt="user" />
-              <Link className="um-profil-link" to="/user">
-                {NavberLinks[languageChange].profil}
-              </Link>
-            </div>
-
-            <Link to="/" className="user-modal-nav-out">
-              <img src={RedGoOut} alt="go-out" />
-              <button onClick={logoutBtn} className="um-out-btn">
-                {NavberLinks[languageChange].exit}
-              </button>
-            </Link>
-          </Modal>
-        </div>
       </div>
-    </div>
+    <Outlet/>
+  </>
   );
 };
 
