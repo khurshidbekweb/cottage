@@ -10,10 +10,12 @@ import {
   Autoplay,
   Parallax,
 } from "swiper/modules";
+
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/css/bundle";
+
 import { ALL_DATA } from "../../Query/get_all";
 import { BASE_URL_SERVER } from "../../constants/server.constants";
 import { useContext, useState } from "react";

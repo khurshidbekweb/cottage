@@ -4,12 +4,11 @@ import Footer from "../../components/Footer/Footer";
 import { AiFillStar } from "react-icons/ai";
 
 import { IMG_BASE_URL } from "../../constants/img.constants";
-import {  useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { ALL_DATA } from "../../Query/get_all";
 import MiniNaw from "../../components/MiniNaw/MiniNaw";
 import Loader from "../../components/Loader/Loader";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-
 
 import React, { useState } from "react";
 // Import Swiper React components
@@ -23,8 +22,8 @@ import "swiper/css/navigation";
 import "swiper/css/thumbs";
 
 
-const View = () => {
 
+const View = () => {
   const params = useParams();
   const [viewCottage, setViewCottage] = useState(null);
 
@@ -41,13 +40,39 @@ const View = () => {
   });
 
   if (!mainImage) return <Loader />;
+
+
+
   console.log(cottageView?.images);
+
   return (
     <div className="viewWrapper">
       <Navbar />
 
       <div className="container">
         <div className="view">
+
+          <LazyLoadImage
+            className="view-imgmain"
+            src={`${IMG_BASE_URL}${mainImage}`}
+            alt="img"
+            effect="blur"
+          />
+
+          <div className="view-imgs">
+            {childImage?.length &&
+              childImage.map((e) => {
+                return (
+                  <LazyLoadImage
+                    key={e.id}
+                    className="view-image"
+                    src={`${IMG_BASE_URL}${e.image}`}
+                    alt="img"
+                    effect="blur"
+                  />
+                );
+              })}
+
           <div className="imag-and-desc-wrap w-100 gap-3 d-flex">
             <div className="cottage-images">
                 <Swiper
@@ -94,6 +119,7 @@ const View = () => {
                 <textarea className="mt-4 form-control text-area-mini" name="" id="" cols="40" rows="23"></textarea>
                 <button type="submit" className="btn bg-success text-white mt-3 d-block ms-auto">Submit</button>
             </div>
+
           </div>
           <div className="view-main">
             <h2 className="view-name">{cottageView?.name}</h2>
@@ -120,7 +146,11 @@ const View = () => {
                 cottageView.comforts.map((e) => {
                   return (
                     <div key={e.id} className="view-facility1">
-                      <LazyLoadImage src={`${IMG_BASE_URL}${e.image}`} alt="img" effect="blur" />
+                      <LazyLoadImage
+                        src={`${IMG_BASE_URL}${e.image}`}
+                        alt="img"
+                        effect="blur"
+                      />
                       <p className="view-facility-text">{e.name}</p>
                     </div>
                   );
