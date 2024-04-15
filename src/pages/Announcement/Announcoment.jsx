@@ -6,27 +6,19 @@ import DachaMiniCard from "../../components/DachaMiniCard/DachaMiniCard";
 import MiniNaw from "../../components/MiniNaw/MiniNaw";
 import './Announcoment.css'
 
-import Navbar from "../../components/Navbar/Navbar";
 
 
 function Announcoment() {
   const userCottage = ALL_DATA.useCottageUserId();
   return (
-    <>
-
+    <>    
+            <Helmet>
+                  <title>Announcoment</title>
+                  <meta name="description" content="Announcoment page" />
+                  <link rel="canonical" href="/announcoment" />
+                </Helmet>
       <div className="announcoment">
-          <div className="container">
-            <BreacdCrumbs/>
-            <div className="dacha">
-              {userCottage.data && userCottage.data.length?<>
-
-      <Helmet>
-        <title>Announcoment</title>
-        <meta name="description" content="Announcoment page" />
-        <link rel="canonical" href="/announcoment" />
-      </Helmet>
-      <Navbar />
-      <div className="announcoment">
+        <BreacdCrumbs/>
         <div className="container">
           <div className="dacha">
             {userCottage.data && userCottage.data.length ? (

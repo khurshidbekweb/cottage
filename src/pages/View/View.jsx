@@ -43,7 +43,7 @@ const View = () => {
   });
   
   if (!mainImage) return <Loader />;
-  
+
   return (
     <>
       <Helmet>
@@ -53,8 +53,6 @@ const View = () => {
       </Helmet>
 
       <div className="viewWrapper">
-        <Navbar />
-
         <div className="container">
           <BreacdCrumbs/>
           <div className="view">
@@ -184,11 +182,8 @@ const View = () => {
           </div>
         </div>
         <MiniNaw />
-        <Footer />
       </div>
       <MiniNaw />
-    </div>
-
     </>
   );
 };

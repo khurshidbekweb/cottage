@@ -78,22 +78,15 @@ const User = () => {
   // User profile language
   const { languageChange } = useContext(LanguageContext);
 
-  return (
-    <div>
-      <div className="container">
-        <BreacdCrumbs/>
-        <div className="user">
-          <h2 className="user-header">{ProfileLeng[languageChange].text}</h2>
-
-    <>
+  return (    <>
       <Helmet>
         <title>User Profil</title>
         <meta name="description" content="user page" />
         <link rel="canonical" href="/user" />
       </Helmet>
       <div>
-        <Navbar />
         <div className="container">
+        <BreacdCrumbs/>
           <div className="user">
             <h2 className="user-header">{ProfileLeng[languageChange].text}</h2>
 
@@ -192,10 +185,9 @@ const User = () => {
           </div>
         </div>
         <MiniNaw />
-        <Footer />
       </div>
       <MiniNaw />
-    </div>
+    
     </>
   );
 };
