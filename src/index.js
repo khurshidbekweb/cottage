@@ -7,15 +7,18 @@ import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ToastContainer } from "react-toastify";
+import { HelmetProvider } from "react-helmet-async";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-const quertClient = new QueryClient()
+const quertClient = new QueryClient();
 root.render(
-    <QueryClientProvider client={quertClient}>
-      <BrowserRouter>
+  <QueryClientProvider client={quertClient}>
+    <BrowserRouter>
+      <HelmetProvider>
         <App />
-        <ToastContainer position="top-right" autoClose={2000}/>
-      </BrowserRouter>
-    </QueryClientProvider>
+      </HelmetProvider>
+      <ToastContainer position="top-right" autoClose={2000} />
+    </BrowserRouter>
+  </QueryClientProvider>
 );
 reportWebVitals();
