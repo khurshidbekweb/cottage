@@ -18,7 +18,10 @@ import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
+
 import { FiPhoneCall, FiUser } from "react-icons/fi";
+import { FaRegUserCircle } from "react-icons/fa";
+import { IoIosArrowForward } from "react-icons/io";
 import BreacdCrumbs from "../../components/BreadCrumbs/BreacdCrumbs";
 import { Helmet } from "react-helmet-async";
 
@@ -38,7 +41,7 @@ const View = () => {
       childImage.push(e);
     }
   });
-  console.log(cottageView);
+  
   if (!mainImage) return <Loader />;
 
   return (
@@ -104,18 +107,38 @@ const View = () => {
                 </Swiper>
               </div>
               <div className="contact-me">
+                <div className="contactUSer">
+                  <p>FOYDALANUVCHI</p>
+                  <div className="contact__user">
+                    {cottageView?.user.image ? (
+                      <LazyLoadImage
+                        src={`${IMG_BASE_URL}${cottageView?.user.image}`}
+                        title="userImg"
+                        height={40}
+                        width={40}
+                        effect="blur"
+                      />
+                    ) : (
+                      <span>
+                        <FaRegUserCircle size={23} />
+                      </span>
+                    )}
+                    <p>{cottageView?.user.name}</p>
+                  </div>
+                  <Link to={""} className="announCementLink">
+                    <span>Barcha e'lonlar</span>
+                    <span>
+                      <IoIosArrowForward size={22} />
+                    </span>
+                  </Link>
+                </div>
                 <Link
-                  to="tel:+998971082004"
-                  className="mt-3 fs-4 text-decoration-none fw-bold d-flex align-items-center gap-2 border p-2 px-4 rounded bg-warning text-black "
-                >
-                  <FiUser /> Xurshidbek
-                </Link>
-                <Link
-                  to="tel:+998971082004"
-                  className="call-me mt-3 text-center"
+                  to={`tel:+998${cottageView?.user.phone}`}
+                  className="btn btn-outline-success callLink p-0 call-me mt-3 text-center"
                 >
                   {" "}
-                  <FiPhoneCall /> <p className="mt-3 fw-bold">Telefon qilish</p>
+                  <FiPhoneCall size={23} />{" "}
+                  <span className="fs-5 fw-bold">Telefon qilish</span>
                 </Link>
               </div>
             </div>
