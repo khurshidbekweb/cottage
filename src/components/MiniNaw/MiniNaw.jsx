@@ -11,6 +11,7 @@ import { ALL_DATA } from "../../Query/get_all";
 
 const MiniNaw = () => {
   const miniNav = useRef(null);
+
   const accessAToken = localStorage.getItem("accessToken");
   const refreshToken = localStorage.getItem("refreshToken");
   const cottage = ALL_DATA.useCottage();

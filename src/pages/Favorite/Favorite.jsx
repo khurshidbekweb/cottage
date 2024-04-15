@@ -28,6 +28,7 @@ const Favorite = () => {
         <meta name="description" content="Favorite page" />
         <link rel="canonical" href="/favorite" />
       </Helmet>
+
       <Navbar />
       <div className="container">
         <div className="favorite">

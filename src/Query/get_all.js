@@ -62,26 +62,30 @@ export const ALL_DATA = {
     }
     return { ...cottages };
   },
-  useCottageFilter: ({type, region, price}) => {
+  useCottageFilter: ({ type, region, price }) => {
     return useQuery({
-      queryKey: [QUERY_KEYS.cottage_by_filter, type, region,price],
+      queryKey: [QUERY_KEYS.cottage_by_filter, type, region, price],
       queryFn: async () => {
-        const data = await cottageUtils.getCottageFilter({type, region, price})
-        return data
-      }
-    })
+        const data = await cottageUtils.getCottageFilter({
+          type,
+          region,
+          price,
+        });
+        return data;
+      },
+    });
   },
   useCottageByType: (type) => {
     return useQuery({
       queryKey: [QUERY_KEYS.cottageType_by_Id],
-      queryFn: async () => await cottageUtils.getCottageType(type)   
-    })
+      queryFn: async () => await cottageUtils.getCottageType(type),
+    });
   },
   useCottageUserId: () => {
     return useQuery({
       queryKey: [QUERY_KEYS.cottage_by_UserId],
-      queryFn: cottageUtils.getCottageUser
-    })
+      queryFn: cottageUtils.getCottageUser,
+    });
   },
   useLanguage() {
     return useQuery({
@@ -113,52 +117,52 @@ export const ALL_DATA = {
       queryFn: cottageTypeUtils.getCottageType,
     });
   },
-  useUsers: ()=>{
+  useUsers: () => {
     return useQuery({
       queryKey: [QUERY_KEYS.users],
       queryFn: userUtils.getUsers,
-    })
+    });
   },
   useSingleUser: () => {
     return useQuery({
       queryKey: [QUERY_KEYS.users],
-      queryFn:userUtils.getSingleUser
-    })
+      queryFn: userUtils.getSingleUser,
+    });
   },
   useNotificationUser: (userId) => {
     return useQuery({
       queryKey: [QUERY_KEYS.notification, userId],
       queryFn: async () => {
-        const data = await notificationUtils.getUserNotification(userId)
-        return data
-      }
-    })
+        const data = await notificationUtils.getUserNotification(userId);
+        return data;
+      },
+    });
   },
   useAllNotification: () => {
     return useQuery({
       queryKey: [QUERY_KEYS.all_notification],
       queryFn: async () => {
-        const data = await notificationUtils.getNotification()
-        return data
-      }
-    })
+        const data = await notificationUtils.getNotification();
+        return data;
+      },
+    });
   },
   useServices: () => {
     return useQuery({
       queryKey: [QUERY_KEYS.services],
       queryFn: async () => {
         const data = await ServiceUtils.getService();
-        return data
-      }
-    })
+        return data;
+      },
+    });
   },
   useTariff: () => {
     return useQuery({
       queryKey: [QUERY_KEYS.tariff],
       queryFn: async () => {
-        const data = await TariffUtils.getTariff()
-        return data
-      }
-    })
-  }
+        const data = await TariffUtils.getTariff();
+        return data;
+      },
+    });
+  },
 };

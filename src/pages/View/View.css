@@ -27,9 +27,9 @@
 .view-image {
   display: block;
   height: 450px !important;
-  border-radius: 35px;  
+  border-radius: 35px;
 }
-.view-image-child{
+.view-image-child {
   height: 150px !important;
   border-radius: 3px;
 }
@@ -73,7 +73,7 @@
 .view-star-active {
   color: #ffd400;
 }
-.cottage-images{
+.cottage-images {
   width: 75%;
 }
 .view-h {
@@ -141,7 +141,6 @@
   color: #2c2d2e;
 }
 
-
 /* Swiper Css */
 .swiper {
   width: 100%;
@@ -164,7 +163,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-}  
+}
 .swiper {
   width: 100%;
   height: 300px;
@@ -198,7 +197,7 @@
   opacity: 1;
 }
 
-.swiper-slide-active{
+.swiper-slide-active {
   opacity: 1;
 }
 
@@ -208,7 +207,7 @@
   height: 100%;
 }
 
-.call-me{
+.call-me {
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -216,16 +215,24 @@
   padding: 2px 15px;
   width: 100%;
   border-radius: 10px;
-  background: green;
-  color: white;
-  font-size: 23px;
 }
-.call-me:hover{
+.call-me:hover {
   color: white;
 }
-.contact-me{
+.contact-me {
   margin: 15px auto;
-  text-align: center;
+}
+.contactUSer {
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 10px 20px;
+}
+.announCementLink {
+  display: flex;
+  align-items: center;
+  color: black;
+  text-decoration: none;
+  margin-top: 10px;
 }
 
 @media (max-width: 576px) {
@@ -239,7 +246,7 @@
     height: 180px;
     border-radius: 5px;
   }
-  .cottage-images{
+  .cottage-images {
     width: 100%;
   }
   .view-imgs {
@@ -257,7 +264,7 @@
     height: 200px !important;
     border-radius: 5px;
   }
-  .view-image-child{
+  .view-image-child {
     height: 80px !important;
     border-radius: 3px;
   }
@@ -345,7 +352,7 @@
   .view-facility-box {
     display: none;
   }
-  .text-area-mini{
+  .text-area-mini {
     display: none;
   }
 }
@@ -374,7 +381,7 @@
     height: 100px;
     border-radius: 15px;
   }
-  .view-image-child{
+  .view-image-child {
     height: 60px !important;
     border-radius: 3px;
   }
@@ -470,4 +477,24 @@
     border-radius: 25px;
     text-align: center;
   }
+}
+
+.contact__user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.contact__user p {
+  margin: 0;
+}
+.contact__user img {
+  border-radius: 100%;
+  margin: 0;
+}
+
+.callLink {
+  padding: 5px 10px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
