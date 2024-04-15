@@ -2,7 +2,6 @@ import "./App.css";
 import Home from "./pages/Home/Home";
 import Contact from "./pages/Contact/Contact";
 import SignIn from "./pages/SignIn/SignIn";
-import SignUp from "./pages/SignUp/SignUp";
 import View from "./pages/View/View";
 import Filter from "./pages/Filter/Filter";
 import User from "./pages/User/User";
@@ -13,7 +12,7 @@ import PayDetail from "./pages/PayDetail/PayDetail";
 import Favorite from "./pages/Favorite/Favorite";
 import Add from "./pages/Add/Add";
 import AddNew from "./pages/AddNew/AddNew";
-import { Routes, Route, useLocation, BrowserRouter } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import { AuthContextProvider } from "./context/AuthContext";
 import Protected from "./components/Protected";
 import Vacation from "./pages/Vacation/Vacation";
@@ -25,6 +24,7 @@ import { useQueryClient } from "@tanstack/react-query";
 import Services from "./pages/Services/Services";
 import Profil from "./pages/Profil/Profil";
 import ViewCottage from "./pages/ViewCottage/ViewCottage";
+import VacationPage from "./pages/Vacation/VacationPage";
 
 function App() {
   if (!localStorage.getItem("language")) localStorage.setItem("language", "uz");
@@ -65,15 +65,8 @@ function App() {
                 <Route path="home/profile/add-new" element={<Protected><AddNew /></Protected>}/>
                 <Route path="home/profile/announcement" element={<Protected><Announcoment /></Protected>} />
                 <Route path="home/view" element={<ViewCottage/>} />
-                <Route
-                  path="home/vacation/:id"
-                  element={
-                    <Protected>
-                      <Vacation />
-                    </Protected>
-                  }
-                /> 
-              </Route>
+                <Route path="home/vacation/:id" element={<Protected><Vacation /></Protected>}/>
+                <Route path="home/vacation" element={<Protected><VacationPage /></Protected>}/></Route>
               <Route path="/sign-in" element={<SignIn />} />           
             
             <Route
