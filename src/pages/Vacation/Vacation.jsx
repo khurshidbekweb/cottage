@@ -16,6 +16,7 @@ function Vacation() {
   
   if(!cottages.data?.x1length)
     return <div className='container'>
+      <BreacdCrumbs/>
       <h2 className='favorite-header'>{placeName}</h2>
       <p className='text-danger mt-0'>Bu joylashuvda hali dacha yoq</p>
     </div>

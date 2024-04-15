@@ -24,6 +24,7 @@ import { useEffect, useState } from "react";
 import { useQueryClient } from "@tanstack/react-query";
 import Services from "./pages/Services/Services";
 import Profil from "./pages/Profil/Profil";
+import ViewCottage from "./pages/ViewCottage/ViewCottage";
 
 function App() {
   if (!localStorage.getItem("language")) localStorage.setItem("language", "uz");
@@ -63,6 +64,7 @@ function App() {
                 <Route path="home/profile/services" element={<Services />} />
                 <Route path="home/profile/add-new" element={<Protected><AddNew /></Protected>}/>
                 <Route path="home/profile/announcement" element={<Protected><Announcoment /></Protected>} />
+                <Route path="home/view" element={<ViewCottage/>} />
                 <Route
                   path="home/vacation/:id"
                   element={

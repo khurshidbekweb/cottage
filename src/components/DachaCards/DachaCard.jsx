@@ -63,7 +63,7 @@ const DachaCard = (props) => {
               : "here-icons-wrap"
           }
         >
-          <div
+          <div onClick={() => favoriteCottage(props.cottage.id)}
             className={`dacha-card-like ${
               props.cottage.isLiked ? "dacha-card-like-active" : ""
             }`}
@@ -72,7 +72,7 @@ const DachaCard = (props) => {
               className={`dacha-heart-icon ${
                 props.cottage.isLiked ? "dacha-heart-icon-active" : ""
               }`}
-              onClick={() => favoriteCottage(props.cottage.id)}
+              
             />
           </div>
         </div>

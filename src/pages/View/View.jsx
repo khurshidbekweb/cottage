@@ -47,29 +47,7 @@ const View = () => {
     <div className="viewWrapper">
       <div className="container">
         <BreacdCrumbs/>
-        <div className="view">
-
-          <LazyLoadImage
-            className="view-imgmain"
-            src={`${IMG_BASE_URL}${mainImage}`}
-            alt="img"
-            effect="blur"
-          />
-
-          <div className="view-imgs">
-            {childImage?.length &&
-              childImage.map((e) => {
-                return (
-                  <LazyLoadImage
-                    key={e.id}
-                    className="view-image"
-                    src={`${IMG_BASE_URL}${e.image}`}
-                    alt="img"
-                    effect="blur"
-                  />
-                );
-              })}
-
+        <div className="view">         
           <div className="imag-and-desc-wrap w-100 gap-3 d-flex">
             <div className="cottage-images">
                 <Swiper
@@ -157,7 +135,6 @@ const View = () => {
         </div>
       </div>
       <MiniNaw />
-    </div>
     </div>
   );
 };
