@@ -1,6 +1,4 @@
 import "./View.css";
-import Navbar from "../../components/Navbar/Navbar";
-import Footer from "../../components/Footer/Footer";
 import { AiFillStar } from "react-icons/ai";
 
 import { IMG_BASE_URL } from "../../constants/img.constants";
@@ -20,10 +18,13 @@ import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
+
 import { FiPhoneCall, FiUser } from "react-icons/fi";
 import { FaRegUserCircle } from "react-icons/fa";
 import { IoIosArrowForward } from "react-icons/io";
+import BreacdCrumbs from "../../components/BreadCrumbs/BreacdCrumbs";
 import { Helmet } from "react-helmet-async";
+
 
 const View = () => {
   const params = useParams();
@@ -40,10 +41,9 @@ const View = () => {
       childImage.push(e);
     }
   });
-
-  console.log(cottageView);
-
+  
   if (!mainImage) return <Loader />;
+  
   return (
     <>
       <Helmet>
@@ -56,6 +56,7 @@ const View = () => {
         <Navbar />
 
         <div className="container">
+          <BreacdCrumbs/>
           <div className="view">
             <div className="imag-and-desc-wrap w-100 gap-3 d-flex">
               <div className="cottage-images">
@@ -185,6 +186,9 @@ const View = () => {
         <MiniNaw />
         <Footer />
       </div>
+      <MiniNaw />
+    </div>
+
     </>
   );
 };

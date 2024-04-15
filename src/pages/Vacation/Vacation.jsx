@@ -7,16 +7,21 @@ import DachaCard from "../../components/DachaCards/DachaCard";
 import DachaMiniCard from "../../components/DachaMiniCard/DachaMiniCard";
 import "./Vacation.css";
 import { Helmet } from "react-helmet-async";
+import BreacdCrumbs from '../../components/BreadCrumbs/BreacdCrumbs';
 
 function Vacation() {
-  const params = useParams();
-
-  const cottages = ALL_DATA.useCottageByPlace(params?.id);
-
-  const place = ALL_DATA.usePlace();
-
-  const placeName = place?.data?.find((e) => e.id === params?.id).name;
-
+  const params = useParams()
+  const cottages = ALL_DATA.useCottageByPlace(params?.id)
+  const place = ALL_DATA.usePlace()
+  const placeName = place?.data?.find(e => e.id === params?.id).name;
+  console.log(cottages.data);
+  
+  if(!cottages.data?.x1length)
+    return <div className='container'>
+      <BreacdCrumbs/>
+      <h2 className='favorite-header'>{placeName}</h2>
+      <p className='text-danger mt-0'>Bu joylashuvda hali dacha yoq</p>
+    </div>
   return (
     <>
       <Helmet>
@@ -26,9 +31,10 @@ function Vacation() {
       </Helmet>
       <Navbar />
       <div className="container">
+    <BreacdCrumbs/>
         <div className="favorite">
           <h2 className="favorite-header">{placeName}</h2>
-
+            
           <div className="place-card-sort-big">
             {cottages?.data?.length &&
               cottages.data.map((e) => {
@@ -43,8 +49,7 @@ function Vacation() {
               })}
           </div>
         </div>
-      </div>
-      <MiniNaw />
+        <MiniNaw/>
       <Footer />
     </>
   );

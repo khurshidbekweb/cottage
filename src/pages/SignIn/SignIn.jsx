@@ -8,7 +8,10 @@ import { useRef, useState } from "react";
 import toastify from "../../utils/toastify";
 import { useNavigate } from "react-router-dom";
 import Cleave from "cleave.js/react";
+
+import custimAxios from "../../configs/axios.config";
 import { Helmet } from "react-helmet-async";
+
 
 const SignIn = () => {
   const smsForm = useRef(null);
@@ -33,11 +36,8 @@ const SignIn = () => {
   const login = useMutation({
     mutationFn: authUtils.loginAuth,
     onSuccess: (data) => {
-      localStorage.setItem("accessToken", data.accessToken);
-      localStorage.setItem("refreshToken", data.refreshToken);
-      localStorage.setItem("user", JSON.stringify(data?.user));
       toastify.successMessage("Successfully logged in!");
-      navigate("/user");
+      navigate("/home/profile/user");
     },
     onError: (err) => {
       console.log(err, "login");

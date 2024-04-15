@@ -36,7 +36,7 @@ const DachaMiniCard = (props) => {
   };
   return (
     <div className="mini-card-wrap">
-      <Link to={`/view/${props.cottage.id}`} className="dacha-mini-card shadow">
+      <Link to={`/home/view/${props.cottage.id}`} className="dacha-mini-card shadow">
         <div className="img-wrap">
           <LazyLoadImage
             className="view-img"
@@ -75,7 +75,7 @@ const DachaMiniCard = (props) => {
             : "mini-cart-heart-wrap"
         }
       >
-        <div
+        <div onClick={() => handlLiked(props.cottage.id)}
           className={`dmc-like ${
             props.cottage?.isLiked === true ? "dmc-like-active" : ""
           }`}
