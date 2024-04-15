@@ -85,7 +85,7 @@ const Header = () => {
                         <h1 className="oswald header-text"> {el.name} </h1>
                         <h2 className="oswald header-num">${el.price}</h2>
                         <Link
-                          to={`/view/${el.id}`}
+                          to={`/home/view/${el.id}`}
                           className="header-btn oswald"
                         >
                           {HeaderLang[languageChange].btn}
