@@ -109,7 +109,7 @@ const Navbar = (props) => {
                 })}
             </select>
 
-            <Link to="/contact" className="modal-nav-contact">
+            <Link to={"tel:+998931002323"} className="modal-nav-contact">
               {NavLeng[languageChange].connection}
             </Link>
             <select
@@ -195,7 +195,7 @@ const Navbar = (props) => {
               })}
           </select>
 
-          <Link to="/contact" className="contact d-block">
+          <Link to="tel:+9981002314" className="contact d-block">
             {NavLeng[languageChange].connection}
           </Link>
 
