@@ -1,13 +1,24 @@
 import "./Tarif.css";
 import Tariff from "../../Modals/Tariff";
 import { ALL_DATA } from "../../Query/get_all";
+
 import MiniNaw from "../../components/MiniNaw/MiniNaw";
 import BreacdCrumbs from "../../components/BreadCrumbs/BreacdCrumbs";
+
+import { Helmet } from "react-helmet-async";
+
 
 const Tarif = () => {
   const tariff = ALL_DATA.useTariff();
   return (
     <>
+      <Helmet>
+        <title>Tariff</title>
+        <meta name="description" content="Tariff page" />
+        <link rel="canonical" href="/Tariff" />
+      </Helmet>
+      <Navbar />
+
       <div className="container">
         <BreacdCrumbs/>
         <div className="tarif">

@@ -9,8 +9,8 @@ import { AiFillStar } from "react-icons/ai";
 import MiniNav from "../../components/MiniNaw/MiniNaw";
 import "./Add.css";
 import BreacdCrumbs from "../../components/BreadCrumbs/BreacdCrumbs";
+
 const Add = () => {
-  
   return (
     <>
       <div className="container">

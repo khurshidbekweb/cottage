@@ -130,7 +130,7 @@ const PayDetail = () => {
           <button className="pay-detail-btn">Удалить</button>
         </div>
       </div>
-      <MiniNaw/>
+      <MiniNaw />
       <Footer />
     </>
   );
