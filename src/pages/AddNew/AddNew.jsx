@@ -12,7 +12,11 @@ import { ALL_DATA } from "../../Query/get_all";
 import MiniNaw from "../../components/MiniNaw/MiniNaw";
 import { Link } from "react-router-dom";
 import toastify from "../../utils/toastify";
+
+import BreacdCrumbs from "../../components/BreadCrumbs/BreacdCrumbs";
+
 import { Helmet } from "react-helmet-async";
+
 
 async function getBase64(file) {
   return new Promise((resolve, reject) => {
@@ -144,7 +148,9 @@ const AddNew = () => {
         <link rel="canonical" href="/addnew" />
       </Helmet>
       <Navbar />
+
       <div className="container">
+        <BreacdCrumbs/>
         <div className="addnew">
           <h3 className="addnew-header">Фото</h3>
           <form onSubmit={handlCottage}>

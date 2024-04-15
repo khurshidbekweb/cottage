@@ -8,12 +8,13 @@ import { Link } from "react-router-dom";
 import { AiFillStar } from "react-icons/ai";
 import MiniNav from "../../components/MiniNaw/MiniNaw";
 import "./Add.css";
+import BreacdCrumbs from "../../components/BreadCrumbs/BreacdCrumbs";
 
 const Add = () => {
   return (
     <>
-      <Navbar />
       <div className="container">
+        <BreacdCrumbs/>
         <div className="add">
           <div className="add-header">
             <h3 className="add-header-text">Подать объявлению</h3>
@@ -122,7 +123,6 @@ const Add = () => {
         </div>
       </div>
       <MiniNav />
-      <Footer />
     </>
   );
 };

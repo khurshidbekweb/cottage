@@ -7,7 +7,7 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const PlacesCard = (props) => {
   return (
-    <Link to={`/vacation/${props.id}`} className="places-card">
+    <Link to={`/home/vacation/${props.id}`} className="places-card">
       <LazyLoadImage
         className="nature-img"
         src={`${IMG_BASE_URL}${props.img}`}

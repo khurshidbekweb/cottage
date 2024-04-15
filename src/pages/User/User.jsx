@@ -1,6 +1,4 @@
 import "./User.css";
-import Navbar from "../../components/Navbar/Navbar";
-import Footer from "../../components/Footer/Footer";
 import AddImg from "../../assets/images/add-img.svg";
 import MiniNaw from "../../components/MiniNaw/MiniNaw";
 import { ALL_DATA } from "../../Query/get_all";
@@ -13,7 +11,10 @@ import EditImageIcon from "../../assets/images/edit.svg";
 import { useNavigate } from "react-router-dom";
 import { ProfileLeng } from "../../configs/language";
 import { LanguageContext } from "../../helper/languageContext";
+import BreacdCrumbs from "../../components/BreadCrumbs/BreacdCrumbs";
+
 import { Helmet } from "react-helmet-async";
+
 
 async function getBase64Full(file) {
   return new Promise((resolve, reject) => {
@@ -78,6 +79,12 @@ const User = () => {
   const { languageChange } = useContext(LanguageContext);
 
   return (
+    <div>
+      <div className="container">
+        <BreacdCrumbs/>
+        <div className="user">
+          <h2 className="user-header">{ProfileLeng[languageChange].text}</h2>
+
     <>
       <Helmet>
         <title>User Profil</title>
@@ -89,6 +96,7 @@ const User = () => {
         <div className="container">
           <div className="user">
             <h2 className="user-header">{ProfileLeng[languageChange].text}</h2>
+
 
             <form onSubmit={handleUser} className="user-box">
               <div className="user-l">
@@ -186,6 +194,8 @@ const User = () => {
         <MiniNaw />
         <Footer />
       </div>
+      <MiniNaw />
+    </div>
     </>
   );
 };

@@ -27,7 +27,7 @@ const MiniNaw = () => {
           <img src={Home} width="24" height="24.98" alt="home" />
         </NavLink>
 
-        <NavLink to="/favorite" className="favorite">
+        <NavLink to="/home/favorite" className="favorite">
           <img src={Like} width="31.96" height="25.47" alt="like" />
           <span
             className={
@@ -38,11 +38,11 @@ const MiniNaw = () => {
           </span>
         </NavLink>
 
-        <NavLink to="/add-new">
+        <NavLink to="/home/profile/add-new">
           <img src={Plus} width="32" height="32" alt="plus" />
         </NavLink>
 
-        <NavLink to="/profil">
+        <NavLink to="/home/profile">
           <img src={User} width="28" height="28" alt="user" />
         </NavLink>
       </div>

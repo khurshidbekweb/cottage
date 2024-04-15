@@ -30,16 +30,9 @@ custimAxios.interceptors.response.use(
   (err) => {
     if (err?.response?.status === 406) {
       authUtils.refreshAuth();
-      // originalRequest._retry = true;
-      // window.location.reload()
-      // return custimAxios(originalRequest);
     }
     return Promise.reject(err);
   }
 );
-
-custimAxios.defaults.headers.common[
-  "Authorization"
-] = `Bearer ${localStorage.getItem("accessToken")}`;
 
 export default custimAxios;
