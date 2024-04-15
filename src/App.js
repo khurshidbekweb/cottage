@@ -25,6 +25,7 @@ import Services from "./pages/Services/Services";
 import Profil from "./pages/Profil/Profil";
 import ViewCottage from "./pages/ViewCottage/ViewCottage";
 import VacationPage from "./pages/Vacation/VacationPage";
+import UserCottageSingle from "./pages/User/UserCottageSingle";
 
 function App() {
   if (!localStorage.getItem("language")) localStorage.setItem("language", "uz");
@@ -55,7 +56,6 @@ function App() {
             <Route path='/home' element={<Home />} />
             <Route path='/' element={<Home />}>
                 <Route path="home/contact" element={<Contact />} />
-                <Route path="home/view/:id" element={<Protected><View /></Protected>}/>
                 <Route path="home/favorite" element={<Protected><Favorite /></Protected>}/>
                 <Route path="home/profile/user" element={<User />} />
                 <Route path="home/filter" element={<Protected><Filter /></Protected>}/>
@@ -64,7 +64,10 @@ function App() {
                 <Route path="home/profile/services" element={<Services />} />
                 <Route path="home/profile/add-new" element={<Protected><AddNew /></Protected>}/>
                 <Route path="home/profile/announcement" element={<Protected><Announcoment /></Protected>} />
-                <Route path="home/view" element={<ViewCottage/>} />
+                <Route path="home/view/:id" element={<Protected><View /></Protected>}/>
+                <Route path="home/view" element={<ViewCottage/>}>
+                  <Route path="user-dacha" element={<UserCottageSingle/>}/>
+                </Route>
                 <Route path="home/vacation/:id" element={<Protected><Vacation /></Protected>}/>
                 <Route path="home/vacation" element={<Protected><VacationPage /></Protected>}/></Route>
               <Route path="/sign-in" element={<SignIn />} />           
