@@ -1,3 +1,4 @@
+
 import { Helmet } from "react-helmet-async";
 import Footer from "../../components/Footer/Footer";
 import MiniNaw from "../../components/MiniNaw/MiniNaw";
@@ -29,6 +30,7 @@ const Contact = () => {
               <p className="text-contact text-white mt-2">
                 Say something to start a live chat!
               </p>
+
 
               <div className="contact-to-offece">
                 <div className="phone-nomer-conatct w-25 d-flex gap-3">
@@ -125,6 +127,7 @@ const Contact = () => {
             </div>
           </div>
         </div>
+
       </div>
       <MiniNaw />
       <Footer />

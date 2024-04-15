@@ -2,10 +2,11 @@ import React from "react";
 
 import "./Profil.css";
 
-import Navbar from "../../components/Navbar/Navbar";
-import MiniNaw from "../../components/MiniNaw/MiniNaw";
 
-import { Link } from "react-router-dom";
+import Navbar from '../../components/Navbar/Navbar';
+import MiniNaw from '../../components/MiniNaw/MiniNaw';
+import { Link } from 'react-router-dom';
+import BreacdCrumbs from '../../components/BreadCrumbs/BreacdCrumbs';
 import { Helmet } from "react-helmet-async";
 
 const Profil = () => {
@@ -34,6 +35,7 @@ const Profil = () => {
             <p className="profil-text">My cottage</p>
             <i className="bx fs-1  bx-analyse"></i>
           </Link>
+
         </div>
       </div>
       <MiniNaw />

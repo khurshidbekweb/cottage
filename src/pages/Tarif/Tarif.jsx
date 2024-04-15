@@ -1,9 +1,12 @@
-import Footer from "../../components/Footer/Footer";
-import Navbar from "../../components/Navbar/Navbar";
 import "./Tarif.css";
 import Tariff from "../../Modals/Tariff";
 import { ALL_DATA } from "../../Query/get_all";
+
+import MiniNaw from "../../components/MiniNaw/MiniNaw";
+import BreacdCrumbs from "../../components/BreadCrumbs/BreacdCrumbs";
+
 import { Helmet } from "react-helmet-async";
+
 
 const Tarif = () => {
   const tariff = ALL_DATA.useTariff();
@@ -15,7 +18,9 @@ const Tarif = () => {
         <link rel="canonical" href="/Tariff" />
       </Helmet>
       <Navbar />
+
       <div className="container">
+        <BreacdCrumbs/>
         <div className="tarif">
           <h2 className="tarif-header font-bold">Тарифы</h2>
 
@@ -45,7 +50,7 @@ const Tarif = () => {
           </div>
         </div>
       </div>
-      <Footer />
+      <MiniNaw/>
     </>
   );
 };
