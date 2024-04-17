@@ -177,12 +177,13 @@
 }
 
 .mySwiper2 {
-  height: 80%;
+  height: 90%;
   width: 100%;
 }
 
 .mySwiper {
   height: 20%;
+  margin-top: 0;
   box-sizing: border-box;
   padding: 10px 0;
 }
@@ -251,6 +252,7 @@
     width: 100%;
   }
   .view-imgs {
+    margin-top: 0;
     display: grid;
     grid-auto-flow: column;
     gap: 12px;
@@ -261,17 +263,19 @@
   }
 
   .view-image {
+    margin-top: 110px;
     width: 111px;
     height: 200px !important;
     border-radius: 5px;
   }
   .view-image-child {
+    margin-top: -90px;
     height: 80px !important;
     border-radius: 3px;
   }
 
   .view-main {
-    margin: 24px 0;
+    margin: 40px 0;
     padding: 0;
   }
 
