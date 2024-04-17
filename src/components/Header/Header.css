@@ -496,7 +496,7 @@
     }
     
     .header-num {
-        margin: 10px 0 24px;
+        margin: 20px 0 24px !important;
         padding: 0;
         font-style: normal;
         font-weight: 400;

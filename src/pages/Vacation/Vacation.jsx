@@ -1,13 +1,12 @@
 import { useParams } from "react-router-dom";
-import Footer from "../../components/Footer/Footer";
 import MiniNaw from "../../components/MiniNaw/MiniNaw";
-import Navbar from "../../components/Navbar/Navbar";
 import { ALL_DATA } from "../../Query/get_all";
 import DachaCard from "../../components/DachaCards/DachaCard";
 import DachaMiniCard from "../../components/DachaMiniCard/DachaMiniCard";
 import "./Vacation.css";
 import { Helmet } from "react-helmet-async";
 import BreacdCrumbs from '../../components/BreadCrumbs/BreacdCrumbs';
+import Places from "../../components/Places/Places";
 
 function Vacation() {
   const params = useParams()
@@ -31,7 +30,7 @@ function Vacation() {
         <link rel="canonical" href="/vacation" />
       </Helmet>
       <div className="container">
-        <BreacdCrumbs/>
+      <BreacdCrumbs/>
         <div className="favorite">
           <h2 className="favorite-header">{placeName}</h2>
             
@@ -51,7 +50,6 @@ function Vacation() {
         </div>
         <MiniNaw/>
         </div>
-      <Footer />
     </>
   );
 }

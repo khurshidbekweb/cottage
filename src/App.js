@@ -65,9 +65,8 @@ function App() {
                 <Route path="home/profile/add-new" element={<Protected><AddNew /></Protected>}/>
                 <Route path="home/profile/announcement" element={<Protected><Announcoment /></Protected>} />
                 <Route path="home/view/:id" element={<Protected><View /></Protected>}/>
-                <Route path="home/view" element={<ViewCottage/>}>
-                  <Route path="user-dacha" element={<UserCottageSingle/>}/>
-                </Route>
+                <Route path="home/view" element={<ViewCottage/>}/>
+                <Route path="home/view/cottage/:id" element={<UserCottageSingle/>}/>
                 <Route path="home/vacation/:id" element={<Protected><Vacation /></Protected>}/>
                 <Route path="home/vacation" element={<Protected><VacationPage /></Protected>}/></Route>
               <Route path="/sign-in" element={<SignIn />} />           

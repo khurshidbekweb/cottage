@@ -74,11 +74,12 @@
         line-height: 60px;
         color: #2C2D2E;
     }
-    .swiper-slide-place{
+     .swiper .swiper-slide-place{
         height: 120px !important;
     }
     .swiper-place-mini{
         margin-top: 10px;
+        height: inherit;
         display: block !important;
     }
     .swiper-place{

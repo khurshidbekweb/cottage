@@ -90,7 +90,6 @@ const User = () => {
           <div className="user">
             <h2 className="user-header">{ProfileLeng[languageChange].text}</h2>
 
-
             <form onSubmit={handleUser} className="user-box">
               <div className="user-l">
                 <label className="file-input__label">
