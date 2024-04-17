@@ -25,7 +25,6 @@ import { IoIosArrowForward } from "react-icons/io";
 import BreacdCrumbs from "../../components/BreadCrumbs/BreacdCrumbs";
 import { Helmet } from "react-helmet-async";
 
-
 const View = () => {
   const params = useParams();
   const [viewCottage, setViewCottage] = useState(null);
@@ -41,7 +40,7 @@ const View = () => {
       childImage.push(e);
     }
   });
-  
+
   if (!mainImage) return <Loader />;
 
   return (
@@ -54,7 +53,7 @@ const View = () => {
 
       <div className="viewWrapper">
         <div className="container">
-          <BreacdCrumbs/>
+          <BreacdCrumbs />
           <div className="view">
             <div className="imag-and-desc-wrap w-100 gap-3 d-flex">
               <div className="cottage-images">

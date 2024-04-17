@@ -17,6 +17,9 @@ import { cottageUtils } from "../../utils/cottage.utils";
 import { NavLeng, NavberLinks } from "../../configs/language";
 import { LanguageContext } from "../../helper/languageContext";
 
+// icons
+import { BsTelephoneFill } from "react-icons/bs";
+
 Modal.setAppElement("#root");
 
 const Navbar = (props) => {
@@ -48,11 +51,11 @@ const Navbar = (props) => {
   const signIn = useRef(null);
   const handleCottageType = async (e) => {
     const type = await cottageUtils.getCottageType(e.target.value);
-    console.log(type);
   };
 
   const accessToken = localStorage.getItem("accessToken");
   const refreshToken = localStorage.getItem("refreshToken");
+
   const logoutBtn = () => {
     signIn.current.classList.remove("d-none");
     registered.current.classList.add("d-none");
@@ -110,7 +113,7 @@ const Navbar = (props) => {
               </select>
 
               <Link to="tel:+9981002314" className="modal-nav-contact d-black ">
-                {NavLeng[languageChange].connection}                
+                {NavLeng[languageChange].connection}
               </Link>
               <select
                 defaultValue="socials"
@@ -173,10 +176,16 @@ const Navbar = (props) => {
               </button>
             </div>
           </div>
-          {/*  hamburger menu end */}          
+          {/*  hamburger menu end */}
 
           <Link to="/">
-            <img className="logo" src={Logo} width="65" height="64" alt="logo" />
+            <img
+              className="logo"
+              src={Logo}
+              width="65"
+              height="64"
+              alt="logo"
+            />
           </Link>
           <div className="navs align-items-center">
             <select
@@ -248,7 +257,12 @@ const Navbar = (props) => {
               </span>
             </Link>
 
-            <Notification />
+            <div className="d-flex align-items-center">
+              <Notification />
+              <Link to={"tel:+998936222222"} className="phoneMobile">
+                <BsTelephoneFill size={18} />
+              </Link>
+            </div>
 
             <button
               ref={registered}
@@ -273,61 +287,64 @@ const Navbar = (props) => {
             >
               Вход
             </Link>
-          <div className="icons">
-            <Modal
-              isOpen={modalOpen}
-              onRequestClose={closeModal}
-              contentLabel="Example Modal"
-              overlayClassName="modal-nav-overlay"
-              className="modal-nav-content"
-            >
-              <div className="user-modal-nav-top">
-                <p className="um-top-gmail">User@gmail.com</p>
-                <img
-                  src={`${IMG_BASE_URL}${userImg}`}
-                  className={userImg ? "um-top-img" : "d-none um-top-img"}
-                  alt="userImg"
-                />
-              </div>
-
-              <Link to="/home/profile/add-new" className="um-text text-decoration-none">
-                {NavberLinks[languageChange].add}
-              </Link>
-              <Link
-                to="/home/profile/announcement"
-                className="um-text text-decoration-none mt-2 d-block"
+            <div className="icons">
+              <Modal
+                isOpen={modalOpen}
+                onRequestClose={closeModal}
+                contentLabel="Example Modal"
+                overlayClassName="modal-nav-overlay"
+                className="modal-nav-content"
               >
-                {NavberLinks[languageChange].cottage}
-              </Link>
-              <Link
-                to="/home/profile/services"
-                className="um-text text-decoration-none mt-2 d-block"
-              >
-                {NavberLinks[languageChange].services}
-              </Link>
+                <div className="user-modal-nav-top">
+                  <p className="um-top-gmail">User@gmail.com</p>
+                  <img
+                    src={`${IMG_BASE_URL}${userImg}`}
+                    className={userImg ? "um-top-img" : "d-none um-top-img"}
+                    alt="userImg"
+                  />
+                </div>
 
-              <hr />
-
-              <div className="user-modal-nav-profil">
-                <img src={UserModal} alt="user" />
-                <Link className="um-profil-link" to="/home/profile/user">
-                  {NavberLinks[languageChange].profil}
+                <Link
+                  to="/home/profile/add-new"
+                  className="um-text text-decoration-none"
+                >
+                  {NavberLinks[languageChange].add}
                 </Link>
-              </div>
+                <Link
+                  to="/home/profile/announcement"
+                  className="um-text text-decoration-none mt-2 d-block"
+                >
+                  {NavberLinks[languageChange].cottage}
+                </Link>
+                <Link
+                  to="/home/profile/services"
+                  className="um-text text-decoration-none mt-2 d-block"
+                >
+                  {NavberLinks[languageChange].services}
+                </Link>
 
-              <Link to="/" className="user-modal-nav-out">
-                <img src={RedGoOut} alt="go-out" />
-                <button onClick={logoutBtn} className="um-out-btn">
-                  {NavberLinks[languageChange].exit}
-                </button>
-              </Link>
-            </Modal>
+                <hr />
+
+                <div className="user-modal-nav-profil">
+                  <img src={UserModal} alt="user" />
+                  <Link className="um-profil-link" to="/home/profile/user">
+                    {NavberLinks[languageChange].profil}
+                  </Link>
+                </div>
+
+                <Link to="/" className="user-modal-nav-out">
+                  <img src={RedGoOut} alt="go-out" />
+                  <button onClick={logoutBtn} className="um-out-btn">
+                    {NavberLinks[languageChange].exit}
+                  </button>
+                </Link>
+              </Modal>
+            </div>
           </div>
         </div>
-        </div>     
       </div>
-    <Outlet/>
-  </>
+      <Outlet />
+    </>
   );
 };
 
