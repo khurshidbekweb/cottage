@@ -83,8 +83,7 @@ const Navbar = (props) => {
             />
             <p className="menu-text">Меню</p>
           </button>
-
-          {/*  hamburger menu */}
+          {/*  hamburger menu star */}
           <div
             className={`hamburgerMenu ${
               modalIsOpen ? "hamburgerMenuActive" : "hamburgerMenuClose"
@@ -110,8 +109,8 @@ const Navbar = (props) => {
                   })}
               </select>
 
-              <Link to="/home/contact" className="modal-nav-contact">
-                {NavLeng[languageChange].connection}
+              <Link to="tel:+9981002314" className="modal-nav-contact d-black ">
+                {NavLeng[languageChange].connection}                
               </Link>
               <select
                 defaultValue="socials"
@@ -174,14 +173,14 @@ const Navbar = (props) => {
               </button>
             </div>
           </div>
-          {/*  hamburger menu */}
+          {/*  hamburger menu end */}          
 
           <Link to="/">
             <img className="logo" src={Logo} width="65" height="64" alt="logo" />
           </Link>
           <div className="navs align-items-center">
             <select
-              className="select fs-5 border-0"
+              className="select data_type_select fs-5"
               name="dacha"
               id="dacha"
               onChange={handleCottageType}
@@ -196,8 +195,7 @@ const Navbar = (props) => {
                 })}
             </select>
 
-
-            <Link to={"tel:+998931002323"} className="modal-nav-contact">
+            <Link to="tel:+9981002314" className="contact d-block ">
               {NavLeng[languageChange].connection}
             </Link>
 
@@ -275,77 +273,7 @@ const Navbar = (props) => {
             >
               Вход
             </Link>
-
-
-        <Link to="/">
-          <img className="logo" src={Logo} width="65" height="64" alt="logo" />
-        </Link>
-        <div className="navs align-items-center">
-          <select
-            className="select data_type_select fs-5"
-            name="dacha"
-            id="dacha"
-            onChange={handleCottageType}
-          >
-            {cottageType.data?.length &&
-              cottageType.data.map((e) => {
-                return (
-                  <option key={e.id} value={e.id}>
-                    {e.name}
-                  </option>
-                );
-              })}
-          </select>
-
-          <Link to="tel:+9981002314" className="contact d-block">
-            {NavLeng[languageChange].connection}
-          </Link>
-
-          <select
-            className="select-two form-select"
-            name="social"
-            id="social"
-            onChange={jumpLink}
-          >
-            <option selected value="socials">
-              {NavLeng[languageChange].set}
-            </option>
-            <option value="https://t.me/dachi_v_gorax">Telegram</option>
-            <option value="https://facebook.com">Facebook</option>
-            <option value="https://instagram.com">Instagram</option>
-            <option value="https://youtube.com">Youtube</option>
-          </select>
-
-          <select
-            className="select-three"
-            name="language"
-            onChange={toggleLanguage}
-          >
-            {language.data?.length &&
-              language.data.map((e) => {
-                if (e.code === defaultLang) {
-                  return (
-                    <option key={e.id} selected value={e.code}>
-                      {e.code}
-                    </option>
-                  );
-                }
-                return (
-                  <option key={e.id} value={e.code}>
-                    {e.code}
-                  </option>
-                );
-              })}
-          </select>
-        </div>
-        <div className="icons">
-          <Link to="/favorite" className="heart">
-            <FiHeart className="heart-icon" />
-            <span
-              className={
-                fovariteCottage === 0 ? "fovarite-num d-none" : "fovarite-num"
-              }
-
+          <div className="icons">
             <Modal
               isOpen={modalOpen}
               onRequestClose={closeModal}
@@ -395,7 +323,8 @@ const Navbar = (props) => {
               </Link>
             </Modal>
           </div>
-        </div>       
+        </div>
+        </div>     
       </div>
     <Outlet/>
   </>

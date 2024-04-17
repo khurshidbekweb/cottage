@@ -125,7 +125,7 @@ const View = () => {
                     )}
                     <p>{cottageView?.user.name}</p>
                   </div>
-                  <Link to={""} className="announCementLink">
+                  <Link to="/home/view/user-dacha" className="announCementLink">
                     <span>Barcha e'lonlar</span>
                     <span>
                       <IoIosArrowForward size={22} />
