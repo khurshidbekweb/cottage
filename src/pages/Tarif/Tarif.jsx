@@ -17,8 +17,6 @@ const Tarif = () => {
         <meta name="description" content="Tariff page" />
         <link rel="canonical" href="/Tariff" />
       </Helmet>
-      <Navbar />
-
       <div className="container">
         <BreacdCrumbs/>
         <div className="tarif">

@@ -16,12 +16,13 @@ function Vacation() {
   const placeName = place?.data?.find(e => e.id === params?.id).name;
   console.log(cottages.data);
   
-  if(!cottages.data?.x1length)
+  if(!cottages.data?.length)
     return <div className='container'>
-      <BreacdCrumbs/>
-      <h2 className='favorite-header'>{placeName}</h2>
-      <p className='text-danger mt-0'>Bu joylashuvda hali dacha yoq</p>
-    </div>
+            <BreacdCrumbs/>
+            <h2 className='favorite-header'>{placeName}</h2>
+            <p className='text-danger mt-0'>Bu joylashuvda hali dacha yoq</p>
+          </div>
+
   return (
     <>
       <Helmet>
@@ -31,7 +32,7 @@ function Vacation() {
       </Helmet>
       <Navbar />
       <div className="container">
-    <BreacdCrumbs/>
+        <BreacdCrumbs/>
         <div className="favorite">
           <h2 className="favorite-header">{placeName}</h2>
             
@@ -50,6 +51,7 @@ function Vacation() {
           </div>
         </div>
         <MiniNaw/>
+        </div>
       <Footer />
     </>
   );

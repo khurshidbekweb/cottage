@@ -43,7 +43,7 @@ const View = () => {
   });
   
   if (!mainImage) return <Loader />;
-  
+
   return (
     <>
       <Helmet>
@@ -53,8 +53,6 @@ const View = () => {
       </Helmet>
 
       <div className="viewWrapper">
-        <Navbar />
-
         <div className="container">
           <BreacdCrumbs/>
           <div className="view">
@@ -127,7 +125,7 @@ const View = () => {
                     )}
                     <p>{cottageView?.user.name}</p>
                   </div>
-                  <Link to={""} className="announCementLink">
+                  <Link to="/home/view/user-dacha" className="announCementLink">
                     <span>Barcha e'lonlar</span>
                     <span>
                       <IoIosArrowForward size={22} />
@@ -184,11 +182,8 @@ const View = () => {
           </div>
         </div>
         <MiniNaw />
-        <Footer />
       </div>
       <MiniNaw />
-    </div>
-
     </>
   );
 };
