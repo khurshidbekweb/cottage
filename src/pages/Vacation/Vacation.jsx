@@ -30,7 +30,6 @@ function Vacation() {
         <meta name="description" content="cottage places" />
         <link rel="canonical" href="/vacation" />
       </Helmet>
-      <Navbar />
       <div className="container">
         <BreacdCrumbs/>
         <div className="favorite">
