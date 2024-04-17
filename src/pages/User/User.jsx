@@ -12,7 +12,6 @@ import { useNavigate } from "react-router-dom";
 import { ProfileLeng } from "../../configs/language";
 import { LanguageContext } from "../../helper/languageContext";
 import BreacdCrumbs from "../../components/BreadCrumbs/BreacdCrumbs";
-
 import { Helmet } from "react-helmet-async";
 
 
@@ -89,7 +88,6 @@ const User = () => {
         <BreacdCrumbs/>
           <div className="user">
             <h2 className="user-header">{ProfileLeng[languageChange].text}</h2>
-
 
             <form onSubmit={handleUser} className="user-box">
               <div className="user-l">

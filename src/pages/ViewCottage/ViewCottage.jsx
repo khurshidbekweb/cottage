@@ -3,11 +3,14 @@ import Dacha from '../../components/Dacha/Dacha';
 import BreacdCrumbs from '../../components/BreadCrumbs/BreacdCrumbs';
 
 const ViewCottage = () => {
-    return (
-        <div className='container'>
+    return (<>
+        <div className='container mb-3'>
             <BreacdCrumbs/>
-            <Dacha/>
         </div>
+        <div className="mt-5">
+        <Dacha/>
+        </div>
+        </>
     );
 };
 

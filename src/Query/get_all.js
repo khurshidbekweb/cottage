@@ -87,6 +87,12 @@ export const ALL_DATA = {
       queryFn: cottageUtils.getCottageUser,
     });
   },
+  useCottageAllUserId: (userId) => {
+    return useQuery({
+      queryKey: [QUERY_KEYS.cottageUserAllId],
+      queryFn: async ()=> await cottageUtils.getCottageUserId(userId)
+    })
+  },
   useLanguage() {
     return useQuery({
       queryKey: [QUERY_KEYS.languages],

@@ -165,7 +165,7 @@
     }
 
     .footer-top {
-        display: block;
+        display: none;
     }
 
     .footer-box {
@@ -194,10 +194,12 @@
         font-size: 32px;
         line-height: 44px;
         color: #FFFFFF;
+        text-align: center;
     }
 
     .footer-bottom {
         display: block;
+        text-align: center;
     }
 
     .footer-socials {

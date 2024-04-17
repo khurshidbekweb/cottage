@@ -1,14 +1,13 @@
 import React from "react";
 import "./Services.css";
-import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
 import MiniNaw from "../../components/MiniNaw/MiniNaw";
 import { Link } from "react-router-dom";
 import { ALL_DATA } from "../../Query/get_all";
-import { BASE_URL_SERVER } from "../../constants/server.constants";
 import { IMG_BASE_URL } from "../../constants/img.constants";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Helmet } from "react-helmet-async";
+import BreacdCrumbs from "../../components/BreadCrumbs/BreacdCrumbs";
 
 const Services = () => {
   const services = ALL_DATA.useServices();
@@ -20,8 +19,8 @@ const Services = () => {
         <meta name="description" content="Services page" />
         <link rel="canonical" href="/services" />
       </Helmet>
-      <Navbar />
       <div className="container">
+      <BreacdCrumbs/>
         <h1>Services</h1>
         <div className="services-wrap">
           {services.data?.length &&
@@ -45,7 +44,6 @@ const Services = () => {
         </div>
       </div>
       <MiniNaw />
-      <Footer />
     </>
   );
 };

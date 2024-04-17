@@ -24,7 +24,10 @@ body {
   font-family: Oswald;
   src: url(../src/fonts/Oswald-Regular.ttf);
 }
-
+.oswald{
+  font-family: Oswald;
+  font-style: normal;
+}
 .container {
   max-width: 1142px;
   margin: 0 auto;
