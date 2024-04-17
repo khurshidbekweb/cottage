@@ -33,6 +33,7 @@ function App() {
   const [languageChange, setLanguageChange] = useState(
     localStorage.getItem("language")
   );
+
   const queryClient = useQueryClient();
   const toggleLanguage = (e) => {
     e.preventDefault();
@@ -69,12 +70,13 @@ function App() {
                 <Route path="home/view/cottage/:id" element={<UserCottageSingle/>}/>
                 <Route path="home/vacation/:id" element={<Protected><Vacation /></Protected>}/>
                 <Route path="home/vacation" element={<Protected><VacationPage /></Protected>}/></Route>
-              <Route path="/sign-in" element={<SignIn />} />           
-            
+              <Route path="/sign-in" element={<SignIn />} />  
             <Route
               path="/tarif"
               element={
-                <Protected> <Tarif />
+                <Protected>
+                  {" "}
+                  <Tarif />
                 </Protected>
               }
             />
@@ -101,10 +103,8 @@ function App() {
                   <PayDetail />
                 </Protected>
               }
-            />          
-            
-                   
-            
+            />
+
             <Route path="*" element={<ErrorPage />} />
           </Routes>
           {/* </BrowserRouter> */}
