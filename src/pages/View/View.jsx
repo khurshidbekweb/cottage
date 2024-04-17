@@ -19,7 +19,7 @@ import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
 
-import { FiPhoneCall, FiUser } from "react-icons/fi";
+import { FiPhoneCall} from "react-icons/fi";
 import { FaRegUserCircle } from "react-icons/fa";
 import { IoIosArrowForward } from "react-icons/io";
 import BreacdCrumbs from "../../components/BreadCrumbs/BreacdCrumbs";
