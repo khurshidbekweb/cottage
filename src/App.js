@@ -33,6 +33,7 @@ function App() {
   const [languageChange, setLanguageChange] = useState(
     localStorage.getItem("language")
   );
+
   const queryClient = useQueryClient();
   const toggleLanguage = (e) => {
     e.preventDefault();
@@ -53,29 +54,95 @@ function App() {
         <LanguageContext.Provider value={{ languageChange, toggleLanguage }}>
           {/* <BrowserRouter> */}
           <Routes>
-            <Route path='/home' element={<Home />} />
-            <Route path='/' element={<Home />}>
-                <Route path="home/contact" element={<Contact />} />
-                <Route path="home/favorite" element={<Protected><Favorite /></Protected>}/>
-                <Route path="home/profile/user" element={<User />} />
-                <Route path="home/filter" element={<Protected><Filter /></Protected>}/>
-                <Route path="home/profile" element={<Protected><Profil /></Protected>}/>
-                <Route path="home/profile/add" element={<Protected><Add /></Protected>}/>
-                <Route path="home/profile/services" element={<Services />} />
-                <Route path="home/profile/add-new" element={<Protected><AddNew /></Protected>}/>
-                <Route path="home/profile/announcement" element={<Protected><Announcoment /></Protected>} />
-                <Route path="home/view/:id" element={<Protected><View /></Protected>}/>
-                <Route path="home/view" element={<ViewCottage/>}>
-                  <Route path="user-dacha" element={<UserCottageSingle/>}/>
-                </Route>
-                <Route path="home/vacation/:id" element={<Protected><Vacation /></Protected>}/>
-                <Route path="home/vacation" element={<Protected><VacationPage /></Protected>}/></Route>
-              <Route path="/sign-in" element={<SignIn />} />           
-            
+            <Route path="/home" element={<Home />} />
+            <Route path="/" element={<Home />}>
+              <Route path="home/contact" element={<Contact />} />
+              <Route
+                path="home/favorite"
+                element={
+                  <Protected>
+                    <Favorite />
+                  </Protected>
+                }
+              />
+              <Route path="home/profile/user" element={<User />} />
+              <Route
+                path="home/filter"
+                element={
+                  <Protected>
+                    <Filter />
+                  </Protected>
+                }
+              />
+              <Route
+                path="home/profile"
+                element={
+                  <Protected>
+                    <Profil />
+                  </Protected>
+                }
+              />
+              <Route
+                path="home/profile/add"
+                element={
+                  <Protected>
+                    <Add />
+                  </Protected>
+                }
+              />
+              <Route path="home/profile/services" element={<Services />} />
+              <Route
+                path="home/profile/add-new"
+                element={
+                  <Protected>
+                    <AddNew />
+                  </Protected>
+                }
+              />
+              <Route
+                path="home/profile/announcement"
+                element={
+                  <Protected>
+                    <Announcoment />
+                  </Protected>
+                }
+              />
+              <Route
+                path="home/view/:id"
+                element={
+                  <Protected>
+                    <View />
+                  </Protected>
+                }
+              />
+              <Route path="home/view" element={<ViewCottage />}>
+                <Route path="user-dacha" element={<UserCottageSingle />} />
+              </Route>
+              <Route
+                path="home/vacation/:id"
+                element={
+                  <Protected>
+                    <Vacation />
+                  </Protected>
+                }
+              />
+              <Route
+                path="home/vacation"
+                element={
+                  <Protected>
+                    <VacationPage />
+                  </Protected>
+                }
+              />
+            </Route>
+            <Route path="/sign-in" element={<SignIn />} />
+
             <Route
               path="/tarif"
               element={
-                <Protected> <Tarif />
+                <Protected>
+                  {" "}
+                  <Tarif />
                 </Protected>
               }
             />
@@ -102,10 +169,8 @@ function App() {
                   <PayDetail />
                 </Protected>
               }
-            />          
-            
-                   
-            
+            />
+
             <Route path="*" element={<ErrorPage />} />
           </Routes>
           {/* </BrowserRouter> */}

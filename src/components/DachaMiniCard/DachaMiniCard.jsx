@@ -13,10 +13,14 @@ const DachaMiniCard = (props) => {
   const mainImg = props.cottage.images.find(
     (e) => e.isMainImage === true
   ).image;
+
   const queryClient = useQueryClient();
+
   let liked = [];
+
   const accessToken = localStorage.getItem("accessToken");
   const refreshToken = localStorage.getItem("refreshToken");
+
   const navigate = useNavigate(null);
   const handlLiked = (id) => {
     if (accessToken && refreshToken) {
@@ -34,9 +38,13 @@ const DachaMiniCard = (props) => {
       navigate("/sign-in");
     }
   };
+
   return (
     <div className="mini-card-wrap">
-      <Link to={`/home/view/${props.cottage.id}`} className="dacha-mini-card shadow">
+      <Link
+        to={`/home/view/${props.cottage.id}`}
+        className="dacha-mini-card shadow"
+      >
         <div className="img-wrap">
           <LazyLoadImage
             className="view-img"
@@ -66,6 +74,7 @@ const DachaMiniCard = (props) => {
           <p className="dmc-text">
             {props.cottage.region.name} {props.cottage.place.name}
           </p>
+          <p className="mini-card-price">{props.cottage?.price}$</p>
         </div>
       </Link>
       <div
@@ -75,7 +84,8 @@ const DachaMiniCard = (props) => {
             : "mini-cart-heart-wrap"
         }
       >
-        <div onClick={() => handlLiked(props.cottage.id)}
+        <div
+          onClick={() => handlLiked(props.cottage.id)}
           className={`dmc-like ${
             props.cottage?.isLiked === true ? "dmc-like-active" : ""
           }`}
