@@ -315,6 +315,8 @@
     font-size: 16px;
     line-height: 20px;
     color: #2c2d2e;
+    font-style: normal;
+    font-family: sans-serif;
   }
   .view-facilitys {
     display: grid;
