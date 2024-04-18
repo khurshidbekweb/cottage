@@ -17,7 +17,6 @@ import BreacdCrumbs from "../../components/BreadCrumbs/BreacdCrumbs";
 
 import { Helmet } from "react-helmet-async";
 
-
 async function getBase64(file) {
   return new Promise((resolve, reject) => {
     const reader = new FileReader();
@@ -147,10 +146,9 @@ const AddNew = () => {
         <meta name="description" content="addnew page" />
         <link rel="canonical" href="/addnew" />
       </Helmet>
-      <Navbar />
 
       <div className="container">
-        <BreacdCrumbs/>
+        <BreacdCrumbs />
         <div className="addnew">
           <h3 className="addnew-header">Фото</h3>
           <form onSubmit={handlCottage}>
@@ -308,7 +306,6 @@ const AddNew = () => {
         </div>
       </div>
       <MiniNaw />
-      <Footer />
     </>
   );
 };

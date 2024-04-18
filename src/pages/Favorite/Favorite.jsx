@@ -11,9 +11,7 @@ import { cottageUtils } from "../../utils/cottage.utils";
 import { QUERY_KEYS } from "../../Query/query-keys";
 import BreacdCrumbs from "../../components/BreadCrumbs/BreacdCrumbs";
 
-
 import { Helmet } from "react-helmet-async";
-
 
 const Favorite = () => {
   const cottage = ALL_DATA.useCottage();
@@ -33,9 +31,8 @@ const Favorite = () => {
         <link rel="canonical" href="/favorite" />
       </Helmet>
 
-      <Navbar />
       <div className="container">
-        <BreacdCrumbs/>
+        <BreacdCrumbs />
         <div className="favorite">
           {cottage.data && cottage.data.length ? (
             <>

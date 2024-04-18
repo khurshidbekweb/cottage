@@ -1,13 +1,13 @@
 .blokcards {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 26px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 26px;
 }
 
 @media (max-width: 390px) {
-    .blokcards {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-    }
+  .blokcards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
 }
