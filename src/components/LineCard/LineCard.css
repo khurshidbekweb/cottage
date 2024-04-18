@@ -60,8 +60,6 @@
 .lc-name {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
-  font-style: normal;
   font-weight: 500;
   font-size: 28px;
   line-height: 38px;
@@ -91,8 +89,6 @@
 .lc-location {
   margin: 12px 0 24px;
   padding: 0;
-  font-family: sans-serif;
-  font-style: normal;
   font-weight: 500;
   font-size: 16px;
   line-height: 26px;
@@ -116,8 +112,6 @@
 .lc-inner-text {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
-  font-style: normal;
   font-weight: 600;
   font-size: 18px;
   line-height: 38px;
@@ -127,8 +121,6 @@
 .lc-text {
   margin: 0 0 12px 0;
   padding: 0;
-  font-family: sans-serif;
-  font-style: normal;
   font-weight: 600;
   font-size: 18px;
   line-height: 38px;
@@ -138,8 +130,6 @@
 .lc-span {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
-  font-style: normal;
   font-weight: 600;
   font-size: 28px;
   line-height: 38px;
@@ -157,8 +147,6 @@
   width: 220px;
   margin: 0;
   padding: 10px 0;
-  font-family: sans-serif;
-  font-style: normal;
   font-weight: 600;
   font-size: 18px;
   line-height: 36px;
@@ -177,8 +165,6 @@
   width: 220px;
   margin: 0;
   padding: 10px 0;
-  font-family: sans-serif;
-  font-style: normal;
   font-weight: 600;
   font-size: 18px;
   line-height: 36px;
@@ -304,8 +290,6 @@
   .lc-text {
     margin: 0 0 2px 0;
     padding: 0;
-    font-family: sans-serif;
-    font-style: normal;
     font-weight: 500;
     font-size: 12px;
     line-height: 22px;
@@ -315,8 +299,6 @@
   .lc-span {
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
-    font-style: normal;
     font-weight: 600;
     font-size: 16px;
     line-height: 20px;
@@ -334,8 +316,6 @@
     width: 138px;
     margin: 0 auto;
     padding: 8px 27px;
-    font-family: sans-serif;
-    font-style: normal;
     font-weight: 600;
     font-size: 15px;
     line-height: 20px;
@@ -349,8 +329,6 @@
     width: 138px;
     margin: 12px 0 0 12px;
     padding: 8px 15px;
-    font-family: sans-serif;
-    font-style: normal;
     font-weight: 600;
     font-size: 15px;
     line-height: 20px;

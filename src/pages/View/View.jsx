@@ -19,7 +19,7 @@ import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
 
-import { FiPhoneCall} from "react-icons/fi";
+import { FiPhoneCall } from "react-icons/fi";
 import { FaRegUserCircle } from "react-icons/fa";
 import { IoIosArrowForward } from "react-icons/io";
 import BreacdCrumbs from "../../components/BreadCrumbs/BreacdCrumbs";
@@ -124,7 +124,10 @@ const View = () => {
                     )}
                     <p>{cottageView?.user.name}</p>
                   </div>
-                  <Link to={`/home/view/cottage/${cottageView?.user.id}`} className="announCementLink">
+                  <Link
+                    to={`/home/view/cottage/${cottageView?.user.id}`}
+                    className="announCementLink"
+                  >
                     <span>Barcha e'lonlar</span>
                     <span>
                       <IoIosArrowForward size={22} />
@@ -160,7 +163,10 @@ const View = () => {
                   )}
                   <p>{cottageView?.user.name || "Username"}</p>
                 </div>
-                <Link to="/home/view/user-dacha" className="announCementLink">
+                <Link
+                  to={`/home/view/cottage/${cottageView?.user.id}`}
+                  className="announCementLink"
+                >
                   <span>Barcha e'lonlar</span>
                   <span>
                     <IoIosArrowForward size={22} />
@@ -218,7 +224,7 @@ const View = () => {
         <MiniNaw />
       </div>
       <div className="mt-5">
-      <Dacha/>
+        <Dacha />
       </div>
     </>
   );

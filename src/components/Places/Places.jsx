@@ -14,6 +14,7 @@ import { ALL_DATA } from "../../Query/get_all";
 import { useContext, useRef } from "react";
 import { PlaseLeng } from "../../configs/language";
 import { LanguageContext } from "../../helper/languageContext";
+
 const Places = () => {
   const places = ALL_DATA.usePlace();
 

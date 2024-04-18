@@ -1,14 +1,12 @@
 .addnew-header {
   margin: 40px 0 48px;
   padding: 0;
-  font-family: sans-serif;
-  font-style: normal;
   font-weight: 500;
   font-size: 32px;
   line-height: 42px;
   color: #2c2d2e;
 }
-.input-file{
+.input-file {
   width: 0.1px;
   height: 0.1px;
   opacity: 0;
@@ -16,7 +14,7 @@
   position: absolute;
   z-index: -1;
 }
-.label-input-file{
+.label-input-file {
   cursor: pointer;
 }
 .addnew-imgs {
@@ -47,8 +45,6 @@
 .addnew-img-text {
   margin: 115px 0 0 0;
   padding: 0;
-  font-family: sans-serif;
-  font-style: normal;
   font-weight: 600;
   font-size: 18px;
   line-height: 28px;
@@ -69,8 +65,6 @@
 .addnew-add-text {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
-  font-style: normal;
   font-weight: 600;
   font-size: 18px;
   line-height: 36px;
@@ -80,8 +74,6 @@
 .addnew-label {
   margin: 0 0 12px 0;
   padding: 0;
-  font-family: sans-serif;
-  font-style: normal;
   font-weight: 400;
   font-size: 18px;
   line-height: 22px;
@@ -93,8 +85,6 @@
   padding: 0;
   border: none;
   outline: none;
-  font-family: sans-serif;
-  font-style: normal;
   font-weight: 500;
   font-size: 24px;
   line-height: 34px;
@@ -153,8 +143,6 @@
 .addnew-object-text {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
-  font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 26px;
@@ -162,16 +150,16 @@
 }
 
 .addnew-message {
-    width: 100%;
-    margin: 0 0 56px 0;
-    padding: 36px 24px 338px;
-    background: rgba(44, 45, 46, 0.25);
-    border: none;
-    outline: none;
-    border-radius: 35px;
+  width: 100%;
+  margin: 0 0 56px 0;
+  padding: 36px 24px 338px;
+  background: rgba(44, 45, 46, 0.25);
+  border: none;
+  outline: none;
+  border-radius: 35px;
 }
 
-.image-child-wrap{
+.image-child-wrap {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 16px;
@@ -182,64 +170,60 @@
   margin: 0 auto;
   padding: 10px 0;
   display: block;
-  background: #3CD298;
+  background: #3cd298;
   border: none;
   border-radius: 35px;
-  font-family: sans-serif;
-  font-style: normal;
   font-weight: 600;
   font-size: 18px;
   line-height: 36px;
   text-align: center;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
-.add-new-title-main{
+.add-new-title-main {
   width: 50%;
   border: 0;
   border-bottom: 2px solid silver;
   padding: 5px 0;
 }
-.wrap-region-place{
+.wrap-region-place {
   display: flex;
   align-items: center;
   margin: 15px 0 30px;
   gap: 10px;
 }
-.add-new-title-main:focus{
+.add-new-title-main:focus {
   outline: none;
 }
 
-.mini-wrap-select{
+.mini-wrap-select {
   width: 25%;
 }
-.price-wrap{
+.price-wrap {
   width: 50%;
 }
 
-@media only screen and (max-width:576px) {
-  .add-new-title-main{
+@media only screen and (max-width: 576px) {
+  .add-new-title-main {
     width: 100%;
     border: 0;
     border-bottom: 2px solid silver;
     padding: 5px 0;
   }
-  .price-wrap{
+  .price-wrap {
     width: 100%;
   }
-  .wrap-region-place{
+  .wrap-region-place {
     display: flex;
     align-items: center;
     margin: 15px 0 30px;
   }
-  .mini-wrap-select{
+  .mini-wrap-select {
     width: 50%;
   }
   .addnew-header {
     margin: 32px 0 34px;
     padding: 0;
-    font-family: sans-serif;
-    font-style: normal;
     font-weight: 500;
     font-size: 23px;
     line-height: 34px;
@@ -260,8 +244,6 @@
   .addnew-img-text {
     margin: 75px 0 0 0;
     padding: 0;
-    font-family: sans-serif;
-    font-style: normal;
     font-weight: 600;
     font-size: 18px;
     line-height: 28px;
@@ -290,10 +272,9 @@
   .addnew-select {
     margin: 0;
     padding: 0;
-    border: none;
+    border: 1px solid #ced4da;
+    padding: 5px;
     outline: none;
-    font-family: sans-serif;
-    font-style: normal;
     font-weight: 500;
     font-size: 18px;
     line-height: 28px;
@@ -323,7 +304,7 @@
     margin: 0;
   }
 
-  .addnew-objects {    
+  .addnew-objects {
     padding: 15px;
     display: block;
     background: #2c2d2e;
@@ -334,8 +315,6 @@
     width: 246px;
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
-    font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 26px;
@@ -358,7 +337,7 @@
     border: none;
     outline: none;
     border-radius: 35px;
-}
+  }
 
   .soxranit {
     margin-top: 20px;
@@ -370,8 +349,6 @@
   .addnew-header {
     margin: 32px 0 34px;
     padding: 0;
-    font-family: sans-serif;
-    font-style: normal;
     font-weight: 500;
     font-size: 23px;
     line-height: 34px;
@@ -389,12 +366,9 @@
     height: 173px;
   }
 
-
   .addnew-img-text {
     margin: 75px 0 0 0;
     padding: 0;
-    font-family: sans-serif;
-    font-style: normal;
     font-weight: 600;
     font-size: 18px;
     line-height: 28px;
@@ -424,14 +398,13 @@
   .addnew-select {
     margin: 0;
     padding: 0;
-    border: none;
+    border: 1px solid #ced4da;
     outline: none;
-    font-family: sans-serif;
-    font-style: normal;
     font-weight: 500;
     font-size: 18px;
     line-height: 28px;
     color: #2c2d2e;
+    padding: 5px;
   }
 
   .addnew-hr {
@@ -469,8 +442,6 @@
     width: 246px;
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
-    font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 26px;
@@ -493,7 +464,7 @@
     border: none;
     outline: none;
     border-radius: 35px;
-}
+  }
 
   .soxranit {
     margin-top: 20px;
