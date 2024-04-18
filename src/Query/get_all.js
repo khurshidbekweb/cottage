@@ -90,8 +90,8 @@ export const ALL_DATA = {
   useCottageAllUserId: (userId) => {
     return useQuery({
       queryKey: [QUERY_KEYS.cottageUserAllId],
-      queryFn: async ()=> await cottageUtils.getCottageUserId(userId)
-    })
+      queryFn: async () => await cottageUtils.getCottageUserId(userId),
+    });
   },
   useLanguage() {
     return useQuery({

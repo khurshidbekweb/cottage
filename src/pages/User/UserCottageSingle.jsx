@@ -8,12 +8,15 @@ import Loader from "../../components/Loader/Loader";
 
 const UserCottageSingle = () => {
   const params = useParams();
+
   const cottage = ALL_DATA.useCottageAllUserId(params.id);
+
   const user = ALL_DATA.useSingleUser(params.id);
 
-  if (!user.data.image) {
+  if (!user.data?.image) {
     return <Loader />;
   }
+
   return (
     <div className="container">
       <div className="dacha">
