@@ -42,8 +42,6 @@
 .view-name {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
-  font-style: normal;
   font-weight: 500;
   font-size: 48px;
   line-height: 58px;
@@ -53,8 +51,6 @@
 .view-location {
   margin: 16px 0 20px;
   padding: 0;
-  font-family: sans-serif;
-  font-style: normal;
   font-weight: 500;
   font-size: 24px;
   line-height: 36px;
@@ -79,8 +75,6 @@
 .view-h {
   margin: 58px 0 48px;
   padding: 0;
-  font-family: sans-serif;
-  font-style: normal;
   font-weight: 600;
   font-size: 32px;
   line-height: 42px;
@@ -90,8 +84,6 @@
 .view-p {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
-  font-style: normal;
   font-weight: 500;
   font-size: 24px;
   line-height: 36px;
@@ -101,8 +93,6 @@
 .view-facility-header {
   margin: 0 0 48px 0;
   padding: 0;
-  font-family: sans-serif;
-  font-style: normal;
   font-weight: 500;
   font-size: 32px;
   line-height: 42px;
@@ -133,8 +123,6 @@
   width: 334px;
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
-  font-style: normal;
   font-weight: 500;
   font-size: 24px;
   line-height: 36px;
@@ -221,6 +209,10 @@
   color: white;
 }
 
+.phoneCallMobile {
+  display: none;
+}
+
 .contact-me {
   margin: 15px auto;
 }
@@ -240,6 +232,10 @@
 @media (max-width: 576px) {
   .view {
     overflow: hidden;
+  }
+  .phoneCallMobile {
+    display: block;
+    margin-top: 30px;
   }
   .view-imgmain {
     margin: 35px auto 15px;
@@ -282,10 +278,8 @@
   .view-name {
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
-    font-style: normal;
     font-weight: 500;
-    font-size: 24px;
+    font-size: 30px;
     line-height: 34px;
     color: #2c2d2e;
   }
@@ -293,8 +287,6 @@
   .view-location {
     margin: 12px 0 24px;
     padding: 0;
-    font-family: sans-serif;
-    font-style: normal;
     font-weight: 500;
     font-size: 16px;
     line-height: 26px;
@@ -309,8 +301,6 @@
   .view-h {
     margin: 25px 0 16px;
     padding: 0;
-    font-family: sans-serif;
-    font-style: normal;
     font-weight: 600;
     font-size: 18px;
     line-height: 24px;
@@ -320,8 +310,6 @@
   .view-p {
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
-    font-style: normal;
     font-weight: 500;
     font-size: 16px;
     line-height: 20px;
@@ -334,8 +322,6 @@
   .view-facility-header {
     margin: 0 0 16px 0;
     padding: 0;
-    font-family: sans-serif;
-    font-style: normal;
     font-weight: 500;
     font-size: 24px;
     line-height: 34px;
@@ -346,8 +332,6 @@
     width: 150px;
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
-    font-style: normal;
     font-weight: 500;
     font-size: 16px;
     line-height: 26px;
@@ -398,8 +382,6 @@
   .view-name {
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
-    font-style: normal;
     font-weight: 500;
     font-size: 24px;
     line-height: 34px;
@@ -409,8 +391,6 @@
   .view-location {
     margin: 12px 0 24px;
     padding: 0;
-    font-family: sans-serif;
-    font-style: normal;
     font-weight: 500;
     font-size: 16px;
     line-height: 26px;
@@ -425,8 +405,6 @@
   .view-h {
     margin: 25px 0 16px;
     padding: 0;
-    font-family: sans-serif;
-    font-style: normal;
     font-weight: 600;
     font-size: 18px;
     line-height: 24px;
@@ -450,8 +428,6 @@
   .view-facility-header {
     margin: 0 0 16px 0;
     padding: 0;
-    font-family: sans-serif;
-    font-style: normal;
     font-weight: 500;
     font-size: 24px;
     line-height: 34px;
@@ -462,8 +438,6 @@
     width: 150px;
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
-    font-style: normal;
     font-weight: 500;
     font-size: 16px;
     line-height: 26px;
