@@ -41,6 +41,14 @@ export const cottageUtils = {
     });
     return data;
   },
+  getCottageUserId: async (userId) => {
+    const { data } = await custimAxios.get(`cottage/user/${userId}`, {
+      headers: {
+        "accept-language": localStorage.getItem("language"),
+      },
+    });
+    return data;
+  },
   getCottageFilter: async ({ type, region, price }) => {
     const { data } = await custimAxios.get(
       `/cottage/filter/?type=${type}&region=${region}&price=${price}`,

@@ -8,6 +8,9 @@
     line-height: 42px;
     color: #2C2D2E;
 }
+.dacha{
+    margin: 40px 0 0;
+}
 .user{
     position: relative;
 }
@@ -146,7 +149,14 @@
     line-height: 24px;
     color: #FF3C3C;
 }
-
+.user-image{
+    width: 90px;
+    height: 90px;
+}
+.user-info-wrap{
+    margin-top: 0;
+    width: 50%;
+}
 .user-btn {
     margin: 0;
     padding: 10px 24px;
@@ -175,6 +185,14 @@
     }
     .user-info-wrap{
         margin-top: 50px;
+        width: 100%;
+    }
+    .dacha{
+        margin: 20px 0 0;
+    }
+    .user-image{
+        width: 70px;
+        height: 70px;
     }
     .user-edit-btn{
         position: relative;

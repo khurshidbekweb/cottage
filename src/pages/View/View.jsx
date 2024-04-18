@@ -19,11 +19,12 @@ import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
 
-import { FiPhoneCall, FiUser } from "react-icons/fi";
+import { FiPhoneCall} from "react-icons/fi";
 import { FaRegUserCircle } from "react-icons/fa";
 import { IoIosArrowForward } from "react-icons/io";
 import BreacdCrumbs from "../../components/BreadCrumbs/BreacdCrumbs";
 import { Helmet } from "react-helmet-async";
+import Dacha from "../../components/Dacha/Dacha";
 
 const View = () => {
   const params = useParams();
@@ -50,7 +51,6 @@ const View = () => {
         <meta name="description" content="single cottage page" />
         <link rel="canonical" href="/view" />
       </Helmet>
-
       <div className="viewWrapper">
         <div className="container">
           <BreacdCrumbs />
@@ -124,7 +124,7 @@ const View = () => {
                     )}
                     <p>{cottageView?.user.name}</p>
                   </div>
-                  <Link to="/home/view/user-dacha" className="announCementLink">
+                  <Link to={`/home/view/cottage/${cottageView?.user.id}`} className="announCementLink">
                     <span>Barcha e'lonlar</span>
                     <span>
                       <IoIosArrowForward size={22} />
@@ -217,7 +217,9 @@ const View = () => {
         </div>
         <MiniNaw />
       </div>
-      <MiniNaw />
+      <div className="mt-5">
+      <Dacha/>
+      </div>
     </>
   );
 };
