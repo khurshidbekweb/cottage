@@ -141,6 +141,41 @@ const View = () => {
                 </Link>
               </div>
             </div>
+            <div className="phoneCallMobile">
+              <div className="contactUSer">
+                <p>FOYDALANUVCHI</p>
+                <div className="contact__user">
+                  {cottageView?.user.image ? (
+                    <LazyLoadImage
+                      src={`${IMG_BASE_URL}${cottageView?.user.image}`}
+                      title="userImg"
+                      height={40}
+                      width={40}
+                      effect="blur"
+                    />
+                  ) : (
+                    <span>
+                      <FaRegUserCircle size={23} />
+                    </span>
+                  )}
+                  <p>{cottageView?.user.name || "Username"}</p>
+                </div>
+                <Link to="/home/view/user-dacha" className="announCementLink">
+                  <span>Barcha e'lonlar</span>
+                  <span>
+                    <IoIosArrowForward size={22} />
+                  </span>
+                </Link>
+              </div>
+              <Link
+                to={`tel:+998${cottageView?.user.phone}`}
+                className="btn btn-outline-success callLink p-0 call-me mt-3 text-center"
+              >
+                {" "}
+                <FiPhoneCall size={23} />{" "}
+                <span className="fs-5 fw-bold">Telefon qilish</span>
+              </Link>
+            </div>
             <div className="view-main">
               <h2 className="view-name">{cottageView?.name}</h2>
               <p className="view-location">
