@@ -9,10 +9,13 @@ import Loader from "../../components/Loader/Loader";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
 import React, { useState } from "react";
+
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
+
 // import required modules
 import { FreeMode, Navigation, Thumbs } from "swiper/modules";
+
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/free-mode";

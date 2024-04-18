@@ -682,6 +682,9 @@
     display: none;
   }
   @media only screen and (max-width: 576px) {
+    .mini-search {
+      display: block;
+    }
     .swiper-header {
       width: 100%;
       height: 90vh !important;
@@ -875,6 +878,9 @@
     }
   }
   @media only screen and (max-width: 414px) {
+    .mini-search {
+      display: block;
+    }
     .swiper-header {
       width: 100%;
       height: 90vh !important;
@@ -982,10 +988,6 @@
       border: none;
     }
   }
-}
-
-.mini-search {
-  display: block;
 }
 
 .header-top {

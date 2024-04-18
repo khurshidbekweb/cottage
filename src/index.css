@@ -11,20 +11,24 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Roboto", sans-serif;
+  font-style: normal;
 }
+
 @font-face {
   font-family: Roboto;
   src: url(../src/fonts/Roboto-Regular.ttf);
 }
+
 .roboto {
   font-family: Roboto;
   font-style: normal;
 }
+
 @font-face {
   font-family: Oswald;
   src: url(../src/fonts/Oswald-Regular.ttf);
 }
-.oswald{
+.oswald {
   font-family: Oswald;
   font-style: normal;
 }
