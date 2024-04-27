@@ -16,6 +16,7 @@ const DachaCard = (props) => {
   const mainImage = props.cottage.images.find(
     (e) => e.isMainImage === true
   ).image;
+
   const liked = [];
 
   const navigate = useNavigate();
@@ -24,16 +25,16 @@ const DachaCard = (props) => {
 
   const refreshToken = localStorage.getItem("refreshToken");
 
-  const favoriteCottage = (id) => {
+  const handleLike = (id) => {
     if (accessToken && refreshToken) {
-      let LocalLiked = JSON.parse(localStorage.getItem("liked"));
-      liked.push(...(LocalLiked || ""));
-      if (!liked.includes(id)) {
-        liked.push(id);
-        localStorage.setItem("liked", JSON.stringify(liked));
-      } else if (liked.includes(id)) {
-        const likedCottages = liked.filter((e) => e !== id);
-        localStorage.setItem("liked", JSON.stringify(likedCottages));
+      const likedCottage = JSON.parse(localStorage.getItem("liked")) || [];
+      const isExist = likedCottage.includes(id);
+      if (isExist) {
+        const UpdatedLikedArr = likedCottage.filter((item) => item != id);
+        localStorage.setItem("liked", JSON.stringify(UpdatedLikedArr));
+      } else {
+        const updatedLike = [...likedCottage, id];
+        localStorage.setItem("liked", JSON.stringify(updatedLike));
       }
       queryClient.invalidateQueries({ queryKey: [QUERY_KEYS.cottages] });
     } else {
@@ -63,7 +64,8 @@ const DachaCard = (props) => {
               : "here-icons-wrap"
           }
         >
-          <div onClick={() => favoriteCottage(props.cottage.id)}
+          <div
+            onClick={() => handleLike(props?.cottage?.id)}
             className={`dacha-card-like ${
               props.cottage.isLiked ? "dacha-card-like-active" : ""
             }`}
@@ -72,7 +74,6 @@ const DachaCard = (props) => {
               className={`dacha-heart-icon ${
                 props.cottage.isLiked ? "dacha-heart-icon-active" : ""
               }`}
-              
             />
           </div>
         </div>
