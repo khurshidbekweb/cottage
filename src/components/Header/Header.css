@@ -33,10 +33,9 @@
   position: absolute;
   padding: 80px 0;
   top: 0;
-  width: 600px;
+  width: 100%;
   margin: 0 auto;
-  left: 430px;
-  z-index: 999999999999999999999;
+  z-index: 30;
 }
 
 .header-text {
