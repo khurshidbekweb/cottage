@@ -62,18 +62,37 @@ export const ALL_DATA = {
     }
     return { ...cottages };
   },
-  useCottageFilter: ({ type, region, price }) => {
-    return useQuery({
-      queryKey: [QUERY_KEYS.cottage_by_filter, type, region, price],
+  useCottageFilter: ({ type, place, price }) => {
+    const filters = useQuery({
+      queryKey: [QUERY_KEYS.cottage_by_filter, type, place, price],
       queryFn: async () => {
         const data = await cottageUtils.getCottageFilter({
           type,
-          region,
+          place,
           price,
         });
         return data;
       },
     });
+
+    const likedCottages = JSON.parse(localStorage.getItem("liked"));
+    if (filters.data?.length) {
+      const data = filters.data.map((e) => {
+        if (likedCottages?.includes(e.id)) {
+          return {
+            ...e,
+            isLiked: true,
+          };
+        } else {
+          return {
+            ...e,
+            isLiked: false,
+          };
+        }
+      });
+      return { ...filters, data: data };
+    }
+    return { ...filters };
   },
   useCottageByType: (type) => {
     return useQuery({

@@ -38,6 +38,7 @@ const Header = () => {
   });
 
   const cottageFilter = ALL_DATA.useCottageFilter(filter);
+
   const handleFilterCottage = (e) => {
     e.preventDefault();
     setFilter({
@@ -131,9 +132,9 @@ const Header = () => {
               </p>
               <input
                 className="header-nums"
-                type="text"
+                type="number"
                 name="price"
-                placeholder="300$ - 800$"
+                placeholder="400$"
               />
             </div>
           </div>

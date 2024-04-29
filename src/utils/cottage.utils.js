@@ -49,12 +49,12 @@ export const cottageUtils = {
     });
     return data;
   },
-  getCottageFilter: async ({ type, region, price }) => {
+  getCottageFilter: async ({ type, place, price }) => {
     const { data } = await custimAxios.get(
-      `/cottage/filter/?type=${type}&region=${region}&price=${price}`,
+      `/cottage/filter/?type=${type}&place=${place}&price=${price}`,
       {
         type: type,
-        region: region,
+        place: place,
         price: price,
 
         headers: {
