@@ -6,9 +6,9 @@ export const userUtils = {
     return data;
   },
   getSingleUser: async () => {
-      const { data } = await custimAxios.get("/user/single");
-      localStorage.setItem("user", JSON.stringify(data));
-      return data;
+    const { data } = await custimAxios.get("/user/single");
+    localStorage.setItem("user", JSON.stringify(data));
+    return data;
   },
   getUserDevice: async (userId) => {
     const { data } = await custimAxios.get(`user/user-device/${userId}`);
@@ -23,14 +23,7 @@ export const userUtils = {
     });
     return data;
   },
-  patchUser: async ({
-    id,
-    email,
-    favoriteCottages,
-    image,
-    name,
-    phone,
-  }) => {
+  patchUser: async ({ id, email, favoriteCottages, image, name, phone }) => {
     const formData = new FormData();
     formData.append("email", email);
     if (Array.isArray(favoriteCottages) && favoriteCottages.length) {

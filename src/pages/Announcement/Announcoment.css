@@ -1,7 +1,5 @@
-
-
-@media (max-width: 576px){
-    .announcoment{
-        margin-top: 50px;
-    }
+@media (max-width: 576px) {
+  .announcoment {
+    margin-top: 50px;
+  }
 }

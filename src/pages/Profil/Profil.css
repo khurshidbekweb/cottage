@@ -1,54 +1,56 @@
-.profil-wrap{
-    display: none;
+.profil-wrap {
+  display: none;
 }
 @media (max-width: 576px) {
-    .profil-wrap{
-        display: block;
-        width: 370px;
-    }
-    .profil-card{
-        width: 90%;
-        margin: 10px auto;
-        padding: 5px 8px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        border: 1px solid silver;
-        border-radius: 7px;
-        text-decoration: none;
-        color: white;
-    }
-    .profil-card:hover{
-        color: white;
-        -webkit-box-shadow: 1px -2px 16px 4px rgba(170,194,194,1);
-        -moz-box-shadow: 1px -2px 16px 4px rgba(170,194,194,1);
-        box-shadow: 1px -2px 16px 4px rgba(170,194,194,1);
-    }
-    .user-card-mini{
-        background-color: #4B878BFF;
-    }
-    .services-card-mini{
-        background-color: #603F83FF;
-    }
-    .annoumcommet-card-mini{
-        background-color: #006B38FF;
-    }
-    .profil-card .profil-text{
-        font-size: 25px;
-        /* margin-top: 5px; */
-        font-weight: 700;
-        display: block;
-    }
+  .profil-wrap {
+    display: block;
+    width: 370px;
+    margin-bottom: 180px;
+  }
+  .profil-card {
+    width: 90%;
+    margin: 10px auto;
+    padding: 5px 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid silver;
+    border-radius: 7px;
+    text-decoration: none;
+    color: white;
+  }
+  .profil-card:hover {
+    color: white;
+    -webkit-box-shadow: 1px -2px 16px 4px rgba(170, 194, 194, 1);
+    -moz-box-shadow: 1px -2px 16px 4px rgba(170, 194, 194, 1);
+    box-shadow: 1px -2px 16px 4px rgba(170, 194, 194, 1);
+  }
+  .user-card-mini {
+    background-color: #4b878bff;
+  }
+  .services-card-mini {
+    background-color: #603f83ff;
+  }
+  .annoumcommet-card-mini {
+    background-color: #006b38ff;
+  }
+  .profil-card .profil-text {
+    font-size: 25px;
+    /* margin-top: 5px; */
+    font-weight: 700;
+    display: block;
+  }
 }
 @media (max-width: 390px) {
-    .profil-wrap{
-        display: block;
-        width: 350px;
-    }
+  .profil-wrap {
+    display: block;
+    width: 350px;
+  }
 }
 @media (max-width: 370px) {
-    .profil-wrap{
-        display: block;
-        width: 340px;
-    }
+  .profil-wrap {
+    display: block;
+    width: 340px;
+    margin-bottom: 80px;
+  }
 }

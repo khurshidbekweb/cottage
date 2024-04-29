@@ -14,7 +14,6 @@ import { LanguageContext } from "../../helper/languageContext";
 import BreacdCrumbs from "../../components/BreadCrumbs/BreacdCrumbs";
 import { Helmet } from "react-helmet-async";
 
-
 async function getBase64Full(file) {
   return new Promise((resolve, reject) => {
     const reader = new FileReader();
@@ -77,7 +76,8 @@ const User = () => {
   // User profile language
   const { languageChange } = useContext(LanguageContext);
 
-  return (    <>
+  return (
+    <>
       <Helmet>
         <title>User Profil</title>
         <meta name="description" content="user page" />
@@ -85,7 +85,7 @@ const User = () => {
       </Helmet>
       <div>
         <div className="container">
-        <BreacdCrumbs/>
+          <BreacdCrumbs />
           <div className="user">
             <h2 className="user-header">{ProfileLeng[languageChange].text}</h2>
 
@@ -185,7 +185,6 @@ const User = () => {
         <MiniNaw />
       </div>
       <MiniNaw />
-    
     </>
   );
 };

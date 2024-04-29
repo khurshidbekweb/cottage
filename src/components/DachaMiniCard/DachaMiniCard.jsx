@@ -16,22 +16,23 @@ const DachaMiniCard = (props) => {
 
   const queryClient = useQueryClient();
 
-  let liked = [];
-
   const accessToken = localStorage.getItem("accessToken");
   const refreshToken = localStorage.getItem("refreshToken");
+  let liked = [];
 
-  const navigate = useNavigate(null);
+  const navigate = useNavigate();
+
   const handlLiked = (id) => {
     if (accessToken && refreshToken) {
-      const likedCottage = JSON.parse(localStorage.getItem("liked"));
-      liked.push(...(likedCottage || ""));
-      if (!liked?.includes(id)) {
-        liked.push(id);
-        localStorage.setItem("liked", JSON.stringify(liked));
-      } else if (liked?.includes(id)) {
-        const isLiked = liked.filter((e) => e !== id);
-        localStorage.setItem("liked", JSON.stringify(isLiked));
+      const likedCottage = JSON.parse(localStorage.getItem("liked")) || [];
+      const isExist = likedCottage.includes(id);
+
+      if (isExist) {
+        const UpdatedLikedArr = likedCottage.filter((item) => item != id);
+        localStorage.setItem("liked", JSON.stringify(UpdatedLikedArr));
+      } else {
+        const updatedLike = [...likedCottage, id];
+        localStorage.setItem("liked", JSON.stringify(updatedLike));
       }
       queryClient.invalidateQueries({ queryKey: [QUERY_KEYS.cottages] });
     } else {
@@ -91,7 +92,6 @@ const DachaMiniCard = (props) => {
           }`}
         >
           <FiHeart
-            onClick={() => handlLiked(props.cottage.id)}
             className={`dacha-mini-heart-icon ${
               props.cottage.isLiked === true ? "dacha-mini-heart-active" : ""
             }`}

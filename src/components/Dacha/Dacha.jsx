@@ -10,6 +10,7 @@ import { LanguageContext } from "../../helper/languageContext";
 const Dacha = () => {
   const { languageChange } = useContext(LanguageContext);
   const cottage = ALL_DATA.useCottage();
+
   return (
     <div className="container">
       <div className="dacha">

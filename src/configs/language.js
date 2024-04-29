@@ -225,3 +225,9 @@ export const FooterMiniLang = {
   ru: "Ташкент, Амир Tемура  7",
   en: "Tashkent, Amir Temur 7",
 };
+
+export const FilterNotFound = {
+  uz: "Dacha topilmadi",
+  ru: "Коттедж не найден",
+  en: "Cottage not found",
+};
