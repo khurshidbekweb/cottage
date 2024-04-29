@@ -11,9 +11,10 @@ const UserCottageSingle = () => {
 
   const cottage = ALL_DATA.useCottageAllUserId(params.id);
 
-  const user = ALL_DATA.useSingleUser(params.id);
+  const user = ALL_DATA.useCottageUserById(params.id);
+  console.log(user);
 
-  if (!user.data?.image) {
+  if (user.isLoading) {
     return <Loader />;
   }
 
@@ -31,7 +32,7 @@ const UserCottageSingle = () => {
             <p>+998{user.data?.phone}</p>
           </div>
         </div>
-        <h2 className="dacha-top mt-4">User Cottage</h2>
+        <h2 className="dacha-top mt-4 fs-2">{user?.data?.name}'s Cottage</h2>
         <div className="dacha-cards">
           {cottage.data?.length &&
             cottage.data

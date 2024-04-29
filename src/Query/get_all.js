@@ -107,10 +107,30 @@ export const ALL_DATA = {
     });
   },
   useCottageAllUserId: (userId) => {
-    return useQuery({
+    const userCottage = useQuery({
       queryKey: [QUERY_KEYS.cottageUserAllId],
       queryFn: async () => await cottageUtils.getCottageUserId(userId),
     });
+
+    const likedCottages = JSON.parse(localStorage.getItem("liked"));
+
+    if (userCottage.data?.length) {
+      const data = userCottage.data.map((e) => {
+        if (likedCottages?.includes(e.id)) {
+          return {
+            ...e,
+            isLiked: true,
+          };
+        } else {
+          return {
+            ...e,
+            isLiked: false,
+          };
+        }
+      });
+      return { ...userCottage, data: data };
+    }
+    return { ...userCottage };
   },
   useLanguage() {
     return useQuery({
@@ -152,6 +172,12 @@ export const ALL_DATA = {
     return useQuery({
       queryKey: [QUERY_KEYS.users],
       queryFn: userUtils.getSingleUser,
+    });
+  },
+  useCottageUserById: (userID) => {
+    return useQuery({
+      queryKey: [QUERY_KEYS.userCottageUser],
+      queryFn: async () => userUtils.getCottageUserById(userID),
     });
   },
   useNotificationUser: (userId) => {

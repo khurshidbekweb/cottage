@@ -18,7 +18,6 @@ const DachaMiniCard = (props) => {
 
   const accessToken = localStorage.getItem("accessToken");
   const refreshToken = localStorage.getItem("refreshToken");
-  let liked = [];
 
   const navigate = useNavigate();
 

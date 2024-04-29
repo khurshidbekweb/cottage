@@ -14,5 +14,6 @@ export const QUERY_KEYS = {
   all_notification: "all_notification",
   services: "services",
   tariff: "tariffs",
-  cottageUserAllId: "cottageUserIdAll"
+  cottageUserAllId: "cottageUserIdAll",
+  userCottageUser: "UserCottageUser",
 };
