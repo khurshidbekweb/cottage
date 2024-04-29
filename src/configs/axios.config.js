@@ -4,9 +4,9 @@ import { authUtils } from "../utils/auth.utils";
 const custimAxios = axios.create({
   baseURL: BASE_URL_SERVER,
   timeout: 10000,
-  headers: {
-    Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-  },
+  // headers: {
+  //   Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+  // },
 });
 
 // custimAxios.interceptor.request.use(
