@@ -10,6 +10,11 @@ export const userUtils = {
     localStorage.setItem("user", JSON.stringify(data));
     return data;
   },
+  getCottageUserById: async (userId) => {
+    console.log(userId);
+    const { data } = await custimAxios.get(`/user/single/user/by/${userId}`);
+    return data;
+  },
   getUserDevice: async (userId) => {
     const { data } = await custimAxios.get(`user/user-device/${userId}`);
     return data;
