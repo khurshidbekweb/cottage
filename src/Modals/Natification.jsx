@@ -12,6 +12,7 @@ function Natification() {
     <>
       <button
         className="btn"
+        style={{marginRight:"30px"}}
         data-bs-toggle="modal"
         data-bs-target="#staticBackdrop"
       >

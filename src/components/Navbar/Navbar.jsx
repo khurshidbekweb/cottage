@@ -260,9 +260,9 @@ const Navbar = (props) => {
 
             <div className="d-flex align-items-center">
               <Notification />
-              <Link to={"tel:+998936222222"} className="phoneMobile">
+              {/* <Link to={"tel:+998936222222"} className="phoneMobile">
                 <BsTelephoneFill size={18} />
-              </Link>
+              </Link> */}
             </div>
 
             <button

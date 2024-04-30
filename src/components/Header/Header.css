@@ -196,6 +196,9 @@
 .mini-search {
   display: none;
 }
+.mini-search-icon{
+  display: none;
+}
 @media only screen and (max-width: 576px) {
   .swiper-header {
     width: 100%;
@@ -204,6 +207,17 @@
     height: 350px;
     margin-top: -20px;
     z-index: -9 !important;
+  }
+  .mini-search-icon{
+    display: block;
+    position: absolute;
+    top: -53px;
+    right: 15px;
+    background-color: #3cd298;
+    padding: 5px;
+    border-radius: 50%;
+    color: white;
+    font-weight: 800;
   }
   .header {
     position: relative;
