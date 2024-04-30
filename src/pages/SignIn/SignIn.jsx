@@ -47,6 +47,7 @@ const SignIn = () => {
   const handleAuth = (e) => {
     e.preventDefault();
     console.log(e.target.phonenumber.value.replaceAll(" ", "").slice(4));
+    
     phone.mutate({
       phone: e.target.phonenumber.value.replaceAll(" ", "").slice(4),
     });
