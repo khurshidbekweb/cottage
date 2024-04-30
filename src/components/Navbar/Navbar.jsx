@@ -49,6 +49,7 @@ const Navbar = (props) => {
 
   const registered = useRef(null);
   const signIn = useRef(null);
+
   const handleCottageType = async (e) => {
     const type = await cottageUtils.getCottageType(e.target.value);
   };
